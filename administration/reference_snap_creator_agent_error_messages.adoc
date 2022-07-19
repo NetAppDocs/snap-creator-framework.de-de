@@ -1,0 +1,95 @@
+---
+permalink: administration/reference_snap_creator_agent_error_messages.html 
+sidebar: sidebar 
+keywords: snap, creator, agent, error, message, aft, sc_agentconfiguration, parameter, remote, port 
+summary: In der folgenden Tabelle sind die Fehlermeldungen des Snap Creator Agent aufgeführt. 
+---
+= Fehlermeldungen des Snap Creator Agent
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+In der folgenden Tabelle sind die Fehlermeldungen des Snap Creator Agent aufgeführt.
+
+|===
+| Fehlercode | Beschreibung/Auflösung 
+
+
+ a| 
+agt-00001
+ a| 
+Der Snap Creator Agent oder ein anderer Prozess wird auf dem angegebenen Port ausgeführt. Versuchen Sie einen anderen Port.
+
+
+
+ a| 
+agt-00003
+ a| 
+Die angegebenen Parameter waren nicht richtig, um den Snap Creator Agent zu starten. Überprüfen Sie die erforderlichen Parameter.
+
+
+
+ a| 
+agt-00004
+ a| 
+Der Parameter SC_AGENTConfiguration muss bei Verwendung eines Remote-Agenten definiert werden.
+
+
+
+ a| 
+agt-00005
+ a| 
+Sie dürfen das System nicht wieder zum Stillegen von Daten ausführen, und ein Vorgang wird bereits ausgeführt. Warten oder unquiesce ausführen.
+
+
+
+ a| 
+agt-00006
+ a| 
+Der Watchdog-Prozess kann nicht gespickt werden. Das System hat höchstwahrscheinlich die maximale Anzahl an Prozessen erreicht. Deaktivieren Sie den Watchdog in der Konfiguration, oder überprüfen Sie die Betriebssystemeinstellungen.
+
+
+
+ a| 
+agt-00008
+ a| 
+Der Vorgang quiesce und unquiesce wurde nicht abgeschlossen und der Backup ist nur absturzkonsistent. Prüfen Sie die Protokolle. Dies kann passieren, wenn der Stilllegen-Betrieb zu lang dauert und Sie einen Watchdog verwenden. Der Watchdog-Prozess führt nach x Sekunden einen erzwungenen Unstilllegen aus, wie in der Konfiguration definiert.
+
+
+
+ a| 
+agt-00009
+ a| 
+Pre- und Post-Befehle müssen in der Agent.conf auf der Agentenseite erlaubt sein. Aktualisieren Sie den Agent.conf und lassen Sie die erforderlichen Befehle zu.
+
+
+
+ a| 
+agt-00010
+ a| 
+Der Agent konnte seine Konfigurationsdatei nicht lesen. Prüfen Sie die Berechtigungen auf der Datei Agent.conf.
+
+
+
+ a| 
+agt-00011
+ a| 
+Ein Befehl wurde an den Agenten gesendet, ist jedoch nicht zulässig. Aktualisieren Sie die Agent.conf, um den Befehl zu ermöglichen.
+
+
+
+ a| 
+agt-00012
+ a| 
+Dieser Fehler tritt beim Laden eines Plug-ins auf. Prüfen Sie die Einstellung Plug-in und APP_NAME.
+
+
+
+ a| 
+agt-00013
+ a| 
+Dieser Fehler tritt beim Ausführen der Setenv-Methode im Plug-in auf. Prüfen Sie das Plug-in und stellen Sie sicher, dass die Syntax korrekt ist.
+
+|===

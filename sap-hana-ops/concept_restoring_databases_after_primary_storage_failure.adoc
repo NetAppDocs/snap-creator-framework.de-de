@@ -1,0 +1,14 @@
+---
+permalink: sap-hana-ops/concept_restoring_databases_after_primary_storage_failure.html 
+sidebar: sidebar 
+keywords: restoring, restore, database, primary, storage, failure 
+summary: Nach einem Ausfall des Primär-Storage oder dem Löschen aller Snapshot Kopien aus den Volumes im primären Storage ist Snap Creator nicht in der Lage, die Wiederherstellung zu verarbeiten, da es keine SnapVault-Beziehung mehr auf den primären Storage-Systemen gibt. 
+---
+= Wiederherstellung von Datenbanken nach Ausfall des primären Storage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Nach einem Ausfall des Primär-Storage oder dem Löschen aller Snapshot Kopien aus den Volumes im primären Storage ist Snap Creator nicht in der Lage, die Wiederherstellung zu verarbeiten, da es keine SnapVault-Beziehung mehr auf den primären Storage-Systemen gibt.

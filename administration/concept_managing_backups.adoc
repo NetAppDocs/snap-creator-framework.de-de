@@ -1,0 +1,20 @@
+---
+permalink: administration/concept_managing_backups.html 
+sidebar: sidebar 
+keywords: managing, backups, backup, copies, 
+summary: Sie können Backup-Kopien erstellen, eine Liste von Backup-Kopien anzeigen und Backup-Kopien löschen, wenn diese nicht mehr benötigt werden. 
+---
+= Verwalten von Backups
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können Backup-Kopien erstellen, eine Liste von Backup-Kopien anzeigen und Backup-Kopien löschen, wenn diese nicht mehr benötigt werden.
+
+Darüber hinaus können Sie Backup-Vorgänge automatisieren. Weitere Informationen zum Erstellen geplanter Jobs finden Sie unter Verwandte Aufgaben.
+
+*Verwandte Informationen*
+
+xref:task_creating_scheduled_jobs_using_sc_gui.adoc[Geplante Aufträge werden erstellt]

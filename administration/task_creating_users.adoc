@@ -1,0 +1,22 @@
+---
+permalink: administration/task_creating_users.html 
+sidebar: sidebar 
+keywords: snap, creator, profile, role, gui, user 
+summary: Sie können Snap Creator Benutzer erstellen und verschiedene Aktionen ausführen, beispielsweise das Zuweisen von Profilen und Rollen zu Benutzern über die Snap Creator GUI. 
+---
+= Erstellen von Snap Creator Benutzern
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können Snap Creator Benutzer erstellen und verschiedene Aktionen ausführen, beispielsweise das Zuweisen von Profilen und Rollen zu Benutzern über die Snap Creator GUI.
+
+. Wählen Sie im Hauptmenü der Snap Creator GUI die Option *Benutzer und Rollen* > *Benutzerverwaltung*.
+. Klicken Sie auf der Registerkarte Benutzerverwaltung auf *Hinzufügen*.
+. Geben Sie im Dialogfeld Neuer Benutzer ein Kennwort für den Benutzernamen ein und klicken Sie dann auf *Speichern*.
++
+Der neue Benutzername wird im Fensterbereich *Benutzer* unter *Benutzername* angezeigt.
+
+

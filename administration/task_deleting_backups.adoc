@@ -1,0 +1,24 @@
+---
+permalink: administration/task_deleting_backups.html 
+sidebar: sidebar 
+keywords: delete, backup, copy, configuration, file, delete, snap, creator, gui, data 
+summary: Sie können Sicherungskopien einer Konfigurationsdatei löschen. 
+---
+= Backups werden gelöscht
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können Sicherungskopien einer Konfigurationsdatei löschen.
+
+. Wählen Sie im Hauptmenü der grafischen Benutzeroberfläche Snap Creator die Option *Daten* > *Backups* aus
+. Erweitern Sie im Bereich Profile und Konfigurationen auf der Registerkarte Backups ein Profil und wählen Sie eine Konfigurationsdatei aus.
+. Wählen Sie das zu löschende Backup aus und klicken Sie auf *Löschen*.
++
+
+NOTE: Wenn die Konfigurationsdatei mehrere Data ONTAP Volumes enthält, müssen Sie die Snapshot Kopie auswählen, die Sie auf jedem der Data ONTAP Volumes löschen möchten.
+
+. Klicken Sie im Bestätigungsfenster auf *Ja*.
+

@@ -1,0 +1,31 @@
+---
+permalink: domino-ops/concept_backup_operations_using_domino_plug_in.html 
+sidebar: sidebar 
+keywords: domino, ibm, backup, operations, ibm, understanding 
+summary: Im Gegensatz zu anderen Backup-Technologien ermöglicht das IBM Domino Plug-in das Schreiben von Daten während des Backup-Betriebs in die Datenbank. Sie stellt sicher, dass das Backup mit Anwendungsdaten konsistent ist, indem alle Änderungen an der Datenbank während der Backup-Vorgänge in einem temporären Verzeichnis namens changeinfo aufgezeichnet werden. Beim Restore werden diese Änderungen auf die Datenbank angewendet, nachdem Daten aus der Snapshot Kopie wiederhergestellt wurden. 
+---
+= Allgemeines zu Backup-Vorgängen durch IBM Domino Plug-in
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Im Gegensatz zu anderen Backup-Technologien ermöglicht das IBM Domino Plug-in das Schreiben von Daten während des Backup-Betriebs in die Datenbank. Sie stellt sicher, dass das Backup mit Anwendungsdaten konsistent ist, indem alle Änderungen an der Datenbank während der Backup-Vorgänge in einem temporären Verzeichnis namens changeinfo aufgezeichnet werden. Beim Restore werden diese Änderungen auf die Datenbank angewendet, nachdem Daten aus der Snapshot Kopie wiederhergestellt wurden.
+
+Während des Backups befinden sich Datenbankdateien im Backup-Modus. Obwohl das Snap Creator Framework sich auf diese Dateien als „`stillgelegt,`“ bezieht, ist das nicht der Fall. Während der Erstellung der Snapshot Kopie werden die Daten weiterhin auf die Dateien geschrieben.
+
+Die grundlegenden Schritte sind wie folgt:
+
+. Auflistung von Datenbanken, Vorlagen und Mailboxen in den zu sichernden Volumes
+. Speichern Sie Dateien nacheinander in den Backup-Modus, und zwar in einer Datenbank.
+. Prüfen Sie auf inkonsistente oder beschädigte Datenbanken.
++
+
+NOTE: Sie können das Plug-in erzwingen, um mit Backup-Vorgängen trotz Fehlern fortzufahren, wie in Schritt beschrieben link:task_using_the_gui_to_create_a_configuration_file.md#STEP_AA41331683A24598B7845367CB967F99["Task_using_the_gui_to_create_a_Configuration_file.md#STEP_AA41331683A24598B7845367CB967F99"].
+
+. Erstellen Sie von jedem Volume eine Snapshot Kopie.
+. Wenn die Transaktionsprotokollierung von Domino verwendet wird, können Sie Kopien von Domino Transaktionsprotokollen zwecks Verwendung in aktuellen Restore-Vorgängen archivieren.
+. Entfernen Sie Dateien aus dem Backup-Modus, und nehmen Sie gleichzeitig eine Datenbank auf.
+. Nehmen Sie Änderungen an der Datenbank auf, da Dateien im Backup-Modus im Verzeichnis changeinfo gespeichert wurden.
+

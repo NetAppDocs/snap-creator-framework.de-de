@@ -1,0 +1,43 @@
+---
+permalink: installation/task_uninstalling_snap_creator_agent_from_unix.html 
+sidebar: sidebar 
+keywords: uninstalling, uninstall, snap, creator, agent, unix 
+summary: Sie können Snap Creator Agent von UNIX deinstallieren, indem Sie den Snap Creator Agent Installationsordner löschen. 
+---
+= Deinstallieren von Snap Creator Agent unter UNIX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können Snap Creator Agent von UNIX deinstallieren, indem Sie den Snap Creator Agent Installationsordner löschen.
+
+Sichern Sie die folgenden Verzeichnisse und alle zugehörigen Unterverzeichnisse und Dateien im Snap Creator Agent Verzeichnis (/install_PATH/scAgent4.1.0):
+
+* Logs (../logs)
+* Plug-ins (../Plug-ins)
+* Eigenschaften von Snap Creator Agent (../etc), die die Dateien allowed_befiehlt.config und agent.properties enthalten
+
+
+So deinstallieren Sie Snap Creator Agent:
+
+
+NOTE: Die in den folgenden Schritten aufgeführten Pfade beziehen sich auf den allgemeinen Installationspfad. Sie können den Pfad in diesen Befehlen ändern, um den angepassten Snap Creator Agent Installationspfad anzuzeigen.
+
+. Stoppen Sie den Snap Creator Agent mit dem folgenden Skript:
++
+[listing]
+----
+/install_path/scAgent4.1.0/bin/scAgent stop
+----
+. Löschen Sie den Snap Creator Agent-Installationsordner.
++
+Führen Sie beispielsweise auf einem Linux-System den folgenden Befehl aus:
+
++
+[listing]
+----
+rm -Rf /install_path/scAgent4.1.0
+----
+

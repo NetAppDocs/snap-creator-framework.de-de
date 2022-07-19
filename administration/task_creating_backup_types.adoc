@@ -1,0 +1,22 @@
+---
+permalink: administration/task_creating_backup_types.html 
+sidebar: sidebar 
+keywords: backup, snap, creator, gui, policy, creating, type 
+summary: Optional können Sie mithilfe der Snap Creator GUI einen Backup-Typ erstellen, um den Zweck einer Richtlinie zu identifizieren. 
+---
+= Backup-Typen werden erstellt
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Optional können Sie mithilfe der Snap Creator GUI einen Backup-Typ erstellen, um den Zweck einer Richtlinie zu identifizieren.
+
+. Wählen Sie im Hauptmenü der Snap Creator GUI die Option *Richtlinie* > *Sicherungstyp*.
+. Klicken Sie auf der Registerkarte *Backup type* auf *Add*.
+. Geben Sie den Namen des neuen Backup-Typs ein, und klicken Sie anschließend auf *OK*.
++
+Der neue Sicherungstyp ist unter *Sicherungstyp* aufgeführt.
+
+

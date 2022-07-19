@@ -1,0 +1,33 @@
+---
+permalink: administration/reference_self_signed_ssl_certificate.html 
+sidebar: sidebar 
+keywords: self-signed, ssl, certificate, url, issue, cause, corrective, action, system, ip, parameter 
+summary: Selbstsigniertes SSL-Zertifikat entspricht nicht der URL 
+---
+= Selbstsigniertes SSL-Zertifikat entspricht nicht der URL
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+* *Ausgabe*
++
+Das mit Snap Creator Framework bereitgestellte selbstsigniertes SSL-Zertifikat stimmt nicht mit der URL überein.
+
+* *Ursache*
++
+Der allgemeine Name (CN) des SSL-Zertifikats, das auf dem Snap Creator Service vorgestellt wird, ist für eine andere Maschine, und somit stimmt er nicht mit dem Hostnamen überein.
+
+* *Korrekturmaßnahmen*
++
+Der System-IP-Parameter wurde während der Installation von Snap Creator Server und Snap Creator Agent eingeführt, um den Hostnamen aufzulösen.
+
++
+.. Geben Sie die System-IP-Adresse ein, an der Snap Creator Framework über die Option System IP installiert wird.
++
+*** Der allgemeine Name des SSL-Zertifikats kann mit derselben IP-Adresse erstellt werden.
+
+
+
+
+

@@ -1,0 +1,31 @@
+---
+permalink: domino-ops/task_using_the_snap_creator_reports_option_to_view_logs.html 
+sidebar: sidebar 
+keywords: domino, ibm, viewing, view, logs, report pane 
+summary: Sie können Protokolle im Fensterbereich Snap CreatorReports im gleichen Format anzeigen, in dem sie im Konsolenbereich angezeigt werden. Im Bereich Berichte können Fehlerprotokolle sowie Standardprotokolle angezeigt werden. 
+---
+= Anzeigen von Protokollen im Fenster Berichte
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können Protokolle im Fensterbereich Snap CreatorReports im gleichen Format anzeigen, in dem sie im Konsolenbereich angezeigt werden. Im Bereich Berichte können Fehlerprotokolle sowie Standardprotokolle angezeigt werden.
+
+. Klicken Sie oben im Snap Creator Framework Fenster auf *Berichte* > *Logs*.
+. Wählen Sie im Fensterbereich Berichte das Profil, die Konfigurationsdatei, den Protokolltyp und die Protokolldatei aus. Dabei sind folgende Protokolltypen vorgesehen:
++
+** *Out Logs* liefern ausführliche Informationen für einen Job.
+** *Debug Logs* bietet ausführliche Informationen sowie Informationen, die für Debugging nützlich sind.
+** *Stderr Logs* liefert Informationen über Fehler, die auf Standardfehler geschrieben wurden.
+** *Fehlerprotokolle* enthält alle Fehlerinformationen. *Hinweis:* je nach Auftragsgröße kann die Auswahl *Debug Log* dazu führen, dass der Browser langsam oder nicht mehr reagiert.
+
+
+. Klicken Sie Auf:
++
+** *Ausgewähltes Protokoll herunterladen* um das ausgewählte Protokoll herunterzuladen.
+** *Laden Sie GUI Logs* herunter, um die GUI-Protokolle herunterzuladen. Klicken Sie im Downloaddialog auf *Öffnen* oder *Speichern* nach Bedarf.
+
+
+

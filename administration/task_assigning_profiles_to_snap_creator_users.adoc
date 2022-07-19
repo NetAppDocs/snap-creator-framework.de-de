@@ -1,0 +1,23 @@
+---
+permalink: administration/task_assigning_profiles_to_snap_creator_users.html 
+sidebar: sidebar 
+keywords: snap, creator, gui, profile, menu, assign 
+summary: Über die Snap Creator GUI können Sie Snap Creator-Benutzer Profile zuweisen. 
+---
+= Zuweisen von Profilen zu Snap Creator Benutzern
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Über die Snap Creator GUI können Sie Snap Creator-Benutzer Profile zuweisen.
+
+. Wählen Sie im Hauptmenü der Snap Creator GUI die Option *Benutzer und Rollen* > *Benutzerverwaltung*.
+. Wählen Sie auf der Registerkarte Benutzerverwaltung den gewünschten Benutzernamen aus und klicken Sie dann auf *Profile zuweisen*.
+. Verschieben Sie die gewünschten Profile aus der linken Spalte in die rechte Spalte und klicken Sie dann auf *Speichern*.
++
+Sie können die Profile zwischen Spalten auswählen und ziehen oder auf den Pfeil klicken, um die Profile zwischen Spalten zu verschieben.
+
+. Überprüfen Sie, ob das Profil zugewiesen wurde, indem Sie den Benutzer auswählen und das zugewiesene Profil im Fenster *zugewiesene Profile und Rollen* anzeigen.
+

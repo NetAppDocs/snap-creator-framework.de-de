@@ -1,0 +1,52 @@
+---
+permalink: installation/concept_plug_ins_for_application_integration.html 
+sidebar: sidebar 
+keywords: plug-in, application, integration 
+summary: Mithilfe von Plug-ins werden Applikationen oder Datenbanken konsistent. Snap Creator enthält mehrere Plug-ins, die bereits Teil der Binärdatei sind und keine zusätzliche Installation erfordern. 
+---
+= Plug-ins für die Applikationsintegration
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Mithilfe von Plug-ins werden Applikationen oder Datenbanken konsistent. Snap Creator enthält mehrere Plug-ins, die bereits Teil der Binärdatei sind und keine zusätzliche Installation erfordern.
+
+Zu den unterstützten Applikationen zählen Datenbank-, E-Mail-, Hypervisor- oder benutzerdefinierte Applikationen. Die folgenden Plug-ins werden zur Verwendung mit Snap Creator unterstützt:
+
+* Applikations- und Datenbank-Plug-ins:
++
+** DB2
+** IBM Domino (Domino)
+** MaxDB
+** MySQL
++
+
+NOTE: Das MySQL Plug-in unterstützt keine Backup- und Restore-Vorgänge für mehrere Datenbanken.
+
+** Oracle
+** SAP High-Performance Analytic Appliance (HANA)
+** Sybase Adaptive Server Enterprise (ASE)
+
+
+* SnapManager Plug-ins:
++
+** SnapManager für Microsoft Exchange
+** SnapManager für Microsoft SQL Server
+
+
+* Hypervisor-Plug-ins:
++
+** Citrix XenServer
+** Virtual Machine (KVM) mit Red hat Kernel
+** VMware (vSphere für individuelle Backups virtueller Maschinen und vCloud Director für vApp Backups)
+
+
+
+
+Benutzerdefinierte (auch „Community“ genannt) Plug-ins werden von der Entwickler-Community geschrieben und können von Snap Creator aktiviert werden, werden aber nicht unterstützt. Diese Plug-ins nutzen die von Snap Creator bereitgestellte Schnittstelle, sodass die Entwickler sich auf ihre Zielapplikationen konzentrieren können.
+
+Weitere Informationen finden Sie auf der http://community.netapp.com/t5/Snap-Creator-Framework-Discussions/bd-p/snap-creator-framework-discussions["Snap Creator Framework Diskussionen Community-Forum"] Standort.
+
+https://library.netapp.com/ecm/ecm_download_file/ECMLP2854418["Snap Creator Framework 4.3.3 – Administratorhandbuch"]

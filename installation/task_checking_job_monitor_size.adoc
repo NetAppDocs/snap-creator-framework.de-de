@@ -1,0 +1,29 @@
+---
+permalink: installation/task_checking_job_monitor_size.html 
+sidebar: sidebar 
+keywords: checking, check, job, monitor, size 
+summary: Bevor Sie ein Upgrade auf die neueste Version von Snap Creator durchführen, sollten Sie die Job-Monitor-Größe für die derzeit installierte Version von Snap Creator überprüfen. 
+---
+= Größe des Jobmonitors wird überprüft
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bevor Sie ein Upgrade auf die neueste Version von Snap Creator durchführen, sollten Sie die Job-Monitor-Größe für die derzeit installierte Version von Snap Creator überprüfen.
+
+Wenn Sie Snap Creator aktualisieren, stellen Sie sicher, dass Sie die Größe der Jobüberwachung gleich oder größer als die vorherige Einstellung, um Datenverlust in der Job-Monitor-Datenbank zu vermeiden. Snap Creator ruft Jobs nur bis zur Größe des aktualisierten Job-Monitors ab.
+
+Wenn die Größe der Jobüberwachung beispielsweise in Snap Creator 4.0 500 beträgt, stellen Sie beim Upgrade auf den neuesten Snap Creator sicher, dass die Größe des Jobmonitors auf eine Zahl von mindestens 500 eingestellt wird.
+
+. Überprüfen Sie die Größe des Jobmonitors, indem Sie eine der folgenden Optionen durchführen:
++
+** Öffnen Sie die Snap Creator Server-Eigenschaftendateien (/install_PATH/scServer4.1.x/Engine/etc/snapcreator.properties), und überprüfen Sie die Variable SNAPCREATOR_JOB_MONITOR_SIZE.
+** Wählen Sie im Hauptmenü der Snap Creator GUI die Option *Verwaltung* > *Job Monitor* und klicken Sie dann auf *Größe*.
++
+Das Dialogfeld „Größe des Jobmonitors“ wird im oberen Feld mit der aktuellen Größe angezeigt.
+
+
+
+

@@ -1,0 +1,19 @@
+---
+permalink: administration/task_viewing_permissions_assigned_to_a_role_by_using_the_gui.html 
+sidebar: sidebar 
+keywords: snap, creator, permission, gui, role, management 
+summary: Sie können eine Liste aller Snap Creator Berechtigungen anzeigen, die einer Rolle zugewiesen sind, indem Sie die Snap Creator GUI verwenden. 
+---
+= Anzeigen der Snap Creator Berechtigungen, die einer Rolle zugewiesen wurden
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können eine Liste aller Snap Creator Berechtigungen anzeigen, die einer Rolle zugewiesen sind, indem Sie die Snap Creator GUI verwenden.
+
+. Wählen Sie im Hauptmenü der Snap Creator GUI die Option *Benutzer und Rollen* > *Rollenverwaltung*.
+. Wählen Sie auf der Registerkarte**Rollenverwaltung** die gewünschte Rolle aus.
+. Wählen Sie die gewünschte Rolle aus, und zeigen Sie die zugewiesenen Berechtigungen in der Rolle und im Bereich zugewiesene Berechtigungen an.
+

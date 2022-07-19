@@ -1,0 +1,26 @@
+---
+permalink: administration/task_deleting_retention_policies.html 
+sidebar: sidebar 
+keywords: delete, retention, policy, snap, creator, gui 
+summary: Sie können Aufbewahrungsrichtlinien löschen. 
+---
+= Aufbewahrungsrichtlinien werden gelöscht
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können Aufbewahrungsrichtlinien löschen.
+
+. Wählen Sie im Hauptmenü der Snap Creator GUI die Option *Richtlinie* > *Policy Management*.
+. Wählen Sie auf der Registerkarte *Policy Manager* eine Richtlinie aus und klicken Sie auf *Löschen*.
++
+
+NOTE: Wenn Sie versuchen, eine Richtlinie zu löschen, die einer Konfigurationsdatei zugeordnet ist, zeigt die GUI die folgende Fehlermeldung an: Richtlinie kann nicht gelöscht werden, da der Richtlinienname auf die Konfiguration angewendet wird.Verwenden Sie die Trennrichtlinie und löschen Sie dann die Richtlinie.
+
+. Klicken Sie im Bestätigungsfenster auf *Ja*.
++
+Die Richtlinie wird aus der Registerkarte Policy Manager entfernt.
+
+

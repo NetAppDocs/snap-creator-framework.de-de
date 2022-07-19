@@ -1,0 +1,33 @@
+---
+permalink: administration/reference_cli_command_results_in_500_connect_failed_error.html 
+sidebar: sidebar 
+keywords: unix, 500, error, connect, failed 
+summary: In einer UNIX-Umgebung tritt möglicherweise der Fehler 500 Connect beim Ausführen eines CLI-Befehls auf. 
+---
+= CLI-Befehl führt zu 500 Connect Fehler
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+In einer UNIX-Umgebung tritt möglicherweise der Fehler 500 Connect beim Ausführen eines CLI-Befehls auf.
+
+* *Ausgabe*
++
+In einer UNIX-Umgebung versuchen Sie, einen CLI-Befehl auszuführen. Der Fehler 500 Connect ist jedoch fehlgeschlagen. Beispiel:
+
++
+[listing]
+----
+500 Connect failed: connect: Connection refused; Connection refused at //scServer4.1.0/snapcreator>SnapCreator/Service/Engine.pm line 152
+----
+* *Ursache*
++
+Dieser Fehler tritt in der Regel auf, wenn Snap Creator den ausgewählten Port nicht abhört.
+
+* *Korrekturmaßnahmen*
++
+Vergewissern Sie sich, dass Snap Creator auf dem ausgewählten Port ausgeführt wird.
+
+

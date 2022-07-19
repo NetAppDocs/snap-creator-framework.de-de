@@ -1,0 +1,85 @@
+---
+permalink: installation/task_installing_snap_creator_agent_on_windows.html 
+sidebar: sidebar 
+keywords: installing, install, snap, creator, agent, windows 
+summary: Sie können Snap Creator Agent unter Windows Hosts mit dem Windows Installer installieren. 
+---
+= Installieren von Snap Creator Agent unter Windows
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können Snap Creator Agent unter Windows Hosts mit dem Windows Installer installieren.
+
+* JRE 1.8 Update 72 oder höher muss installiert sein.
+* Sie müssen über Berechtigungen auf Administratorebene verfügen.
+* Der Standardport (9090) oder ein anderer Netzwerkanschluss müssen verfügbar sein.
+* Snap Creator muss heruntergeladen werden.
++
+.. Starten Sie den Snap Creator Installer, indem Sie auf das Dateisymbol Snap_Creator_Frameworkrelease-Windowsversion.exe doppelklicken (z. B. Snap_Creator_Framework4.1.0-Windows64.exe).
+.. Klicken Sie auf der Begrüßungsseite auf *Weiter*, um die Installation zu starten.
+.. Überprüfen und akzeptieren Sie die Bedingungen der Lizenzvereinbarung.
+.. Konfigurieren Sie auf der Seite Installationstyp auswählen die folgenden Einstellungen für verschiedene Installationstypen:
++
+*** *Installationstyp auswählen*
++
+Wählen Sie *Agent*.
+
+*** *Agent als Dienst starten*
++
+Wählen Sie diese Option aus, um den *Snapcreatoragentservice* unmittelbar nach Abschluss des Installationsprozesses zu installieren und zu starten.
+
++
+Wenn diese Option nicht ausgewählt ist, ist das Feld Agent-Port deaktiviert.
+
++
+
+NOTE: Wenn Sie diese Option nicht auswählen, wird der Dienst nicht installiert, und Sie müssen Snap Creator Agent manuell starten, indem Sie über eine Eingabeaufforderung ein Batch-Skript ausführen.
+
+*** *Geben Sie Ihre System-IP* ein
++
+Wählen Sie diese Option aus, um die IP-Adresse des Systems bereitzustellen, auf dem Snap Creator Server oder Snap Creator Agent installiert ist. Diese Option wird zum Generieren des SSL-Zertifikats während des Snap Creator Installationsprozesses verwendet.
+
+*** *Java bin-Pfad eingeben*
++
+Wählen Sie diese Option aus, um den Java-bin-Pfad zur Suche nach dem Keytool-Dienstprogramm bereitzustellen. Das keytool-Dienstprogramm wird verwendet, um ein SSL-Zertifikat während der Snap Creator-Installation zu generieren.
+
+*** *Agent-Port*
++
+Akzeptieren Sie den Standardport (9090) oder geben Sie eine Portnummer an.
+
+
+
+
+
++
+image::../media/choose_install_type_page.gif[Wählen Sie die Seite „Installationstyp“]
+
++
+.. Klicken Sie Auf *Weiter*.
+.. Geben Sie auf der Seite Installationsstandort wählen entweder einen Snap Creator-Installationspfad ein, oder akzeptieren Sie den Standardpfad (C:\Programme\NetApp\Snap_Creator_Framework), und klicken Sie dann auf *Weiter*.
++
+
+NOTE: Wenn Sie das IBM Domino Plug-in verwenden möchten, müssen Sie einen anderen Speicherort als den Domino-Datenordner auswählen.
+
+.. Passen Sie auf der Seite Startmenü Ordner auswählen entweder den Ordner an, in dem Snap Creator im Windows Startmenü angezeigt werden soll, oder übernehmen Sie die Standardordneroption, und klicken Sie dann auf *Installieren*.
+.. Klicken Sie nach Abschluss der Installation auf *Weiter*.
++
+Während der Installation des Snap Creator Agent Service wird eine Eingabeaufforderung angezeigt, wenn ein Dienst als Teil der Installationsoptionen ausgewählt wurde. Dieser Prozess versucht, vorhandene Dienste zu starten. Daher werden häufig Fehlermeldungen angezeigt, die in diesem Schritt aufgeführt sind, die Sie ignorieren sollten.
+
+.. Klicken Sie auf *Fertig stellen*, um das Windows-Installationsprogramm zu schließen.
+
+
+
+
+Wenn Sie während des Installationsprozesses die Option *Agent als Dienst starten* nicht ausgewählt haben, müssen Sie Snap Creator Agent manuell starten.
+
+*Verwandte Informationen*
+
+xref:task_installing_java_on_snap_creator_hosts.adoc[Installieren von Java auf Snap Creator Hosts]
+
+xref:task_downloading_the_snap_creator_software.adoc[Herunterladen der Snap Creator Software]
+
+xref:task_starting_the_agent_from_a_command_prompt.adoc[Starten des Agenten über eine Eingabeaufforderung]

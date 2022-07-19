@@ -1,0 +1,16 @@
+---
+permalink: installation/concept_installing_the_snap_creator_server.html 
+sidebar: sidebar 
+keywords: installing, install, snap, creator, server 
+summary: Sie können den Snap Creator Server auf Windows- und UNIX-Hosts installieren. 
+---
+= Installieren des Snap Creator Servers
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können den Snap Creator Server auf Windows- und UNIX-Hosts installieren.
+
+In einer typischen Installation sind der Snap Creator Server und der Snap Creator Agent auf separaten Hosts installiert. In einigen Fällen können Server und Agent jedoch gleichzeitig installiert werden. Bei diesem Setup wird während der Installation nur der Server konfiguriert.

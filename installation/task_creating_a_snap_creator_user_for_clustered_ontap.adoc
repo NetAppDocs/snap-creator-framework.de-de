@@ -1,0 +1,63 @@
+---
+permalink: installation/task_creating_a_snap_creator_user_for_clustered_ontap.html 
+sidebar: sidebar 
+keywords: creating, create, snap, center, user, ontap 
+summary: 'Bei Clustered Data ONTAP sollten Sie Benutzer für Snap Creator erstellen. Der von Ihnen erstellte Benutzer hängt jedoch von der Version von Clustered Data ONTAP ab. Die beiden Benutzertypen sind ein Cluster-Benutzer und ein Storage Virtual Machine (SVM)-Benutzer.' 
+---
+= Erstellen eines Snap Creator Benutzers für Clustered Data ONTAP
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bei Clustered Data ONTAP sollten Sie Benutzer für Snap Creator erstellen. Der von Ihnen erstellte Benutzer hängt jedoch von der Version von Clustered Data ONTAP ab. Die beiden Benutzertypen sind ein Cluster-Benutzer und ein Storage Virtual Machine (SVM)-Benutzer.
+
+Erstellen Sie die folgenden Benutzer mit den entsprechenden Rollen, die im _Snap Creator Framework Administration Guide_ für Ihre Data ONTAP-Version definiert sind:
+
+* Data ONTAP Versionen vor Clustered Data ONTAP 8.2: Erstellen Sie ein Cluster und SVM-Benutzer.
+* Clustered Data ONTAP 8.2 oder höher: Erstellen Sie einen SVM-Benutzer.
+
+
+Zur Erhöhung der Sicherheit sollten Sie einen Data ONTAP Benutzer und eine Rolle speziell für Snap Creator erstellen. Alternativ können Sie andere Benutzerkonten wie „admin“ oder „vsadmin“ verwenden.
+
+Weitere Informationen zum Erstellen einer Snap Creator-Rolle mithilfe der CLI finden Sie unter Verwandte Referenzen.
+
+Beide Benutzertypen benötigen Zugriff auf die Data ONTAPI-Bibliothek. Darüber hinaus wird für Clustered Data ONTAP unabhängig von der Version eine Management-LIF benötigt.
+
+Die beiden Benutzer sind nicht austauschbar. Beispielsweise hat der Cluster-Benutzer keinen Zugriff auf die erforderlichen APIs, um bestimmte Aktionen wie das Erstellen einer Snapshot Kopie durchzuführen. Die Standardeinstellung des Cluster-Administratorkontos wird verwendet. SVM-Konten sollten die *vsadmin* Rolle oder eine durch den Kunden erstellte Rolle verwenden, damit Snap Creator ordnungsgemäß funktioniert.
+
+Sie müssen diese Prozedur einmal auf jeder SVM und jedem Cluster, wo Snap Creator verwendet wird, durchführen.
+
+Die folgenden Anweisungen beziehen sich zur einfacheren Verwendung auf Admin- und vsadmin-Rollen. Sie können diese Rollennamen jedoch durch die von Ihnen erstellten Rollen ersetzen.
+
+
+NOTE: Sie sollten Befehle nicht direkt aus diesem Dokument kopieren und einfügen. Fehler (z. B. falsch übertragene Zeichen, die durch Zeilenumbrüche und harte Rückgaben verursacht werden) können dazu führen. Kopieren Sie die Befehle aus diesem Verfahren in einen Texteditor, überprüfen Sie die Befehle und geben Sie sie anschließend in die CLI ein.
+
+. Erstellen Sie den SVM-Benutzer svm_username01 mit der entsprechenden Rolle (vsadmin oder der für den Benutzer erstellten Rolle) auf der svm_nameSVM und aktivieren Sie den Zugriff auf die ONTAPI-Bibliothek, indem Sie den folgenden Befehl und ein Benutzerpasswort eingeben:
++
+[listing]
+----
+security login create -username svm_username01
+-vserver svm_name -application ontapi
+-authmethod password -role vsadmin
+
+Please enter a password for user 'svm_username01':
+Please enter it again:
+----
+. _(nur für Versionen vor Clustered Data ONTAP 8.2)_ Erstellen Sie einen Cluster-Benutzer, indem Sie den folgenden Befehl und ein Benutzerpasswort eingeben:
++
+[listing]
+----
+security login create -username svm_username02
+-vserver svm_clustername -application ontapi
+-authmethod password -role admin
+
+Please enter a password for user 'svm_username02':
+Please enter it again:
+----
+
+
+*Verwandte Informationen*
+
+xref:reference_cli_commands_for_creating_a_role_for_a_snap_creator_user_in_clustered_data_ontap.adoc[CLI-Befehle zum Erstellen einer Rolle für einen Snap Creator-Benutzer in Clustered Data ONTAP]

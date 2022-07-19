@@ -1,0 +1,23 @@
+---
+permalink: administration/task_assigning_permissions_to_snap_creator_roles.html 
+sidebar: sidebar 
+keywords: assign, permission, snap, creator, gui, role, gui, permission 
+summary: Über die Snap Creator GUI können Sie Snap Creator Rollen Berechtigungen zuweisen. 
+---
+= Zuweisen von Berechtigungen zu Snap Creator-Rollen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Über die Snap Creator GUI können Sie Snap Creator Rollen Berechtigungen zuweisen.
+
+. Wählen Sie im Hauptmenü der Snap Creator GUI die Option *Benutzer und Rollen* > *Rollenverwaltung*.
+. Wählen Sie auf der Registerkarte Rollenverwaltung die gewünschte Rolle aus und klicken Sie dann auf *Berechtigungen zuweisen*.
+. Verschieben Sie die gewünschten Berechtigungen aus der linken Spalte in die rechte Spalte und klicken Sie dann auf *Speichern*.
++
+Sie können die Berechtigungen auswählen und zwischen Spalten ziehen oder auf den Pfeil klicken, um die Berechtigungen zwischen Spalten zu verschieben.
+
+. Überprüfen Sie, ob die Berechtigung zugewiesen wurde, indem Sie die Rolle auswählen und die zugewiesene Berechtigung im Bereich Rollen und zugewiesene Berechtigungen anzeigen.
+

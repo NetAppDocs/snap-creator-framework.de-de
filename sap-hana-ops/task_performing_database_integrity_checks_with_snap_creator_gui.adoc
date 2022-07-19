@@ -1,0 +1,27 @@
+---
+permalink: sap-hana-ops/task_performing_database_integrity_checks_with_snap_creator_gui.html 
+sidebar: sidebar 
+keywords: sap, hana, peforming, database, integrity, checks, snap, creator, gui, graphical, user, interface 
+summary: Sie können Datenbankintegritätsprüfungen über die grafische Benutzeroberfläche von Snap Creator durchführen. 
+---
+= Durchführen von Datenbankintegritätsprüfungen über die Snap Creator GUI
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können Datenbankintegritätsprüfungen über die grafische Benutzeroberfläche von Snap Creator durchführen.
+
+Sie müssen den Parameter DB Integrity Check auf der Registerkarte „HANA Integrity Check Settings“ aktiviert haben.
+
+. Wählen Sie die Konfiguration HANA_Database_Integrity_Check aus.
+. Wählen Sie *Aktionen* > *Integritätsprüfung*.
++
+image::../media/performing_file_based_backup_with_gui.gif[Dateibasierte Backups mit GUI durchführen]
+
+. Legen Sie die Policy-Option auf *Keine* fest, und klicken Sie auf *OK*.
++
+image::../media/performing_file_based_backup_with_gui_2.gif[Dateibasierte Backups mit GUI durchführen]
+
+

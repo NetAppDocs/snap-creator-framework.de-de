@@ -1,0 +1,53 @@
+---
+permalink: administration/task_starting_verifying_and_stopping_the_snap_creator_agent_on_windows.html 
+sidebar: sidebar 
+keywords: snap, creator, agent, service, start, verify, stop, windows 
+summary: Sie können den Snap Creator Agent Service starten und stoppen und überprüfen, ob der Snap Creator Agent Service auf Ihrem Windows System ausgeführt wird. 
+---
+= Starten, Überprüfen und Stoppen von Snap Creator Agent unter Windows
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können den Snap Creator Agent Service starten und stoppen und überprüfen, ob der Snap Creator Agent Service auf Ihrem Windows System ausgeführt wird.
+
+. Starten oder stoppen Sie an der Eingabeaufforderung den Snap Creator Agent Service oder überprüfen Sie, ob der Snap Creator Agent Service ausgeführt wird, falls zutreffend:
++
+|===
+| Ihr Ziel ist | Geben Sie Folgendes ein... 
+
+
+ a| 
+Starten Sie den Snap Creator Agent Service
+ a| 
+sc starten Snapcreatoragentservice
+
+
+
+ a| 
+Überprüfen Sie, ob der Snap Creator Agent-Dienst ausgeführt wird
+ a| 
+sc Abfrage Snapcreatoragentservice
+
+
+
+ a| 
+Beenden Sie den Snap Creator Agent Service
+ a| 
+sc stoppen Snapcreatoragentservice
+
+|===
++
+Wenn Sie Snap Creator im Vordergrund ausführen möchten, anstatt den sc Start-Befehl zu verwenden, führen Sie die folgenden Schritte aus:
+
++
+.. Öffnen Sie eine Eingabeaufforderung auf dem Host, auf dem der Snap Creator Agent installiert ist, und navigieren Sie dann zum Snap Creator Agentverzeichnis: cd `\install_path\scAgent4.3.0\bin\`
+.. Um den Snap Creator Agent-Dienst zu starten, führen Sie das Batch-Skript scAgent.bat Start aus
++
+Durch Schließen der Eingabeaufforderung wird der Snap Creator Agent-Dienst beendet. Da im Batch-Skript (SCAgent.bat) Snap Creator im Vordergrund ausgeführt wird, kann der Snap Creator Agent nur ausgeführt werden, solange die Eingabeaufforderung geöffnet ist. Um Snap Creator im Hintergrund auszuführen, sollten Sie den Snap Creator Agent Service verwenden.
+
+
+
+

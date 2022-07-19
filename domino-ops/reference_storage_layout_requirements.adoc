@@ -1,0 +1,73 @@
+---
+permalink: domino-ops/reference_storage_layout_requirements.html 
+sidebar: sidebar 
+keywords: domino, ibm, storage, layout, requirements, 
+summary: Eine typische IBM Domino Umgebung verfügt über mindestens drei Domino Volumes, jeweils eins für Domino Daten, Domino Transaktions-Logs und das Plug-in changeinfo-Verzeichnis. Viele Standorte verfügen auch über Volumes für Domino DAOS und für View-Rebuilds. 
+---
+= Anforderungen an das Storage-Layout
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Eine typische IBM Domino Umgebung verfügt über mindestens drei Domino Volumes, jeweils eins für Domino Daten, Domino Transaktions-Logs und das Plug-in changeinfo-Verzeichnis. Viele Standorte verfügen auch über Volumes für Domino DAOS und für View-Rebuilds.
+
+Das IBM Domino Plug-in verwendet das Changeinfo-Verzeichnis für Änderungen, die während von Backup-Vorgängen aufgezeichnet wurden, sowie für Kopien von Transaktionsprotokollen, die bei aktuellen Restore-Vorgängen verwendet werden. Als Best Practice empfiehlt es sich, das Verzeichnis changeinfo auf einem separaten Volume zu speichern, um zu vermeiden, dass die Informationen versehentlich überschrieben werden, und um die Sicherung zu erleichtern.
+
+Sie können es auch nützlich finden, separate Volumes für Domino DAOS zu haben (wenn sie aktiviert ist) und für View-Rebuilds. Wenn Domino eine Ansicht neu erstellt (z. B. wenn ein Benutzer eine Ansicht öffnet, deren Index gelöscht wurde oder wenn updall --R ausgeführt wird), kann es temporäre Dateien generieren, um die Daten für die schnelle Wiederherstellung von Ansichten zu sortieren.
+
+Standardmäßig befinden sich diese temporären Dateien im temporären Ordner des Systems oder im Domino-Datenordner. IBM empfiehlt, den Speicherort der temporären Dateien auf ein anderes Laufwerk zu ändern, um Festplatten-I/O zu verteilen und um sicherzustellen, dass genügend Speicherplatz für die Wiederherstellung von Ansichten vorhanden ist. Um den temporären Ordner zu ändern, der für die Wiederherstellung von Ansichten verwendet wird, fügen Sie der Datei notes.ini die Einstellung View_Rebuild_Dir hinzu.
+
+In der folgenden Tabelle wird das bevorzugte Volume-Layout angezeigt:
+
+|===
+| Datenmenge | Inhalt | Hinweise 
+
+
+ a| 
+Band 1
+ a| 
+Domino Daten
+ a| 
+FC-, SAS- oder SSD-Laufwerke bevorzugt.
+
+
+
+ a| 
+Lautstärke 2
+ a| 
+Domino Transaktionsprotokolle
+ a| 
+FC-, SAS- oder SSD-Laufwerke bevorzugt.
+
+
+
+ a| 
+Lautstärke 3
+ a| 
+Änderungsinformationen
+ a| 
+Speicherung von während Backup-Vorgängen aufgezeichneten Änderungen und Kopien von Transaktionsprotokollen zur Verwendung in aktuellen Restore-Vorgängen
+
+
+
+ a| 
+Lautstärke 4
+ a| 
+Anzeigen von Neuerstellungen
+ a| 
+Optional Speichert temporäre Dateien, die während Indexaktualisierungen erstellt wurden. Kann RAM-Datenträger verwenden. Fügen Sie die Einstellung View_reconcate_Dir zu notes.ini Datei hinzu.
+
+
+
+ a| 
+Lautstärke 5
+ a| 
+DAOS Repository
+ a| 
+Optional Enthält .dlo-Dateien von DAOS. Niedrige I/O-Anforderungen machen dies zu einem guten Kandidaten für SATA-Laufwerke.
+
+|===
+
+NOTE: In virtuellen Umgebungen werden bevorzugt Gast-Mount-Festplatten verwendet.

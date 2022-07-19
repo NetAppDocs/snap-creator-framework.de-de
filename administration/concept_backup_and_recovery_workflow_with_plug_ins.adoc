@@ -1,0 +1,27 @@
+---
+permalink: administration/concept_backup_and_recovery_workflow_with_plug_ins.html 
+sidebar: sidebar 
+keywords: backup, recovery, workflow, snap, creator, framework 
+summary: Der Workflow kann als Richtlinie für den Backup- und Recovery-Prozess mithilfe der Snap Creator GUI genutzt werden. 
+---
+= Workflows für Backup und Recovery
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Der Workflow kann als Richtlinie für den Backup- und Recovery-Prozess mithilfe der Snap Creator GUI genutzt werden.
+
+Wenn Sie diese Aufgaben ausführen, muss Snap Creator ausgeführt werden, und die Snap Creator GUI muss geöffnet sein. Wenn nicht, können Sie die URL des Snap Creator Servers in einem Webbrowser ("https://IP_address:gui_port"[] Standardmäßig ist der Port 8443) und melden Sie sich dann mit den Snap Creator GUI-Anmeldedaten an.
+
+Die folgende Abbildung zeigt den gesamten Satz von Aufgaben bei der Durchführung einer Sicherung und Wiederherstellung Ihres Systems bei Verwendung von Plug-ins:
+
+
+NOTE: Die im Workflow beschriebenen Aufgaben können auch über die Befehlszeilenschnittstelle (CLI) ausgeführt werden. Informationen zur CLI finden Sie in den entsprechenden Referenzen zur CLI-Kommandozeile.
+
+image::../media/sc_workflow_with_plugin.gif[sc-Workflow mit Plug-in]
+
+*Verwandte Informationen*
+
+xref:reference_guidelines_for_using_the_snap_creator_command_line.adoc[Richtlinien zur Verwendung der Snap Creator Befehlszeilenschnittstelle]

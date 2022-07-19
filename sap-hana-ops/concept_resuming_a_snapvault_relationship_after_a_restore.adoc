@@ -1,0 +1,18 @@
+---
+permalink: sap-hana-ops/concept_resuming_a_snapvault_relationship_after_a_restore.html 
+sidebar: sidebar 
+keywords: resuming, resume, restart, snapvault, relationship, after, restore 
+summary: Jede Wiederherstellung, die nicht mit dem neuesten Snapshot Backup durchgeführt wird, löscht die SnapVault-Beziehung auf den primären Storage-Systemen. 
+---
+= Wiederaufnahme einer SnapVault Beziehung nach einer Wiederherstellung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Jede Wiederherstellung, die nicht mit dem neuesten Snapshot Backup durchgeführt wird, löscht die SnapVault-Beziehung auf den primären Storage-Systemen.
+
+Nach Abschluss des Restore- und Recovery-Prozesses muss die SnapVault-Beziehung wieder aufgenommen werden, damit Backups mit Snap Creator wieder ausgeführt werden können. Anderenfalls wird Snap Creator eine Fehlermeldung ausgeben, da die SnapVault-Beziehung nicht mehr auf den primären Storage-Systemen gefunden werden kann.
+
+Der gewünschte Datentransfer basiert auf einem Delta-Transfer, falls zwischen dem Quell-Volume und dem Ziel-Volume weiterhin eine allgemeine Snapshot Kopie vorhanden ist.

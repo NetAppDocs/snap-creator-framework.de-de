@@ -1,0 +1,38 @@
+---
+permalink: administration/task_performing_single_file_restore_using_the_gui.html 
+sidebar: sidebar 
+keywords: snap, creator, gui, file, restore, wizard 
+summary: Sie können Restore-Vorgänge für einzelne Dateien über die Snap Creator GUI durchführen. 
+---
+= Durchführen von Restore-Vorgängen für einzelne Dateien
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können Restore-Vorgänge für einzelne Dateien über die Snap Creator GUI durchführen.
+
+. Wählen Sie im Hauptmenü der Snap Creator GUI die Option *Verwaltung* > *Konfigurationen*.
+. Wählen Sie auf der Registerkarte Konfigurationen im Fenster Profile und Konfiguration die Konfigurationsdatei aus.
+. Wählen Sie *Aktion* > *Wiederherstellen*.
++
+Der Wiederherstellungs-Assistent wird im rechten Fensterbereich geöffnet.
+
+. Schließen Sie den Wiederherstellungsassistenten ab:
++
+.. Wählen Sie im Abschnitt „`Restore Details`“ einen Controller- oder Vserver-Namen, einen Namen des Volumes wiederherstellen, eine Richtlinie und einen Namen der Snapshot Kopie wiederherstellen aus und wählen Sie dann in der Liste Restore type *Single File Restore* aus.
++
+image::../media/restore_wizard_restore_details.gif[Details zur Wiederherstellung des Assistenten]
+
+.. Wählen Sie die Dateien aus, die wiederhergestellt werden sollen.
+.. Wählen Sie den Speicherort aus, an dem die Dateien wiederhergestellt werden sollen.
+.. Überprüfen Sie die Zusammenfassung und klicken Sie auf *Fertig stellen*.
+
+
++
+Es wird eine Warnmeldung angezeigt, in der gefragt wird, ob weitere Elemente wiederhergestellt werden müssen.
+
+. Klicken Sie auf *Nein*, wenn keine weiteren Elemente wiederhergestellt werden sollen, und klicken Sie dann auf der Bestätigungsseite auf *OK*.
+. Überprüfen Sie im Konsolenfenster, ob die ausgewählten Dateien erfolgreich wiederhergestellt wurden, indem Sie die angezeigten Meldungen überprüfen.
+

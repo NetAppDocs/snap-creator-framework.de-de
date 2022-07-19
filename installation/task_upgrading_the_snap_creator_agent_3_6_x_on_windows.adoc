@@ -1,0 +1,121 @@
+---
+permalink: installation/task_upgrading_the_snap_creator_agent_3_6_x_on_windows.html 
+sidebar: sidebar 
+keywords: upgrading, upgrade, snap, creator, agent, 3.6.x, windows 
+summary: Sie können ein Upgrade direkt von Snap Creator Agent 3.6.x auf Windows durchführen. 
+---
+= Aktualisieren von Snap Creator Agent 3.6.x auf Windows
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können ein Upgrade direkt von Snap Creator Agent 3.6.x auf Windows durchführen.
+
+* Sie haben den Snap Creator Agent Service angehalten (`snapcreatoragentservice`) Vor der Sicherung der Snap Creator Agent Verzeichnisse, um sicherzustellen, dass die gesicherten Daten abgeschlossen sind.
++
+Sie können den Dienst beispielsweise mit dem Service-Snap-in beenden:
+
++
+.. Wählen Sie *Start* > *Lauf* und geben Sie ein `services.msc`.
+.. Suchen Sie den Snap Creator Agent-Dienst, und wählen Sie ihn aus. Beenden Sie dann den Dienst. Alternativ können Sie eine Eingabeaufforderung öffnen und den folgenden Befehl eingeben:
+
+
++
+[listing]
+----
+sc stop snapcreatoragentservice
+----
+* Sie haben die folgenden Verzeichnisse und alle damit verbundenen Unterverzeichnisse und Dateien im Snap Creator Agent Verzeichnis gesichert (C:\Program Files\NetApp\NetApp_Snap_Creator_Framework\scAgent3.6.x):
++
+** Agent.conf-Datei (..\config\Agent.conf)
++
+
+NOTE: Wenn der Snap Creator Server auf demselben System installiert ist, wurde diese Datei möglicherweise bereits gesichert, wenn Sie ein Upgrade auf Snap Creator Server 3.6.x durchführen
+
+** Protokollverzeichnis, falls aktiviert (..\logs)
+** Plug-ins-Verzeichnis (..\Plug-ins)
+
+
+
+
+Snap Creator Agent in Versionen vor 4.1 verwendete eine Datei namens Agent.conf, um Befehle außerhalb von Snap Creator aufzulisten, die auf Snap Creator Agent ausgeführt werden könnten. In 4.1 wird die Datei allowed_befiehlt.config verwendet.
+
+Auf ähnliche Weise wurde die Agent.conf-Datei Hosts aufgeführt, mit denen der Snap Creator Agent kommunizieren konnte. Standardmäßig ermöglichte der Snap Creator Agent die Kommunikation mit allen Snap Creator Servern. Wenn Sie diese Funktion jedoch in früheren Versionen von Snap Creator verwenden möchten, ersetzt der Parameter AUTHORIZED_HOSTS in der Datei agent.properties diese Funktion.
+
+
+NOTE: Wenn Sie diese Parameter nicht verwendet haben, ist nur eine einfache Installation des neuen Agenten erforderlich.
+
+Die in den folgenden Schritten aufgeführten Pfade beziehen sich auf den Standardinstallationspfad für Windows. Die Pfadinformationen können von Ihrem Installationspfad abweichen, wenn die Standardeinstellungen nicht verwendet wurden.
+
+. Beenden Sie den Snap Creator Agent Service, wenn Sie dies noch nicht getan haben.
++
+Informationen zum Anhalten des Dienstes finden Sie in den Details, die weiter oben in diesem Thema angegeben sind.
+
+. Deinstallieren Sie Snap Creator (für Windows), indem Sie *Start* > *Programme* > *Snap Creator* > *NetApp Snap Creator Framework deinstallieren* wählen.
++
+Weitere Informationen finden Sie in den Informationen zur Deinstallation von Snap Creator unter Windows.
+
+. Installieren Sie den aktuellen Snap Creator Agent.
++
+Weitere Informationen finden Sie in den Informationen zum Installieren von Snap Creator Agent unter Windows.
+
+. Öffnen Sie die gesicherte Kopie der Datei Agent.conf in einem Texteditor.
++
+Im Folgenden finden Sie ein Beispiel für Agent.conf:
+
++
+[listing]
+----
+host: scServer@Tampico
+command: sdcli.exe
+----
+. Öffnen Sie die neue Datei allowed_bedabs.config (C:\Program Files\NetApp\Snap_Creator_Framework\scAgent4.1.x\etc\allowed_bedges.config) in einem Texteditor und kopieren Sie die Befehlszeile aus Agent.conf in die Datei allowed_bedges.config. Stellen Sie jedoch aufgrund der verbesserten Sicherheit im letzten Snap Creator sicher, dass der Befehl voll qualifiziert ist.
++
+Im vorherigen Beispiel sollte die Datei allowed_befiehlt.config Folgendes enthalten:
+
++
+[listing]
+----
+command: "C:\Program Files\NetApp\SnapDrive\sdcli.exe"
+----
++
+
+NOTE: Wegen des Raumes zwischen "[.code]``Program Files``", Anführungszeichen müssen zur Einkapselung des Befehls enthalten sein. Wenn der Befehl keine Leerzeichen enthält, sind Anführungszeichen nicht erforderlich.
+
++
+Sie können Befehle nach Bedarf hinzufügen, wobei jeder Befehl auf einer eigenen Zeile steht.
+
+. Speichern und schließen Sie die Datei.
+. Öffnen Sie die Datei agent.properties (C:\Programme\NetApp\Snap_Creator_Framework\scAgent4.1.x\usw.\agent.properties) in einem Texteditor, und ändern Sie den Standardeintrag von AUTHORIZED_HOSTS=*, um die Host-Einstellung in der Agent.conf-Datei wiederzugeben.
++
+Im vorherigen Beispiel sollte der Parameter AUTHORIZED_HOSTS die folgende enthalten:
+
++
+[listing]
+----
+AUTHORIZED_HOSTS=Tampico
+----
++
+Hosts können bei Bedarf hinzugefügt werden, indem die Hostnamen durch Kommas getrennt werden. Host-Namen und IP-Adressen werden unterstützt:
+
++
+[listing]
+----
+AUTHORIZED_HOSTS=Tampico, 10.10.10.192, Fuji01
+----
+. Speichern und schließen Sie die Datei.
+. Starten Sie den Snap Creator Agent-Dienst, indem Sie eine der folgenden Aktionen ausführen:
++
+** Verwenden Sie das Service-Snap-in, und starten Sie den Dienst.
+** Geben Sie an einer Eingabeaufforderung den folgenden Befehl ein: `sc start snapcreatoragentservice`
+
+
+
+
+*Verwandte Informationen*
+
+xref:task_installing_snap_creator_agent_on_windows.adoc[Installieren von Snap Creator Agent unter Windows]
+
+xref:task_uninstalling_snap_creator_on_windows.adoc[Deinstallieren von Snap Creator unter Windows]

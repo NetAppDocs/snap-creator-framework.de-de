@@ -1,0 +1,128 @@
+---
+permalink: administration/reference_oracle_plug_in.html 
+sidebar: sidebar 
+keywords: oracle, plug-in, sql, plus, database, quiesce, unquiesce, oracle, database 
+summary: Das Oracle Plug-in verwendet SQL*Plus, um mit der Datenbank zu kommunizieren und die oracle Datenbank zum Sichern stillzulegen & unstillzulegen. 
+---
+= Oracle Plug-in
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das Oracle Plug-in verwendet SQL*Plus, um mit der Datenbank zu kommunizieren und die oracle Datenbank zum Sichern stillzulegen & unstillzulegen.
+
+Das Snap Creator Oracle Plug-in unterstützt Oracle Automatic Storage Management (Offline- oder Online-Backups) und Online-Backups einer Real Application Clusters (RAC)-Datenbankkonfiguration. Die Interoperabilitäts-Matrix enthält die neuesten Informationen zu Support und Kompatibilität.
+
+Zur Verwendung von C Shell (CSH) mit dem Oracle Plug-in auf UNIX- oder Linux-Plattformen sollten folgende Bedingungen erfüllt sein:
+
+* Snap Creator Agent muss als Oracle-Benutzer anstelle des Root-Benutzers gestartet werden.
+* Der Oracle-Benutzer muss über die entsprechenden Umgebungsvariablen (ORACLE_HOME und ORACLE_SID) verfügen, damit die Plug-in-gesteuerten SQL*Plus-Befehle funktionieren.
++
+Dies kann mit einer Shell-Startdatei wie ~/.cscrc durchgeführt werden.
+
+
+
+In der folgenden Tabelle sind die Oracle Plug-in-Parameter aufgeführt, ihre Einstellungen aufgeführt und beschrieben:
+
+|===
+| Parameter | Einstellung | Beschreibung 
+
+
+ a| 
+APP_NAME
+ a| 
+Oracle
+ a| 
+Applikationsname
+
+
+
+ a| 
+ORACLE_DATENBANKEN
+ a| 
+db_Name:user_Name
+ a| 
+Liste der Oracle-Datenbanken und Benutzernamen mehrere Datenbanken und Benutzernamen können als Semikolon-getrennte Liste angegeben werden, z. B. `db1:user1;db2:user2`.
+
+
+
+ a| 
+SQLPLUS_CMD
+ a| 
+ a| 
+Pfad zum sqlplus-Befehl
+
+
+
+ a| 
+CNTL_FILE_BACKUP_DIR
+ a| 
+ a| 
+Pfad zum Verzeichnis, in dem der Benutzer die SicherungssteuerdateienDer Oracle-Benutzer muss über die entsprechenden Berechtigungen für dieses Verzeichnis verfügen.
+
+
+
+ a| 
+ORA_TEMP
+ a| 
+ a| 
+Pfad zum Verzeichnis zum Speichern der temporären Datei, zum Beispiel /tmp.der Oracle-Benutzer muss über entsprechende Berechtigungen für dieses Verzeichnis verfügen.
+
+
+
+ a| 
+NUR ARCHIVE_LOG_ONLY
+ a| 
+(J
+| N 
+
+
+| Richtlinie:<Y | N>)  a| 
+Informiert das Oracle Plug-in über die Durchführung eines Switch-ProtokolloperationDiese Einstellung ist nützlich, wenn Sie Archiv-Log-Backups getrennt von Daten-Backups durchführen.
+
+
+
+ a| 
+ORACLE_HOME
+ a| 
+ a| 
+Pfad zum Oracle Home Directory
+
+
+
+ a| 
+ORACLE_HOME_SID
+ a| 
+ a| 
+Pfad zum Oracle Home-Verzeichnis für eine bestimmte System-ID (SID)beim Backup mehrerer Datenbanken kann es wichtig sein, mehr als ein Oracle Home-Verzeichnis anzugeben.
+
+
+
+ a| 
+ORACLE_EXPORT_PARAMETER
+ a| 
+(J
+| N ) 
+
+
+ a| 
+Die Parameter DER Umgebung ORACLE_HOME und ORACLE_SID werden mithilfe des Exportbefehls exportiert. Dies gilt nur für UNIX oder für eine Linux-basierte Umgebung.
+ a| 
+ORACLE_BACKUPMODE
+ a| 
+
+
+
+ a| 
+Option zum Konfigurieren von Offline- oder Online-Backups mithilfe der Snap Creator-Richtlinie Die Standardoption ist online. ORACLE_BACKUPMODE=stündlich:online,täglich:offline
+ a| 
+ORACLE_SHUTDOWNABORT
+ a| 
+(J
+
+|===
+*Verwandte Informationen*
+
+http://mysupport.netapp.com/matrix["Interoperabilitäts-Matrix-Tool: mysupport.netapp.com/matrix"]

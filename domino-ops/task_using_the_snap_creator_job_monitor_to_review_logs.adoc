@@ -1,0 +1,37 @@
+---
+permalink: domino-ops/task_using_the_snap_creator_job_monitor_to_review_logs.html 
+sidebar: sidebar 
+keywords: domino, ibm, viewing, view, job, status, logs, monitor 
+summary: Der Snap Creator Job Monitor ist eine Dashboard-ähnliche Oberfläche für Snap Creator Jobs. Über den Job Monitor können Sie den Job-Status anzeigen und Protokolle herunterladen. 
+---
+= Job-Status und -Protokolle im Job-Monitor anzeigen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Der Snap Creator Job Monitor ist eine Dashboard-ähnliche Oberfläche für Snap Creator Jobs. Über den Job Monitor können Sie den Job-Status anzeigen und Protokolle herunterladen.
+
+Der Job-Monitor zeigt den Job-Status wie folgt an:
+
+* image:../media/scfw_domino_icon_job_in_progress.gif["Dieses Bild wird durch den umgebenden Text erläutert."] Zeigt einen laufenden Job an.
+* image:../media/scfw_domino_icon_job_successful.gif["Dieses Bild wird durch den umgebenden Text erläutert."] Zeigt einen Job an, der erfolgreich abgeschlossen wurde.
+* image:../media/scfw_domino_icon_job_completed_with_errors.gif["Dieses Bild wird durch den umgebenden Text erläutert."] Zeigt einen Job an, der mit Fehlern abgeschlossen wurde.
+* image:../media/scfw_domino_icon_job_failed.gif["Dieses Bild wird durch den umgebenden Text erläutert."] Zeigt einen fehlgeschlagenen Job an.
++
+.. Wählen Sie im Fenster Profile and Configurations die Konfigurationsdatei aus und klicken Sie oben im Snap Creator Framework-Fenster auf *Management* > *Job Monitor*.
++
+Der Bereich Job Monitor wird angezeigt, in dem Sie den Job-Status anzeigen können.
+
+.. Wählen Sie einen Job aus und klicken Sie dann auf *Download Logs* > *Log_Type*, wobei Log_Type einer der folgenden Optionen ist:
++
+*** *Out Logs* liefern ausführliche Informationen für einen Job.
+*** *Debug Logs* bietet ausführliche Informationen sowie Informationen, die für Debugging nützlich sind.
+*** *GUI Logs* bietet Informationen über Snap Creator GUI Aktionen.das GUI-Protokoll ist nicht spezifisch für den ausgewählten Job.
+
+
+.. Klicken Sie im Downloaddialog auf *Öffnen* oder *Speichern* nach Bedarf.
+
+
+

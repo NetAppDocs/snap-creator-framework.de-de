@@ -1,0 +1,22 @@
+---
+permalink: administration/task_deleting_clones.html 
+sidebar: sidebar 
+keywords: unmount, delete, clone, gui, snap, creator, management, configuration, action, snapshot, copy, controller, volume 
+summary: 'Sie können das Mounten (oder Löschen) von Klonen aufheben.' 
+---
+= Aufheben der Montage von Klonen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das Mounten (oder Löschen) von Klonen aufheben.
+
+. Wählen Sie im Hauptmenü der Snap Creator GUI die Option *Verwaltung* > *Konfigurationen*.
+. Wählen Sie auf der Registerkarte *Configurations* eine Konfigurationsdatei aus, und wählen Sie dann *Actions* > *Unmount* aus.
+. Wählen Sie im Fenster zusätzliche Parameter den Controller, das Volume, die Snapshot Kopie-Richtlinie mit dem gemounteten Backup und dem Namen spezifischer Snapshot Kopien, auf denen der Klon erstellt wurde. Klicken Sie dann auf *OK*.
++
+Der Klon wird abgehängt. Die Snapshot Kopie wird nicht gelöscht.
+
+

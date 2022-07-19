@@ -1,0 +1,36 @@
+---
+permalink: administration/task_creating_clones_from_a_new_backup.html 
+sidebar: sidebar 
+keywords: clone, volume, lun, snapshot, copy, create, profile, configuration 
+summary: Sie können Volumes oder LUNs aus einer neuen Snapshot Kopie klonen. 
+---
+= Erstellen von Klonen aus einem neuen Backup
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können Volumes oder LUNs aus einer neuen Snapshot Kopie klonen.
+
+* Der Snap Creator Server muss eine Kommunikation mit dem Storage-System durchführen.
+* Sie müssen bei Snap Creator mit der erforderlichen Berechtigung zum Ausführen des Klonvorgangs angemeldet sein.
+
+
+Bei diesem Klonvorgang wird eine neue Snapshot Kopie geklont.
+
+. Wählen Sie im Hauptmenü der grafischen Benutzeroberfläche Snap Creator die Option *Verwaltung* > *Konfigurationen*.
+. Wählen Sie im Fensterbereich *Profile und Konfiguration* eine Konfigurationsdatei aus.
+. Navigieren Sie zur Registerkarte *Clone settings* und überprüfen Sie, ob die Einstellungen richtig eingestellt sind.
++
+image::../media/clone_settings.gif[Kloneinstellungen]
+
+. Wählen Sie abhängig von der erforderlichen Klonart *Actions* und eine der folgenden Optionen aus:
++
+** LUN Klonen
+** Klonen Von Volumes
+
+
+. Wählen Sie im Dialogfeld zusätzliche Parameter die entsprechende Richtlinie aus und klicken Sie dann auf *OK*, um den Klonprozess zu starten.
+. Überprüfen Sie im Fenster *Konsole*, ob der Klonprozess erfolgreich war.
+

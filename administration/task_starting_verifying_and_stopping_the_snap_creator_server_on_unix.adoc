@@ -1,0 +1,45 @@
+---
+permalink: administration/task_starting_verifying_and_stopping_the_snap_creator_server_on_unix.html 
+sidebar: sidebar 
+keywords: snap, creator, service, server, start, verify, stop, unix 
+summary: Sie können den Snap Creator Server Service starten und stoppen und überprüfen, ob der Snap Creator Server Service auf Ihrem UNIX System ausgeführt wird. 
+---
+= Starten, Überprüfen und Stoppen von Snap Creator Server unter UNIX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können den Snap Creator Server Service starten und stoppen und überprüfen, ob der Snap Creator Server Service auf Ihrem UNIX System ausgeführt wird.
+
+. Starten Sie den Snap Creator Server Service: `install_path/scServer4.3.0/bin/scServer start`
+. Öffnen Sie die grafische Benutzeroberfläche von Snap Creator (GUI):
++
+.. Geben Sie die URL des Snap Creator Servers in einen Webbrowser ein: "https://IP_address:gui_port"[]
++
+Standardmäßig ist der Port 8443.
+
+.. Melden Sie sich mit den Anmeldedaten für die Snap Creator GUI an.
+
+
+. Überprüfen Sie, ob der Snap Creator Server Service ausgeführt wird, oder beenden Sie den Snap Creator Server Service, falls zutreffend:
++
+|===
+| Ihr Ziel ist | Geben Sie Folgendes ein... 
+
+
+ a| 
+Überprüfen Sie, ob der Snap Creator Server Service ausgeführt wird
+ a| 
+`install_path/scServer4.3.0/bin/scServer status`
+
+
+
+ a| 
+Beenden Sie den Snap Creator Server Service
+ a| 
+`install_path/scServer4.3.0/bin/scServer stop`
+
+|===
+

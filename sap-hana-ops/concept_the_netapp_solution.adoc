@@ -1,0 +1,26 @@
+---
+permalink: sap-hana-ops/concept_the_netapp_solution.html 
+sidebar: sidebar 
+keywords: netapp, solution, sap, hana 
+summary: Ein Datenbank-Backup kann mithilfe von NetApp Snapshot™ Technologie in Minutenschnelle erstellt werden. Wie lange es dauert, eine Snapshot Kopie zu erstellen, ist unabhängig von der Größe der Datenbank, da bei Snapshot Kopien keine Datenblöcke verschoben werden. 
+---
+= Die Lösung von NetApp
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Ein Datenbank-Backup kann mithilfe von NetApp Snapshot™ Technologie in Minutenschnelle erstellt werden. Wie lange es dauert, eine Snapshot Kopie zu erstellen, ist unabhängig von der Größe der Datenbank, da bei Snapshot Kopien keine Datenblöcke verschoben werden.
+
+Der Einsatz von Snapshot-Technologie hat auch keine Auswirkungen auf die Performance des SAP-Produktionssystems. Daher kann die Erstellung von Snapshot Kopien ohne Berücksichtigung von Spitzenzeiten geplant werden. SAP- und NetApp-Kunden planen in der Regel mehrere Online-Snapshot-Backups während des Tages. So können beispielsweise alle vier Stunden Backups durchgeführt werden. Diese Snapshot Backups werden in der Regel drei bis fünf Tage auf dem primären Storage-System gespeichert.
+
+Snapshot Kopien bieten auch wichtige Vorteile für den Restore- und Recovery-Vorgang. Die NetApp SnapRestore® Funktionalität ermöglicht die Wiederherstellung der gesamten Datenbank oder Teile der Datenbank so lange, bis zum Zeitpunkt der Erstellung einer verfügbaren Snapshot Kopie. Dieser Restore-Prozess dauert nur wenige Minuten, unabhängig von der Größe der Datenbank. Der Recovery-Prozess verkürzt sich ebenfalls drastisch, da tagsüber mehrere Snapshot Kopien erstellt wurden und weniger Protokolle angewendet werden müssen.
+
+Snapshot-Backups werden auf demselben Festplattensystem gespeichert, auf dem die aktiven Online-Daten gespeichert werden. NetApp empfiehlt daher die Verwendung von Snapshot-Backups als Ergänzung und kein Ersatz für Backups an einem sekundären Standort wie Festplatte oder Tape. Obwohl Backups an einen Sekundärstandort weiterhin notwendig sind, ist die Wahrscheinlichkeit, dass diese Backups für Restore und Recovery erforderlich werden, nur gering. Die meisten Restore- und Recovery-Aktionen werden mithilfe von SnapRestore im primären Storage-System durchgeführt. Restores von einem Sekundärstandort sind nur nötig, wenn das primäre Storage-System, auf dem die Snapshot-Kopien gespeichert sind, beschädigt ist oder wenn es zur Wiederherstellung eines Backups erforderlich ist, das über eine Snapshot Kopie nicht mehr verfügbar ist. Möglicherweise müssen Sie vor zwei Wochen ein Backup wiederherstellen.
+
+Ein Backup an einen sekundären Standort basiert immer auf Snapshot-Kopien, die auf dem primären Storage erstellt wurden. Somit werden die Daten direkt aus dem primären Storage-System gelesen, ohne dass dabei Lasten auf dem SAP Datenbankserver entsteht. Der primäre Speicher kommuniziert direkt mit dem sekundären Speicher und sendet die Sicherungsdaten über das SnapVault® Disk-to-Disk Backup an das Ziel. Die NetApp SnapVault Funktion bietet entscheidende Vorteile im Vergleich zu herkömmlichen Backups. Nach einem anfänglichen Datentransfer, bei dem alle Daten von der Quelle an das Ziel übertragen werden müssen, werden bei allen nachfolgenden Backups nur die geänderten Blöcke in den sekundären Storage kopiert. Dies reduziert die Last des primären Storage-Systems deutlich und die Zeit für ein komplettes Backup. Da SnapVault nur die geänderten Blöcke am Ziel speichert, benötigt ein vollständiges Datenbank-Backup weniger Festplattenspeicher.
+
+Unter Umständen ist weiterhin eine Sicherung der Daten auf Tape erforderlich, da ein Langzeit-Backup erforderlich ist. Dabei könnte es sich beispielsweise um ein wöchentliches Backup handelt, das ein Jahr lang aufbewahrt wird. In diesem Fall kann die Tape-Infrastruktur direkt mit dem sekundären Storage verbunden werden. Die Daten können mithilfe des Network Data Management Protocol (NDMP) auf Tape geschrieben werden.
+
+image::../media/scfw_sap_hana_backup_solution_overview.png[Hier finden Sie die Übersicht über die Snap Creator SAP HANA Lösung]

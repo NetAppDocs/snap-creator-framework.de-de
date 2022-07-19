@@ -1,0 +1,32 @@
+---
+permalink: domino-ops/concept_allowing_additional_commands_through_the_snap_creator_agent.html 
+sidebar: sidebar 
+keywords: domino, ibm, allowing, allow, additional, commands, snap, creator, agent 
+summary: Wenn Sie einen zusätzlichen Befehl auf dem Snap Creator Agent ausführen möchten, müssen Sie ausdrücklich zulassen, dass der Befehl ausgeführt wird, indem Sie ihn in die Datei allowed_befiehlt.config auf dem Agent einfügen. 
+---
+= Lässt zusätzliche Befehle über den Snap Creator Agent zu
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie einen zusätzlichen Befehl auf dem Snap Creator Agent ausführen möchten, müssen Sie ausdrücklich zulassen, dass der Befehl ausgeführt wird, indem Sie ihn in die Datei allowed_befiehlt.config auf dem Agent einfügen.
+
+Allowed_befiehlt.config befindet sich im Unterverzeichnis etc des Snap Creator Agent Installationsverzeichnisses. Beispiel:
+
+* Auf UNIX-Hosts /install/path/scAgent4.1.x/etc/allowed_befiehlt.config
+* Auf Windows Hosts C:\Programmdateien\NetApp\Snap_Creator_Framework\scAgent4.1.x\usw.\allowed_befiehlt.config
+
+
+Um zusätzliche Befehle auf dem Agent zuzulassen, öffnen Sie allowed_bedions.config in einem Editor. Geben Sie jeden Befehl in eine eigene Zeile ein, so wie Sie an einer Eingabeaufforderung den Befehl eingeben würden. Fall ist von großer Bedeutung. Stellen Sie sicher, dass Sie den vollständig qualifizierten Pfadnamen angeben. Schließen Sie den Pfadnamen in Anführungszeichen ein, wenn er Leerzeichen enthält. Beispiel:
+
+[listing]
+----
+"C:\Program Files\NetApp\SnapDrive\sdcli.exe"
+ myscript.bat
+----
+Starten Sie den Agent neu, damit die Änderungen wirksam werden.
+
+
+NOTE: Aus Sicherheitsgründen sollten Sie keinen Platzhaltereintrag (*) verwenden, um alle Befehle zuzulassen.

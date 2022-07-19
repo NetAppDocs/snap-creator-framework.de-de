@@ -1,0 +1,16 @@
+---
+permalink: administration/concept_managing_profiles.html 
+sidebar: sidebar 
+keywords: create, view, delete, profiles, managing, rbac 
+summary: Sie können Profile erstellen, anzeigen und löschen. 
+---
+= Verwalten von Profilen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können Profile erstellen, anzeigen und löschen.
+
+Ein Profil ist im Wesentlichen ein Ordner, der für die Organisation von Konfigurationsdateien verwendet wird. Profile fungieren auch als Objekte für die rollenbasierte Zugriffssteuerung (Role Based Access Control, RBAC), sodass Benutzer nur Zugriff auf bestimmte Profile und die Konfigurationsdateien in ihnen haben.

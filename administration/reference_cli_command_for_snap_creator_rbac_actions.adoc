@@ -1,0 +1,388 @@
+---
+permalink: administration/reference_cli_command_for_snap_creator_rbac_actions.html 
+sidebar: sidebar 
+keywords: snap, creator, rbac, cli, command, user, access 
+summary: Sie können Snap Creator RBAC-Aktionen über CLI Befehle ausführen. 
+---
+= Befehle, die zum Management des Snap Creator Benutzerzugriffs verwendet werden
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können Snap Creator RBAC-Aktionen über CLI Befehle ausführen.
+
+Die folgende Tabelle bietet das Äquivalent zur Befehlszeile für GUI-basierte RBAC-Aktionen von Snap Creator:
+
+|===
+| RBAC-Bereich | Aktion | Befehl und zugehörige Parameter 
+
+
+ a| 
+Benutzer
+ a| 
+Erstellen Sie einen neuen Benutzer.
+ a| 
+[listing]
+----
+snapcreator
+--server IP
+--port Port
+--user User
+--passwd Password
+--action userAdd
+--username user_name
+--userPwd user_passwd
+--verbose
+----
+
+
+ a| 
+Löschen Sie einen Benutzer.
+ a| 
+[listing]
+----
+snapcreator
+--server IP
+--port Port
+--user User
+--passwd Password
+--action userDelete
+--username user_name
+--verbose
+---- a| 
+Alle Benutzer auflisten.
+
+
+
+ a| 
+[listing]
+----
+snapcreator
+--server IP
+--port Port
+--user User
+--passwd Password
+--action userList
+--verbose
+---- a| 
+Listen Sie alle zugewiesenen Benutzer für eine Rolle auf.
+ a| 
+[listing]
+----
+snapcreator
+--server IP
+--port Port
+--user User
+--passwd Password
+--action userListAssigned
+--roleName role_name
+--verbose
+----
+
+
+ a| 
+Listen Sie alle Benutzer auf, denen ein Profil zugewiesen ist.
+ a| 
+[listing]
+----
+snapcreator
+--server IP
+--port Port
+--user User
+--passwd Password
+--profile Profile
+--action userListForProfile
+--verbose
+---- a| 
+Rollen
+
+
+
+ a| 
+Erstellen Sie eine neue Rolle.
+ a| 
+[listing]
+----
+snapcreator
+--server IP
+--port Port
+--user User
+--passwd Password
+--action roleAdd
+--roleName role_name
+--roleDesc role_description
+--verbose
+---- a| 
+Rolle löschen.
+
+
+
+ a| 
+[listing]
+----
+snapcreator
+--server IP
+--port Port
+--user User
+--passwd Password
+--action roleDelete
+--roleName role_name
+--verbose
+---- a| 
+Weisen Sie einem Benutzer eine Rolle zu.
+ a| 
+[listing]
+----
+snapcreator
+--server IP
+--port Port
+--user User
+--passwd Password
+--action roleAssign
+--userName user_name
+--roleName role_name
+--verbose
+----
+
+
+ a| 
+Heben Sie die Zuordnung einer Rolle zu einem Benutzer auf.
+ a| 
+[listing]
+----
+snapcreator
+--server IP
+--port Port
+--user User
+--passwd Password
+--action roleUnassign
+--userName user_name
+--roleName role_name
+--verbose
+---- a| 
+Listen Sie alle zugewiesenen Rollen für einen Benutzer auf.
+
+
+
+ a| 
+[listing]
+----
+snapcreator
+--server IP
+--port Port
+--user User
+--passwd Password
+--action roleListAssigned
+--userName user_name
+--verbose
+---- a| 
+Berechtigungen
+ a| 
+Erstellen Sie eine neue Berechtigung.
+
+
+
+ a| 
+[listing]
+----
+snapcreator
+--server IP
+--port Port
+--user User
+--passwd Password
+--action permAdd
+--permName permission_name
+--permDesc permission_description
+--verbose
+---- a| 
+Löschen Sie eine Berechtigung.
+ a| 
+[listing]
+----
+snapcreator
+--server IP
+--port Port
+--user User
+--passwd Password
+--action permDelete
+--permName permission_name
+--verbose
+----
+
+
+ a| 
+Weisen Sie einem Benutzer eine Berechtigung zu.
+ a| 
+[listing]
+----
+snapcreator
+--server IP
+--port Port
+--user User
+--passwd Password
+--action permAssign
+--permName permission_name
+--roleName role_name
+--verbose
+---- a| 
+Heben Sie die Zuweisung einer Berechtigung von einem Benutzer ab.
+
+
+
+ a| 
+[listing]
+----
+snapcreator
+--server IP
+--port Port
+--user User
+--passwd Password
+--action permUnaspermission_namesign
+--permName
+--roleName role_name
+--verbose
+---- a| 
+Alle Berechtigungen auflisten.
+ a| 
+[listing]
+----
+snapcreator
+--server IP
+--port Port
+--user User
+--passwd Password
+--action permList
+--verbose
+----
+
+
+ a| 
+Listen Sie alle Berechtigungen auf, die einer Rolle zugewiesen sind.
+ a| 
+[listing]
+----
+snapcreator
+--server IP
+--port Port
+--user User
+--passwd Password
+--action permListAssigned
+--roleName role_name
+--verbose
+---- a| 
+Betrieb
+
+
+
+ a| 
+Weisen Sie einer Berechtigung eine Operation zu.
+ a| 
+[listing]
+----
+snapcreator
+--server IP
+--port Port
+--user User
+--passwd Password
+--action opAssign
+--opName operation_name
+--permName permission_name
+--verbose
+---- a| 
+Heben Sie die Zuweisung einer Operation aus einer Berechtigung auf.
+
+
+
+ a| 
+[listing]
+----
+snapcreator
+--server IP
+--port Port
+--user User
+--passwd Password
+--action opUnassign
+--opName operation_name
+--permName permission_name
+--verbose
+---- a| 
+Listen Sie alle Vorgänge auf.
+ a| 
+[listing]
+----
+snapcreator
+--server IP
+--port Port
+--user User
+--passwd Password
+--action opList
+--verbose
+----
+
+
+ a| 
+Listen Sie alle Vorgänge auf, die einer Berechtigung zugewiesen sind.
+ a| 
+[listing]
+----
+snapcreator
+--server IP
+--port Port
+--user User
+--passwd Password
+--action opListAssigned
+--permName permission_name
+--verbose
+---- a| 
+Profile
+
+
+
+ a| 
+Weisen Sie einem Benutzer ein Profil zu.
+ a| 
+[listing]
+----
+snapcreator
+--server IP
+--port Port
+--user User
+--passwd Password
+--profile Profile
+--action profileAssign
+--userName user_name
+--verbose
+---- a| 
+Heben Sie die Zuordnung eines Profils zu einem Benutzer auf.
+
+
+
+ a| 
+[listing]
+----
+snapcreator
+--server IP
+--port Port
+--user User
+--passwd Password
+--profile Profile
+--action profileUnassign
+--userName user_name
+--verbose
+---- a| 
+Listen Sie alle Profile auf, die einem Benutzer zugewiesen sind.
+ a| 
+[listing]
+----
+snapcreator
+--server IP
+--port Port
+--user User
+--passwd Password
+--action profileListForUser
+--userName user_name
+--verbose
+----
+|===

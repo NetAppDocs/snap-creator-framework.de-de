@@ -1,0 +1,22 @@
+---
+permalink: sap-hana-ops/task_performing_database_integrity_checks_from_snap_creator_command_line.html 
+sidebar: sidebar 
+keywords: sap, hana, performing, perform, database, integrity, checks, snap, creator, command, line 
+summary: Sie können eine Datenbankintegritätsprüfung über die Snap Creator-Befehlszeile durchführen. 
+---
+= Durchführen von Datenbankintegritätsprüfungen über die Befehlszeile von Snap Creator
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können eine Datenbankintegritätsprüfung über die Snap Creator-Befehlszeile durchführen.
+
+. Führen Sie den folgenden Befehl aus, um Datenbankintegritätsprüfungen durchzuführen:
++
+[listing]
+----
+./snapcreator --server localhost --port 8443 --user sc --passwd sc --profile hana_testing --config HANA_Test --action integrityCheck --policy none --verbose
+----
+

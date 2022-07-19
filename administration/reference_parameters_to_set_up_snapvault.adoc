@@ -1,0 +1,112 @@
+---
+permalink: administration/reference_parameters_to_set_up_snapvault.html 
+sidebar: sidebar 
+keywords: parameter, snapvault, update, volume, relationship 
+summary: Zum Einrichten von SnapVault sind mehrere Parameter erforderlich. 
+---
+= Parameter zum Einrichten von SnapVault
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Zum Einrichten von SnapVault sind mehrere Parameter erforderlich.
+
+|===
+| Parameter | Einstellung | Beschreibung 
+
+
+ a| 
+NTAP_SNAPVAULT_UPDATE
+ a| 
+(J
+| N) 
+
+
+ a| 
+Ermöglicht das ein- und Ausschalten der SnapVault Update-Funktion.
+ a| 
+SnapVault VOLUMES
+ a| 
+
+
+
+ a| 
+Führt die Quell-Storage-Systeme und Volumes auf, auf denen ein SnapVault-Update durchgeführt werden soll (z. B. Controller1:vol1,vol2,vol3;Controller2:vol1;Controller3:vol2,vol3). *Hinweis:*
+
+* Damit SnapVault und SnapMirror Updates funktionieren, müssen die Beziehungen bestehen.
++
+Snap Creator erstellt nicht die Beziehungen.
+
+* Die Host-Namen in der SnapMirror- oder SnapVault-Beziehung müssen den gleichen sein, wie in den Optionen VOLUMES, SNAPMIRROR_VOLUMES und SNAPVAULT_VOLUMES angegeben. Außerdem muss der Host, auf dem Snap Creator ausgeführt wird, in der Lage sein, die Hostnamen aufzulösen.
+* Bei vSphere oder vCloud sollte der Wert auf Auto:Detect gesetzt sein.
+* Hostnamen sollten der kurze Hostname sein (Name, der in der Eingabeaufforderung des Speichercontrollers angezeigt wird), nicht der FQDN.
+
+ a| 
+SNAPVAULT_QTREE_INCLUDE
+ a| 
+
+
+
+ a| 
+Führt die Quell-Storage-Systeme und qtree-Pfade auf, die im SnapVault Update enthalten sein sollten. Ohne diese Option werden alle qtrees unter einem Volume von SnapVault archiviert, wenn eine Beziehung besteht. Im folgenden Beispiel sind die qtrees von SnapVault archiviert und der Rest wird von SnapVault ignoriert: Controller1:/vol/qtree/qtre1,/vol/Volume/qtree2;Controller2:/vol/Volume/qtree1.
+ a| 
+NTAP_SNAPVAULT_AUFBEWAHRUNG
+ a| 
+
+
+
+ a| 
+Legt die Anzahl der Snapshot-Kopien auf dem sekundären SnapVault fest, die Sie für eine bestimmte Richtlinie aufbewahren möchten (z. B. täglich:21, wöchentlich:12, monatlich:3).
+ a| 
+NTAP_SNAPVAULT_RETENTION_AGE
+ a| 
+
+
+
+ a| 
+Ermöglicht die Definition eines Aufbewahrungszeitalters für SnapVault Snapshots (in Tagen) Wenn konfiguriert, werden SnapVault Snapshot-Kopien nur gelöscht, wenn sie die in NTAP_SNAPVAULT_RETENTION definierte Anzahl überschreiten und wenn sie älter als das Aufbewahrungszeitalter (in Tagen) sind.
+ a| 
+NTAP_SNAPVAULT_SNAPSHOT
+ a| 
+(J
+
+
+
+| N)  a| 
+Ermöglicht die Nutzung von SnapVault Snapshot Kopien, d. h. Snapshot Kopien, die mit dem SnapVault-Scheduler des Storage Controllers kompatibel sind. Wenn Sie diese Option verwenden, wird das Löschen von Snapshot Kopien vom Storage Controller und nicht von Snap Creator durchgeführt. Außerdem werden Snapshot-Kopien wie folgt benannt: sv_<RICHTLINIE>.<##>. Der Richtlinienname kommt aus dem Parameter „NTAP_SNAPSHOT_RETENTION“ und der Aufbewahrungssatz wird auch auf den Storage Controller SnapVault Zeitplan angewendet.
+ a| 
+NTAP_SNAPVAULT_ NODELETE
+
+
+
+ a| 
+(J
+| N)  a| 
+Überschreibt NTAP_SNAPVAULT_AUFBEWAHRUNGS und verhindert, dass Snapshot Kopien gelöscht werden. Wenn Sie dieses ein lassen, können Sie Ihr Volumen füllen.
+
+
+
+ a| 
+NTAP_SNAPVAULT_RESTORE_WAIT
+ a| 
+(J
+| N) 
+
+
+ a| 
+Bei einer SnapVault-Wiederherstellung ist es erzwingt Snap Creator, bis der Vorgang abgeschlossen ist. Dies wird empfohlen, da nach Abschluss der SnapVault Wiederherstellung Snap Creator den Benutzer auffordert, die Restore-Snapshot-Kopien zu löschen, die auf dem Primärspeicher erstellt werden und nicht mehr benötigt werden.
+ a| 
+NTAP_SNAPVAULT_WAIT
+ a| 
+
+
+
+ a| 
+Die Wartezeit (in Minuten) bis zum Abschluss des SnapVault-Aktualisierungsvorgangs, bevor eine Snapshot Kopie auf dem sekundären SnapVault erstellt wird.
+ a| 
+NTAP_SNAPVAULT_MAX_TRANSFER
+ a| 
+
+|===

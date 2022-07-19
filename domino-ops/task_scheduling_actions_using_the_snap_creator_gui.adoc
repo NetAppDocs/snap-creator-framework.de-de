@@ -1,0 +1,91 @@
+---
+permalink: domino-ops/task_scheduling_actions_using_the_snap_creator_gui.html 
+sidebar: sidebar 
+keywords: domino, ibm, scheduling, schedule, backups 
+summary: Sie können wiederkehrende Backup-Jobs nach der Durchführung des ersten Backups planen. 
+---
+= Planen von Backups
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können wiederkehrende Backup-Jobs nach der Durchführung des ersten Backups planen.
+
+Sie sollten die Konfigurationsdatei für das Backup erstellt haben, wie in beschrieben xref:task_using_the_gui_to_create_a_configuration_file.adoc[Erstellen einer Konfigurationsdatei].
+
+. Wählen Sie im Fenster Profile und Konfigurationen die Konfigurationsdatei aus und klicken Sie oben im Snap Creator Framework-Fenster auf *Verwaltung* > *Zeitpläne*.
+. Klicken Sie im Bereich Jobs auf *Erstellen*
+. Geben Sie im Dialogfeld Neuer Job die Jobinformationen an:
++
+|===
+| Für dieses Feld... | Tun Sie das... 
+
+
+ a| 
+Job-Name
+ a| 
+Geben Sie den Namen des Jobs ein.
+
+
+
+ a| 
+Startdatum
+ a| 
+Wählen Sie mithilfe der Kalendersteuerung das Datum aus, an dem der Zeitplan beginnen soll.
+
+
+
+ a| 
+Aktiv
+ a| 
+Wählen Sie dieses Feld aus, um den Zeitplan zu aktivieren. Deaktivieren Sie das Kontrollkästchen, um den Zeitplan zu deaktivieren.
+
+
+
+ a| 
+Profil
+ a| 
+Wählen Sie das Profil für die Konfigurationsdatei aus.
+
+
+
+ a| 
+Konfiguration
+ a| 
+Wählen Sie die Konfigurationsdatei aus.
+
+
+
+ a| 
+Aktion
+ a| 
+Wählen Sie Backup aus.
+
+
+
+ a| 
+Richtlinie
+ a| 
+Wählen Sie die Richtlinie für den Backupjob aus. *Hinweis:* Sie müssen die Richtlinie in der Konfigurationsdatei konfiguriert haben.
+
+
+
+ a| 
+Frequenz
+ a| 
+Wählen Sie die Häufigkeit aus, mit der der Job ausgeführt werden soll. Je nach Ihrer Wahl werden neue Felder angezeigt, in denen Sie die Minute, die Stunde und den Tag für die Ausführung des Jobs festlegen können. Wenn Sie einen cron-Job verwenden möchten, wählen Sie cron aus, und geben Sie den cron-Befehl ein.
+
+|===
++
+Das folgende Beispiel zeigt, wie ein Backup-Job täglich um Mitternacht geplant werden kann:
+
++
+image::../media/scfw_domino_new_job.gif[Dieses Bild wird durch den umgebenden Text erläutert.]
+
+. Klicken Sie Auf *Speichern*.
++
+Der geplante Job wird auf der Registerkarte Zeitpläne im Bereich Aufträge aufgeführt. Wählen Sie den Job aus, der ausgeführt, bearbeitet oder gelöscht werden soll.
+
+

@@ -1,0 +1,49 @@
+---
+permalink: administration/reference_parameters_to_set_up_netapp_management_console_data_protection_capability.html 
+sidebar: sidebar 
+keywords: parameter, netapp, management, console, protection, capability, ntap, update, set, backup, format 
+summary: Zur Einrichtung der NetApp Management Console Datensicherungsfunktionen sind mehrere Parameter erforderlich. 
+---
+= Parameter zum Einrichten der Datensicherheitsfunktion für die NetApp Management Console
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Zur Einrichtung der NetApp Management Console Datensicherungsfunktionen sind mehrere Parameter erforderlich.
+
+|===
+| Parameter | Einstellung | Beschreibung 
+
+
+ a| 
+NTAP_PM_UPDATE
+ a| 
+(J
+| N) 
+
+
+ a| 
+Sie können das Update der Datensicherungsfunktionen der NetApp Management Console aktivieren und deaktivieren, das Snap Creator Snapshot Kopien in der Datensicherheitsfunktion der NetApp Management Console registriert. *Hinweis:* Wenn NTAP_PM_UPDATE aktiviert ist, müssen Sie NTAP_DFM_DATA_SET konfigurieren.
+ a| 
+NTAP_DFM_DATA_SET
+ a| 
+
+
+
+ a| 
+Listet die Storage-Systeme und die Datensicherungsfunktionen der NetApp Management Console auf die Volume-Korrelationen auf; das heißt, Controller1:dataset1/vol1,vol2;Controller1:dataet2/vol3.
+ a| 
+NTAP_PM_RUN_BACKUP
+ a| 
+(J
+
+
+
+| N)  a| 
+Startet das Backup der Datensicherungsfunktionen der NetApp Management Console, überprüft den Fortschritt und den Status und wartet auf den Abschluss.
+ a| 
+NTAP_DFM_SNAPSHOT_FORMAT
+
+|===

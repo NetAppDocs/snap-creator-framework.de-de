@@ -1,0 +1,33 @@
+---
+permalink: administration/reference_clonevol_reports_that_aggregate_does_not_exist.html 
+sidebar: sidebar 
+keywords: clustered, data, ontap, storage, virtual, machine, svm, cloning, clonevol 
+summary: 'Für Clustered Data ONTAP muss das Aggregat zum Klonen der Storage Virtual Machine (SVM) zugewiesen werden. Wenn nicht, gibt die KlonVol-Aktion möglicherweise einen Fehler zurück.' 
+---
+= CloneVol meldet, dass das Aggregat nicht existiert
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Für Clustered Data ONTAP muss das Aggregat zum Klonen der Storage Virtual Machine (SVM) zugewiesen werden. Wenn nicht, gibt die KlonVol-Aktion möglicherweise einen Fehler zurück.
+
+* *Ausgabe*
++
+Die Aktion cloneVol gibt einen Fehler zurück, der dem folgenden Beispiel ähnelt:
+
++
+[listing]
+----
+ERROR: com.netapp.snapcreator.storage.executor.ZapiExecutorException: netapp.manage.NaAPIFailedException: Aggregate [aggregate name] does not exist (errno=14420)
+----
+* *Ursache*
++
+Das Aggregat wurde der SVM zum Klonen nicht zugewiesen.
+
+* *Korrekturmaßnahmen*
++
+Weisen Sie das Aggregat der SVM zu Klon-Zwecken zu: vserver modify -vserver [vserver_Name] -aggr-list [Aggregate_Name]
+
+

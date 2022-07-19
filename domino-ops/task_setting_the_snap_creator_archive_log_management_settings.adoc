@@ -1,0 +1,74 @@
+---
+permalink: domino-ops/task_setting_the_snap_creator_archive_log_management_settings.html 
+sidebar: sidebar 
+keywords: domino, ibm, cleaning up, purging, archives, archived, copies, transaction, logs 
+summary: Wenn Sie die Domino-Transaktionsprotokollierung verwenden, archiviert das IBM Domino Plug-in Kopien von Domino Transaktionsprotokollen in das changeinfo-Verzeichnis, um diese in den minutengenauen Wiederherstellungsvorgängen zu verwenden. Sie müssen die Verwaltung des Transaktionsprotokolls aktivieren, bevor Snap Creator die Kopien der Transaktions-Logs aufräumt, die Sie nicht mehr benötigen. 
+---
+= Bereinigung archivierter Kopien von Domino Transaktionsprotokollen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie die Domino-Transaktionsprotokollierung verwenden, archiviert das IBM Domino Plug-in Kopien von Domino Transaktionsprotokollen in das changeinfo-Verzeichnis, um diese in den minutengenauen Wiederherstellungsvorgängen zu verwenden. Sie müssen die Verwaltung des Transaktionsprotokolls aktivieren, bevor Snap Creator die Kopien der Transaktions-Logs aufräumt, die Sie nicht mehr benötigen.
+
+Das Domino Plug-in speichert Änderungsinfo-Dateien und archivierte Kopien von Domino Transaktionsprotokollen im Verzeichnis changeinfo. Das Plug-in bereinigt automatisch .info-Dateien basierend auf den Aufbewahrungsrichtlinien für die Konfiguration. Es bereinigt keine nicht benötigten Kopien von Transaktionsprotokollen, es sei denn, Sie aktivieren ausdrücklich das Transaktions-Log Management in Snap Creator.
+
+Stellen Sie beim Einrichten der Verwaltung von Transaktionsprotokollen sicher, dass Sie einen angemessenen Ausgleich zwischen der Anzahl der archivierten Kopien von Transaktionsprotokollen treffen, die Sie für die minutengenauen Wiederherstellungsvorgänge aufbewahren möchten, und der Größe des Volumes, das das Verzeichnis changeinfo enthält.
+
+
+IMPORTANT: Legen Sie den Verzeichnisparameter Archivprotokoll nicht auf den Pfad der Domino Transaktions-Logs fest. Dies kann Ihre Domino Umgebung beschädigen.
+
+. Wählen Sie im Fenster Profile und Konfigurationen die Konfigurationsdatei aus und klicken Sie auf die Registerkarte *Archiv Protokollverwaltung*.
+. Geben Sie auf der Registerkarte *Archiv Protokollverwaltung* die folgenden Werte für die Einstellungen für die Verwaltung des Transaktionsprotokolls an:
++
+|===
+| Parameter | Einstellung | Beschreibung 
+
+
+ a| 
+Archivprotokoll Aktivieren
+ a| 
+Y
+ a| 
+Aktiviert die Bereinigung des Transaktionsprotokolls.
+
+
+
+ a| 
+Aufbewahrung Von Archivierungsprotokolldaten
+ a| 
+Geben Sie einen Wert ein, der größer oder gleich der Anzahl der Tage ist, für die Snapshot Kopien aufbewahrt werden.
+ a| 
+Die Anzahl der Tage, die Transaktions-Logs aufbewahrt werden sollen.
+
+
+
+ a| 
+Verzeichnis Für Archivprotokolle
+ a| 
+Änderungsinformationen/Protokolle
+ a| 
+Das zu bereinigen Verzeichnis. *Wichtig:* Geben Sie den Pfad der Domino Transaktions-Logs nicht an. Dies kann Ihre Domino Umgebung beschädigen.
+
+
+
+ a| 
+Erweiterung Des Archivprotokolls
+ a| 
+ a| 
+Die Erweiterung für Kopien von Domino Transaktions-Log-Dateien.
+
+
+
+ a| 
+Archivprotokoll Rekursive Suche
+ a| 
+N
+ a| 
+Das Snap Creator Plug-in legt .txn-Dateien im Log-Unterverzeichnis des changeinfo-Verzeichnisses ab, sodass keine rekursive Suche erforderlich ist.
+
+|===
+. Klicken Sie im Fenster Konfigurationsinhalt auf *Speichern*, um Ihre Änderungen zu speichern.
+

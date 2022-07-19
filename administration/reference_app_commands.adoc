@@ -1,0 +1,46 @@
+---
+permalink: administration/reference_app_commands.html 
+sidebar: sidebar 
+keywords: app, command 
+summary: In der folgenden Tabelle sind die Anwendungsbefehle aufgeführt 
+---
+= ANWENDUNGSBEFEHLE
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+In der folgenden Tabelle sind die Anwendungsbefehle aufgeführt.
+
+|===
+| Befehl | Beschreibung 
+
+
+ a| 
+APP_CLONE_FOLLOW_ UP_ CMD ##
+ a| 
+Dies sind Skripte oder Befehle, die ausgeführt werden, nachdem die Datenbank geklont wurde, wobei ## eine Zahl zwischen 01 und 99 ist, einschließlich. Dies kann verwendet werden, um anwendungsspezifische Folgeaktivitäten auf SAP-Systemen durchzuführen, wie z. B. die Installation einer SAP-Lizenz, die Anpassung von Datenbanktabellen, das Löschen oder Aktualisieren von Inhalten und das Starten der Anwendung.
+
+
+
+ a| 
+APP_QUIESCE_CMD ##
+ a| 
+Dies sind Skripte oder Befehle, die Ihre Anwendung in den Backup-Modus versetzen, wobei ## eine Zahl zwischen 01 und 99 ist, einschließlich.*Hinweis:* Dies wird ignoriert, wenn Sie APP_NAME verwenden, da es in diesem Fall intern in Snap Creator behandelt wird.
+
+
+
+ a| 
+APP_UNQUIESCE_ CMD ##
+ a| 
+Dies sind Skripts oder Befehle, mit denen Ihre Applikation den Backup-Modus verlassen kann, wobei ## eine Zahl von 01 bis 99 ist, einschließlich. *Hinweis:* Dies wird ignoriert, wenn Sie APP_NAME verwenden, da es in diesem Fall intern in Snap Creator behandelt wird.
+
+
+
+ a| 
+ARCHIVE_CMD ##
+ a| 
+Dieser Befehl verarbeitet die Datenbankarchivierung; er kann auch als Wrapper verwendet werden, um andere Skripte auszuführen, wobei ## eine Zahl von 01 bis 99 ist.
+
+|===

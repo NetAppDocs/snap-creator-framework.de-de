@@ -1,0 +1,63 @@
+---
+permalink: domino-ops/task_running_snap_creator_by_using_the_custom_action.html 
+sidebar: sidebar 
+keywords: domino, ibm,using, use, snap, creator, custom, action complete, restore 
+summary: Es kann eine individuelle Snap Creator Aktion verwendet werden, um die Verarbeitung von Wiederherstellungen abzuschließen, die außerhalb von Snap Creator durchgeführt wurden. 
+---
+= Verwendung einer Snap Creator benutzerdefinierten Aktion, um die Wiederherstellungsverarbeitung abzuschließen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Es kann eine individuelle Snap Creator Aktion verwendet werden, um die Verarbeitung von Wiederherstellungen abzuschließen, die außerhalb von Snap Creator durchgeführt wurden.
+
+Sie können diese Aktion nur in der Snap Creator CLI ausführen.
+
+. Geben Sie in der Snap Creator-CLI den folgenden Befehl ein: snapcreator.exe ---Action Custom --Server Server --Port Port --user user --passwd password --profile Profile --config --params Snapname=Snapshot_Name datapath=datapath restoretype=u2m restoretime=„MM/DD/YYYYYYY HH:MM:SS“ deaktivierende Funktion=Y N
++
+Wo
+
++
+** Der Server ist der Hostname oder die IP-Adresse des Snap Creator Servers.
+** Der Port ist die Port-Nummer, auf der der Snap Creator Server ausgeführt wird.
+** Benutzer ist der Name des Snap Creator Benutzers.
+** Passwort ist das Passwort des Snap Creator Benutzers.
++
+
+NOTE: Sie können die Option --passwd weglassen, wenn Sie das Passwort nicht in Klartext eingeben möchten. Snap Creator fordert das Passwort an, wenn Sie den Befehl ausführen
+
+** Profil ist der Name des Snap Creator Profils.
+** Config ist der Name der Snap Creator-Konfigurationsdatei.
+** snapshot_Name ist der Name der Snapshot Kopie, aus der Sie die Datei wiederherstellen möchten.
+** Datapaath ist der Pfadname des Verzeichnisses, in das Sie die Datei wiederherstellen möchten.
+** Der Wiederherstellungstyp ist die Art der durchzuführenden Wiederherstellung:
++
+*** u2m führt eine minutengenaue Wiederherstellung durch.
+*** Su2m führt eine wählbare Wiederherstellung des Minutenscheines durch. Geben Sie das Datum und die Uhrzeit an, zu dem Domino Transaktionsprotokolle im FORMAT MM/TT/JJJJ HH:MM:SS in der Option --restoretime wiedergegeben werden sollen. Beispiel: 01/23/2014 12:45:00.
+
+
+** Bei der Deaktivierungsfunktion wird die Domino Replizierung deaktiviert:
++
+*** Geben Sie N (Standard) ein, um die Domino-Replikation zu ermöglichen. Das Plug-in verwendet eine vorhandene Domino-Replikat-ID für die wiederhergestellte Datenbankdatei.
++
+
+NOTE: Eine alternative Methode, um die Domino-Replikation zu ermöglichen, ist, diesen Parameter aus dem Befehl zu lassen.
+
+*** Geben Sie Y ein, um die Domino Replikation zu deaktivieren. Das Plug-in setzt eine neue Domino-Replikat-ID für die wiederhergestellte Datenbankdatei. HINWEIS: Wenn das Restore-Vorgang angehängt ist –-ausführlichen Angaben zum Befehl werden zusätzliche Informationen über den Restore-Vorgang angezeigt. Andernfalls werden Sie sofort zur Eingabeaufforderung zurückgegeben, wenn der Befehl die Ausführung abgeschlossen hat.
+
+
+
+
++
+[listing]
+----
+snapcreator.exe --action custom --server Tampico --port 8443
+--user admin --profile Domino --config Nantes
+--params snapname=Nantes-Test_Policy_20140123121459
+datapath=F:\Domino\data\restore\mail\t04.nsf
+restoretype=su2m restoretime="01/23/2014 12:45:00"
+disablereplication=y
+----
+

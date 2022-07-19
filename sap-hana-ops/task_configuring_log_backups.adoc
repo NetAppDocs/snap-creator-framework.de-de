@@ -1,0 +1,31 @@
+---
+permalink: sap-hana-ops/task_configuring_log_backups.html 
+sidebar: sidebar 
+keywords: configuring, log, backups 
+summary: Log-Backups sollten auf einem anderen Storage-System als dem primären Storage gespeichert werden. Das Speichersystem, das für die Datensicherung verwendet wird, kann auch für das Protokoll-Backup verwendet werden. 
+---
+= Protokollsicherungen werden konfiguriert
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Log-Backups sollten auf einem anderen Storage-System als dem primären Storage gespeichert werden. Das Speichersystem, das für die Datensicherung verwendet wird, kann auch für das Protokoll-Backup verwendet werden.
+
+Beim sekundären Storage muss ein Volume konfiguriert werden, um die Protokoll-Backups zu speichern. Vergewissern Sie sich, dass für dieses Volume automatische Snapshot-Kopien deaktiviert sind.
+
+. Mounten Sie das Volume an jedem Datenbankknoten, indem Sie entweder den Mount-Befehl ausführen oder die Dateisystemtabelle (fstab) bearbeiten.
++
+[listing]
+----
+hana2b:/vol/backup_log_ANA /mnt/backup_log_ANA nfs
+rw,bg,vers=3,hard,timeo=600,rsize=65536,wsize=65536,actimeo=0,noatime   0  0
+----
++
+Innerhalb von SAP HANA Studio wird das Backup-Ziel für das Protokoll wie in der folgenden Abbildung dargestellt konfiguriert.
+
++
+image::../media/sap_hana_studio_log_backup_destination_gui.gif[Dieses Bild wird durch den umgebenden Text erläutert.]
+
+

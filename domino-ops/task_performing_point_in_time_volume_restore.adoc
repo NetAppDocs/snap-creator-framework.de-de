@@ -1,0 +1,134 @@
+---
+permalink: domino-ops/task_performing_point_in_time_volume_restore.html 
+sidebar: sidebar 
+keywords: domino, ibm, volume, restore 
+summary: Mithilfe des IBM Domino Plug-ins können Sie zeitpunktgenaue, minutengenaue Volume-Restores durchführen oder minutengenaue Volumes für alle wichtigen Storage-Typen auswählbar machen. 
+---
+= Volume-Wiederherstellung durchführen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Mithilfe des IBM Domino Plug-ins können Sie zeitpunktgenaue, minutengenaue Volume-Restores durchführen oder minutengenaue Volumes für alle wichtigen Storage-Typen auswählbar machen.
+
+Gehen Sie wie folgt vor:
+
+* Legen Sie das Datenverwiederherstellungsverzeichnis in der Konfigurationsdatei auf das Domino-Datenverzeichnis fest.
+* Stoppen Sie den Domino Server.
+
+
+Folgende Optionen zur Volume-Wiederherstellung sind verfügbar:
+
+|===
+| Typ wiederherstellen | Beschreibung 
+
+
+ a| 
+Volume-Wiederherstellung (zeitpunktgenau)
+ a| 
+Stellt das gesamte Volume zum Zeitpunkt der Snapshot Kopie in seinen Status wieder her.
+
+
+
+ a| 
+Volume-Wiederherstellung (minutengenau)
+ a| 
+Stellt zum Zeitpunkt der Snapshot Kopie das gesamte Volume in seinen Zustand wieder her und gibt dann Domino Transaktionsprotokolle in die aktuellste Kopie weiter.
+
+
+
+ a| 
+Volume-Wiederherstellung (minutengenau wählbar)
+ a| 
+Stellt das gesamte Volume zum Zeitpunkt der Snapshot Kopie in seinen Status wieder her und gibt dann Domino Transaktionsprotokolle in eine festgelegte Zeit weiter.
+
+|===
+
+NOTE: Um eine minutengenaue und auswählbare zeitpunktgenaue Wiederherstellung zu erreichen, muss die Domino Transaktionsprotokollierung aktiviert sein.
+
+Transaktions-Logs können nur weitergespielt werden. Wenn Sie einen Zeitpunkt vor dem Erstellen der Snapshot Kopie auswählen, führt dies zu einem Wiederherstellungsfehler.
+
+. Wählen Sie im Fenster Profile und Konfigurationen die Konfigurationsdatei aus und klicken Sie auf *Aktionen* > *Wiederherstellen*.
++
+Durch Auswahl von *Restore* wird der Snap Creator Framework Restore Wizard automatisch gestartet. Klicken Sie im Wiederherstellungsassistenten auf *Weiter*, um zur nächsten Seite zu gelangen. Klicken Sie auf *Zurück*, um zur vorherigen Seite zurückzukehren.
+
++
+
+NOTE: Wenn Sie ein Restore aus einer SnapVault Kopie durchführen, werden Sie aufgefordert, eine Wiederherstellung aus primärem oder sekundärem Storage durchzuführen. Ihre Auswahl hängt davon ab, wie Sie mit der unter beschriebenen Beschränkung umgehen link:concept_domino_database_restore_overview.html["Datenbanken werden wiederhergestellt"].
+
+. Geben Sie auf der Seite Restore Details die Wiederherstellungsdetails an:
++
+|===
+| Für dieses Feld... | Tun Sie das... 
+
+
+ a| 
+Controller/Vserver Name
+ a| 
+Wählen Sie die SVM auf dem Storage-System aus, von dem Sie wiederherstellen möchten.
+
+
+
+ a| 
+Volume-Name wiederherstellen
+ a| 
+Wählen Sie das Volume aus, aus dem Sie die Wiederherstellung durchführen möchten.
+
+
+
+ a| 
+Richtlinie
+ a| 
+Wählen Sie die Richtlinie für das Backup aus, von dem Sie wiederherstellen möchten.
+
+
+
+ a| 
+Snapshot Kopien/Alle Snapshot Kopien Mit Snap Creator
+ a| 
+Behalten Sie den Standardwert bei.
+
+
+
+ a| 
+Der Name der Snapshot Kopie wird wiederhergestellt
+ a| 
+Wählen Sie die Snapshot Kopie aus, aus der Sie wiederherstellen möchten.
+
+
+
+ a| 
+Typ wiederherstellen
+ a| 
+Wählen Sie *Volume Restore*.
+
+|===
+. Geben Sie auf der folgenden Seite den Wiederherstellungstyp des Volumes an:
++
+|===
+| Für dieses Feld... | Tun Sie das... 
+
+
+ a| 
+Typ Wiederherstellen
+ a| 
+Klicken Sie auf den Wiederherstellungstyp des Volumes. Wenn Sie *auswählbar die Minute* wählen, werden neue Felder angezeigt, in denen Sie das Datum und die Uhrzeit angeben können, zu der Sie Domino-Transaktionsprotokolle weiterleiten wiedergeben möchten. Klicken Sie auf *Validierung ignorieren*, wenn die Zeit auf dem Snap Creator Server nicht mit der Zeit auf dem Storage Controller übereinstimmt.
+
+
+
+ a| 
+Deaktivieren Sie Die Replikation
+ a| 
+Wählen Sie dieses Feld aus, um eine neue Domino-Replikat-ID für wiederhergestellte Datenbankdateien festzulegen.
+
+|===
+. Überprüfen Sie die Zusammenfassung und klicken Sie auf *Fertig stellen*.
+. Klicken Sie im Dialogfeld Volume Restore auf *OK*.
++
+Snap Creator startet den Wiederherstellungsauftrag. Jobinformationen werden im Konsolenfenster angezeigt.
+
+
+
+Starten Sie den Domino-Server neu, wenn der Wiederherstellungsvorgang abgeschlossen ist.

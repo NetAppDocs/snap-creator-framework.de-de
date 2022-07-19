@@ -1,0 +1,27 @@
+---
+permalink: administration/task_deleting_snap_creator_profiles.html 
+sidebar: sidebar 
+keywords: delete, snap, creator, profile 
+summary: Sie können Snap Creator-Profile löschen. 
+---
+= Profile werden gelöscht
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können Snap Creator-Profile löschen.
+
+Durch das Löschen eines Profils werden auch alle Konfigurationsdateien gelöscht, die mit dem Profil verknüpft sind.
+
+. Wählen Sie im Hauptmenü der Snap Creator GUI die Option *Verwaltung* > *Konfigurationen*.
++
+Die vorhandenen Snap Creator-Profile werden im Bereich „Profile and Configurations“ aufgeführt.
+
+. Klicken Sie mit der rechten Maustaste auf das zu löschende Profil und wählen Sie *Löschen*.
+. Klicken Sie in der Bestätigungsnachricht auf *Ja*
++
+Das Profil und die zugehörigen Konfigurationsdateien werden dauerhaft aus Snap Creator gelöscht.
+
+

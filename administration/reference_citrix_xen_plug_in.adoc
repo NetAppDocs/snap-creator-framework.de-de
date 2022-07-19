@@ -1,0 +1,121 @@
+---
+permalink: administration/reference_citrix_xen_plug_in.html 
+sidebar: sidebar 
+keywords: snap, creator, support, backup, restore, citrix, xenserver, virtual, machine, vm, citrix, xenserver, plug-in 
+summary: 'Snap Creator unterstützt mithilfe des Citrix XenServer Plug-ins das Backup und Restore von Citrix XenServer Virtual Machines (VMs).' 
+---
+= Citrix XenServer Plug-in
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Snap Creator unterstützt mithilfe des Citrix XenServer Plug-ins das Backup und Restore von Citrix XenServer Virtual Machines (VMs).
+
+
+NOTE: Aktuelle Informationen zu Support- oder Kompatibilitätsmatrizen finden Sie in der Interoperabilitäts-Matrix.
+
+Das Citrix XenServer Plug-in unterstützt Windows und XenServer.
+
+Berücksichtigen Sie bei Verwendung des Citrix XenServer Plug-ins folgende Punkte:
+
+* Der Active IQ Unified Manager-Server als Proxy wird nicht unterstützt.
+* Mounten, unmounten und Backup-Vorgänge mit Open Systems SnapVault und Archivprotokollmanagement werden nicht unterstützt.
+* Volume-Restore-Vorgänge werden nicht unterstützt; nur softwaredefinierte Restore-Vorgänge werden unterstützt.
+* Gelöschte VMs können wiederhergestellt werden.
+* Snap Creator Agent muss auf dem Host installiert sein, auf dem XenCenter installiert ist, und Snap Creator Server darf nicht auf XenServer installiert werden.
+* Der Wert für SC_AGENT_TIMEOUT sollte größer sein als der Standardwert: 600 oder höher.
+* Wenn DER Wert von APP_DEFINED_RESTORE „Y“ lautet, wird der Wiederherstellungsvorgang für SnapVault mit der GUI nicht unterstützt.
+* Wenn der Pool-Master in einem Serverpool ausfällt, sollte die Snap Creator-Konfigurationsdatei für weitere Aktivitäten manuell mit dem neuen Master-Server geändert werden.
+* XenServer Tools müssen auf allen VMs installiert sein.
+* Bei Fibre Channel in einer SAN-Umgebung (Storage Area Network) muss das Tool plink.exe auf einem Host installiert sein, auf dem Snap Creator Agent installiert ist, und die Variable der Systemumgebung muss plink.exe Pfad hinzugefügt werden.
++
+Ausführliche Informationen zum Hinzufügen des Pfads plink.exe zur Systemumgebvariable finden Sie im _Snap Creator Framework Installation Guide_.
+
+* VM-Pause- und -Umstellungsvorgänge werden seriell ausgeführt.
++
+Bei mehreren VMs hängt die Dauer der VM während des Backup-Vorgangs im Pause-Status von der Anzahl der VMs ab.
+
+* Es wird eine automatische Erkennung von Volumes unterstützt.
+
+
+
+
+== Unterstützte Citrix XenServer Konfigurationen
+
+Die folgenden Citrix XenServer Konfigurationen werden unterstützt:
+
+* San
++
+** Unterstützung von Gast-Virtual Machines mit einem Virtual Disk Image (VDI) pro Storage Repository
+** Unterstützt Datenfestplatten mit einer VDI pro Storage Repository
+
+
+* NAS
++
+** Unterstützung von Gast-VMs, die auf NFS-Mounts installiert sind
+** Unterstützung von Datenfestplatten auf NFS-Mounts.
+
+
+
+
+
+
+== Parameter
+
+In der folgenden Tabelle werden die Citrix XenServer Plug-in-Parameter aufgeführt und beschrieben:
+
+|===
+
+
+| Parameter | Einstellung | Beschreibung 
+
+
+ a| 
+XEN_VMS
+ a| 
+Host-IP:VM#
+ a| 
+Listet virtuelle Maschinen eines bestimmten Hosts auf, getrennt durch einen Schrägstrich (/). Beispiel: 10.10.10.192:VM1/VM2/VM3
+
+
+
+ a| 
+XEN_HOST_BENUTZER
+ a| 
+Host-IP:Benutzername/Passwort
+ a| 
+Listet Xen-Hosts und den entsprechenden Benutzernamen und das entsprechende Passwort auf.
+
+
+
+ a| 
+XEN_BIN_PATH
+ a| 
+Beispiel: c:\Programme\Citrix\XenCenter\xe.exe
+ a| 
+Gibt den Pfad der ausführbaren XenServer-Datei (xe) an. Die XenCenter Konsole ist für den Import und Export der VM-Metadaten erforderlich.
+
+
+
+ a| 
+XEN_METADATA_PATH
+ a| 
+Beispiel: c:\scmetadaten
+ a| 
+Gibt den Pfad auf dem Server an, auf den Sie die Metadaten der virtuellen Maschine herunterladen können.
+
+
+
+ a| 
+XEN_RESTORE_VMS
+ a| 
+Beispiel: Xenserver1:vm1,vm2;xenserver2:vm1,vm2
+ a| 
+Enthält die VMs, die wiederhergestellt werden müssen. Dieser Parameter ist nur während eines Wiederherstellungsvorgangs erforderlich.
+
+|===
+*Verwandte Informationen*
+
+http://mysupport.netapp.com/matrix["Interoperabilitäts-Matrix-Tool: mysupport.netapp.com/matrix"]

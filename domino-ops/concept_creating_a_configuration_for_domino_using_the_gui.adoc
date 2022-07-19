@@ -1,0 +1,33 @@
+---
+permalink: domino-ops/concept_creating_a_configuration_for_domino_using_the_gui.html 
+sidebar: sidebar 
+keywords: domino, ibm, creating, create, backup, restore, configuration 
+summary: Sie geben die meisten Informationen an, die Sie für Backup- und Wiederherstellungsvorgänge in einer Konfigurationsdatei benötigen. Die Konfigurationsdatei ist der Eingang für Snap Creator Backup- und Restore-Vorgänge. 
+---
+= Erstellen einer Backup- und Wiederherstellungskonfiguration
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie geben die meisten Informationen an, die Sie für Backup- und Wiederherstellungsvorgänge in einer Konfigurationsdatei benötigen. Die Konfigurationsdatei ist der Eingang für Snap Creator Backup- und Restore-Vorgänge.
+
+Sie können so viele Konfigurationsdateien erstellen, wie Sie benötigen, aber Sie können nur eine einzige Konfigurationsdatei als Eingabe für einen Vorgang angeben. Zum Erstellen von Konfigurationsdateien können Sie entweder die Snap Creator GUI oder die Snap Creator CLI verwenden.
+
+
+NOTE: In diesem Handbuch wird die Verwendung der GUI zum Erstellen von Konfigurationsdateien erläutert. Informationen zur Verwendung der CLI finden Sie im https://library.netapp.com/ecm/ecm_download_file/ECMP12395422["Snap Creator Framework 4.1.2 – Administratorhandbuch"].
+
+Sie organisieren Konfigurationsdateien in Snap Creatorprofilen. Profile und Konfigurationsdateien befinden sich im Unterverzeichnis \Engine\Konfigurationen im Snap Creator Installationsverzeichnis:
+
+* Auf UNIX-Hosts ist das Verzeichnis, in das die Installationsdatei extrahiert wurde
+* Auf Windows-Hosts, C:\Programmdateien\NetApp\Snap_Creator_Framework\scServer4.1.x, standardmäßig
+
+
+*Verwandte Informationen*
+
+link:concept_general_configuration_file_information.adoc["Melden Sie sich bei der Snap Creator GUI an"]
+link:task_using_the_gui_to_create_a_configuration_file.adoc["Erstellen einer Konfigurationsdatei"]
+link:concept_adding_commands_to_the_backup_and_restore_configuration.adoc["Hinzufügen von Befehlen zur Backup- und Wiederherstellungskonfiguration"]
+link:task_setting_the_snap_creator_archive_log_management_settings.adoc["Bereinigung archivierter Kopien von Domino Transaktionsprotokollen"]
+link:concept_use_meta_data_volumes_setting_to_back_up_the_changeinfo_directory.adoc["Sichern des Verzeichnis changeinfo"]

@@ -1,0 +1,29 @@
+---
+permalink: installation/task_downloading_the_snap_creator_software.html 
+sidebar: sidebar 
+keywords: downloading, download, snap, creator, software 
+summary: Sie laden die Snap Creator Software von der NetApp Support Website herunter. Snap Creator ist im Abschnitt „Software-Download“ unter Snap Creator Framework aufgeführt. 
+---
+= Herunterladen der Snap Creator Software
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie laden die Snap Creator Software von der NetApp Support Website herunter. Snap Creator ist im Abschnitt „`SSoftware Download`“ unter Snap Creator Framework aufgeführt.
+
+. Wechseln Sie zur Software-Seite auf der NetApp Support Site.
++
+Snap Creator ist im Abschnitt *Downloads* > *Software* als *Snap Creator Framework* aufgeführt.
+
+. Wählen Sie eine Plattform aus, und klicken Sie dann auf *Go*.
+. Wählen Sie die Version von Snap Creator zum Herunterladen aus, indem Sie auf *Anzeigen & Download* klicken.
+. Klicken Sie in den Anweisungen zum Herunterladen von Software auf *WEITER*.
+. Lesen und akzeptieren Sie die Endnutzer-Lizenzvereinbarung.
+. Wählen Sie die Betriebssystem- und Bitebene des Softwarepakets aus.
+
+
+*Verwandte Informationen*
+
+http://mysupport.netapp.com/["NetApp Support Website: mysupport.netapp.com"]

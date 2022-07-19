@@ -1,0 +1,22 @@
+---
+permalink: administration/task_deleting_scheduled_jobs.html 
+sidebar: sidebar 
+keywords: delete, schedule, job, management 
+summary: Sie können einen geplanten Job löschen. 
+---
+= Geplante Aufträge werden gelöscht
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können einen geplanten Job löschen.
+
+. Wählen Sie im Hauptmenü der Snap Creator GUI die Option *Verwaltung* > *Zeitpläne*.
+. Wählen Sie auf der Registerkarte Zeitpläne einen Job aus der Liste der geplanten Jobs aus und klicken Sie auf *Löschen*.
+. Klicken Sie im Bestätigungsfenster auf *Ja*.
++
+Der geplante Job wird aus der Liste gelöscht.
+
+

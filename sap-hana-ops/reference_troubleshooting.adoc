@@ -1,0 +1,179 @@
+---
+permalink: sap-hana-ops/reference_troubleshooting.html 
+sidebar: sidebar 
+keywords: troubleshooting 
+summary: Der Abschnitt Fehlerbehebung enthält Informationen zu den Fehlercodes, Fehlermeldungen und enthält die Beschreibung oder Lösung zur Behebung des Problems. 
+---
+= Fehlerbehebung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Der Abschnitt Fehlerbehebung enthält Informationen zu den Fehlercodes, Fehlermeldungen und enthält die Beschreibung oder Lösung zur Behebung des Problems.
+
+In der folgenden Tabelle sind die Fehlermeldungen des SAP HANA Plug-in aufgeführt.
+
+|===
+| Fehlercode | Fehlermeldung | Beschreibung/Auflösung 
+
+
+ a| 
+hdb-00001
+ a| 
+Es konnte kein zugänglicher HANA-Knoten gefunden werden, um hdbsql-Befehle mit den angegebenen Konfigurationsparametern auszuführen. Überprüfen und aktualisieren Sie die HANA-Einstellungen in der Konfiguration, und versuchen Sie es erneut.
+ a| 
+Vergewissern Sie sich, dass HANA-Nodes ausgeführt und erreichbar sind, und die angegebene Instanznummer ist korrekt.
+
+
+
+ a| 
+hdb-00002
+ a| 
+Erstellen von Datenbank-Snapshot für [€sid] fehlgeschlagen.
+ a| 
+Überprüfen Sie, ob ein HANA Datenbank-Snapshot bereits in der Datenbank erstellt wurde. Wenn bereits erstellt, löschen Sie den HANA-Datenbank-Snapshot oder führen Sie den Vorgang unquiesce aus. Falls noch nicht erstellt, überprüfen Sie die Protokolle auf andere Fehlermeldungen und Details.
+
+
+
+ a| 
+hdb-00003
+ a| 
+Löschen des Datenbank-Snapshot für [€dg. sid] fehlgeschlagen.
+ a| 
+Überprüfen, ob ein HANA Datenbank-Snapshot bereits gelöscht wurde Wenn ja, kann dieser Fehler ignoriert werden. Falls nein, überprüfen Sie die SAP HANA-Plug-in-Parameter und stellen Sie sicher, dass Knoten erreichbar sind und die angegebene Instanznummer korrekt ist.
+
+
+
+ a| 
+hdb-00004
+ a| 
+Die Verbindung zum [€dg hana_Node]-Node mit Instanz [€dexinstance] ist fehlgeschlagen, da die Verbindung abgelehnt wurde.
+ a| 
+Der HANA-Knoten mit der in der Meldung angezeigten Instanz ist nicht erreichbar. Dies kann nur eine Warnung sein, da das Plug-in versucht, hdbsql-Befehle auf anderen Knoten auszuführen. Überprüfen Sie die Protokolle, um festzustellen, ob der Vorgang erfolgreich war.
+
+
+
+ a| 
+hdb-00005
+ a| 
+Datenbank [€sid] hat bereits einen Snapshot!
+ a| 
+HANA-Datenbank-Snapshot ist in der Datenbank bereits vorhanden. Löschen Sie den HANA-Datenbank-Snapshot oder führen Sie den Vorgang unquiesce aus, um dieses Problem zu beheben.
+
+
+
+ a| 
+hdb-00006
+ a| 
+Hostname [€bhana_Node] kann nicht aufgelöst werden.
+ a| 
+Der HANA-Node-Hostname kann nicht aufgelöst werden. Überprüfen Sie die Einträge Ihres DNS-Servers oder etc-Hosts.
+
+
+
+ a| 
+hdb-00007
+ a| 
+Ungültiger Benutzername oder ungültiges Passwort. Überprüfen Sie die Anmeldedaten, und versuchen Sie es erneut.
+ a| 
+Der für die HANA-Datenbank angegebene Benutzername und das für die HANA-Datenbank angegebene Passwort sind falsch. Korrigieren Sie die Einträge in der Konfigurationsdatei, und versuchen Sie es erneut.
+
+
+
+ a| 
+hdb-00008
+ a| 
+Ausführen des Befehls [€dbsql_cmd] in [€nger hana_Node] fehlgeschlagen.
+ a| 
+Das Plug-in konnte hdbsql-Befehl nicht auf allen HANA-Knoten ausführen, die in der Konfiguration enthalten sind. Überprüfen Sie die HANA-Nodes und die Instanzparameter und stellen Sie sicher, dass mindestens ein HANA-Node verfügbar ist.
+
+
+
+ a| 
+hdb-00009
+ a| 
+HANA konnte nicht gefunden werden [€Informationen].
+ a| 
+Der SAP HANA-Plug-in SCDUMP-Vorgang konnte keine bestimmten Informationen aus den HANA-Datenbanken abrufen. Überprüfen Sie die HANA-Knoten und die Instanzparameter und stellen Sie sicher, dass mindestens ein HANA-Node verfügbar ist und erreichbar ist.
+
+
+
+ a| 
+hdb-00010
+ a| 
+Fehler beim Sammeln der OS-Informationen.
+ a| 
+Die Erfassung von Betriebssysteminformationen ist in der Windows-Umgebung fehlgeschlagen; das SAP HANA-Plug-in wird unter Windows nicht unterstützt. Verwenden Sie stattdessen ein SLES-Betriebssystem.
+
+
+
+ a| 
+hdb-00011
+ a| 
+Fehler beim Sammeln der OS-Informationen.
+ a| 
+Snap Creator konnte keine BS-Informationen für den SCDUMP-Vorgang sammeln. Überprüfen Sie die Agent-Konfigurationsdatei und korrigieren Sie die Einstellungen.
+
+
+
+ a| 
+hdb-00012
+ a| 
+Fehler beim Sammeln der SnapDrive-Informationen.
+ a| 
+Das SAP HANA Plug-in wird nur in einer NFS-Umgebung unterstützt. Ihre Konfiguration für HANA-Datenbank hat SnapDrive aktiviert; legen SIE SNAPDRIVE=Nin in der Konfigurationsdatei fest.
+
+
+
+ a| 
+hdb-00013
+ a| 
+Der Parameter HANA_NODES ist nicht festgelegt. Überprüfen Sie die HANA-Einstellungen in der Konfigurationsdatei.
+ a| 
+HANA-Nodes (HANA_NODES)-Parameter ist für das SAP HANA-Plug-in erforderlich. Legen Sie den Parameter fest, und versuchen Sie es erneut.
+
+
+
+ a| 
+hdb-00014
+ a| 
+Es konnte kein zugänglicher HANA-Knoten gefunden werden, um hdbsqlbedden mit den angegebenen Konfigurationsparametern auszuführen. Überprüfen und aktualisieren Sie die HANA-Einstellungen in der Konfiguration, und versuchen Sie es erneut.
+ a| 
+Vergewissern Sie sich, dass HANA-Nodes ausgeführt und erreichbar sind, und die angegebene Instanznummer ist korrekt.
+
+
+
+ a| 
+hdb-00015
+ a| 
+Der Parameter HANA_INSTANCE ist nicht festgelegt. Überprüfen Sie die HANA-Einstellungen in der Konfigurationsdatei.
+ a| 
+Für das SAP HANA-Plug-in ist HANA-Instance-Parameter (HANA_INSTANCE) erforderlich. Legen Sie den Parameter fest, und versuchen Sie es erneut.
+
+
+
+ a| 
+hdb-00016
+ a| 
+Der Parameter HANA_PASSWORD ist nicht festgelegt. Überprüfen Sie die HANA-Einstellungen in der Konfigurationsdatei.
+ a| 
+HANA password (HANA_PASSWORD)-Parameter ist für das SAP HANA-Plug-in erforderlich. Legen Sie den Parameter fest, und versuchen Sie es erneut.
+
+
+
+ a| 
+hdb-00017
+ a| 
+Pfad zu hdbsql, Wert des Parameters HANA_HDBSQL_CMD ist ungültig!
+ a| 
+Einer der folgenden Punkte ist aufgetreten:
+
+* Sie haben den hdbsql-Pfad nicht zur Verfügung gestellt
+* Der angegebene hdbsql-Pfad ist falsch.
+
+
+Stellen Sie sicher, dass der HANA hdbsql-Client auf dem Management-Host installiert ist, auf dem Snap Creator Agent installiert ist, und geben Sie den richtigen Pfad der hdbsql-Binärdatei in HANA-Parametern; dann versuchen Sie es erneut.
+
+|===

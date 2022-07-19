@@ -1,0 +1,78 @@
+---
+permalink: domino-ops/concept_restore_operations_using_domino_plug_in.html 
+sidebar: sidebar 
+keywords: domino, ibm, understanding, plug-in, restore 
+summary: Das IBM Domino Plug-in stellt Datenbankdateien aus der Snapshot Kopie des Volumes wieder her, auf dem die Datenbank gespeichert ist. Wenn die Wiederherstellung des Snapshots abgeschlossen ist, wendet das Plug-in alle Änderungen an, die im Verzeichnis „changeinfo“ gespeichert sind. 
+---
+= Allgemeines zum Restore-Betrieb von IBM Domino Plug-in
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das IBM Domino Plug-in stellt Datenbankdateien aus der Snapshot Kopie des Volumes wieder her, auf dem die Datenbank gespeichert ist. Wenn die Wiederherstellung des Snapshots abgeschlossen ist, wendet das Plug-in alle Änderungen an, die im Verzeichnis „changeinfo“ gespeichert sind.
+
+Die grundlegenden Schritte sind wie folgt:
+
+. Wiederherstellen von Datenbankdateien aus Snapshot-Kopien
+. Änderungen anwenden, die im Verzeichnis changeinfo aufgezeichnet wurden.
+. Wenn verfügbar, werden die Informationen zum Transaktionsprotokoll angewendet.
+
+
+
+
+== Wiederherstellungsoptionen
+
+Das Plug-in bietet eine Vielzahl an Restore-Optionen:
+
+|===
+
+
+| Typ wiederherstellen | Beschreibung 
+
+
+ a| 
+Volume-Wiederherstellung (zeitpunktgenau)
+ a| 
+Stellt das gesamte Volume zum Zeitpunkt der Snapshot Kopie in seinen Status wieder her.
+
+
+
+ a| 
+Volume-Wiederherstellung (minutengenau)
+ a| 
+Stellt zum Zeitpunkt der Snapshot Kopie das gesamte Volume in seinen Zustand wieder her und gibt dann Domino Transaktionsprotokolle in die aktuellste Kopie weiter.
+
+
+
+ a| 
+Volume-Wiederherstellung (minutengenau wählbar)
+ a| 
+Stellt das gesamte Volume zum Zeitpunkt der Snapshot Kopie in seinen Status wieder her und gibt dann Domino Transaktionsprotokolle in eine festgelegte Zeit weiter.
+
+
+
+ a| 
+Wiederherstellung einzelner Dateien (zeitpunktgenau)
+ a| 
+Stellt zum Zeitpunkt der Snapshot-Kopie den Status einer einzelnen Datei wieder her (nur NFS).
+
+
+
+ a| 
+Wiederherstellung einzelner Dateien (minutengenau)
+ a| 
+Stellt eine einzelne Datei zum Zeitpunkt der Snapshot Kopie in ihren Zustand wieder her und gibt dann Domino Transaktionsprotokolle an die aktuellste Kopie weiter (nur NFS).
+
+
+
+ a| 
+Wiederherstellung einer einzelnen Datei (minutengenau wählbar)
+ a| 
+Stellt eine einzelne Datei zum Zeitpunkt der Snapshot Kopie in ihren Zustand wieder her und gibt dann die Domino Transaktionsprotokolle an eine bestimmte Zeit weiter (nur NFS).
+
+|===
+*Hinweis:* für minutengenaue und wählbare Wiederherstellungen muss die Domino-Transaktionsprotokollierung aktiviert sein.
+
+Transaktions-Logs können nur weitergespielt werden. Wenn Sie einen Zeitpunkt vor dem Erstellen der Snapshot Kopie auswählen, führt dies zu einem Wiederherstellungsfehler.

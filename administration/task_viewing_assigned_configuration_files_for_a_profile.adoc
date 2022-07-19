@@ -1,0 +1,21 @@
+---
+permalink: administration/task_viewing_assigned_configuration_files_for_a_profile.html 
+sidebar: sidebar 
+keywords: configuration, file, assign, profile 
+summary: Sie können eine Liste von Konfigurationsdateien anzeigen, die einem Profil zugewiesen sind. 
+---
+= Anzeigen einer Liste von Konfigurationsdateien, die einem Profil zugewiesen sind
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können eine Liste von Konfigurationsdateien anzeigen, die einem Profil zugewiesen sind.
+
+. Wählen Sie im Hauptmenü der Snap Creator GUI die Option *Verwaltung* > *Konfigurationen*.
+. Erweitern Sie im Bereich Profile und Konfigurationen den Inhalt des Profils.
++
+Die dem Profil zugewiesenen Konfigurationsdateien werden unter dem Profilnamen aufgelistet.
+
+

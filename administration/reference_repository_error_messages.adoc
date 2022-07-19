@@ -1,0 +1,568 @@
+---
+permalink: administration/reference_repository_error_messages.html 
+sidebar: sidebar 
+keywords: table, repository, error, message, global, configuration, repo 
+summary: In der folgenden Tabelle sind die Fehlermeldungen des Repository aufgeführt. 
+---
+= Repository-Fehlermeldungen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+In der folgenden Tabelle sind die Fehlermeldungen des Repository aufgeführt.
+
+|===
+| Fehlercode | Fehlermeldung | Beschreibung/Auflösung 
+
+
+ a| 
+REPO-01001
+ a| 
+Die globale Konfiguration ist nicht vorhanden
+ a| 
+Überprüfen Sie, ob die Datei Global.conf im Ordner configs vorhanden ist.
+
+
+
+ a| 
+REPO-01002
+ a| 
+Globale Konfiguration ist bereits vorhanden
+ a| 
+Die Datei Global.conf ist bereits im Ordner configs vorhanden. Löschen Sie entweder zuerst die globale Konfigurationsdatei oder aktualisieren Sie die vorhandene Datei.
+
+
+
+ a| 
+REPO-01103
+ a| 
+Erstellen der globalen Konfiguration fehlgeschlagen mit Fehler [%s]
+ a| 
+Fehler beim Erstellen der Datei „Global.conf“ im Ordner „Konfigurationen“. Überprüfen Sie die Berechtigungen des Benutzers, der Snap Creator gegen das Verzeichnis ausführt.
+
+
+
+ a| 
+REPO-01203
+ a| 
+Aktualisierung der globalen Konfiguration mit Fehler [%s] fehlgeschlagen
+ a| 
+Fehler beim Aktualisieren der Datei Global.conf im Ordner configs. Überprüfen Sie die Berechtigungen des Benutzers, der Snap Creator gegen das Verzeichnis ausführt.
+
+
+
+ a| 
+REPO-01303
+ a| 
+Entfernen der globalen Konfiguration fehlgeschlagen mit Fehler [%s]
+ a| 
+Fehler beim Entfernen der Datei Global.conf im Ordner configs. Überprüfen Sie, ob die Datei im Ordner configs vorhanden ist oder prüfen Sie die Berechtigungen des Benutzers, der Snap Creator gegen das Verzeichnis ausführt
+
+
+
+ a| 
+REPO-01403
+ a| 
+Exportieren der globalen Konfiguration fehlgeschlagen mit Fehler [%s]
+ a| 
+Fehler beim Lesen der Datei „Global.conf“ im Ordner „configs“. Überprüfen Sie, ob Ihre globale Konfigurationsdatei gelöscht wurde.
+
+
+
+ a| 
+REPO-01503
+ a| 
+Import der globalen Konfiguration [%s] mit Fehler [%s] fehlgeschlagen
+ a| 
+Fehler beim Aktualisieren der Datei Global.conf im Ordner configs. Überprüfen Sie die Berechtigungen des Benutzers, der Snap Creator gegen das Verzeichnis ausführt.
+
+
+
+ a| 
+REPO-01603
+ a| 
+Fehler beim Abrufen der globalen Konfiguration mit Fehler [%s]
+ a| 
+Fehler beim Lesen der Datei „Global.conf“ im Ordner „configs“. Überprüfen Sie, ob Ihre globale Konfigurationsdatei gelöscht wurde.
+
+
+
+ a| 
+REPO-02002
+ a| 
+Profil [%s] ist bereits vorhanden. Verwenden Sie einen anderen Namen.
+ a| 
+Profil mit demselben Namen ist bereits vorhanden. Wenn das Profil nicht sichtbar ist, hat der Benutzer keine Berechtigung für dieses Profil.
+
+
+
+ a| 
+REPO-02003
+ a| 
+Profil [%s] ist nicht vorhanden
+ a| 
+Überprüfen Sie, ob Ihr Profil umbenannt oder gelöscht wurde. Außerdem hat der Benutzer möglicherweise keine Berechtigung für dieses Profil.
+
+
+
+ a| 
+REPO-02103
+ a| 
+Erstellen der globalen Profilkonfiguration [%s] fehlgeschlagen mit Fehler [%s]
+ a| 
+Fehler beim Erstellen der Datei Global.conf im Profil. Überprüfen Sie die Berechtigungen des Benutzers, der Snap Creator gegen das Verzeichnis ausführt.
+
+
+
+ a| 
+REPO-02106
+ a| 
+Erstellen der Profilkonfiguration [%s] fehlgeschlagen mit Fehler [%s]
+ a| 
+Profil konnte im Ordner „Konfigurationen“ nicht erstellt werden. Überprüfen Sie die Berechtigungen des Benutzers, der Snap Creator gegen das Verzeichnis ausführt.
+
+
+
+ a| 
+REPO-02203
+ a| 
+Aktualisieren der Profilkonfiguration [%s] fehlgeschlagen mit Fehler [%s]
+ a| 
+Fehler beim Aktualisieren des Profils im Ordner „Konfigurationen“. Überprüfen Sie die Berechtigungen des Benutzers, der Snap Creator gegen das Verzeichnis ausführt.
+
+
+
+ a| 
+REPO-02213
+ a| 
+Umbenennen von Profil [%s] in [%s] fehlgeschlagen mit Fehler [%s]
+ a| 
+Das Profil konnte im Ordner „Konfigurationen“ nicht umbenannt werden. Prüfen Sie die Berechtigungen des Benutzers, der Snap Creator gegen das Verzeichnis ausführt, oder überprüfen Sie, ob Ihr Profil bereits umbenannt oder gelöscht wurde.
+
+
+
+ a| 
+REPO-02303
+ a| 
+Entfernen der Profilkonfiguration [%s] fehlgeschlagen
+ a| 
+
+
+
+ a| 
+REPO-02403
+ a| 
+Exportieren der Profilkonfiguration [%s] fehlgeschlagen mit Fehler [%s]
+ a| 
+
+
+
+ a| 
+REPO-02503
+ a| 
+Importieren der Profilkonfiguration [%s] mit Fehler [%s] fehlgeschlagen
+ a| 
+
+
+
+ a| 
+REPO-02603
+ a| 
+Fehler beim Abrufen des globalen Profils mit Fehler [%s]
+ a| 
+
+
+
+ a| 
+REPO-02606
+ a| 
+Fehler beim Abrufen des Profils [%s] mit Fehler [%s]
+ a| 
+
+
+
+ a| 
+REPO-02703
+ a| 
+Fehler beim Auflisten der Profile mit Fehler [%s]
+ a| 
+Auflistung der Profile fehlgeschlagen. Überprüfen Sie den Ordnerpfad für Konfigurationen.
+
+
+
+ a| 
+REPO-03002
+ a| 
+Konfiguration [%s] für Profil [%s] bereits vorhanden
+ a| 
+Für das angegebene Profil ist bereits eine Konfigurationsdatei mit demselben Namen vorhanden. Wählen Sie einen anderen Namen.
+
+
+
+ a| 
+REPO-03103
+ a| 
+Erstellen der Konfiguration [%s] für Profil [%s] fehlgeschlagen mit Fehler [%s]
+ a| 
+
+
+
+ a| 
+REPO-03203
+ a| 
+Aktualisieren der Konfiguration [%s] für das Profil [%s] fehlgeschlagen mit Fehler [%s]
+ a| 
+
+
+
+ a| 
+REPO-03212
+ a| 
+Die Umbenennung der Konfiguration [%s] für das Profil [%s] in [%s] ist fehlgeschlagen
+ a| 
+Die Konfiguration konnte nicht aus dem Profil umbenannt werden. Überprüfen Sie, ob Ihre Konfiguration umbenannt oder gelöscht wird, und überprüfen Sie zudem die Berechtigungen des Benutzers, der Snap Creator gegen das Verzeichnis ausführt.
+
+
+
+ a| 
+REPO-03303
+ a| 
+Entfernen der Konfiguration [%s] aus Profil [%s] fehlgeschlagen
+ a| 
+Die Konfiguration konnte nicht aus dem Profil im Ordner „Konfigurationen“ gelöscht werden. Überprüfen Sie die Berechtigungen des Benutzers, der Snap Creator gegen das Verzeichnis ausführt.
+
+
+
+ a| 
+REPO-03403
+ a| 
+Exportieren der Konfiguration [%s] für Profil [%s] fehlgeschlagen mit Fehler [%s]
+ a| 
+
+
+
+ a| 
+REPO-03503
+ a| 
+Importieren der Konfiguration [%s] in das Profil [%s] fehlgeschlagen mit Fehler [%s]
+ a| 
+
+
+
+ a| 
+REPO-03603
+ a| 
+Abrufen der Konfiguration [%s] aus Profil [%s] fehlgeschlagen mit Fehler [%s]
+ a| 
+
+
+
+ a| 
+REPO-03703
+ a| 
+Auflisten von Konfigurationen aus Profil [%s] fehlgeschlagen mit Fehler [%s]
+ a| 
+
+
+
+ a| 
+REPO-04003
+ a| 
+Lesen des Katalogs für Profil [%s], Konfiguration [%s] und Zeitstempel [%s] fehlgeschlagen mit Fehler [%s]
+ a| 
+
+
+
+ a| 
+REPO-04103
+ a| 
+Der Katalog für das Profil [%s], die Konfiguration [%s] und den Zeitstempel [%s] konnte nicht mit Fehler [%s] geschrieben werden
+ a| 
+
+
+
+ a| 
+REPO-04203
+ a| 
+Löschen des Katalogs für Profil [%s], Konfiguration [%s] und Zeitstempel [%s] fehlgeschlagen mit Fehler [%s]
+ a| 
+
+
+
+ a| 
+REPO-04303
+ a| 
+Inventarkatalog für Profil [%s] und Konfiguration [%s] fehlgeschlagen mit Fehler [%s]
+ a| 
+
+
+
+ a| 
+REPO-04304
+ a| 
+Konfiguration [%s] ist nicht vorhanden
+ a| 
+
+
+
+ a| 
+REPO-04309
+ a| 
+Hinzufügen des Richtlinienobjekts fehlgeschlagen [%s]
+ a| 
+Datenbankfehler; weitere Informationen finden Sie im Stack-Trace.
+
+
+
+ a| 
+REPO-04313
+ a| 
+Das Entfernen des Richtlinienobjekts ist für Richtlinien-ID: %S fehlgeschlagen
+ a| 
+Datenbankfehler; weitere Informationen finden Sie im Stack-Trace.
+
+
+
+ a| 
+REPO-04315
+ a| 
+Aktualisierung des Richtlinienobjekts fehlgeschlagen : %s
+ a| 
+Datenbankfehler; weitere Informationen finden Sie im Stack-Trace.
+
+
+
+ a| 
+REPO-04316
+ a| 
+Richtlinien konnten nicht aufgeführt werden
+ a| 
+Datenbankfehler; weitere Informationen finden Sie im Stack-Trace.
+
+
+
+ a| 
+REPO-04321
+ a| 
+Hinzufügen von Backuptyp-Objekt fehlgeschlagen [%s]
+ a| 
+Datenbankfehler; weitere Informationen finden Sie im Stack-Trace.
+
+
+
+ a| 
+REPO-04323
+ a| 
+Backup-Typ-Eintrag für Backup-Typ-id: %S nicht vorhanden
+ a| 
+Übergeben Sie einen gültigen Sicherungstyp.
+
+
+
+ a| 
+REPO-04325
+ a| 
+Entfernen des Backuptyps-Objekts für Backup-Typ-ID: %S fehlgeschlagen
+ a| 
+Datenbankfehler; weitere Informationen finden Sie im Stack-Trace.
+
+
+
+ a| 
+REPO-04327
+ a| 
+Aktualisierung des Backuptyps-Objekts fehlgeschlagen : %s
+ a| 
+Datenbankfehler; weitere Informationen finden Sie im Stack-Trace.
+
+
+
+ a| 
+REPO-04328
+ a| 
+Fehler beim Auflisten der Backup-Typen
+ a| 
+Datenbankfehler; weitere Informationen finden Sie im Stack-Trace.
+
+
+
+ a| 
+REPO-04333
+ a| 
+Hinzufügen des Planer-Jobobjekts fehlgeschlagen [%s]
+ a| 
+Datenbankfehler; weitere Informationen finden Sie im Stack-Trace.
+
+
+
+ a| 
+REPO-04335
+ a| 
+Der Job-Eintrag des Planers ist für Job-id: %S nicht vorhanden
+ a| 
+Führen Sie einen gültigen Planer-Job durch.
+
+
+
+ a| 
+REPO-04337
+ a| 
+Löschen des Planer-Jobobjekts fehlgeschlagen für Job-ID: %S
+ a| 
+Datenbankfehler; weitere Informationen finden Sie im Stack-Trace.
+
+
+
+ a| 
+REPO-04339
+ a| 
+Aktualisieren des Planer-Jobobjekts fehlgeschlagen : %s
+ a| 
+Datenbankfehler; weitere Informationen finden Sie im Stack-Trace.
+
+
+
+ a| 
+REPO-04340
+ a| 
+Fehler beim Auflisten von Planungsjobs
+ a| 
+Datenbankfehler; weitere Informationen finden Sie im Stack-Trace.
+
+
+
+ a| 
+REPO-04341
+ a| 
+Hinzufügen des Richtlinienobjekts fehlgeschlagen, Richtlinie [%s] mit demselben Namen ist bereits vorhanden
+ a| 
+Richtlinie mit demselben Namen ist bereits vorhanden. Versuchen Sie es mit einem anderen Namen.
+
+
+
+ a| 
+REPO-04342
+ a| 
+Hinzufügen von Backuptyp-Objekt fehlgeschlagen, Sicherungstyp [%s] mit demselben Namen ist bereits vorhanden
+ a| 
+Es ist bereits ein Backup-Typ mit demselben Namen vorhanden. Versuchen Sie es mit einem anderen Namen.
+
+
+
+ a| 
+REPO-04343
+ a| 
+Hinzufügen des Planungsobjekts fehlgeschlagen, Scheduler [%s] mit demselben Aufgabennamen ist bereits vorhanden
+ a| 
+
+
+
+ a| 
+REPO-04344
+ a| 
+Fehler beim Aktualisieren des Profils [%s]. Profil ist leer.
+ a| 
+
+
+
+ a| 
+REPO-04345
+ a| 
+Richtlinientyp kann beim Hinzufügen einer neuen Richtlinie nicht null sein
+ a| 
+
+
+
+ a| 
+REPO-04346
+ a| 
+Das Speicherobjekt darf nicht null sein
+ a| 
+
+
+
+ a| 
+REPO-04347
+ a| 
+Hinzufügen des Speicherobjekts fehlgeschlagen, Speicher [%s] mit demselben Namen/derselben IP ist bereits vorhanden
+ a| 
+
+
+
+ a| 
+REPO-04348
+ a| 
+Fehler beim Abrufen der Storage-Details. Datenbankfehler!
+ a| 
+
+
+
+ a| 
+REPO-04349
+ a| 
+Ungültiger Hostname. Speicher mit Hostname/IP [%s] ist nicht vorhanden
+ a| 
+
+
+
+ a| 
+REPO-04350
+ a| 
+Hostname darf nicht null sein
+ a| 
+Ungültiger Hostname
+
+
+
+ a| 
+REPO-04351
+ a| 
+Löschen von Speicher [%s] fehlgeschlagen mit Fehler [%s]
+ a| 
+Fehler beim Löschen des Speichers. Datenbankfehler!
+
+
+
+ a| 
+REPO-04355
+ a| 
+Fehler beim Aktualisieren von Speicher [%s] mit Fehler [%s]
+ a| 
+Fehler beim Aktualisieren des Speichers. Datenbankfehler!
+
+
+
+ a| 
+REPO-04356
+ a| 
+Das Cluster-Objekt darf nicht null sein
+ a| 
+
+
+
+ a| 
+REPO-04358
+ a| 
+Hinzufügen von Speicher [%s] fehlgeschlagen mit Fehler [%s]
+ a| 
+
+
+
+ a| 
+REPO-04359
+ a| 
+Fehler beim Aktualisieren von Cluster [%s] mit Fehler [%s]
+ a| 
+
+
+
+ a| 
+REPO-04360
+ a| 
+Das Hinzufügen des Clusterobjekts ist fehlgeschlagen. Cluster [%s] mit demselben Namen/derselben IP ist bereits vorhanden
+ a| 
+Das Cluster mit demselben Hostnamen ist bereits vorhanden
+
+|===

@@ -1,0 +1,37 @@
+---
+permalink: administration/task_monitoring_logs_by_using_the_snap_creator_gui.html 
+sidebar: sidebar 
+keywords: profile, configuration, snap, creator, gui, monitor, log, out, debug, error, stderr, log 
+summary: Sie können die Protokolle für jedes Profil und jede Konfiguration über die Snap Creator GUI anzeigen. 
+---
+= Monitoring von Protokollen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können die Protokolle für jedes Profil und jede Konfiguration über die Snap Creator GUI anzeigen.
+
+Sie können die Protokolle Out, Debug, Error und stderr anzeigen, um bei der Fehlerbehebung zu helfen. Weitere Informationen zu diesen Fehlerbehebungsprotokollen finden Sie in den entsprechenden Referenzen.
+
+. Wählen Sie im Hauptmenü der Snap Creator GUI die Option *Berichte* > *Logs*:
++
+image::../media/reports_logs.gif[Berichtsprotokolle]
+
+. Wählen Sie bei Bedarf Protokolle nach Profil, Konfigurationsdatei, Protokolltyp oder spezifisches Protokoll aus:
++
+image::../media/reports_logs_example.gif[Beispiel für Berichtsprotokolle]
+
++
+Das ausgewählte Protokoll kann auch heruntergeladen werden, indem Sie *Ausgewählte Protokoll herunterladen* klicken. Die heruntergeladene Protokolldatei wird im Verzeichnis (oder Ordner) gespeichert, das vom Browser für Downloads angegeben wird.
+
++
+
+NOTE: Die aus-, Debug-, Stderr- und Agentenprotokolle werden wie vom LOG_NUM-Wert in der Konfigurationsdatei definiert beibehalten, aber das Fehlerprotokoll ist immer angehängt.
+
+
+
+*Verwandte Informationen*
+
+xref:reference_logs.adoc[Arten von Fehlermeldungen und Fehlerbehebungsprotokollen]

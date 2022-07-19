@@ -1,0 +1,33 @@
+---
+permalink: administration/reference_cli_command_results_in_404_not_found_error.html 
+sidebar: sidebar 
+keywords: unix, cli, command, port, 404, error 
+summary: In einer UNIX-Umgebung wird möglicherweise der Fehler 404 nicht gefunden, wenn ein CLI-Befehl ausgeführt wird. 
+---
+= Der CLI-Befehl führt zu 404 nicht gefunden Fehler
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+In einer UNIX-Umgebung wird möglicherweise der Fehler 404 nicht gefunden, wenn ein CLI-Befehl ausgeführt wird.
+
+* *Ausgabe*
++
+In einer UNIX-Umgebung versuchen Sie, einen CLI-Befehl auszuführen. Der Fehler 404 wurde jedoch nicht gefunden. Beispiel:
+
++
+[listing]
+----
+404 Not Found at //local/scServer4.1.0c/snapcreator>SnapCreator/Service/Engine.pm line 152
+----
+* *Ursache*
++
+Dieser Fehler tritt in der Regel auf, wenn ein anderer Port als Snap Creator den ausgewählten Port verwendet.
+
+* *Korrekturmaßnahmen*
++
+Vergewissern Sie sich, dass Snap Creator auf dem ausgewählten Port ausgeführt wird und dass der Port nicht mehr verwendet wird.
+
+

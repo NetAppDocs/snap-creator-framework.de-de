@@ -1,0 +1,25 @@
+---
+permalink: administration/task_creating_policy_schedules.html 
+sidebar: sidebar 
+keywords: policy, schedule, snap, creator, gui 
+summary: Optional können Sie Richtlinienzeitpläne mit der Snap Creator GUI erstellen. 
+---
+= Erstellen von Richtlinienzeitplänen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Optional können Sie Richtlinienzeitpläne mit der Snap Creator GUI erstellen.
+
+. Wählen Sie im Hauptmenü der Snap Creator GUI die Option *Richtlinie* > *Richtlinien-Zeitpläne*.
+. Klicken Sie auf der Registerkarte *Policy Schedules* auf *Create*.
+. Geben Sie den Terminplannamen ein, und wählen Sie die Aktion und die Häufigkeit aus, und klicken Sie dann auf *Speichern*.
++
+Je nach gewählter Häufigkeit müssen Sie die entsprechenden Zeitfelder für die Ausführung des geplanten Jobs auswählen.
+
++
+image::../media/add_policy_schedule.gif[Richtlinienplan hinzufügen]
+
+

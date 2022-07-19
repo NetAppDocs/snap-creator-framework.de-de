@@ -1,0 +1,23 @@
+---
+permalink: installation/concept_configuring_settings_for_the_domino_plug_in.html 
+sidebar: sidebar 
+keywords: configuring, configure, settings 
+summary: Sie müssen bestimmte Einstellungen nur dann konfigurieren, wenn Sie das IBM Domino Plug-in verwenden möchten, das im Rahmen der Snap Creator Agent Installation enthalten ist. 
+---
+= Einstellungen für das Domino Plug-in konfigurieren
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen bestimmte Einstellungen nur dann konfigurieren, wenn Sie das IBM Domino Plug-in verwenden möchten, das im Rahmen der Snap Creator Agent Installation enthalten ist.
+
+
+NOTE: Es ist eine Best Practice, Snap Creator Server und Snap Creator Agent auf verschiedenen Hosts zu installieren.
+
+Sie müssen diese Einstellungen je nach Betriebssystem konfigurieren, bevor Sie Snap Creator Agent installieren, damit das IBM Domino Plug-in ordnungsgemäß funktioniert.
+
+* Für eine Windows-Umgebung müssen Sie den Domino-Pfad zu den Umgebungsvariablen hinzufügen.
+* Für eine UNIX-Umgebung müssen Sie symbolische Links erstellen, um die freigegebenen Objektdateien von Domino zu verknüpfen.
+

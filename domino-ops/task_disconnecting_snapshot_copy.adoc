@@ -1,0 +1,21 @@
+---
+permalink: domino-ops/task_disconnecting_snapshot_copy.html 
+sidebar: sidebar 
+keywords: domino, ibm, disconnecting, disconnect, snapshot, copy 
+summary: Wenn die Wiederherstellung abgeschlossen ist, müssen Sie die gemountete Snapshot Kopie trennen. 
+---
+= Trennen der Snapshot Kopie
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn die Wiederherstellung abgeschlossen ist, müssen Sie die gemountete Snapshot Kopie trennen.
+
+Das folgende Verfahren zeigt, wie eine gemountete Snapshot Kopie auf einem Windows Server 2008 Host getrennt wird. SnapDrive für Windows und der Snap Creator Agent müssen auf dem Host ausgeführt werden.
+
+. Klicken Sie im Servermanager auf *Storage* > *SnapDrive* > *Physical_Server_Name* > *Disks*.
+. Wählen Sie im Fenster Disk Identification den bereitgestellten Datenträger aus und klicken Sie im Kontextmenü auf *Disconnect Disk*.
+. Klicken Sie im Dialogfeld Disconnect Disk auf *Ja*.
+

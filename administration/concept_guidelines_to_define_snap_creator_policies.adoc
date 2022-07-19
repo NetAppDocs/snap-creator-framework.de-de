@@ -1,0 +1,39 @@
+---
+permalink: administration/concept_guidelines_to_define_snap_creator_policies.html 
+sidebar: sidebar 
+keywords: snap, creator, policies, guidelines, retendtion, snapshot 
+summary: Snap Creator Richtlinien sind benutzerdefinierte Snapshot Kopien, die sich auf die Snapshot Kopien im primären Storage und SnapVault und SnapMirror Kopien auf dem sekundären Storage anwenden. Mit einer Richtlinie können Sie die Anzahl der Snapshot Kopien festlegen, die beibehalten werden sollen, und das Alter der Snapshot Kopien. 
+---
+= Richtlinien zur Definition von Snap Creator Richtlinien
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Snap Creator Richtlinien sind benutzerdefinierte Snapshot Kopien, die sich auf die Snapshot Kopien im primären Storage und SnapVault und SnapMirror Kopien auf dem sekundären Storage anwenden. Mit einer Richtlinie können Sie die Anzahl der Snapshot Kopien festlegen, die beibehalten werden sollen, und das Alter der Snapshot Kopien.
+
+Im Feld *Snapshot Retention Count* müssen Sie mindestens eine Richtlinie definieren. Für SnapVault können Sie dieselbe Richtlinie mit unterschiedlichen SnapVault Aufbewahrungsfristen verknüpfen. Beispielsweise müssen Sie die folgenden Richtlinienoptionen und -Einstellungen verwenden, um tägliche Snapshot Kopien zu erstellen und sie für sieben Tage auf dem primären Storage und einen Monat auf dem sekundären Storage aufzubewahren:
+
+* *Anzahl der Snapshot-Aufbewahrung*: Täglich:7
+* *SnapVault Einbehalt Anzahl*: Täglich:28
+
+
+Sie können außerdem die Mindestanzahl an Tagen angeben, nach denen eine Snapshot Kopie gelöscht wird. Basierend auf dem vorhergehenden Beispiel sollten Sie die folgenden Optionen und Einstellungen verwenden:
+
+* *Snapshot Retention Alter*: 7
+* *SnapVault Aufbewahrungsalter*: 28
+
+
+Außerdem können Sie das Löschen der Snapshot Kopie nach Alter angeben, indem Sie den folgenden Parameter in der Konfigurationsdatei einstellen:
+
+NTAP_SNAPSHOT_DELETE_BY_AGE_ONLY=PRIMÄRER SEKUNDÄRER WERT
+
+
+NOTE: Dieser Parameter ist über die Snap Creator GUI nicht verfügbar. Weitere Informationen über die Konfigurationsparameter zum Einrichten von Snapshot Kopien finden Sie in den zugehörigen Referenzen.
+
+Snap Creator kann nur eine Richtlinie gleichzeitig ausführen. Der maximale Alterswert ist ein globaler Parameter, der für alle Richtlinien gilt. Um eine zusätzliche wöchentliche Richtlinie zu konfigurieren, definieren Sie die Richtlinie und rufen sie dann einmal pro Woche in Snap Creator auf, indem Sie cron oder Task Manager mit der Snap Creator-Variable %SNAP_TYPE auf wöchentlich setzen.
+
+*Verwandte Informationen*
+
+xref:reference_parameters_to_set_up_a_snapshot_copy.adoc[Parameter zum Einrichten von Snapshot Kopien]

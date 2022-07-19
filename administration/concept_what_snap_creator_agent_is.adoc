@@ -1,0 +1,53 @@
+---
+permalink: administration/concept_what_snap_creator_agent_is.html 
+sidebar: sidebar 
+keywords: snap, creator, agent, quiesce, server, plug-in, multi-tenant 
+summary: Der Snap Creator Agent, normalerweise auf dem gleichen Host installiert ist, auf dem eine Anwendung oder Datenbank installiert ist, wickelt Quiesce-und unquiesce-Befehle vom Snap Creator Server einer bestimmten Anwendung ab und befindet sich an dem sich die Plug-ins befinden. Agent wird manchmal innerhalb von Snap Creator zu SCAgent verkürzt. 
+---
+= Snap Creator Agent – Überblick
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Der Snap Creator Agent, normalerweise auf dem gleichen Host installiert ist, auf dem eine Anwendung oder Datenbank installiert ist, wickelt Quiesce-und unquiesce-Befehle vom Snap Creator Server einer bestimmten Anwendung ab und befindet sich an dem sich die Plug-ins befinden. Agent wird manchmal innerhalb von Snap Creator zu SCAgent verkürzt.
+
+Der Snap Creator Agent erhält Kommunikation von der Agent Schnittstelle des Snap Creator Servers über die RESTful Agent Schnittstelle und nur über HTTPS. Dies bedeutet sichere und verschlüsselte Kommunikation – ein wichtiges Feature in mandantenfähigen und Cloud-Umgebungen. Selbstsignierte Zertifikate ermöglichen die Verwendung eines generierten Zertifikats mit dem Snap Creator Agent. Darüber hinaus ist der Snap Creator Agent durch eine konfigurierbare Kombination aus Benutzer und Passwort geschützt, die auf der Festplatte gespeichert wird.
+
+In der folgenden Abbildung ist die Architektur des Snap Creator Agent dargestellt:
+
+image::../media/scfw_agent_architecture_41_refresh.gif[Scfw Agent Architecture 41 – Aktualisierung]
+
+Die Snap Creator Agent Komponente (manchmal verkürzt auf SCAgent innerhalb von Snap Creator selbst) umfasst die folgenden Komponenten:
+
+* *Betriebs- und Execution-Manager*
++
+Der Operations Manager übernimmt die eingehenden, ausgehenden und abgeschlossenen Anfragen. Der Execution Manager ist für die Ausführung der Anforderungen zuständig.
+
+* *Thread Pool*
++
+Der Thread-Pool besteht aus Worker-Threads und wird zur Ausführung mehrerer Aufgaben verwendet.
+
++
+Damit wird die Anzahl der gleichzeitigen Operationen zu einem bestimmten Zeitpunkt festgelegt. Der Execution Manager führt ein Plug-in aus und führt es in einem der Threads im Thread-Pool aus. Wenn der Thread-Pool acht Threads hat, können Sie acht Plug-in-Operationen gleichzeitig ausführen. Neue eingehende Vorgänge werden in die Warteschlange verschoben, bis Threads wieder frei werden.
+
+* *Watchdog*
++
+Der Watchdog, der bei bestimmten Vorgängen vom Execution Manager ausgelöst wurde, ruft nach einer bestimmten Zeit wieder zum Execution Manager zurück, um den Vorgang ggf. zu beenden, und führt einen entsprechenden Rückgängigmapplvorgang aus. So wird beispielsweise die Funktion des Plug-in quiesce aufgerufen, die Applikation in einen Backup-Modus zu versetzen. Der Watchdog hört zu. Wenn das unquiesce nicht innerhalb des angegebenen Zeitfensters ausgeführt wird, entleert der Watchdog die Anwendung und versetzt sie wieder in den normalen Betriebsmodus. Dadurch wird sichergestellt, dass die Datenbank nicht im Backup-Modus stecken bleibt.
+
+* *Context Store*
++
+Alle für die gesamte Lebensdauer des Workflows erforderlichen Informationen werden im Context Store dem Plug-in bei Bedarf Kontextobjekte zur Verfügung gestellt, und wenn ein Workflow ausfällt oder nie abgeschlossen wird, wird das Kontextobjekt nach einer bestimmten Zeit gelöscht.
+
++
+Bei Workflows, die nicht beendet sind oder die in einem nicht definierten Status fehlschlagen, wird in install_path/etc/agent.properties: CONTEXT_LIFETIME_IN_MS=1800000 (Standardwert 30 Minuten) eine maximale Kontextzeit angegeben. Wenn dieser Wert erhöht wird, belegt der Snap Creator Agent mehr Speicher.
+
+* *Plug-in Factory*
++
+Das Plug-in Factory startet das Plug-in und stellt sicher, dass es in einem isolierten Bereich läuft. Die Plug-in Factory kommuniziert auch mit dem Context Store, um auf gespeicherte Informationen zuzugreifen. Über die Plug-in Integration Engine lassen sich außerdem Perl-basierte und native Plug-ins von Snap Creator ausführen.
+
++
+Der Snap Creator Agent kann auch Plug-ins verwenden, die in anderen Sprachen als Java geschrieben sind.
+
+

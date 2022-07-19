@@ -1,0 +1,88 @@
+---
+permalink: administration/reference_cli_command_results_in_500_cannot_locate_object_error.html 
+sidebar: sidebar 
+keywords: unix, 500, locate, error, cli, ssl, libraries 
+summary: In einer UNIX-Umgebung tritt möglicherweise der 500 nach dem Ausführen eines CLI-Befehls nicht auf, dass ein Objektfehler gefunden wurde. 
+---
+= Der CLI-Befehl führt zu 500 kann Objektfehler nicht finden
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+In einer UNIX-Umgebung tritt möglicherweise der 500 nach dem Ausführen eines CLI-Befehls nicht auf, dass ein Objektfehler gefunden wurde.
+
+* *Ausgabe*
++
+In einer UNIX-Umgebung versuchen Sie, einen CLI-Befehl auszuführen, aber das Problem 500 kann keinen Objektfehler finden, wie im folgenden Beispiel zu sehen ist:
+
++
+[listing]
+----
+500 Can't locate object method "new" via package "LWP::Protocol::https::Socket"
+----
+* *Ursache*
++
+Es gibt zwei mögliche Ursachen für diese Fehlermeldung:
+
++
+** Die wahrscheinlichste Ursache dieser Fehlermeldung ist, dass die CLI SSL Bibliotheken nicht verknüpft sind.
+** Wenn die Fehlermeldung nicht das Ergebnis ist, dass die SSL-Bibliotheken nicht verbunden werden, kann es auch zu einer anderen Ursache kommen, dass die HTTPS Perl-Bibliothek fehlt.
+
+
+* *Korrekturmaßnahmen*
++
+Um das Problem mit der Verknüpfung von Bibliotheksdateien zu lösen, müssen die Simlinks manuell erstellt werden. Wenden Sie sich an den Betriebssystemadministrator und überprüfen Sie die Anwesenheit der Dateien libssl.so und libCrypto.so. Möglicherweise müssen SSL-Pakete installiert werden.
+
++
+Wenn die Dateien vorhanden sind, müssen Sie die Dateien manuell verknüpfen. Führen Sie dazu einen der folgenden Befehlssets basierend auf Ihrem Betriebssystem aus:
+
++
+** Für 32 Bit:
++
+[listing]
+----
+cd /usr/lib
+ln -s libssl.so.1.0.0 libssl.so.6
+ln -s libcrypto.so.1.0.0 libcrypto.so.6
+----
+** Für 3264it:
++
+[listing]
+----
+cd /usr/lib64
+ln -s libssl.so.1.0.0 libssl.so.6
+ln -s libcrypto.so.1.0.0 libcrypto.so.6
+----
+
+
+* *Korrekturmaßnahmen*
++
+Um das fehlende Problem mit der HTTPS-Perl-Bibliothek zu beheben, installieren Sie die LWP::Protocol::https-Bibliothek im CPAN-Modus.
+
++
+Führen Sie folgende Schritte aus:
+
++
+.. Öffnen Sie eine SSH-Sitzung Ihres Linux-Servers und führen Sie den folgenden Befehl aus: perl -MCPAN -e Shell
++
+
+NOTE: Wenn Sie CPAN zum ersten Mal verwendet haben, werden Sie wie folgt aufgefordert:
+
++
+[listing]
+----
+Would you like me to configure as much as possible automatically? [yes]
+----
++
+Drücken Sie *Enter*, um die Standardeinstellung zu übernehmen. Die CPAN-Shell öffnet sich.
+
+.. Führen Sie den folgenden Befehl aus: Install LWP::Protocol::https
++
+Die notwendigen Pakete werden heruntergeladen und installiert. Wenn zusätzliche Pakete erforderlich sind, werden Sie möglicherweise auch dazu aufgefordert, diese zu installieren, indem Sie [ja] auswählen.
+
+.. Nachdem die Installation abgeschlossen ist, geben Sie EXIT ein, um zur normalen Shell zurückzukehren.
+
+
+

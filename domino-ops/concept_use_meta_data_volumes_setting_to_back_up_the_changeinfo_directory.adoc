@@ -1,0 +1,38 @@
+---
+permalink: domino-ops/concept_use_meta_data_volumes_setting_to_back_up_the_changeinfo_directory.html 
+sidebar: sidebar 
+keywords: domino, ibm, backing up, backup, changeinfo, directory 
+summary: Wenn Sie ein Backup des Verzeichnisses für changeinfo erstellen möchten, müssen Sie das Volume mit dem Verzeichnis als Metadaten-Volume konfigurieren. Wenn dies der Fall ist, wird das IBM Domino Plug-in informiert, um eine Snapshot Kopie des Änderinfo-Volumes zu erstellen, nachdem die Snapshot Kopie für Datenbankdateien erstellt wurde. 
+---
+= Sichern des Verzeichnis changeinfo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie ein Backup des Verzeichnisses für changeinfo erstellen möchten, müssen Sie das Volume mit dem Verzeichnis als Metadaten-Volume konfigurieren. Dadurch wird das IBM Domino Plug-in informiert, um eine Snapshot Kopie des changeinfo Volume _nach_ der Erstellung der Snapshot Kopie für Datenbankdateien zu erstellen.
+
+Sie sollten das Änderungsinfovolume bereits als ein zu sichernde Volume identifiziert haben, wenn Sie die Konfigurationsdatei erstellt haben. Weitere Informationen finden Sie unter Schritt link:task_using_the_gui_to_create_a_configuration_file.md#STEP_2036E43A6921415985798979F2226786["Aufgabe mit der gui zum Erstellen einer Konfiguration"].
+
+Sie verwenden den PARAMETER META_DATA_VOLUME in der Konfigurationsdatei, um das changeinfo-Volume als Metadaten-Volume zu identifizieren. Der Parameter ist in der GUI nicht verfügbar.
+
+. Öffnen Sie die Konfigurationsdatei in einem Texteditor.
++
+Konfigurationsdateien befinden sich im Snap Creator Installationsverzeichnis, in einem Unterverzeichnis, das für das Profil benannt ist. Auf einem Windows-Host z. B. C:\Program Files\NetApp\Snap_Creator_Framework\scServer4.1.x\Engine\configs\Domino\Fuji15.conf, wobei Domino der Name des Profils ist und Fuji15.conf der Name der Konfigurationsdatei ist.
+
+. Geben Sie den Namen des changeinfo-Volumes im PARAMETER META_DATA_VOLUME ein.
++
+Das changeinfo-Volume sollte bereits im PARAMETER VOLUMES aufgeführt sein.
+
++
+Das folgende Beispiel zeigt, wie Fuji15_DomChangeInfo als Metadatenvolumen konfiguriert wird:
+
++
+[listing]
+----
+VOLUMES=domino_vserver:Fuji15_DomDAOS,Fuji15_DomChangeInfo,
+Fuji15_DomTxn,Fuji15_DomData
+META_DATA_VOLUME=domino_vserver:Fuji15_DomChangeInfo
+----
+

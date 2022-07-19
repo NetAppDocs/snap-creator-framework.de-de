@@ -1,0 +1,22 @@
+---
+permalink: sap-hana-ops/task_performing_file_based_backup_from_snap_creator_command_line.html 
+sidebar: sidebar 
+keywords: sap, hana, performing, file-based, backup, snap, creator, command, line 
+summary: Sie können File-basierte Backups über die Snap Creator Befehlszeile durchführen. 
+---
+= Durchführen der dateibasierten Datensicherung über die Befehlszeile von Snap Creator
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können File-basierte Backups über die Snap Creator Befehlszeile durchführen.
+
+. Führen Sie den folgenden Befehl aus, um eine dateibasierte Sicherung durchzuführen:
++
+[listing]
+----
+./snapcreator --server localhost --port 8443 --user sc --passwd sc --profile hana_testing --config HANA_Test --action fileBasedBackup --policy none --verbose
+----
+

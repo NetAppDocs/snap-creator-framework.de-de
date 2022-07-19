@@ -1,0 +1,105 @@
+---
+permalink: administration/task_creating_scheduled_jobs_using_sc_gui.html 
+sidebar: sidebar 
+keywords: local, retention, policy, configuration, snap, creator, gui, copy, lun, volume, clone, snapvault, ossv, job 
+summary: 'Wenn Sie eine lokale Aufbewahrungsrichtlinie (in der Konfigurationsdatei) verwenden, können Sie über den Scheduler von Snap Creator grafische Benutzeroberfläche (GUI) Zeitpläne erstellen und Aufgaben ausführen. Der innerhalb des Snap Creator Servers enthaltene Scheduler kann Backups (Snapshot Kopien), LUN-Klone, Volume-Klone, applikationsspezifische Klone, Open Systems SnapVault (OSSV)-Übertragungen, Archivjobs und benutzerdefinierte Aktionen planen.' 
+---
+= Geplante Aufträge werden erstellt
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie eine lokale Aufbewahrungsrichtlinie (in der Konfigurationsdatei) verwenden, können Sie über den Scheduler von Snap Creator grafische Benutzeroberfläche (GUI) Zeitpläne erstellen und Aufgaben ausführen. Der innerhalb des Snap Creator Servers enthaltene Scheduler kann Backups (Snapshot Kopien), LUN-Klone, Volume-Klone, applikationsspezifische Klone, Open Systems SnapVault (OSSV)-Übertragungen, Archivjobs und benutzerdefinierte Aktionen planen.
+
+Wenn Sie Richtlinienobjekte anstelle einer lokalen Aufbewahrungsrichtlinie verwenden möchten, sollten Sie diesen Vorgang überspringen und stattdessen einen Richtlinienzeitplan erstellen.
+
+. Wählen Sie im Hauptmenü der Snap Creator GUI die Option *Verwaltung* > *Zeitpläne* und klicken Sie auf *Erstellen*.
+. Geben Sie im Fenster Neuer Job die Details für den Job ein.
++
+image::../media/schedule_new_job_window.gif[Neuen Job-Fenster planen]
+
++
+|===
+| Feld | Beschreibung 
+
+
+ a| 
+Job-Name
+ a| 
+Geben Sie den Namen des geplanten Jobs an.
+
+
+
+ a| 
+Startdatum
+ a| 
+Wählen Sie das heutige oder ein zukünftiges Datum aus.
+
+
+
+ a| 
+Aktiv
+ a| 
+Setzen Sie auf aktiv, um zu kennzeichnen, dass der Job als geplant ausgeführt wird. Aktiv ist die Standardeinstellung.
+
+
+
+ a| 
+Profil
+ a| 
+Wählen Sie das Profil aus, das diesem Job zugeordnet werden soll.
+
+
+
+ a| 
+Konfiguration
+ a| 
+Wählen Sie die Konfiguration aus, die diesem Job zugeordnet werden soll.
+
+
+
+ a| 
+Aktion
+ a| 
+Wählen Sie eine der folgenden Optionen:
+
+** *Backup*: Erstellt mit NetApp Storage Technologie ein Backup.
+** *CloneRun*: Erstellt eine Sicherung und klont eine oder mehrere LUNs mit dem lun Clone Befehl.
+** *CloneVol*: Erstellt eine Sicherung und klont ein Volume.
+** *Clone*: Führt einen Plug-in-gesteuerten Klonvorgang durch.
+** *OSSV*: Verwendet Open Systems SnapVault zur Durchführung der Sicherung.
++
+Es wird kein primäres Backup erstellt.
+
+** *Arch*: Führt nur Archiv-Log-Management durch.
++
+Es wird keine Sicherung erstellt.
+
+** *Benutzerdefiniert*: Führt eine Plug-in-definierte Klonaktion aus.
+
+
+
+
+ a| 
+Richtlinie
+ a| 
+Wählen Sie die Richtlinie aus, die diesem Job zugeordnet werden soll.
+
+
+
+ a| 
+Frequenz
+ a| 
+Wählen Sie die Häufigkeit für diesen Job aus. Je nach Auswahl müssen Sie die entsprechenden Zeitfelder für die Ausführung des geplanten Jobs auswählen.
+
++
+
+|===
+. Klicken Sie Auf *Speichern*.
+
+
+*Verwandte Informationen*
+
+xref:task_creating_policy_schedules.adoc[Erstellen von Richtlinienzeitplänen]

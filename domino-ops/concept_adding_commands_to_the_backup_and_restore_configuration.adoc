@@ -1,0 +1,36 @@
+---
+permalink: domino-ops/concept_adding_commands_to_the_backup_and_restore_configuration.html 
+sidebar: sidebar 
+keywords: domino, ibm, adding, commands, backup, restore, configuration, supplemental, 
+summary: Statt nativer Snap Creator Befehle sollten Sie vielleicht SnapDrive Befehle für Backups verwenden, um die Konsistenz des Dateisystems auf Betriebssystemebene zu gewährleisten. 
+---
+= Hinzufügen von Befehlen zur Backup- und Wiederherstellungskonfiguration
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Gelegentlich muss eine Backup- oder Restore-Operation einen Befehl ausführen, der nicht in Snap Creator verfügbar ist. Auf Windows Hosts mit FC oder iSCSI, beispielsweise, könnten Sie lieber SnapDrive Befehle für Backups anstelle von nativen Snap Creator Befehlen verwenden, um die Konsistenz des Dateisystems auf der Betriebssystemebene sicherzustellen.
+
+
+
+== Wo werden zusätzliche Befehle ausgeführt
+
+Standardmäßig werden zusätzliche Befehle auf dem Snap Creator Agent ausgeführt. Sie können einen zusätzlichen Befehl auf dem Server ausführen, indem Sie den Befehl mit dem TEXTSERVER vorwarden, gefolgt von einem Doppelpunkt (:). BEISPIEL: SERVER:C:\myscript.bat.
+
+Wenn Sie einen zusätzlichen Befehl auf dem Agent ausführen möchten, müssen Sie ausdrücklich zulassen, dass der Befehl ausgeführt wird, indem Sie ihn in die Datei allowed_befiehlt.config auf dem Agent einfügen. Es ist nicht erforderlich, zusätzliche Befehle auf dem Server zuzulassen.
+
+
+
+== Hinzufügen zusätzlicher Befehle
+
+Sie können entweder die Snap Creator GUI oder die Snap Creator CLI verwenden, um Befehle zu Ihrer Backup- und Restore-Konfiguration hinzuzufügen.
+
+
+NOTE: In diesem Handbuch wird gezeigt, wie Sie über die GUI Befehle hinzufügen. Informationen zur Verwendung der CLI finden Sie im https://library.netapp.com/ecm/ecm_download_file/ECMP12395422["Snap Creator Framework 4.1.2 – Administratorhandbuch"].
+
+*Verwandte Informationen*
+
+link:concept_allowing_additional_commands_through_the_snap_creator_agent.adoc["Lässt zusätzliche Befehle über den Snap Creator Agent zu"]
+link:task_configuring_snap_creator_to_use_snapdrive_by_using_the_gui.adoc["Hinzufügen von zusätzlichen Befehlen zur Konfiguration"]

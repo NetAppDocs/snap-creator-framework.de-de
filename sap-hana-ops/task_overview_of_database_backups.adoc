@@ -1,0 +1,27 @@
+---
+permalink: sap-hana-ops/task_overview_of_database_backups.html 
+sidebar: sidebar 
+keywords: snap, creator, backing, up, database, 
+summary: Wenn Snap Creator die Datenbank sichert, werden die folgenden Schritte ausgeführt. 
+---
+= Überblick über Datenbank-Backups
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Snap Creator die Datenbank sichert, werden die folgenden Schritte ausgeführt.
+
+. Erstellen eines globalen, synchronisierten Speicherpunktes für Backups (SAP HANA Snapshot Kopie), um ein konsistentes Image auf der Persistenzschicht zu erhalten
+. Erstellung von Storage-Snapshot Kopien für alle Daten-Volumes
++
+In diesem Beispiel gibt es drei Daten-Volumes, die auf beide Storage Controller verteilt sind: Hana1a und hana1b.
+
+. Das Storage-Snapshot-Backup im SAP HANA Backup-Katalog registrieren
+. Löschen Sie die SAP HANA Snapshot Kopie.
+. Starten Sie das SnapVault Update für alle Daten-Volumes.
+. Überprüfen Sie den SnapVault-Status und warten Sie, bis die Zeitüberschreitung beendet oder konfigurierbar ist.
+. Löschen der Storage-Snapshot-Kopien und Löschen der Backups im SAP HANA Backup-Katalog basierend auf der festgelegten Aufbewahrungsrichtlinie für Backups im primären und sekundären Storage
+. Löschen Sie alle Log-Backups, die älter als die älteste Datensicherung des Filesystems und im SAP HANA Backup-Katalog sind.
+

@@ -1,0 +1,43 @@
+---
+permalink: administration/task_running_a_snap_creator_dump.html 
+sidebar: sidebar 
+keywords: collect, support, information, perform, snap, creator, dump, gui 
+summary: Sie können Support-Informationen mit scdump aus der Snap Creator GUI sammeln. 
+---
+= Durchführen eines Snap Creator Dump
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können Support-Informationen über die Verwendung von *scdump* von Snap Creator GUI sammeln.
+
+Ein Snap Creator Dump (scdump) sammelt die folgenden Support-Informationen auf Profilebene und platziert sie in eine .zip-Datei:
+
+* Konfigurationsdateien für das Profil
+* Log-Dateien (Ouptut und Debug)
+* Andere Protokolldateien (Server.log, gui.log und sc_Server.log)
+* Umgebungsinformationen (scdump.txt), z. B. die folgenden Elemente:
++
+** Snap Creator Version (Build-Informationen, Datum usw.)
+** Host-Betriebssystem und Architektur
+** Datenbank und Version
+** SnapDrive-Version
++
+... Wählen Sie im Hauptmenü der Snap Creator GUI die Option *Verwaltung* > *Konfigurationen*.
+... Erweitern Sie im Bereich Profile und Konfigurationen das Profil und wählen Sie eine Konfigurationsdatei aus.
+... Wählen Sie *Actions* > *scdump*.
++
+
+NOTE: Dieser Vorgang kann einige Minuten dauern. Wählen Sie die Scdump-Option nicht mehrmals aus.
+
+... Speichern Sie die ZIP-Datei.
++
+Die ZIP-Datei (scdump_Profile_date/time.zip) wird im Snap Creator Server-Installationsverzeichnis im Unterverzeichnis der Engine gespeichert.
+
+
+
+
+
+

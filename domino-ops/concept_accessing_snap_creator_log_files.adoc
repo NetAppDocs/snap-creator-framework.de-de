@@ -1,0 +1,64 @@
+---
+permalink: domino-ops/concept_accessing_snap_creator_log_files.html 
+sidebar: sidebar 
+keywords: domino, ibm, viewing, job, status, logs, accessing, snap, creator, log, files 
+summary: Sie können den Status eines Jobs im Snap Creator Job Monitor anzeigen. Sie können ein Protokoll von Job-Aktionen im Konsolenfenster anzeigen, während der Job ausgeführt wird, oder im Out Log für den Job. Es sind auch einige spezielle Protokolle verfügbar. 
+---
+= Job-Status und -Protokolle anzeigen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können den Status eines Jobs im Snap Creator Job Monitor anzeigen. Sie können ein Protokoll von Job-Aktionen im Konsolenfenster anzeigen, während der Job ausgeführt wird, oder im Out Log für den Job. Es sind auch einige spezielle Protokolle verfügbar.
+
+Sie können die folgenden Protokolle in der GUI anzeigen:
+
+|===
+| Protokoll | Beschreibung 
+
+
+ a| 
+Aus
+ a| 
+Bereitstellung ausführlicher Informationen für einen Job
+
+
+
+ a| 
+Debuggen
+ a| 
+Bietet ausführliche Informationen und Informationen, die für Debugging nützlich sind.
+
+
+
+ a| 
+GUI
+ a| 
+Bietet Informationen zu Snap Creator GUI-Aktionen.
+
+
+
+ a| 
+Stderr
+ a| 
+Enthält Informationen über Fehler, die auf Standardfehler geschrieben wurden (nur Berichtsfenster).
+
+
+
+ a| 
+Fehler
+ a| 
+Enthält alle Fehlerinformationen (nur im Bereich „Berichte“).
+
+|===
+Sie können alle Protokolle in einem Texteditor anzeigen, wenn Sie den Job Monitor oder den Bereich Berichte nicht verwenden möchten. Protokolle befinden sich im Installationsverzeichnis für den Snap Creator Server.
+
+*Verwandte Informationen*
+
+xref:task_using_the_snap_creator_job_monitor_to_review_logs.adoc[Job-Status und -Protokolle im Job-Monitor anzeigen]
+
+xref:task_using_the_snap_creator_reports_option_to_view_logs.adoc[Anzeigen von Protokollen im Fenster Berichte]
+
+xref:task_creating_an_scdump_using_the_snap_creator_gui.adoc[Verwenden von scdump zum Erfassen von Protokollen in einem komprimierten Format]

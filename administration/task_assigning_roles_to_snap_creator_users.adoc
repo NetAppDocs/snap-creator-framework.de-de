@@ -1,0 +1,23 @@
+---
+permalink: administration/task_assigning_roles_to_snap_creator_users.html 
+sidebar: sidebar 
+keywords: snap, creator, user, gui, role, management 
+summary: Über die Snap Creator GUI können Sie Snap Creator Benutzern Rollen zuweisen. 
+---
+= Zuweisen von Rollen zu Snap Creator Benutzern
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Über die Snap Creator GUI können Sie Snap Creator Benutzern Rollen zuweisen.
+
+. Wählen Sie im Hauptmenü der Snap Creator GUI die Option *Benutzer und Rollen* > *Benutzerverwaltung*.
+. Wählen Sie auf der Registerkarte Benutzerverwaltung den gewünschten Benutzernamen aus und klicken Sie dann auf *Profile zuweisen*.
+. Verschieben Sie die gewünschten Rollen aus der linken Spalte in die rechte Spalte und klicken Sie dann auf *Speichern*.
++
+Sie können die Rollen auswählen und zwischen Spalten ziehen oder auf den Pfeil klicken, um die Rollen zwischen Spalten zu verschieben.
+
+. Überprüfen Sie, ob die Rolle zugewiesen wurde, indem Sie den Benutzer auswählen und die zugewiesene Rolle im Fenster *zugewiesene Profile und Rollen* anzeigen.
+

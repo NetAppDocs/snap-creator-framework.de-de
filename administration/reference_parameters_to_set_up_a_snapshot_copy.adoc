@@ -1,0 +1,183 @@
+---
+permalink: administration/reference_parameters_to_set_up_a_snapshot_copy.html 
+sidebar: sidebar 
+keywords: parameter, snapshot, copy, snap, creator, server, retention, snapdrive 
+summary: Für die Einrichtung von Snapshot Kopien für Snap Creator Server sind verschiedene Konfigurationsparameter erforderlich. 
+---
+= Parameter zum Einrichten von Snapshot Kopien
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Für die Einrichtung von Snapshot Kopien für Snap Creator Server sind verschiedene Konfigurationsparameter erforderlich.
+
+|===
+| Parameter | Einstellung | Beschreibung 
+
+
+ a| 
+NTAP_SNAPSHOT_ RETENTION_AGE
+ a| 
+ a| 
+Ermöglicht es Ihnen, das Aufbewahrungsalter (in Tagen) für Snapshot Kopien zu definieren. Wenn konfiguriert, werden Snapshot-Kopien nur gelöscht, wenn sie die im Parameter NTAP_SNAPSHOT_ AUFBEWAHRUNG definierte Zahl überschreiten und wenn sie älter als das Aufbewahrungszeitalter sind (in Tagen).
+
+
+
+ a| 
+SnapDrive
+ a| 
+„`Y`“ oder „`N`“
+ a| 
+Ermöglicht Ihnen die Verwendung von SnapDrive anstelle der Data ONTAP API zum Erstellen einer Snapshot Kopie.
+
+
+
+ a| 
+SNAPDRIVE_DISCOVERY
+ a| 
+„`Y`“ oder „`N`“
+ a| 
+Ermöglicht Ihnen den Einsatz von SnapDrive zur Storage-Erkennung. Dies ist in einer SAN- oder iSAN-Umgebung erforderlich, wenn der Parameter „VALIATE_VOLUMES“ verwendet wird.
+
+
+
+ a| 
+NTAP_SNAPSHOT_ DEAKTIVIEREN
+ a| 
+„`Y`“ oder „`N`“
+ a| 
+Deaktiviert die Erstellung einer Snapshot Kopie durch Snap Creator, sodass Snap Creator SnapVault oder SnapMirror für SnapManager handhaben kann. Damit diese Einstellung funktioniert, müssen die SnapManager Snapshot Kopien dieser Namenskonvention folgen: snapshot_copy_Name-Policy_recent.
+
+
+
+ a| 
+NTAP_SNAPSHOT_ NODELETE
+ a| 
+„`Y`“ oder „`N`“
+ a| 
+Überschreibt den Parameter „NTAP_SNAPSHOT_AUFBEWAHRUNGS“ und verhindert, dass Snapshot Kopien gelöscht werden. Wenn diese Variable aktiviert wird, kann das Volumen voll sein.
+
+
+
+ a| 
+NTAP_SNAPSHOT_DELETE_CMD
+ a| 
+ a| 
+Löscht Schnappschüsse durch SnapDrive anstelle von Snap Creator auf der Grundlage der Snapshot-Aufbewahrung.*Hinweis:* Alle in diesem SnapDrive-Befehl zur Snapshot-Löschung verwendeten Volumen (Mount-Laufwerke) sollten auch die Konfigurationsdatei enthalten sein.
+
+
+
+ a| 
+NTAP_SNAPSHOT_DELETE_BY_AGE_ONLY
+ a| 
+(PRIMÄR
+| SEKUNDÄR 
+
+
+| BEIDES | N)  a| 
+Aktiviert das Löschen von alten Snapshot Kopien. Dieser Parameter erfordert den Parameter „NTAP_SNAPSHOT_RETENTION_AGE“ und erzwingt das Löschen auf der Grundlage von Snapshot Kopien anstatt auf die Anzahl der Snapshot Kopien.
+
+
+
+ a| 
+NTAP_SNAPSHOT_DEPENDENCY_IGNORE
+ a| 
+„`Y`“ oder „`N`“
+ a| 
+Gilt nur für das Löschen von Snapshot Kopien mit der BackupDel-Aktion. Das manuelle Löschen von Snapshot-Kopien mit einer Abhängigkeit ist nicht zulässig.
+
+
+
+ a| 
+NTAP_SNAPSHOT_ CREATE_CMD ##
+ a| 
+ a| 
+Erstellt eine Snapshot Kopie und überträgt die Dateisystempuffer. ## ist eine Zahl von 1 bis 99. *Hinweis:* Diese Einstellung ist erforderlich, wenn Sie den SnapDrive-Parameter aktivieren. Die Data ONTAP-API wird weiterhin für alle anderen Aufgaben verwendet, aber die OPTION SnapDrive erstellt Snapshot Kopien.
+
+
+
+ a| 
+NTAP_ METADATEN_SNAPSHOT_ CREATE_CMD ##
+ a| 
+ a| 
+Erstellt die Snapshot Kopie des Metadaten-Volumes, und schreibt die Dateisystempuffer. ## ist eine Zahl von 1 bis 99.
+
+
+
+ a| 
+NTAP_CONSISTENCY_ GROUP_SNAPSHOT
+ a| 
+„`Y`“ oder „`N`“
+ a| 
+Ermöglicht die Verwendung von Konsistenzgruppen zum Erstellen konsistenter Snapshot Kopien über mehrere Volumes hinweg.
+
+
+
+ a| 
+NTAP_CONSISTENCY_ GROUP_SNAPSHOT_RETRY_COUNT
+ a| 
+ a| 
+Gibt die Anzahl der Male an, die ein Snapshot der Konsistenzgruppe im Falle eines Ausfalls erneut versuchen sollte.
+
+
+
+ a| 
+NTAP_CONSISTENCY_ GROUP_SNAPSHOT_RETRY_WAIT
+ a| 
+Zeit (in Sekunden)
+ a| 
+Gibt die Zeit an, die zwischen jeder Wiederholung eines Snapshot einer Konsistenzgruppe warten muss.
+
+
+
+ a| 
+NTAP_CONSISTENCY_ GROUP_TIMEOUT
+ a| 
+(DRINGEND
+| MITTEL 
+
+
+| RELAXD)  a| 
+Gibt die Wartezeit an, bis der Storage Controller Snapshot Kopien konsistent gruppieren kann.
+ a| 
+NTAP_CONSISTENCY_GROUP_WAFL_SYNC
+
+
+
+ a| 
+„`Y`“ oder „`N`“
+ a| 
+Verbessert die Performance einer Snapshot-Kopie einer Konsistenzgruppe, indem ein Konsistenzpunkt (CP) vor dem start der cg durch wafl-Sync erzwungen wird. *Hinweis:* Wenn Sie eine Sicherung der Consistency Group mit dem DB2 Plug-in durchführen, müssen Sie diesen Parameter auf „`N`“ setzen.
+ a| 
+NTAP_SNAPSHOT_RESTORE_AUTO_DETECT
+
+
+
+ a| 
+„`Y`“ oder „`N`“
+ a| 
+Wenn diese Einstellung deaktiviert ist, wird bei der Wiederherstellung einer einzelnen Datei immer ein Single File SnapRestore (SFSR) erzwingt.
+ a| 
+NTAP_SNAPSHOT_CLEANUP
+
+
+
+ a| 
+„`Y`“ oder „`N`“
+ a| 
+Entfernt alle Snapshot Kopien, die bei einem Backup-Fehler erstellt wurden.
+ a| 
+NTAP_USE_EXTERNAL_SNAPSHOT
+
+
+
+ a| 
+„`Y`“ oder „`N`“
+ a| 
+Aktiviert den Import einer Snapshot Kopie, die nicht aus Snap Creator stammt. Die aktuellste Snapshot Kopie wird zugeordnet.
+ a| 
+NTAP_EXTERNAL_SNAPSHOT_REGEX
+
+|===

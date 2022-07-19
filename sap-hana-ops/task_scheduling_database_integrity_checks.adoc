@@ -1,0 +1,24 @@
+---
+permalink: sap-hana-ops/task_scheduling_database_integrity_checks.html 
+sidebar: sidebar 
+keywords: sap, hana, scheduling, schedule, database, integrity, checks 
+summary: Für SAP HANA Konfigurationen können zusätzliche Vorgänge, wie z. B. dateibasierte Backups und Integritätsprüfungen für Datenbanken, geplant werden. Sie können den Betrieb der Datenbankintegritätsprüfungen in bestimmten Intervallen planen. 
+---
+= Planen der Datenbankintegritätsprüfungen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Für SAP HANA Konfigurationen können zusätzliche Vorgänge, wie z. B. dateibasierte Backups und Integritätsprüfungen für Datenbanken, geplant werden. Sie können den Betrieb der Datenbankintegritätsprüfungen in bestimmten Intervallen planen.
+
+. Wählen Sie im Hauptmenü der Snap Creator GUI die Option *Verwaltung* > *Zeitpläne* und klicken Sie auf *Erstellen*.
+. Geben Sie im Fenster Neuer Job die Details für den Job ein.
++
+Die Integritätsprüfung ist standardmäßig auf „`none`“ eingestellt.
+
++
+image::../media/creating_database_integrity_checks_schedules.gif[Erstellen von Zeitplänen für die Datenbankintegritätsprüfung]
+
+

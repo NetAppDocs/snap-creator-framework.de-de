@@ -1,0 +1,65 @@
+---
+permalink: sap-hana-ops/task_restoring_and_recovering_sap_hana_databases.html 
+sidebar: sidebar 
+keywords: sap, hana, restoring, restore, recovering, recover, databases 
+summary: Mit SAP HANA Studio und Snap Creator lassen sich SAP HANA Datenbanken wiederherstellen und wiederherstellen. 
+---
+= Wiederherstellung von SAP HANA Datenbanken
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Mit SAP HANA Studio und Snap Creator lassen sich SAP HANA Datenbanken wiederherstellen und wiederherstellen.
+
+. In SAP HANA Studio:
++
+.. Wählen Sie Recover für das SAP HANA-System aus.
+.. Das SAP HANA-System wird heruntergefahren.
+.. Wählen Sie den Wiederherstellungstyp aus.
+.. Bereitstellung von Backup-Speicherorten für Protokolle
+.. Es wird eine Liste von Daten-Backups angezeigt
+.. Wählen Sie Sicherung, um die externe Backup-ID anzuzeigen.
+
+
+. Nur bei einem Storage-System mit Clustered Data ONTAP:
++
+.. Nur erforderlich, wenn für die Wiederherstellung ein anderes Backup als das neueste verwendet wurde.
+.. Nur erforderlich für „`Volume SnapRestore`“ aus dem Primärspeicher.
+.. SnapVault-Beziehungen deaktivieren
+
+
+. In Snap Creator:
++
+.. Wählen Sie „`Restore`“ für das SAP HANA-System aus.
+.. Wählen Sie je nach Verfügbarkeit des Backups im primären oder sekundären Storage das Restore aus.
+.. Wählen Sie Storage-Controller, Volume-Namen und den Namen der Snapshot Kopie aus. Der Name der Snapshot Kopie entspricht der vorherigen Backup-ID.
+.. Bei SAP HANA Systemen mit mehreren Nodes müssen mehrere Volumes wiederhergestellt werden:
++
+... Wählen Sie *Weitere wiederherstellende Elemente hinzufügen*.
+... Wählen Sie Storage-Controller, Volume-Namen und den Namen der Snapshot Kopie aus.
+... Wiederholen Sie diesen Vorgang für alle erforderlichen Volumes.
+
+
+.. Bei mandantenfähigen Datenbankcontainern (MDC) Einzelmandanten-Datenbanksystemen werden sowohl DIE SYSTEM- als auch DIE MANDANTENDATENBANKEN wiederhergestellt.
+.. Der Wiederherstellungsprozess wird gestartet
+.. Wiederherstellung für alle Volumes abgeschlossen.
+
+
+. Heben Sie an den Datenbank-Knoten alle Datenvolumen ab und mounten Sie sie mit den „veralteten NFS-Handles“.
+. In SAP HANA Studio:
++
+.. Wählen Sie in der Sicherungsliste die Option *Aktualisieren* aus.
+.. Wählen Sie verfügbares Backup für die Recovery (grünes Element).
+.. Starten Sie den Recovery-Prozess.
+.. Starten Sie bei einzelnen mandantenfähigen Datenbanksystemen den Recovery-Prozess zunächst für die SYSTEMDATENBANK und schließlich für die MANDANTEN-Datenbank.
+.. Das SAP HANA System wird gestartet.
+
+
+. (Optional) Fortsetzen der SnapVault-Beziehungen für alle wiederhergestellten Volumen.
++
+
+NOTE: Bei den Speichersystemen ist dieser Schritt nur erforderlich, wenn ein anderes Backup als das neueste für die Wiederherstellung verwendet wurde.
+
+

@@ -1,0 +1,19 @@
+---
+permalink: domino-ops/concept_ibm_domino_backup_and_recovery_workflow.html 
+sidebar: sidebar 
+keywords: domino, ibm, backup, recovery, workflows 
+summary: Bevor Sie Backups mit dem IBM Domino Plug-in erstellen können, müssen Sie Snap Creator Server und Agent Software installieren und NetApp Storage bereitstellen. Wenn Sie Snapshot-Kopien für Disaster Recovery und Archivierung auf dem sekundären Storage replizieren möchten, müssen Sie SnapMirror und SnapVault Beziehungen einrichten. 
+---
+= IBM Domino Workflow für Backup und Recovery
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bevor Sie Backups mit dem IBM Domino Plug-in erstellen können, müssen Sie Snap Creator Server und Agent Software installieren und NetApp Storage bereitstellen. Wenn Sie Snapshot-Kopien für Disaster Recovery und Archivierung auf dem sekundären Storage replizieren möchten, müssen Sie SnapMirror und SnapVault Beziehungen einrichten.
+
+
+NOTE: Insbesondere in einer SAN Umgebung sollten Sie SnapDrive auf dem Snap Creator Agent Host verwenden, um Datenbanken zu sichern oder Snapshot Kopien für Restores einzelner Dateien zu mounten. Weitere Informationen finden Sie unter xref:concept_adding_commands_to_the_backup_and_restore_configuration.adoc[Hinzufügen von Befehlen zur Backup- und Wiederherstellungskonfiguration] Und xref:concept_single_file_restore_in_fc_iscsi_environments.adoc[Wiederherstellung einer einzelnen Datei in einer SAN-Umgebung durchführen].
+
+image::../media/ibm_domino_workflow.gif[ibm Domino Workflow]

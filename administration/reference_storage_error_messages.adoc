@@ -1,0 +1,641 @@
+---
+permalink: administration/reference_storage_error_messages.html 
+sidebar: sidebar 
+keywords: storage troubleshoot, error, message 
+summary: Die speicherbezogenen Fehlermeldungen können Ihnen bei der Behebung aller auftretenden Probleme helfen. 
+---
+= Storage-Fehlermeldungen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die speicherbezogenen Fehlermeldungen können Ihnen bei der Behebung aller auftretenden Probleme helfen.
+
+In der folgenden Tabelle sind die Fehlercodes und Meldungen sowie eine kurze Beschreibung des Fehlers und der vorgeschlagenen Lösung aufgeführt.
+
+|===
+| Fehlercode | Fehlermeldung | Beschreibung/Auflösung 
+
+
+ a| 
+STORAGE-00001
+ a| 
+Datumsformat [%s] ist ungültig: [%s]
+ a| 
+Entweder der Volume-Klon wurde nicht von Snap Creator erstellt, oder der Zeitstempel, der an den Klonnamen angehängt ist, ist ungültig.
+
+
+
+ a| 
+STORAGE-00002
+ a| 
+Ausführenden kann nicht abgerufen werden
+ a| 
+Ein Ausführender wurde nicht zum Speichern erstellt. Überprüfen Sie die Protokolle auf NetApp Manageability-Fehler, die möglicherweise die Ursache des Problems aufdecken.
+
+
+
+ a| 
+STORAGE-00003
+ a| 
+Verbindung zum Host nicht möglich
+ a| 
+Der Host ist nicht erreichbar. Stellen Sie sicher, dass die lokalen Firewall-Einstellungen korrekt sind und dass der Host über das System pingen kann, auf dem Snap Creator Server installiert ist.
+
+
+
+ a| 
+STORAGE-01003
+ a| 
+Das Erstellen der AutoSupport-Nachricht mit Ereignis-id [%s], Kategorie [%s], Beschreibung [%s], Ebene [%s], Hostname [%s] ist mit Fehler [%s] fehlgeschlagen.
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-01004
+ a| 
+Für den Datei-Restore müssen die Quell- und Zieldatenträger das gleiche Volumen haben.
+ a| 
+Die Quell- und Zieldatenträger sind unterschiedlich.Bereitstellen des gleichen Volumens wie der Quelldatenträger und der Zieldatenträger.
+
+
+
+ a| 
+STORAGE-02003
+ a| 
+Das Erstellen der Snapshot Kopie [%s] auf Volumes [%s] ist fehlgeschlagen mit Fehler [%s];
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-02006
+ a| 
+Beim Übersetzen der Snapshot Kopie der Konsistenzgruppe auf [%s] mit der CG-ID [%s] ist ein Fehler aufgetreten [%s]
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-02009
+ a| 
+Das Erstellen der Snapshot Kopie [%s] auf dem Volume [%s] ist fehlgeschlagen mit Fehler [%s]
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-02015
+ a| 
+Das Entfernen der Snapshot Kopie [%s] auf dem Volume [%s] ist fehlgeschlagen mit Fehler [%s]
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-02021
+ a| 
+Wiederherstellen der Snapshot Kopie [%s] des Volume [%s] fehlgeschlagen mit Fehler [%s]
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-02025
+ a| 
+Fehler beim Wiederherstellen der Datei [%s] aus der Snapshot Kopie [%s] in [%s] bei Fehler [%s]
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-02028
+ a| 
+Das Erstellen des Zeitplans für die SnapVault Snapshot Kopie [%s] auf dem Volume [%s] ist fehlgeschlagen mit Fehler [%s]
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-02034
+ a| 
+Das Entfernen von Zeitplänen für die primäre SnapVault Snapshot Kopie aus Volume [%s] fehlgeschlagen mit Fehler [%s]
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-02038
+ a| 
+Erstellen von Klon [%s] des Volume [%s] auf Basis der Snapshot Kopie [%s] fehlgeschlagen mit Fehler [%s]
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-02041
+ a| 
+Fehler beim Klonen der Datei [%s] auf dem Volume [%s] zu [%s] auf Basis der Snapshot Kopie [%s] beim Fehler [%s]
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-02043
+ a| 
+Das Auflisten von Dateien auf Pfad [%s] ist fehlgeschlagen mit Fehler [%s]
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-02046
+ a| 
+Das Klonen von LUN [%s] zu [%s] auf der Grundlage der Snapshot Kopie [%s] mit der Speicherplatzreservierung [%s] fehlgeschlagen mit Fehler [%s]
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-02049
+ a| 
+Löschen der LUN [%s] aus Volume [%s] fehlgeschlagen mit Fehler [%s]
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-02052
+ a| 
+Auflisten von LUNs bei Fehler [%s] fehlgeschlagen
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-02062
+ a| 
+Hinzufügen von NFS-Export [%s] für Hostnamen [%s] mit Zugriff [%s] fehlgeschlagen mit Fehler [%s]
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-02072
+ a| 
+Abrufen des SnapMirror-Status auf Controller [%s] fehlgeschlagen mit Fehler [%s]
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-02075
+ a| 
+Abrufen der SnapMirror Beziehungen auf dem Controller [%s] fehlgeschlagen mit Fehler [%s]
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-02082
+ a| 
+Aktualisierung der SnapMirror Beziehung [%s] auf der Grundlage von Snapshot Kopie [%s] fehlgeschlagen mit Fehler [%s]
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-02092
+ a| 
+Auflisten von Snapshot Kopien auf Volume [%s] fehlgeschlagen mit Fehler [%s]
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-02102
+ a| 
+Umbenennen der Snapshot Kopie [%s] auf dem Volume [%s] in [%s] fehlgeschlagen mit Fehler [%s]
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-02112
+ a| 
+Abrufen des SnapVault-Status auf Controller [%s] fehlgeschlagen mit Fehler [%s]
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-02115
+ a| 
+Fehler beim Abrufen der SnapVault-Beziehungen auf dem Controller [%s] mit Fehler [%s]
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-02122
+ a| 
+Aktualisierung der SnapVault-Beziehung [%s] auf der Grundlage der Snapshot-Kopie [%s] fehlgeschlagen mit Fehler [%s]
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-02132
+ a| 
+Auflisten geklonter Volumes auf Grundlage von Volume [%s] fehlgeschlagen mit Fehler [%s]
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-02142
+ a| 
+Löschen von Volume [%s] fehlgeschlagen mit Fehler [%s]
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-02152
+ a| 
+Auflisten von Volumes mit Fehler [%s] fehlgeschlagen
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-02155
+ a| 
+Auflisten des Volumes [%s] fehlgeschlagen mit Fehlermeldung [%s]
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-02162
+ a| 
+Wiederherstellen der Snapshot Kopie [%s] des Volume [%s] fehlgeschlagen mit Fehler [%s]
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-03001
+ a| 
+Vserver von Clustered ONTAP Node [%s] abrufen
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-05003
+ a| 
+Fehler beim Erstellen des NetApp Management Console-Datensatzes [%s] bei Fehler [%s]
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-05006
+ a| 
+Fehler beim Erstellen des Backups des Datensatzes [%s] auf dem Storage Controller [%s] durch die NetApp Management Console. Fehler [%s]
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-05009
+ a| 
+Abrufen des Datensatzstatus der NetApp Management Console für Datensatz [%s] fehlgeschlagen mit Fehler [%s]
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-05012
+ a| 
+Fehler beim Validieren des NetApp Management Console-Datensatzes [%s] mit Fehler [%s].
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-05018
+ a| 
+Erstellen von OM-Ereignis [%s] auf [%s]
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-03002
+ a| 
+Fehler beim Zuordnen der Initiatorgruppe [%s] zu LUN [%s] bei Fehler [%s]
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-03005
+ a| 
+LUN [%s] auf Volume [%s] konnte nicht mit Fehler [%s] erstellt werden
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-03008
+ a| 
+Das Erstellen der primären SnapVault Snapshot Kopie [%s] auf dem Volume [%s] ist fehlgeschlagen mit Fehler [%s]
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-03011
+ a| 
+Auflisten von Backup-Kopien der NetApp Management Console für Datensatz [%s] fehlgeschlagen mit Fehler [%s]
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-03014
+ a| 
+Fehler beim Löschen der Backup-Versionsnummer [%s] der NetApp Management Console mit Fehler [%s]
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-03019
+ a| 
+Backup-Start der NetApp Management Console für [%s] ([%s]) fehlgeschlagen, beenden!
+ a| 
+Überprüfen Sie die Protokolle auf Fehler.Sie haben höchstwahrscheinlich einen NetApp Manageability Fehler. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-03022
+ a| 
+Start des Backup-Fortschritts der NetApp Management Console für Job-id [%s] fehlgeschlagen, beenden!
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-03025
+ a| 
+Löschen der Datei im Pfad [%s] fehlgeschlagen mit Fehler [%s]
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-03030
+ a| 
+Erkennung von Clustered Data ONTAP-Nodes auf [%s] fehlgeschlagen
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-03033
+ a| 
+Abrufen von Details zur Systemversion von [%s] fehlgeschlagen mit Fehler [%s]
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-03036
+ a| 
+Erstellen des Verzeichnisses auf Pfad [%s] fehlgeschlagen mit Fehler [%s]
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-03039
+ a| 
+Löschen des Verzeichnisses auf Pfad [%s] fehlgeschlagen mit Fehler [%s]
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-03043
+ a| 
+Erstellen der Datei auf Pfad [%s] fehlgeschlagen mit Fehler [%s]
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-03046
+ a| 
+Änderung des Datensatzes der NetApp Management-Konsole für Datensatz [%s] fehlgeschlagen
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-03049
+ a| 
+Der Dateiinhalt für die Datei [%s] konnte nicht gelesen werden
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-03052
+ a| 
+Optionen abrufen für Option [%s] fehlgeschlagen
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-03055
+ a| 
+Fehler beim Abrufen der Performance-Zähler für Objekt [%s]
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-03058
+ a| 
+Fehler beim Abrufen der Performance-Instanzen für das Objekt [%s]
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-03061
+ a| 
+Die Datensatzinformationen für die NetApp Management Console für [%s] sind fehlgeschlagen
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-03064
+ a| 
+Der Befehl [%s] der System-CLI ist fehlgeschlagen
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-03067
+ a| 
+Der Datensatz für die NetApp Management-Konsole [%s] konnte nicht gelöscht werden mit Fehler [%s]
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-03070
+ a| 
+Wiederherstellen der SnapVault-Beziehung [%s] auf Basis der Snapshot Kopie [%s] fehlgeschlagen mit Fehler [%s]
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-03073
+ a| 
+CIFS-Export für [%s]:[%s] fehlgeschlagen!
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-03076
+ a| 
+Abrufen des Root-Volumes auf dem Controller [%s] fehlgeschlagen mit Fehler [%s]
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-03079
+ a| 
+Fehler beim Abrufen des Verbindungspfads für Volume [%s]
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-03082
+ a| 
+Fehler beim Abrufen des Systemnamens
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-03085
+ a| 
+Fehler beim Abrufen des NFS-Dienstes auf Controller [%s]
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-03088
+ a| 
+NFS-Berechtigungs-Prüfung für Host [%s] Pfad Name [%s] Berechtigung [%s] fehlgeschlagen
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-03091
+ a| 
+Fehler beim Abrufen der Netzwerkschnittstelle auf dem Controller [%s]
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-03094
+ a| 
+Qtree-Liste auf Volume [%s] fehlgeschlagen
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+|===

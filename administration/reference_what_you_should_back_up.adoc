@@ -1,0 +1,37 @@
+---
+permalink: administration/reference_what_you_should_back_up.html 
+sidebar: sidebar 
+keywords: create, backup, copy, snap, creator, directories, information, server, snapcreator 
+summary: Als Best Practice empfiehlt es sich, Backup-Kopien von spezifischen Snap Creator Verzeichnissen zu erstellen, um sicherzustellen, dass die Snap Creator-Daten ohne Verlust wiederhergestellt werden können. 
+---
+= Welche Snap Creator-Informationen sollten gesichert werden
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Als Best Practice empfiehlt es sich, Backup-Kopien von spezifischen Snap Creator Verzeichnissen zu erstellen, um sicherzustellen, dass die Snap Creator-Daten ohne Verlust wiederhergestellt werden können.
+
+Sie sollten Sicherungskopien der folgenden Verzeichnisse erstellen:
+
+* Das Unterverzeichnis der Snap Creator Server 4.3 Engine:
++
+** Snap Creator Datenbank (..\SnapCreator)
+** Eigenschaften von Snap Creator Server (..\usw.)
+** Profile und Konfiguration (..\Konfigurationen)
+** Logs (..\Logs)
+** Plug-in Repository, falls aktiviert (..\SnapcreatorPlugin)
+
+
+* Das Snap Creator Agent Verzeichnis:
++
+** Eigenschaften von Snap Creator Agent (..\usw.)
+** Protokolle, wenn aktiviert (..\Logs)
+** Plug-ins (..\Plug-ins)
+
+
+
+
+
+NOTE: Optimal sollten Backups geplant werden, wenn die Snap Creator Services oder Prozesse gestoppt werden können, um die Snap Creator Daten konsistent sichern zu können.

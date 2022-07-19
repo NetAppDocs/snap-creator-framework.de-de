@@ -1,0 +1,45 @@
+---
+permalink: administration/concept_vm_backup_and_restore_using_vmware_plug_in.html 
+sidebar: sidebar 
+keywords: snap, creator, support, backup, vmware, virtual, machines, vsphere, api, vmware, vcenter, credentials 
+summary: Snap Creator unterstützt das Backup von VMware Virtual Machines über das VMware Plug-in. Backups von Virtual Machines werden über die vSphere API auf dem VMware vCenter Server erstellt. 
+---
+= Backup und Restore für Virtual Machines mit dem VMware Plug-in
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Snap Creator unterstützt das Backup von VMware Virtual Machines über das VMware Plug-in. Backups von Virtual Machines werden über die vSphere API auf dem VMware vCenter Server erstellt.
+
+Für die Sicherung virtueller Maschinen müssen Sie die folgenden Details in der Konfigurationsdatei angeben:
+
+* VCenter IP oder Host-Name und Zugangsdaten
+* VSphere Virtual Machines und Datenspeichernamen
+
+
+
+NOTE: Snap Creator entdeckt vCenter nur, wenn vCenter auf dem Standardport konfiguriert ist (443).
+
+Für den Wiederherstellungsvorgang sollten Sie die Backup-Parameter und den Namen der Snapshot Kopie angeben.
+
+Bei der Durchführung der Backup- und Restore-Prozesse von VMware sind folgende Punkte zu beachten:
+
+* Wenn eine virtuelle Maschine aufgeführt ist und nicht verfügbar ist, wird im Plug-in eine Fehlermeldung angezeigt. Eine verlorene virtuelle Maschine kann nicht wiederhergestellt werden, selbst wenn sie gesichert ist.
+* Wenn ein Datastore aufgeführt wird, werden alle virtuellen Maschinen im Datastore gesichert.
+* Es werden nur die aufgeführten virtuellen Maschinen oder virtuellen Maschinen in den angegebenen Datastores gesichert.
+* Wenn eine für das Backup ausgewählte virtuelle Maschine in einem Datastore enthalten ist, der auch für das Backup ausgewählt wurde, wird sie nur einmal gesichert.
+* Das VMware Plug-in unterstützt sowohl Network File System (NFS) als auch VMware Virtual Machine File System (VMFS) Datenspeicher.
++
+** Für die Wiederherstellung der Virtual Machine auf einem NFS-Datastore wird Single File SnapRestore (SFSR) auf dem Storage-System verwendet, wodurch Host-Kopien vermieden werden.
+** So stellen Sie eine virtuelle Maschine auf einem VMFS-Datastore wieder her:
++
+... Verwenden Sie FlexClone oder LUN-Klon der in einer spezifischen Snapshot Kopie mit Restore enthaltenen LUN.
+... Zuordnen zu einem Cluster
+... Verwenden Sie vCenter-API-Aufrufe, um Inhalte von der Snapshot-Kopie des VMFS-Datenspeichers in den ursprünglichen VMFS-Datastore zu kopieren.
+
+
+
+
+

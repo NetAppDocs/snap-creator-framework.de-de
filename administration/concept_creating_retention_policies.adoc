@@ -1,0 +1,16 @@
+---
+permalink: administration/concept_creating_retention_policies.html 
+sidebar: sidebar 
+keywords: creating, retention, policies, local, configuration 
+summary: 'Wenn Sie Richtlinienobjekte anstelle einer lokalen Aufbewahrungsrichtlinie verwenden möchten (die in der Konfigurationsdatei enthalten ist), können Sie eine Aufbewahrungsrichtlinie erstellen.' 
+---
+= Aufbewahrungsrichtlinien werden erstellt
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie Richtlinienobjekte anstelle einer lokalen Aufbewahrungsrichtlinie verwenden möchten (die in der Konfigurationsdatei enthalten ist), können Sie eine Aufbewahrungsrichtlinie erstellen.
+
+Im Rahmen des Erzeugen einer Aufbewahrungsrichtlinie können Sie einen Backup-Typ und einen Richtlinienzeitplan erstellen.

@@ -1,0 +1,68 @@
+---
+permalink: administration/reference_archive_log_plug_in.html 
+sidebar: sidebar 
+keywords: archive, log, plug-in, snap, creator, archive 
+summary: Das Archiv-Log-Plug-in funktioniert mit Snap Creator Archive Logs und nicht mit den Protokollen einer Applikation oder Datenbank. 
+---
+= Plug-in für Archivprotokolle
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das Archiv-Log-Plug-in funktioniert mit Snap Creator Archive Logs und nicht mit den Protokollen einer Applikation oder Datenbank.
+
+In der folgenden Tabelle sind die Parameter für das Archiv-Protokoll-Plug-in aufgeführt, ihre Einstellungen aufgeführt und beschrieben:
+
+|===
+| Parameter | Einstellung | Beschreibung 
+
+
+ a| 
+ARCHIVE_LOG_ENABLE
+ a| 
+(J
+| N 
+
+
+| Richtlinie:Alter)  a| 
+Ermöglicht das Management von Archivprotokollen (Löschen der alten Archivprotokolle).
+ a| 
+ARCHIVE_LOG_RETENTION
+
+
+
+ a| 
+Anzahl_Tage
+ a| 
+Gibt die Anzahl der Tage an, die die Archivprotokolle aufbewahrt werden. Diese Einstellung muss gleich oder größer sein als NTAP_SNAPSHOT_ AUFBEWAHRUNG.
+ a| 
+ARCHIVE_LOG_DIR
+
+
+
+ a| 
+Change_info_Directory/logs
+ a| 
+Gibt den Pfad zum Verzeichnis an, das die Archivprotokolle enthält.
+ a| 
+ARCHIVE_LOG_EXT
+
+
+
+ a| 
+Dateierweiterung
+ a| 
+Gibt die Dateierweiterung der Archivprotokolle an. Wenn die Archivprotokolle z. B. 10192091019.log sind, geben Sie diese Parametereinstellung für PROTOKOLL an.
+ a| 
+ARCHIVE_LOG_REKURSIVE_SEARCH
+
+
+
+ a| 
+(J
+| N)  a| 
+Ermöglicht das Management von Archivprotokollen innerhalb von Unterverzeichnissen. Wenn sich die Archivprotokolle unter Unterverzeichnissen befinden, sollten Sie diesen Parameter verwenden.
+
+|===

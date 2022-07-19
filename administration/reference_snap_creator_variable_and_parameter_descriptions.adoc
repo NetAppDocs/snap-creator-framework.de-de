@@ -1,0 +1,298 @@
+---
+permalink: administration/reference_snap_creator_variable_and_parameter_descriptions.html 
+sidebar: sidebar 
+keywords: snap, creator, built-in, variable, parameter, basic, configuration, description, snap, type, time, action 
+summary: Snap Creator enthält integrierte Variablen und Parameter, die in einer Basiskonfiguration erforderlich sind. 
+---
+= Beschreibungen der Variablen und Parameter von Snap Creator
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Snap Creator enthält integrierte Variablen und Parameter, die in einer Basiskonfiguration erforderlich sind.
+
+|===
+| Variablen | Beschreibung 
+
+
+ a| 
+%SNAP_TYPE
+ a| 
+Verwendet, wenn Sie Snap Creator ausführen und es ist Ihre Aufbewahrungsrichtlinie (täglich, wöchentlich, monatlich)
+
+
+
+ a| 
+%SNAP_TIME
+ a| 
+Der Zeitstempel (YYYYMMDDhmmss) zur Benennung von Snapshot Kopien verwendet, um für jede Snapshot Kopie einen garantierten eindeutigen Namen zu erstellen. Sie wird auch verwendet, um Backup-Berichte und Sybase Transaktions-Logs zu benennen.
+
+
+
+ a| 
+%AKTION
+ a| 
+Die Liste der Aktionen, die Sie durchführen können, wenn Sie Snap Creator ausführen: (Backup
+
+
+
+| KlonVol | KlonRun 
+
+
+| Bogen | Wiederherstellen 
+
+
+| BackupDel | Backupliste 
+
+
+| Klonliste | Pmsetup 
+
+
+| ossv)  a| 
+%MSG
+
+
+
+ a| 
+Wird verwendet, um eine Fehlermeldung an ein anderes Programm wie E-Mail oder Tivoli zu senden. Sie kann nur mit der SENDTRAP-Funktion verwendet werden.
+ a| 
+%USER_DEFINED
+
+|===
+In der folgenden Tabelle werden die Snap Creator-Parameter aufgeführt und beschrieben, die in einer Basiskonfiguration verwendet werden:
+
+|===
+
+
+| Parameter | Einstellung | Beschreibung 
+
+
+ a| 
+SNAME
+ a| 
+ a| 
+Gibt die Namenskonvention für Snapshot Kopien an, deren Benennung eindeutig sein sollte. Snapshot Kopien werden gemäß der Namenskonvention gelöscht.
+
+
+
+ a| 
+SNAP_TIMESTAMP_ONLY
+ a| 
+(J
+| N) 
+
+
+ a| 
+Legt die Snapshot-BenennungskonventionWenn auf Y eingestellt, enden Snapshot-Kopien mit YYYMMDDHHMSS. Andernfalls werden neue Snapshot Kopien umbenannt in YYYMMDDHHMSS.
+ a| 
+VOLUMES
+ a| 
+
+
+
+ a| 
+Hier sind die primären Storage Controller und Volumes aufgeführt, von denen Sie eine Snapshot Kopie erstellen möchten. Beispiel:
+
+[listing]
+----
+controller1:vol1,vol2,vol3;
+controller2:vol1;
+controller3:vol2,vol3
+---- a| 
+VOLUME_GRUPPEN
+ a| 
+vol_1,vol_2,vol_n
+
+
+
+ a| 
+Definiert mehrere Volumes in einer einzelnen Gruppe. Mehrere Volumes werden als kommagetrennte Liste angegeben.Beispiel:
+
+[listing]
+----
+VOLUMES_01=filer1:vol1,vol2,vol3;filer2:vol1
+VOLUMES_02=filer1:vol3,vol4
+VOLUMES_03=filer2:vol3,vol4
+VOLUME_GROUPS=VOLUMES_01,VOLUMES_02,VOLUMES_03
+----
+
+NOTE: VOLUME_GROUPS wird nur für Backup-Vorgänge unterstützt. Wenn dieser Parameter festgelegt ist, wird der PARAMETER VOLUMES während des Backups ignoriert.
+ a| 
+NTAP_SNAPSHOT_AUFBEWAHRUNG
+ a| 
+
+
+
+ a| 
+Legt die Anzahl der Snapshot Kopien fest, die für eine bestimmte Richtlinie beibehalten werden sollen. Beispiel:
+
+[listing]
+----
+daily:7,weekly:4,monthly:1
+---- a| 
+NTAP_USERS
+ a| 
+
+
+
+ a| 
+Listet die Speichersysteme und die entsprechenden Benutzernamen und -Kennwort auf.Beispiel:
+
+[listing]
+----
+controller1:joe/password1;
+controller2:bob/password2;
+controller3:ken/password3
+----
+
+NOTE: Das Passwort muss mindestens zwei Zeichen enthalten.
+ a| 
+NTAP_PWD_PROTECTION
+ a| 
+(J
+
+
+
+| N)  a| 
+Aktiviert oder deaktiviert den Kennwortschutz Sie müssen alle Passwörter (Speichersystem und Anwendungen oder Plug-ins) verschlüsseln und verschlüsselte Passwörter in der Konfigurationsdatei speichern.
+ a| 
+VERKEHR
+
+
+
+ a| 
+HTTP
+| HTTPS  a| 
+Ermöglicht die Verwendung von HTTP oder HTTPS zur Verbindung mit dem Speicher-Controller** Hinweis:** HTTPS benötigt möglicherweise openssl-devel-Bibliotheken.
+
+
+
+ a| 
+PORT
+ a| 
+ a| 
+Konfiguriert die Port-Nummer, die die Storage Controller verwenden; normalerweise: 80 und 443
+
+
+
+ a| 
+LOG_NUM
+ a| 
+ a| 
+Gibt die Anzahl der .debug- und .out-Berichte an, die Snap Creator behalten muss
+
+
+
+ a| 
+CONFIG_TYPE
+ a| 
+PLUG-IN
+| STANDARD 
+
+
+ a| 
+Gibt die Konfigurationstypen an Es gibt zwei Arten von Konfigurationen: Plug-in und Standard. Mithilfe mehrerer Plug-in-Konfigurationen können komplexe Backup-Workflows in quiesce und unquiesce erstellt werden.
+ a| 
+CMODE_CLUSTER_USERS
+ a| 
+
+
+
+ a| 
+(Erforderlich für Clustered Data ONTAP) enthält die primären und sekundären Cluster Data ONTAP Cluster und die entsprechenden Benutzernamen und Kennwort. Beispiel:
+
+[listing]
+----
+cluster1:joe/password1;
+cluster2:bob/password2
+----
+
+NOTE: Das Passwort muss mindestens zwei Zeichen enthalten.
+ a| 
+CMODE_CLUSTER_NAME
+ a| 
+
+
+
+ a| 
+(Erforderlich für Clustered Data ONTAP) gibt den Namen des primären Clustered Data ONTAP Clusters an
+ a| 
+CMODE_SNAPSHOT_FORCE_DELETE
+ a| 
+(J
+
+
+
+| N)  a| 
+Snapshot Kopien werden gemäß der Snapshot Kopie-Richtlinie in Clustered Data ONTAP gelöscht. Snapshot Kopien werden nicht gelöscht, wenn sie Abhängigkeiten, z. B. einen Klon, aufweisen.
+ a| 
+LOG_TRACE_ENABLE
+
+
+
+ a| 
+(J
+| N)  a| 
+Aktiviert oder deaktiviert die Protokollierung aller Ereignisse Wenn deaktiviert, werden die Ergebnisobjekte der ONTAP-Lösung verwalten nicht protokolliert.
+
+
+
+ a| 
+NTAP_TIMEOUT
+ a| 
+Sekunden
+ a| 
+Legt den Zeitüberschreitungswert für alle Anrufe der Storage Controller „Manage ONTAP Solution Calls“ fest; Standard ist 60 Sekunden
+
+
+
+ a| 
+USE_GLOBAL_CONFIG
+ a| 
+(J
+| N) 
+
+
+ a| 
+Ermöglicht Ihnen die Verwendung der globalen Konfiguration zum Speichern von Werten
+ a| 
+FÖDERIERTE_ANWENDUNGEN
+ a| 
+
+
+
+ a| 
+Listet die Konfigurations- und Profilnamen für die föderierten Anwendungen unter der Konfiguration auf, z. B.:
+
+[listing]
+----
+databases@db2;databases@oracle
+---- a| 
+CMODE_SET
+ a| 
+(J
+
+
+
+| N)  a| 
+Definiert, ob die Konfiguration für Clustered Data ONTAP oder Data ONTAP in 7-Mode ist
+ a| 
+ALLOW_DUPLICATE_SNAME
+
+
+
+ a| 
+(J
+| N)  a| 
+(Optional) aktiviert oder deaktiviert die Möglichkeit, eine Konfigurationsdatei mit einem doppelten Snapshot-Namen zu erstellen dieser Parameter funktioniert nicht mit globalen (Super Global oder Profile Global) Konfigurationsdateien.
+
+
+
+ a| 
+SNAPCREATOR_MISSEDJOB_RUN
+ a| 
+(J
+| N) 
+|===

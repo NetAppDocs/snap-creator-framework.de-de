@@ -1,0 +1,30 @@
+---
+permalink: administration/reference_error_starting_the_gui.html 
+sidebar: sidebar 
+keywords: unix, environment, snap, creator, gui, linux 
+summary: In einer UNIX-Umgebung kann es zu einem Fehler beim Starten der Snap Creator GUI kommen. 
+---
+= Fehler beim Starten der Snap Creator GUI
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+In einer UNIX-Umgebung kann es zu einem Fehler beim Starten der Snap Creator GUI kommen.
+
+* *Ausgabe*
++
+In einer UNIX-Umgebung wird beim Starten der Snap Creator GUI ein HTTP-FEHLER 503 angezeigt, z. B. HTTP-FEHLER 503Problem Zugriff /. Grund: SERVICE_NICHT VERFÜGBAR
+
+* *Ursache*
++
+Diese Fehlermeldung wird möglicherweise angezeigt, wenn nicht genügend Speicherplatz für die Temp-Datei vorhanden ist.
+
+* *Korrekturmaßnahmen*
++
+Stellen Sie sicher, dass im temporären Ordner in den jeweiligen Betriebssystemordnern ausreichend Speicherplatz vorhanden ist.
+
+
+
+Beispiel: Prüfen Sie /tmp in einer Linux-Umgebung.

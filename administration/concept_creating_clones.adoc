@@ -1,0 +1,18 @@
+---
+permalink: administration/concept_creating_clones.html 
+sidebar: sidebar 
+keywords: creating, clones, lunes, volumes, cloning, snapshot 
+summary: 'Es gibt zwei Methoden zum Klonen von Volumes oder LUNS: Aus einem neuen Backup und aus einem bestehenden Backup.' 
+---
+= Klone werden erstellt
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Es gibt zwei Methoden zum Klonen von Volumes oder LUNS: Aus einem neuen Backup und aus einem bestehenden Backup.
+
+* Ein Klon aus einem neuen Backup zu erstellen, besteht darin, einen Snapshot zu erstellen, die neue Snapshot Kopie zu klonen und dann die geklonte Kopie zu mounten.
+* Das Erstellen eines Klons aus einem vorhandenen Backup besteht aus dem Klonen einer vorhandenen Snapshot Kopie und dem Mounten der geklonten Kopie.
+

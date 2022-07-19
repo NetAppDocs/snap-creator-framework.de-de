@@ -1,0 +1,14 @@
+---
+permalink: administration/index.html 
+sidebar: sidebar 
+keywords: administration, guide, snap, creator, server, agent, profiles, policies, schedule, jobs, backup, recovery 
+summary: Beschreibt „Hot to Management“ für Snap Creator Server und Agent, einschließlich Benutzerzugriff, Profile, Richtlinien, Zeitplanaufgaben und Backup- und Recovery-Vorgänge 
+---
+= Administrationshandbuch
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="Lead"]
+Diese Anleitung beschreibt das Management von Snap Creator Server und Agent für Snap Creator 4.3.3, einschließlich Benutzerzugriff und -Profile, Richtlinien, Zeitplanjobs sowie Backup- und Recovery-Vorgänge.

@@ -1,0 +1,23 @@
+---
+permalink: administration/reference_error_messages.html 
+sidebar: sidebar 
+keywords: error, messages, scf, repo, storage, agt, gui 
+summary: Sie müssen die Fehlermeldungen für verschiedene Snap Creator Operationen kennen. 
+---
+= Fehlermeldungen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen die Fehlermeldungen für verschiedene Snap Creator Operationen kennen.
+
+Jede Fehlermeldung enthält einen Flächencode und eine eindeutige 5-stellige Kennung, z. B. FEHLER: [<area Code>-<unique Area error Identifier>] <error message>. Der Ortscode gibt an, wo der Fehler aufgetreten ist. Die verschiedenen Ortsvorwahlen sind wie folgt:
+
+* `scf`: Snap Creator Framework
+* `REPO`: Repository
+* `STORAGE`: Lagerung
+* `agt`: Snap Creator Agent
+* `gui`: Grafische Benutzeroberfläche Snap Creator (GUI)
+

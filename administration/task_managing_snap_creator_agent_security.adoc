@@ -1,0 +1,57 @@
+---
+permalink: administration/task_managing_snap_creator_agent_security.html 
+sidebar: sidebar 
+keywords: snap, creator, agent, server, manage, security, install, snapdrive 
+summary: Sie können die Sicherheitseinstellungen des Snap Creator Agent verwalten, indem Sie Befehle hinzufügen, die von Snap Creator verwendet werden können. Sie können die Kommunikation auch auf bestimmte Snap Creator Server begrenzen. 
+---
+= Management der Snap Creator Agent-Sicherheit
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können die Sicherheitseinstellungen des Snap Creator Agent verwalten, indem Sie Befehle hinzufügen, die von Snap Creator verwendet werden können. Sie können die Kommunikation auch auf bestimmte Snap Creator Server begrenzen.
+
+Das Verfahren zum Verwalten von Snap Creator Agent Sicherheit ist dasselbe für Windows und UNIX. Das folgende Verfahren nutzt Beispiele aus der UNIX-Umgebung.
+
+. Melden Sie sich am System an, auf dem der Snap Creator Agent ausgeführt wird, und wechseln Sie zum Unterverzeichnis etc innerhalb des Installationsverzeichnisses.
++
+`cd /install_path/scAgent4.3.0/etc`
+
+. Wenn Sie Befehle hinzufügen möchten, die von Snap Creator verwendet werden können, führen Sie die folgenden Schritte aus:
++
+.. Öffnen Sie die Datei allowed_bedits.config in einem Texteditor.
+.. Fügen Sie nach Bedarf Befehle hinzu, wobei jeder Befehl auf einer eigenen Zeile steht.
++
+
+NOTE: Bei den in der Datei allowed_befiehlt.config eingegebenen Befehlen wird zwischen Groß- und Kleinschreibung unterschieden, und sie müssen exakt mit den Befehlen in der Konfigurationsdatei übereinstimmen, einschließlich Kapitalisierung und Anführungszeichen.
+
++
+Befehl: „C:\Programme\NetApp\SnapDrive\sdcli.exe“
+
++
+
+NOTE: Wenn der Befehl Leerzeichen enthält, müssen Sie den Befehl in Anführungszeichen einschließen.
+
+.. Speichern und schließen Sie die Datei.
+
+
+. Wenn Sie die Kommunikation auf bestimmte Snap Creator Server begrenzen möchten, führen Sie die folgenden Schritte aus:
++
+.. Öffnen Sie die Datei agent.properties in einem Texteditor.
+.. Ändern Sie den Parameter „AUTHORIZED_HOSTS“, indem Sie die Hostnamen mit Komma trennen.
++
+Host-Namen und IP-Adressen werden unterstützt.
+
++
+AUTHORIZED_HOSTS=Lyon, 10.10.10.192, Fuji01
+
+.. Speichern und schließen Sie die Datei.
+
+
+. Starten Sie den Snap Creator Agent neu.
++
+`/install_path/scAgent4.3.0/bin/scAgent restart`
+
+

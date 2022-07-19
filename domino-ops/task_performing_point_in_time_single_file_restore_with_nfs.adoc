@@ -1,0 +1,146 @@
+---
+permalink: domino-ops/task_performing_point_in_time_single_file_restore_with_nfs.html 
+sidebar: sidebar 
+keywords: snap creator, ibm, domino, plug-in, perfomring, single-file, single, file restore 
+summary: Mithilfe des IBM Domino Plug-ins können Sie zeitpunktgenaue, minutengenaue Wiederherstellungen mit einzelnen Dateien für Datenbanken in NFS-Umgebungen durchführen. 
+---
+= Wiederherstellung einzelner Dateien
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Mithilfe des IBM Domino Plug-ins können Sie zeitpunktgenaue, minutengenaue Wiederherstellungen mit einzelnen Dateien für Datenbanken in NFS-Umgebungen durchführen.
+
+Sie müssen den Parameter Data Restore Directoryin der Konfigurationsdatei auf das richtige Unterverzeichnis auf dem Domino-Daten-Volume setzen.
+
+
+NOTE: Sie müssen den Domino-Server für eine Wiederherstellung einer einzelnen Datei nicht beenden.
+
+Die Restore-Optionen für einzelne Dateien lauten wie folgt:
+
+|===
+| Typ wiederherstellen | Beschreibung 
+
+
+ a| 
+Wiederherstellung einzelner Dateien (zeitpunktgenau)
+ a| 
+Stellt zum Zeitpunkt der Snapshot-Kopie den Status einer einzelnen Datei wieder her (nur NFS).
+
+
+
+ a| 
+Wiederherstellung einzelner Dateien (minutengenau)
+ a| 
+Stellt eine einzelne Datei zum Zeitpunkt der Snapshot Kopie in ihren Zustand wieder her und gibt dann Domino Transaktionsprotokolle an die aktuellste Kopie weiter (nur NFS).
+
+
+
+ a| 
+Wiederherstellung einer einzelnen Datei (minutengenau wählbar)
+ a| 
+Stellt eine einzelne Datei zum Zeitpunkt der Snapshot Kopie in ihren Zustand wieder her und gibt dann die Domino Transaktionsprotokolle an eine bestimmte Zeit weiter (nur NFS).
+
+|===
+
+NOTE: Um eine minutengenaue und auswählbare zeitpunktgenaue Wiederherstellung zu erreichen, muss die Domino Transaktionsprotokollierung aktiviert sein.
+
+Transaktions-Logs können nur weitergespielt werden. Wenn Sie einen Zeitpunkt vor dem Erstellen der Snapshot Kopie auswählen, führt dies zu einem Wiederherstellungsfehler.
+
+. Wählen Sie im Fenster Profile und Konfigurationen die Konfigurationsdatei aus und klicken Sie dann auf *Aktionen* > *Wiederherstellen*.
++
+Durch Auswahl von *Restore* wird der Snap Creator Framework Restore Wizard automatisch gestartet. Klicken Sie im Wiederherstellungsassistenten auf *Weiter*, um zur nächsten Seite zu gelangen, und klicken Sie auf *Zurück*, um zur vorherigen Seite zurückzukehren.
+
++
+
+NOTE: Wenn Sie ein Restore aus einer SnapVault Kopie durchführen, werden Sie aufgefordert, eine Wiederherstellung aus primärem oder sekundärem Storage durchzuführen. Ihre Auswahl hängt davon ab, wie Sie mit der unter beschriebenen Beschränkung umgehen link:concept_domino_database_restore_overview.md#GUID-4D864E27-DE54-43BF-9B9F-EF2F240F65D9["Concept_domino_Database_Restore_overview.md#GUID-4D864E27-DE54-43BF-9B9F-EF2F240F65D9"].
+
+. Geben Sie auf der Seite Restore Details die Wiederherstellungsdetails an:
++
+|===
+| Für dieses Feld... | Tun Sie das... 
+
+
+ a| 
+Controller/Vserver Name
+ a| 
+Wählen Sie die SVM auf dem Storage-System aus, von dem Sie wiederherstellen möchten.
+
+
+
+ a| 
+Volume-Name wiederherstellen
+ a| 
+Wählen Sie das Volume aus, aus dem Sie die Wiederherstellung durchführen möchten.
+
+
+
+ a| 
+Richtlinie
+ a| 
+Wählen Sie die Richtlinie für das Backup aus, von dem Sie wiederherstellen möchten.
+
+
+
+ a| 
+Snapshot Kopien/Alle Snapshot Kopien Mit Snap Creator
+ a| 
+Behalten Sie den Standardwert bei.
+
+
+
+ a| 
+Der Name der Snapshot Kopie wird wiederhergestellt
+ a| 
+Wählen Sie die Snapshot Kopie aus, aus der Sie wiederherstellen möchten.
+
+
+
+ a| 
+Typ wiederherstellen
+ a| 
+Wählen Sie *Single File Restore*.
+
+|===
+. Wählen Sie auf der folgenden Seite die Datei aus, die Sie wiederherstellen möchten.
++
+Die Datei wird im Feld *Source PATH* mit ihrem vollständigen Pfadnamen angezeigt.
+
++
+
+TIP: Kopieren Sie den Pfadnamen zur späteren Verwendung in die Zwischenablage.
+
+. Wählen Sie auf der folgenden Seite das Verzeichnis aus, in das Sie die Datei wiederherstellen möchten.
++
+Der Name des übergeordneten Unterverzeichnisses für die Datei muss mit dem Namen des übergeordneten Unterverzeichnisses im Quellpfad identisch sein. Wenn der Quellpfad beispielsweise /Domino/Data/Mail/user1.nsf lautet, lautet der Wiederherstellungspfad /Domino/Data/restore/Mail/user1.nsf.
+
++
+Das Verzeichnis wird im Feld *Zielpfad* mit seinem vollständigen Pfadnamen angezeigt.
+
+. Geben Sie auf der folgenden Seite den Wiederherstellungstyp für einzelne Dateien an:
++
+|===
+| Für dieses Feld... | Tun Sie das... 
+
+
+ a| 
+Typ Wiederherstellen
+ a| 
+Klicken Sie auf den Wiederherstellungstyp einer einzelnen Datei. Wenn Sie *auswählbar die Minute* wählen, werden neue Felder angezeigt, in denen Sie das Datum und die Uhrzeit angeben können, zu der Sie Domino-Transaktionsprotokolle weiterleiten wiedergeben möchten. Klicken Sie auf *Validierung ignorieren*, wenn die Zeit auf dem Snap Creator Server nicht mit der Zeit auf dem Storage Controller übereinstimmt.
+
+
+
+ a| 
+Deaktivieren Sie Die Replikation
+ a| 
+Wählen Sie dieses Feld aus, um eine neue Domino-Replikat-ID für die wiederhergestellte Datenbankdatei festzulegen.
+
+|===
+. Überprüfen Sie die Zusammenfassung und klicken Sie dann auf *Fertig stellen*.
+. Klicken Sie im Dialogfeld Single File Restore auf *OK*.
++
+Snap Creator startet den Wiederherstellungsauftrag. Jobinformationen werden im Konsolenfenster angezeigt.
+
+

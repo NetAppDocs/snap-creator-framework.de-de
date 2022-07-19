@@ -1,0 +1,28 @@
+---
+permalink: installation/concept_upgrading_snap_creator.html 
+sidebar: sidebar 
+keywords: upgrading, upgrade, snap, creator 
+summary: Sie können von verschiedenen unterstützten Versionen auf die neueste Version von Snap Creator aktualisieren. 
+---
+= Upgrade Von Snap Creator Durchführen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können von verschiedenen unterstützten Versionen auf die neueste Version von Snap Creator aktualisieren.
+
+
+NOTE: Wenn Sie Fragen dazu haben, ob Sie ein Upgrade aus auf der Community Site veröffentlichten Versionen durchführen können, können Sie allgemeine Fragen an das NetApp Communities Forum stellen. Das NetApp Communities Forum ist online unter: https://communities.netapp.com/community/products_and_solutions/databases_and_enterprise_apps/snapcreator[]
+
+Überprüfen Sie vor dem Upgrade auf die neueste Version von Snap Creator die Größe der Jobüberwachung für die derzeit installierte Version von Snap Creator. Wenn Sie Snap Creator aktualisieren, müssen Sie die Größe der Jobüberwachung mindestens der vorherigen Einstellung anpassen, um Datenverlust in der Job-Monitor-Datenbank zu vermeiden.
+
+Beim Upgrade von Snap Creator müssen Sie zudem sicherstellen, dass das Upgrade auf einem Host erfolgt, der die gleiche Betriebssystemumgebung nutzt. Wenn Sie beispielsweise ein Upgrade in einer Windows-Umgebung durchführen, sollten Sie sicherstellen, dass beim Kopieren der gesicherten Daten auch die Daten zurück in eine Windows-Umgebung kopiert werden, statt auf UNIX-basierte Systeme.
+
+
+IMPORTANT: Snap Creator verfügt nicht über eine Downgrade-Option (Zurücksetzen). Während eines Upgrade-Prozesses sichern Sie mehrere Dateien. Es ist wichtig, die gesicherten Dateien zu behalten, bis Sie sicher sind, dass Sie nicht auf eine frühere Version von Snap Creator zurücksetzen müssen.
+
+*Verwandte Informationen*
+
+xref:task_checking_job_monitor_size.adoc[Größe des Jobmonitors wird überprüft]

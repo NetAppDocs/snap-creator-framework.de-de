@@ -1,0 +1,96 @@
+---
+permalink: administration/reference_troubleshooting_network_issues.html 
+sidebar: sidebar 
+keywords: network, issues, snap, creator, authorization, failure, troubleshoot, nat 
+summary: Möglicherweise treten Netzwerkprobleme in Snap Creator auf, z. B. Autorisierungsfehler. Diese Probleme sollten Sie kennen und wissen, wie Sie sie beheben können. 
+---
+= Fehlerbehebung bei Netzwerkproblemen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Möglicherweise treten Netzwerkprobleme in Snap Creator auf, z. B. Autorisierungsfehler. Diese Probleme sollten Sie kennen und wissen, wie Sie sie beheben können.
+
+* *Ausgabe*
++
+Während in Snap Creator Sie ein Problem mit einem Autorisierungsfehler haben.
+
+* *Ursache*
++
+Ein Berechtigungsfehler kann auf die Konfiguration, Firewall-Berechtigungen oder Network Address Translation (NAT) zurückzuführen sein.
+
+* *Korrekturmaßnahmen*
++
+Überprüfen Sie Folgendes:
+
++
+** IP/Hostname
++
+Wenn Sie nicht Host equiv verwenden, sollte der Name des Speichersystems aus dem Hostnamen-Befehl auf dem Controller mit dem identisch sein, was in der Snap Creator-Konfigurationsdatei eingegeben wurde.
+
++
+Verwenden Sie keinen vollständig qualifizierten Domänennamen (FQDN), wenn der Hostname eines Speichersystems abgekürzt ist.
+
++
+Stellen Sie sicher, dass die IP-Auflösung dem von Ihnen angegebenen Namen entspricht. Wenn nicht übereinstimmende Informationen vorliegen, korrigieren Sie diese durch die Verwendung von Host equiv auf dem Storage-System.
+
++
+Führen Sie folgende Schritte aus, um den Hostequiv zu aktivieren:
+
++
+... Geben Sie den folgenden Befehl ein: Optionen https.admin.hostsequiv.enable on
+... Bearbeiten Sie die Datei /etc/hostsequiv und fügen Sie Folgendes hinzu: IP/Host_Name_in_Snap_Creator config_fileSnap_Creator_user
+
+
+** Die Datensicherungsfunktionen der NetApp Management Console
++
+Der in den Snap Creator-KONFIGURATIONSPARAMETERN definierte Storage Controller-Name muss mit dem Storage Controller-Namen in der Datensicherheitsfunktion der NetApp Management Console übereinstimmen. Wenn die Namen der Storage Controller nicht übereinstimmen, können Sie die Host-Datei des Betriebssystems verwenden, um die Namen der Storage-Controller zu erzwingen.
+
+** Firewall
++
+Wenn zwischen dem Host, auf dem Snap Creator ausgeführt wird, und dem Speichersystem eine Firewall vorhanden ist, stellen Sie sicher, dass die bidirektionalen Zugriffssteuerungslisten (ACLs) für 80, 443 oder beide geöffnet sind.
+
++
+*** 80: Zur Kommunikation mit dem Speichersystem bei Auswahl von HTTP
+*** 443: Zur Kommunikation mit dem Speichersystem, wenn HTTPS zur Verwendung von HTTPS (443) für Linux, Solaris oder AIX ausgewählt ist, installieren Sie die openssl Bibliotheken, die für die Verwendung von SSL erforderlich sind.
+
+
+
+
++
+Wenn Snap Creator Agent ausgeführt wird, muss der Port, auf dem der Agent ausgeführt wird, geöffnet sein. Stellen Sie sicher, dass der zurückkehrende Datenverkehr vom Speichersystem auf das System übertragen kann, auf dem Snap Creator ausgeführt wird, zumindest auf den nicht privilegierten Ports.
+
++
+** Snap Creator Framework kann mit Clustered Data ONTAP und Data ONTAP im 7-Mode über TLS kommunizieren, wenn SSL deaktiviert ist.
++
+In Snap Creator Framework können Sie SSLV3 im Host und Speichersystem deaktivieren:
+
++
+*** Um SSLV3 auf AIX, Unix oder Windows zu deaktivieren, sollten Sie den Parameter jdk.tls.diabledAlgorithms in der Datei java.security wie folgt aktualisieren:
++
+jdk.tls.diabledAlgorithms=sslv3
+
++
+Die Datei java.security befindet sich unter dem Pfad /java/jre/lib/Security/
+
+*** Um SSLV3 auf dem Speichersystem zu deaktivieren, sollten Sie den Befehl System Service Web modify ausführen und die folgenden Parameter konfigurieren:
++
+TLSv1 aktiviert: Wahr
+
++
+SSLv3 aktiviert: False
+
++
+SSLv2 aktiviert: Falsch
+
+
+
+** NAT
++
+Wenn Sie NAT verwenden, stellen Sie sicher, dass die Quell-/Ziel-IP-Adressen nicht im TCP-Paket (Transmission Control Protocol) geändert werden. Die Host- und Speichersysteme müssen wissen, mit wem sie kommunizieren. Die Vorstellung einer Firewall-IP statt der tatsächlichen Host- oder Controller-IP kann zu Problemen führen.
+
+
+
+

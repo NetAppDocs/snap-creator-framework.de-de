@@ -1,0 +1,27 @@
+---
+permalink: sap-hana-ops/concept_housekeeping_of_log_backups.html 
+sidebar: sidebar 
+keywords: housekeeping, log, backups 
+summary: Die allgemeine Ordnung und Sauberkeit von Log-Backups in SAP HANA basiert auf einer Funktion innerhalb von HANA Studio oder auf einer SQL-Anweisung, die das Löschen aller Backups ermöglicht, die älter als ein ausgewähltes Backup sind. 
+---
+= Allgemeine Ordnung und Sauberkeit von Protokollsicherungen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die allgemeine Ordnung und Sauberkeit von Log-Backups in SAP HANA basiert auf einer Funktion innerhalb von HANA Studio oder auf einer SQL-Anweisung, die das Löschen aller Backups ermöglicht, die älter als ein ausgewähltes Backup sind.
+
+Snap Creator verwaltet die allgemeine Ordnung und Sauberkeit der Daten-Backups (Snapshot Kopien), indem die Snapshot Kopien auf dem primären oder sekundären Storage gelöscht und die entsprechenden Einträge im HANA-Katalog gemäß einer festgelegten Aufbewahrungsrichtlinie gelöscht werden.
+
+Die Log-Backups, die älter als die letzte Datensicherung sind, werden gelöscht, da sie nicht benötigt werden.
+
+Snap Creator verwaltet die allgemeine Ordnung und Sauberkeit der Backup-Erstellung von Protokolldateien auf Filesystem-Ebene und im SAP HANA Backup-Katalog. Als Teil eines jeden Snapshot Backups mit Snap Creator werden die folgenden Schritte ausgeführt:
+
+* Lesen Sie den Backup-Katalog und erhalten Sie die Backup ID der ältesten erfolgreichen Daten oder des Snapshot Backups.
+* Löschen Sie alle Backups, die älter als das älteste Backup sind.
+
+
+
+NOTE: Snap Creator verwaltet nur die allgemeine Ordnung und Sauberkeit für Backups auf der Basis von Snapshot-Kopien. Wenn zusätzliche dateibasierte Backups erstellt werden, müssen Sie sicherstellen, dass die dateibasierten Backups aus dem Backup-Katalog und dem Dateisystem gelöscht werden. Wird eine solche Datensicherung nicht manuell aus dem Backup-Katalog gelöscht, kann sie zur ältesten Datensicherung werden, und die allgemeine Ordnung und Sauberkeit der Protokolle schlägt fehl.

@@ -1,0 +1,35 @@
+---
+permalink: installation/task_starting_the_server_from_a_command_prompt.html 
+sidebar: sidebar 
+keywords: starting, start, server, command, prompt 
+summary: 'Sie können den Snap Creator Server manuell über eine Eingabeaufforderung starten, indem Sie ein Batch-Skript (scServer.bat) ausführen.' 
+---
+= Starten des Servers über eine Eingabeaufforderung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können den Snap Creator Server manuell über eine Eingabeaufforderung starten, indem Sie ein Batch-Skript (scServer.bat) ausführen.
+
+Normalerweise müssen Sie diese Vorgehensweise nur befolgen, wenn Sie während der Installation nicht die Option *Server als Service* starten ausgewählt haben.
+
+Sie können das Batch-Skript (scServer.bat) auch so planen, dass es beim Start über den Windows-Taskplaner ausgeführt wird. Weitere Informationen zur Verwendung des Windows-Taskplaners finden Sie in der Dokumentation für Ihr Windows-Betriebssystem.
+
+Da auf dem Batch-Skript (scServer.bat) Snap Creator im Vordergrund ausgeführt wird, wird der Snap Creator Server nur noch ausgeführt, solange die Eingabeaufforderung geöffnet ist. Durch Schließen der Eingabeaufforderung wird der Snap Creator Server beendet. Zur Ausführung im Hintergrund sollte der Snap Creator Server Service verwendet werden.
+
+. Öffnen Sie eine Eingabeaufforderung und geben Sie die folgenden Befehle ein:
++
+[listing]
+----
+cd \install_path\scServerrelease-version\bin\
+scServer.bat start
+----
++
+[listing]
+----
+cd \Program Files\NetApp\Snap_Creator_Framework\scServer4.1.0\bin\
+scServer.bat start
+----
+

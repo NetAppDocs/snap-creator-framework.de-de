@@ -1,0 +1,36 @@
+---
+permalink: administration/task_performing_volume_restore_using_the_gui.html 
+sidebar: sidebar 
+keywords: volume, restore, snap, creator, gui, perform, wizard 
+summary: Sie können eine Volume-Wiederherstellung mithilfe der Snap Creator GUI durchführen. 
+---
+= Volume-Wiederherstellung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können eine Volume-Wiederherstellung mithilfe der Snap Creator GUI durchführen.
+
+. Wählen Sie im Hauptmenü der Snap Creator GUI die Option *Verwaltung* > *Konfigurationen*.
+. Wählen Sie auf der Registerkarte *Configurations* im Fenster *Profile and Configuration* die Konfigurationsdatei aus.
+. Wählen Sie *Aktion* > *Wiederherstellen*.
++
+Der Wiederherstellungs-Assistent wird im rechten Fensterbereich angezeigt.
+
+. Führen Sie die Seiten im Wiederherstellungsassistenten durch, um die Wiederherstellung durchzuführen.
++
+.. Wählen Sie auf der Seite *Restore Details* den Namen des Controllers/SVM, den Namen des Volumes, die Richtlinie und den Namen der Snapshot Kopie wiederherstellen aus, und wählen Sie dann aus der Dropdown-Liste *Restore type* die Option *Volume Restore* aus.
++
+image::../media/restore_wizard_restore_details.gif[Details zur Wiederherstellung des Assistenten]
+
+.. Überprüfen Sie die Zusammenfassung und klicken Sie dann auf *Fertig stellen*.
+
+
++
+Es wird eine Warnmeldung angezeigt, in der gefragt wird, ob weitere Elemente wiederhergestellt werden müssen.
+
+. Klicken Sie auf *Nein* und dann auf der Bestätigungsseite Wiederherstellen auf *OK*.
+. Überprüfen Sie im Fensterbereich *Konsole*, ob die Wiederherstellung erfolgreich abgeschlossen wurde, indem Sie die Meldungen anzeigen.
+

@@ -1,0 +1,22 @@
+---
+permalink: administration/task_creating_new_configuration_files_by_copying_existing_configuration_files_using_the_cli.html 
+sidebar: sidebar 
+keywords: cli, command-line, interface, configuration, file, copy 
+summary: 'Über die Befehlszeilenschnittstelle (CLI) können Sie eine neue Konfigurationsdatei erstellen, indem Sie eine vorhandene Konfigurationsdatei kopieren und anschließend die neue Datei umbenennen.' 
+---
+= Erstellen neuer Konfigurationsdateien durch Kopieren vorhandener Konfigurationsdateien
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Über die Befehlszeilenschnittstelle (CLI) können Sie eine neue Konfigurationsdatei erstellen, indem Sie eine vorhandene Konfigurationsdatei kopieren und anschließend die neue Datei umbenennen.
+
+. Zum Konfigurationsverzeichnis wechseln: `cd install_path/scServer4.3/engine/configs`
+. Kopieren Sie die Quellkonfigurationsdatei: `cp source_profile_name/configuration_nametarget_profile_name/new_configuration_name`
++
+Sie müssen einen Namen für die neue Konfigurationsdatei angeben.
+
+. Passen Sie die neue Konfigurationsdatei für die Anwendung oder Datenbank an, die Sie managen möchten.
+

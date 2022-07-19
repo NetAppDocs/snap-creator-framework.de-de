@@ -1,0 +1,44 @@
+---
+permalink: sap-hana-ops/task_restoring_databases_after_a_primary_storage_failure_with_clustered_data_ontap.html 
+sidebar: sidebar 
+keywords: sap, hana, restore, restoring, databases, primary, storage, failure, clustered, data, ontap 
+summary: Nach dem Ausfall eines primären Storage-Systems mit Clustered Data ONTAP können Sie eine SAP HANA Datenbank wiederherstellen. 
+---
+= Wiederherstellung von Datenbanken nach einem Ausfall des primären Storage mit Clustered Data ONTAP
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Nach dem Ausfall eines primären Storage-Systems mit Clustered Data ONTAP können Sie eine SAP HANA Datenbank wiederherstellen.
+
+Wenn das primäre Volume komplett verloren geht, müssen Sie ein neues primäres Volume erstellen und dann vom Backup Volume wiederherstellen.
+
+. Erstellung eines primären Volumes mit type-Datensicherung
++
+[listing]
+----
+hana::> volume create -vserver hana1a -volume hana_data -aggregate aggr_sas_101 -size 300G -state online -type DP -policy default -autosize-mode grow_shrink -space-guarantee none
+-snapshot-policy none -foreground true
+[Job 6744] Job is queued: Create hana_data.
+[Job 6744] Job succeeded: Successful
+----
+. Wiederherstellung aller Daten aus dem Backup-Volume
++
+[listing]
+----
+hana::> snapmirror restore -destination-path hana1a:hana_data -source-path hana2b:backup_hana_data -source-snapshot sc-backup-daily_20140505121000
+[Job 6746] Job is queued: snapmirror restore from source "hana2b:backup_hana_data" for the
+snapshot sc-backup-daily_20140505121000.
+
+hana::> job show -id 6746
+Owning
+Job ID Name                 Vserver    Node           State
+------ -------------------- ---------- -------------- ----------
+6746   SnapMirror restore   hana        hana01        Running
+       Description: snapmirror restore from source "hana2b:backup_hana_data" for the snapshot sc-backup-daily_20140505121000
+----
+
+
+Nach Abschluss des Wiederherstellungsprozesses wird die Recovery mit SAP HANA durchgeführt.

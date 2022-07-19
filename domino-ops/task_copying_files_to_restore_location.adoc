@@ -1,0 +1,24 @@
+---
+permalink: domino-ops/task_copying_files_to_restore_location.html 
+sidebar: sidebar 
+keywords: domino, ibm, copy, copying, file, data restore directory 
+summary: Nachdem Sie die Snapshot Kopie für die Datei angehängt haben, die Sie wiederherstellen möchten, können Sie die Datei in das Daten-Wiederherstellungsverzeichnis kopieren, das in der Konfigurationsdatei für Backup und Restore angegeben ist. 
+---
+= Kopieren der Datei in das Verzeichnis der Datenwiederherstellung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Nachdem Sie die Snapshot Kopie für die Datei angehängt haben, die Sie wiederherstellen möchten, können Sie die Datei in das Daten-Wiederherstellungsverzeichnis kopieren, das in der Konfigurationsdatei für Backup und Restore angegeben ist.
+
+. Kopieren Sie die Datei, die aus der gemounteten Snapshot Kopie wiederhergestellt werden soll.
+. Fügen Sie die Datei in das Verzeichnis der Datenwiederherstellung ein, das in der Konfigurationsdatei für die Sicherung und Wiederherstellung angegeben ist.
++
+Das folgende Beispiel zeigt, wie Sie die Datenbankdatei t04.nsf aus der Snapshot Kopie kopieren können, die auf dem Laufwerk R: In das in der Konfigurationsdatei angegebene Daten-Wiederherstellungsverzeichnis eingebunden ist.
+
++
+image::../media/scfw_domino_copy_files_to_restore.gif[Dieses Bild wird durch den umgebenden Text erläutert.]
+
+

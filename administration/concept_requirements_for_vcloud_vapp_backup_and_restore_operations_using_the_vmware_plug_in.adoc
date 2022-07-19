@@ -1,0 +1,35 @@
+---
+permalink: administration/concept_requirements_for_vcloud_vapp_backup_and_restore_operations_using_the_vmware_plug_in.html 
+sidebar: sidebar 
+keywords: snap, creator, backup, vcloud, vapp, vmware, director, api, vsphere, director, vcenter, vdc 
+summary: Snap Creator unterstützt die Sicherung von vCloud vApp über das VMware Plug-in. VApp und Backup-Kopien von Virtual Machines werden vom VMware Plug-in über die vCloud Director API und die vSphere API erstellt, die auf den VMware vCloud Director bzw. den VMware vCenter Server aufgerufen werden. 
+---
+= Anforderungen für die Backup- und Restore-Vorgänge für vCloud vApp mit dem VMware Plug-in
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Snap Creator unterstützt die Sicherung von vCloud vApp über das VMware Plug-in. VApp und Backup-Kopien von Virtual Machines werden vom VMware Plug-in über die vCloud Director API und die vSphere API erstellt, die auf den VMware vCloud Director bzw. den VMware vCenter Server aufgerufen werden.
+
+Damit die Backup- und Wiederherstellungsvorgänge für vApp erfolgreich sind, müssen Sie die folgenden Details in der Konfigurationsdatei angeben:
+
+* VCloud IP und Anmeldedaten
+* VCloud Unternehmen, virtuelle Datacenter (vDCs) und vApp-Namen
+
+
+
+NOTE: Wenn mehr als ein vCenter mit vCloud verbunden ist, sollte das Kennwort für alle vCenter-Server identisch sein.
+
+Bei der Durchführung der Backup- und Wiederherstellungsvorgänge von vCloud müssen Sie Folgendes berücksichtigen:
+
+* Die Backup- und Restore-Prozesse für VMware und vCloud sind sehr ähnlich, mit Ausnahme des Erkennungsvorgangs, bei dem vCloud Backups mithilfe von Rest-APIs (Representational State Transfer) zusätzliche Discovery-Vorgänge für die vCloud Director Metadaten erforderlich machen.
+* Sie sollten Details zu vCloud den zu sichernden Unternehmen, vDCs und vApps zukommen lassen.
+* Wenn ein VDC aufgelistet ist, werden alle vApps im VDC gesichert.
+* Das vCloud Modul erkennt virtuelle Maschinen, die jeder vApp zugeordnet sind, die gesichert werden muss, und legt sie in eine Sicherungsliste.
+* Wenn eine zur Sicherung ausgewählte vApp in einer Organisation oder einem VDC enthalten ist, das ebenfalls für die Sicherung ausgewählt wurde, wird die vApp nur einmal gesichert.
+
+
+
+NOTE: Für Wiederherstellungen einer Virtual Machine File System (VMFS) mit dem VMware Plug-in muss im Volume ausreichend Speicherplatz vorhanden sein, um einen LUN-Klon zu erstellen, der der Größe der LUN entspricht.

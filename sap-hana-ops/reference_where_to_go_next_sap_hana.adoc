@@ -1,0 +1,36 @@
+---
+permalink: sap-hana-ops/reference_where_to_go_next_sap_hana.html 
+sidebar: sidebar 
+keywords: more information, snap, creator, release, notes, support 
+summary: Weitere Informationen zu Snap Creator, einschließlich Versionsspezifischer Informationen, finden Sie auf der NetApp Support Site. 
+---
+= Weitere Schritte
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Weitere Informationen zu Snap Creator, einschließlich Versionsspezifischer Informationen, finden Sie auf der NetApp Support Site.
+
+* https://docs.netapp.com/us-en/snap-creator-framework/installation/index.html["Snap Creator Framework 4.3.3 – Installationshandbuch"]
++
+Beschreibt die Installation von Snap Creator Server und Agent. Die Agent-Installation umfasst das SAP Hana Plug-in.
+
+* https://docs.netapp.com/us-en/snap-creator-framework/administration/index.html["Snap Creator Framework 4.3.3 – Administratorhandbuch"]
++
+Hier wird die Administration von Snap Creator Framework nach Abschluss der Installation beschrieben.
+
+* https://docs.netapp.com/us-en/snap-creator-framework/releasenotes.html["Snap Creator Framework 4.3.3 – Versionshinweise"]
++
+Beschreibt neue Funktionen, wichtige Vorsichtsmaßnahmen, bekannte Probleme und Einschränkungen für Snap Creator Framework 4.1.1.
+
+* http://community.netapp.com/t5/Snap-Creator-Framework-Discussions/bd-p/snap-creator-framework-discussions["Diskussionen Zu Snap Creator Framework"]
++
+Tauschen Sie sich mit anderen aus, stellen Sie Fragen, lassen Sie sich von neuen Ideen inspirieren, finden Sie geeignete Ressourcen und erfahren Sie mehr über Snap Creator Best Practices.
+
+* http://www.youtube.com/SnapCreatorTV["NetApp Video: SnapCreatorTV"]
++
+In Videos werden die wichtigsten Snap Creator Technologien demonstriert.
+
+

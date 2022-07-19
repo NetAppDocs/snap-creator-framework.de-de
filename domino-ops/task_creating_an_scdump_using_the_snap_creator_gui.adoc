@@ -1,0 +1,87 @@
+---
+permalink: domino-ops/task_creating_an_scdump_using_the_snap_creator_gui.html 
+sidebar: sidebar 
+keywords: domino, ibm, using scdump, gathering, logs, compressed, format 
+summary: Sie können die Aktion Snap Creatorscdump verwenden, um Protokolle in einem komprimierten Dateiarchiv zu erfassen. Anschließend können Sie das Archiv zur Überprüfung an den technischen Support oder einen Snap Creator Experten senden. 
+---
+= Verwenden von scdump zum Erfassen von Protokollen in einem komprimierten Format
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können die Aktion Snap Creatorscdump verwenden, um Protokolle in einem komprimierten Dateiarchiv zu erfassen. Anschließend können Sie das Archiv zur Überprüfung an den technischen Support oder einen Snap Creator Experten senden.
+
+Sie sollten eine Konfigurationsdatei für die Sicherung und Wiederherstellung erstellt haben.
+
+Ein Scdump enthält die folgenden Dateien:
+
+|===
+| Datei | Beschreibung 
+
+
+ a| 
+scdump.txt
+ a| 
+Enthält die Version Snap Creator Agent und das Host-Betriebssystem, die Data ONTAP Version und die Domino Version.
+
+
+
+ a| 
+engine.log
+ a| 
+Enthält Informationen zu Snap Creator Workflow-Engine-Operationen.
+
+
+
+ a| 
+gui.log
+ a| 
+Enthält Informationen zu Snap Creator GUI-Vorgängen und Meldungen. Es können mehrere Protokolle enthalten sein.
+
+
+
+ a| 
+sc_server.log
+ a| 
+Enthält detaillierte Informationen zu Snap Creator Server-Vorgängen. Es können mehrere Protokolle enthalten sein.
+
+
+
+ a| 
+Aus Protokollen
+ a| 
+Enthält ausführliche Informationen für Jobs. Ausgabeprotokolle für alle Konfigurationen im ausgewählten Profil sind enthalten.
+
+
+
+ a| 
+Debug-Protokolle
+ a| 
+Enthält ausführliche Informationen und Informationen, die für das Debuggen nützlich sind. Debug-Protokolle für alle Konfigurationen im ausgewählten Profil sind enthalten.
+
+
+
+ a| 
+Fehlerprotokolle
+ a| 
+Enthält Fehlerinformationen für Protokolle. Fehlerprotokolle für alle Konfigurationen im ausgewählten Profil sind enthalten.
+
+
+
+ a| 
+Konfigurationsdateien
+ a| 
+Alle Konfigurationsdateien im ausgewählten Profil sind enthalten, einschließlich der globalen Konfigurationsdateien.
+
+|===
+
+NOTE: Obwohl eine Konfigurationsdatei die Eingabe für scdump ist, sammelt das Dienstprogramm Informationen für alle Konfigurationen im übergeordneten Profil.
+
+. Wählen Sie im Fenster Profile und Konfigurationen eine Konfigurationsdatei aus und klicken Sie auf *Aktionen* > *scdump*.
++
+Scdump sammelt Protokolle und andere Dateien in einem komprimierten Dateiarchiv.
+
+. Klicken Sie im Downloaddialog auf *Öffnen* oder *Speichern* nach Bedarf.
+

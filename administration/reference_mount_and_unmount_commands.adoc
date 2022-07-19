@@ -1,0 +1,32 @@
+---
+permalink: administration/reference_mount_and_unmount_commands.html 
+sidebar: sidebar 
+keywords: cloning, mount_cmd, unmount_cmd, command, snap, creator, pre, post 
+summary: Beim Klonen sollten Sie anstelle der Snap Creator PRE- oder POST-Befehle die MOUNT_CMD und UMOUNT_CMD-Befehle verwenden. 
+---
+= Mount- und Unmount-Befehle
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Beim Klonen sollten Sie anstelle der Snap Creator PRE- oder POST-Befehle die MOUNT_CMD und UMOUNT_CMD-Befehle verwenden.
+
+|===
+| Befehl | Beschreibung 
+
+
+ a| 
+MOUNT_CMD ##
+ a| 
+Mount-Befehle werden verwendet, um das Dateisystem zum Klonen oder Mounten von Aktionen zu mounten, wobei ## eine Zahl ist, die von 01 bis 99 beginnt.
+
+
+
+ a| 
+UMOUNT_CMD ##
+ a| 
+Unmount-Befehle werden verwendet, um das Dateisystem zum Klonen oder Mounten von Aktionen zu mounten, wobei ## eine Zahl ist, die zwischen 01 und 99 beginnt.
+
+|===

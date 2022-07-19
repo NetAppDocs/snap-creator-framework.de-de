@@ -1,0 +1,35 @@
+---
+permalink: installation/task_starting_the_agent_from_a_command_prompt.html 
+sidebar: sidebar 
+keywords: starting, start, agent, command, prompt 
+summary: 'Sie können den Snap Creator Agent manuell über eine Eingabeaufforderung starten, indem Sie ein Batch-Skript (SCAgent.bat) ausführen.' 
+---
+= Starten des Agenten über eine Eingabeaufforderung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können den Snap Creator Agent manuell über eine Eingabeaufforderung starten, indem Sie ein Batch-Skript (SCAgent.bat) ausführen.
+
+In der Regel sollten Sie diese Vorgehensweise nur befolgen, wenn Sie während des Installationsvorgangs die Option *Start Agent as Service* nicht ausgewählt haben.
+
+Sie können das Batch-Skript (SCAgent.bat) auch so planen, dass es beim Start über den Windows-Task-Scheduler ausgeführt wird. Weitere Informationen zur Verwendung des Windows-Taskplaners finden Sie in der Dokumentation für Ihr Windows-Betriebssystem.
+
+. Öffnen Sie eine Eingabeaufforderung und geben Sie die folgenden Befehle ein:
++
+[listing]
+----
+cd \install_path\scAgentrelease-version\bin\
+scAgent.bat start
+----
++
+[listing]
+----
+cd \Program Files\NetApp\Snap_Creator_Framework\scAgent4.1.0\bin\
+scAgent.bat start
+----
+
+
+Da das Batch-Skript (SCAgent.bat) Snap Creator im Vordergrund ausgeführt wird, wird der Snap Creator Agent nur weiter ausgeführt, solange die Eingabeaufforderung geöffnet ist. Durch Schließen der Eingabeaufforderung wird der Snap Creator Agent beendet. Um Snap Creator im Hintergrund auszuführen, sollte der Snap Creator Agent Service verwendet werden.

@@ -1,0 +1,16 @@
+---
+permalink: administration/concept_managing_scheduled_jobs.html 
+sidebar: sidebar 
+keywords: manage, scheduled, jobs, listing, running, deleting, managing 
+summary: 'Sie können geplante Jobs verwalten, indem Sie sie \ (zur Automatisierung von Backup-Vorgängen\) erstellen sowie diese geplanten Jobs bearbeiten, auflisten, ausführen und löschen.' 
+---
+= Verwalten von geplanten Jobs
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können geplante Jobs verwalten, indem Sie sie erstellen (um Backup-Vorgänge zu automatisieren) und Listen Sie durch Bearbeiten, Auflisten, Ausführen und Löschen dieser geplanten Jobs.
+
+Der Snap Creator Server enthält einen zentralen Scheduler, mit dem Snap Creator Jobs geplant werden können, entweder über einen Richtlinienplan (Teil von Richtlinienobjekten) oder direkt über den Scheduler erstellt werden. Der Planer kann bis zu 10 Jobs gleichzeitig ausführen und zusätzliche Jobs bis zum Abschluss eines laufenden Jobs in die Warteschlange stellen.

@@ -1,0 +1,38 @@
+---
+permalink: administration/concept_what_snap_creator_does.html 
+sidebar: sidebar 
+keywords: snap, creator, framework, unix, applications, third-party, databases, hypervisors, windows, aix, hp-ux, linux, solaris, extensibility 
+summary: '`Snap Creator Framework ermöglicht die Verwendung vorgefertigter und benutzerdefinierter Plug-ins, die die Datensicherung für eine Vielzahl von Applikationen, Datenbanken und Hypervisoren von Drittanbietern in Windows und UNIX Umgebungen (AIX, HP-UX, Linux und Solaris) standardisieren und vereinfachen.' 
+---
+= Was macht Snap Creator Framework
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Snap Creator Framework ermöglicht die Verwendung vorgefertigter und benutzerdefinierter Plug-ins, die die Datensicherung für eine Vielzahl von Applikationen, Datenbanken und Hypervisoren von Drittanbietern in Windows und UNIX Umgebungen (AIX, HP-UX, Linux und Solaris) standardisieren und vereinfachen.
+
+Snap Creator ermöglicht durch Nutzung von Snapshot, SnapVault, Open Systems SnapVault und SnapMirror Funktionen sowie Datensicherungs-Funktionen der NetApp Management Console, der Operations Manager Konsole und FlexClone:
+
+* Applikationskonsistenter Datenschutz
++
+Eine zentralisierte Lösung für das Sichern wichtiger Informationen, die Integration in die vorhandene Applikationsarchitektur, um die Datenkonsistenz zu gewährleisten und die Betriebskosten zu reduzieren.
+
+* Erweiterbarkeit
++
+Schnelle Integration dank modularer Architektur und richtlinienbasierter Automatisierung
+
+* Cloud-fähig
++
+Snap Creator ist eine vom Betriebssystem unabhängige Funktionalität, die physische und virtuelle Plattformen unterstützt und mit IT-als-Service- und Cloud-Umgebungen kompatibel ist.
+
+* Klonfunktionen
++
+Platzsparendes Daten-Klonen wird für Entwicklungs- und Testzwecke unterstützt.
+
+
+
+Die folgende Abbildung zeigt die Komponenten des Snap Creator Framework:
+
+image::../media/scfw_overview_41_refresh_administration.gif[Scfw Übersicht 41 Verwaltung aktualisieren]

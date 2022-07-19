@@ -1,0 +1,146 @@
+---
+permalink: administration/reference_snap_creator_terminology.html 
+sidebar: sidebar 
+keywords: snap, creator, terminology,action, backup, lun, clone, volume, agent, monitor, archive, log, configuration, discover, global, job, mount, ossv, profile, policy, quiesce, restore, scdump, schedule, umount, unquiesce, watchdog 
+summary: Snap Creator besteht aus ein paar verschiedenen Konstrukten, und es ist wichtig, die Sprache und die Konzepte zu verstehen. 
+---
+= Snap Creator Terminologie
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Snap Creator besteht aus ein paar verschiedenen Konstrukten, und es ist wichtig, die Sprache und die Konzepte zu verstehen.
+
+* *Aktion*
++
+Snap Creator kann verschiedene Aktionen auf Konfigurationsdateien durchführen. Dabei handelt es sich in der Regel um einen definierten Workflow, der das gewünschte Ergebnis erreicht. Um eine Aktion auszuführen, wählen Sie eine Konfigurationsdatei aus der GUI aus, klicken Sie auf *Aktion* und wählen Sie eine der folgenden Aktionen aus der Dropdown-Liste aus:
+
++
+** *Backup*
++
+Sichert die in einer Konfigurationsdatei angegebene Umgebung. Der Backup-Workflow ist eine mehrstufige Aktion, die sich je nach den Einstellungen der ausgewählten Konfigurationsdatei ändert. Ein Beispiel für eine Backup-Aktion mit einem konfigurierten Plug-in: Stilllegen einer Applikation oder Datenbank, Erstellen einer Snapshot-Kopie aller definierten Volumes, Auslegen der ausgewählten Applikation oder Datenbank, Durchführen eines SnapVault- und/oder SnapMirror-Updates, Ausführen einer Aufbewahrungsrichtlinien oder Handeln auf Einstellungen für ein Archivprotokoll.
+
+** *LUN Clone*
++
+Erstellt eine neue Snapshot Kopie einer LUN und klont die neue Snapshot Kopie
+
+** *Volume Clone*
++
+Erstellt eine neue Snapshot Kopie eines Volume und klont die neue Snapshot Kopie
+
+
+
+* *Agent Monitor*
++
+Der Agent Monitor fragt den Snap Creator Server nach allen Agenten ab, die in den Konfigurationsdateien definiert sind, und fragt die Agenten nach ihrem Status. Der Agent Monitor meldet, ob der Agent ausgeführt wird, der Port, den der Agent abhört und die Version des Agenten verwendet wird.
+
+* *Archiv-Log*
++
+Die Aktion Archivprotokoll wirkt auf alle Einstellungen in der Einstellung für die Verwaltung des Archivprotokolls der Konfigurationsdatei. Diese Aktion bereinigt in der Regel Protokolle, die von Snap Creator nicht mehr benötigt werden.
+
+* *Konfigurationsdatei*
++
+Eine Konfigurationsdatei ist das Herzstück von Snap Creator. Sie konfiguriert Snap Creator, ermöglicht die Ausführung von Applikations-Plug-ins, setzt erforderliche Variablen ein und definiert die Volumes, die in Snapshot Kopien erfasst werden. Konfigurationsdateien bestehen aus verschiedenen Parametern, die so eingestellt werden können, dass sie das Verhalten von Snap Creator beeinflussen. Die Konfigurationsdatei wird oft auf Konfiguration oder Konfiguration verkürzt.
+
+* *Entdecken*
++
+Die Aktion „Discover“ führt die Erkennung auf Storage-Ebene in der Umgebung durch, die in der Konfigurationsdatei beschrieben ist. Nicht alle Plug-ins unterstützen die Erkennung.
+
+* *Globale Konfigurationsdatei*
++
+Eine Konfigurationsdatei, die entweder auf überglobaler Ebene agieren kann (Parameter wirken sich auf alle Konfigurationsdateien in der gesamten Snap Creator Server-Umgebung aus) oder auf Profilebene (Parameter wirken sich auf alle Konfigurationsdateien in einem bestimmten Profil aus). Überglobale Parameter werden mit allen Parametern überschrieben, die in einem globalen Profil-Level angegeben sind. Ebenso überschreiben Parameter, die in einer Konfigurationsdatei angegeben sind, alle Parameter in einer globalen Super- oder Profilebene. Globale Konfigurationsdatei wird oft auf globale config verkürzt.
+
+* *Job*
++
+Alle von Snap Creator durchgeführten Vorgänge werden als Jobs betrachtet. Einige Aktionen können aus mehreren Jobs bestehen. Alle von Snap Creator ausgeführten Jobs werden im Job Monitor aufgelistet.
+
+* * Job Monitor*
++
+Der Job Monitor ist eine benutzerfreundliche Dashboard-Oberfläche, die einen einfachen Überblick über den Status von Snap Creator-Jobs bietet, die ausgeführt werden oder bereits ausgeführt wurden. Der Job Monitor ist beim Setup aktiviert und kann 1 bis 1,000 Jobs speichern.
+
+* * Mount*
++
+Mit der Mount-Aktion können Sie eine vorhandene Snapshot Kopie angeben, die geklont und angehängt werden soll.
+
+* *OSSV*
++
+Die Aktion OSSV (Open Systems SnapVault) führt OSSV Operationen durch.
+
+* *Profil*
++
+Ein Profil ist im Wesentlichen ein Ordner, der für die Organisation von Konfigurationsdateien verwendet wird. Profile fungieren auch als Objekte für die rollenbasierte Zugriffssteuerung (Role Based Access Control, RBAC). Das bedeutet, dass Sie nur Zugriff auf bestimmte Profile und die Konfigurationsdateien in erhalten können.
+
+* *Richtlinien*
++
+Die Richtlinie ist aufgrund der Aufbewahrungsrichtlinie nicht richtlinienbasiert. Eine Richtlinie definiert normalerweise Snapshot-Aufbewahrungsrichtlinien (wie viele Snapshot Kopien aufbewahren) und Alter (wie alt sollte eine Snapshot Kopie sein, bevor sie gelöscht wird). Beispielsweise kann eine tägliche Richtlinie` Snapshot Kopien von 30 Tagen aufbewahren, die mindestens 30 Tage alt sein müssen. (Dank der Einstellung zum Aufbewahrungszeitalter werden nicht mehrere am selben Tag erstellte Snapshot Kopien davon entfernt, SLAs zu umgehen, die möglicherweise angeben, eine Snapshot Kopie sei 30 Tage alt.) Bei Verwendung von SnapVault definiert die Richtlinie auch alle Aufbewahrungseinstellungen für die SnapVault Kopie. Aktuell können Richtlinien entweder direkt in einer Konfigurationsdatei oder als Teil eines Richtlinienobjekts gespeichert werden. Wenn eine Richtlinie Teil einer Konfigurationsdatei ist, kann dies als lokale Aufbewahrungsrichtlinie bezeichnet werden.
+
+* *Richtlinienobjekt*
++
+Ein Richtlinienobjekt ist eine Aufbewahrungsrichtlinie, die auf Profilebene angewendet werden kann. Wie eine Richtlinie definiert ein Richtlinienobjekt Aufbewahrungsrichtlinien, kann aber auch einen Zeitplan und ein Etikett definieren. Die folgenden Komponenten sind Komponenten eines Richtlinienobjekts:
+
++
+** *Sicherungstyp*
++
+Ein Backup-Typ ist eine Bezeichnung, die vom Richtlinienobjekt festgelegt werden kann.
+
+** *Richtlinienzuweisungen*
++
+Richtlinienzuweisungen weisen einem bestimmten Profilprofil eine (in der Richtlinienverwaltung erstellte) Policy zu.
+
+** *Policy Management*
++
+Das Richtlinienmanagement erstellt eine Richtlinie im Richtlinienobjekt. Dies ermöglicht die Definition der Anzahl und des Alters der Aufbewahrung von Snapshot Kopien. Wenn SnapVault verwendet wird, können auch die Anzahl und das Alter der zugehörigen Aufbewahrung festgelegt werden. Das Richtlinienmanagement ermöglicht außerdem die optionale Auswahl eines Richtlinienplans und eines Backup-Typs.
+
+** *Policenpläne*
++
+Richtlinienzeitpläne definieren eine Aktion, die an einem bestimmten Zeitplan ausgeführt werden soll.
+
+
+
+* *Quiesce*
++
+Die Aktion zum Stilllegen führt Aktionen aus, die erforderlich sind, um eine Applikation oder Datenbank in einen konsistenten Zustand zu versetzen. Obwohl die Aktion den Namen quiesce aufweist, ist dies möglicherweise kein echter quiesce-Betrieb je nach dem Plug-in oder der Einstellung der Konfigurationsdatei. Das Domino Plug-in führt beispielsweise Domino-API-Aufrufe durch, um Domino-Datenbanken in einen Backup-Startzustand zu versetzen, während das DB2-Plug-in den DB2 Write suspend Befehl ausführt.
+
+* *Wiederherstellen*
++
+Die Wiederherstellungsaktion führt einen Wiederherstellungsvorgang für Volumes oder einzelne Dateien auf einem oder mehreren Volumes durch, die in der Konfigurationsdatei angegeben sind. Abhängig vom in den Konfigurationsdateien verwendeten Plug-in sind möglicherweise weitere Wiederherstellungsvorgänge verfügbar.
+
+* *Scdump*
++
+Scdump ist ein Fehlerbehebungsvorgang, der alle Konfigurationsdateien und Protokolldateien auf Profilebene erfasst, sowie einige Standard Snap Creator Server-Protokolle und Umgebungsinformationen sammelt. Alle diese gesammelten Dateien werden in eine ZIP-Datei komprimiert, die Sie zum Download aufgefordert werden. Die ZIP-Datei zum Scdump kann dann per E-Mail verschickt oder zur Unterstützung für die Analyse hochgeladen werden.
+
+* *Termine*
++
+Der Snap Creator Server enthält einen zentralen Scheduler. Dadurch können Snap Creator Jobs entweder über einen Richtlinieplan (Teil von Richtlinienobjekten) geplant oder direkt über den Scheduler erstellt werden. Der Planer führt bis zu 10 Jobs gleichzeitig aus und stellt zusätzliche Aufträge vor, bis ein laufender Job abgeschlossen ist.
+
+* *Snap Creator Agent*
++
+Der Snap Creator Agent wird typischerweise auf demselben Host installiert, an dem eine Anwendung oder Datenbank installiert ist. Auf dem Agent befinden sich die Plug-ins. Der Agent wird manchmal innerhalb von Snap Creator zu SCAgent verkürzt.
+
+* *Snap Creator Framework*
++
+Snap Creator ist ein Framework, und der vollständige Produktname ist das NetApp Snap Creator Framework.
+
+* *Snap Creator Plug-ins*
++
+Mithilfe von Plug-ins werden Applikationen oder Datenbanken konsistent. Snap Creator enthält mehrere Plug-ins, die bereits Teil der Binärdatei sind und keine zusätzliche Installation erfordern.
+
+* *Snap Creator Server*
++
+Snap Creator Server wird typischerweise auf einem physischen oder virtuellen Host installiert. Der Server hostet die Snap Creator GUI sowie die erforderlichen Datenbanken zum Speichern von Informationen über Jobs, Zeitpläne, Benutzer, Rollen, Profile, Konfigurationsdateien und Metadaten aus Plug-ins. Der Server wird manchmal auf scServer in Snap Creator verkürzt.
+
+* *Umount*
++
+Mit der Umount-Aktion können Sie einen vorhandenen Mount-Punkt angeben, der aufgehoben werden soll.
+
+* *Unquiesce*
++
+Die Aktion unquiesce führt Aktionen aus, die erforderlich sind, um eine Anwendung oder Datenbank in den normalen Betriebsmodus zurückzusetzen. Obwohl die Aktion den Namen unquiesce aufweist, ist dies möglicherweise kein echter unquiesce Betrieb je nach dem Plug-in oder der Einstellung der Konfigurationsdatei. Das Domino Plug-in führt beispielsweise Domino-API-Aufrufe durch, um Domino-Datenbanken in einen Backup-Stopp-Status zu versetzen, während das DB2-Plug-in den Befehl zum Wiederaufnehmen des Schreibvorgangs durchführt.
+
+* *Watchdog*
++
+Der Watchdog ist Teil von Snap Creator Agent, der den Status von Jobs überwacht, die der Agent ausführt. Wenn der Agent nicht innerhalb einer bestimmten Zeitspanne reagiert, kann der Watchdog den Agenten neu starten oder bestimmte Aktionen beenden. Wenn beispielsweise ein stilllegen-Vorgang den Wert für die Zeitüberschreitung überschreitet, kann der Watchdog die Aktion quiesce beenden und einen unquiesce-Vorgang initiieren, um die Datenbank wieder in den normalen Betriebsmodus zu versetzen.
+
+

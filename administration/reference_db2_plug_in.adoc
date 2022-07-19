@@ -1,0 +1,66 @@
+---
+permalink: administration/reference_db2_plug_in.html 
+sidebar: sidebar 
+keywords: db2, plug-in, communicate, database 
+summary: Das DB2-Plug-in verwendet den db2-Befehl, um mit der Datenbank zu kommunizieren. 
+---
+= DB2-Plug-in
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das DB2-Plug-in verwendet den db2-Befehl, um mit der Datenbank zu kommunizieren.
+
+In der folgenden Tabelle sind die DB2-Plug-in-Parameter aufgeführt, die Parametereinstellungen angegeben und die Parameter beschrieben.
+
+|===
+| Parameter | Einstellung | Beschreibung 
+
+
+ a| 
+APP_NAME
+ a| 
+db2
+ a| 
+Stellt den Anwendungsnamen bereit.
+
+
+
+ a| 
+DB2_DATENBANKEN
+ a| 
+db_Name:user_Name
+ a| 
+Listet die DB2-Datenbanken und den Benutzernamen auf.mehrere Datenbanken und Benutzernamen können als Semikolon-getrennte Liste angegeben werden: Z. B. `db1:user1;db2:user2`.
+
+
+
+ a| 
+DB2_CMD
+ a| 
+Pfad_zu_db2cli_cmd
+ a| 
+Gibt den Pfad an, der zum Initialisieren der Datenbankverbindung verwendet wird, damit weitere Befehle auf der Datenbank ausgeführt werden können.
+
+* UNIX-basierte Umgebung:``db2_install_directory/sqllib/bin/db2``
++
+Beispiel: `/home/db2inst1/sqllib/bin/db2`
+
+* Windows: `db2_install_directory\SQLLIB\BIN\db2cmd.exe`
++
+Beispiel: `C:\"Program Files"\IBM\SQLLIB\BIN\db2cmd.exe`
+
+
+
+Wenn kein Pfad angegeben ist, wird sqllib/db2 als Pfad verwendet.
+
+|===
+*Hinweis:* die DB2 Plug-in-Handles Write Anywhere File Layout (WAFL) Operationen standardmäßig. Wenn Sie ein Backup einer Konsistenzgruppe mit dem DB2 Plug-in sichern möchten, sollten Sie den Parameter auf NTAP_CONSISTENCY_GROUP_WAFL_SYNC Parameter auf N. setzen Wenn Sie diesen Parameter auf Y setzen, werden zusätzliche und redundante Synchronisierungsvorgänge durchgeführt.
+
+Aktuelle Informationen zu Support oder Kompatibilitätsmatrizen finden Sie in der Interoperabilitäts-Matrix.
+
+*Verwandte Informationen*
+
+http://mysupport.netapp.com/matrix["Interoperabilitäts-Matrix-Tool: mysupport.netapp.com/matrix"]

@@ -1,0 +1,41 @@
+---
+permalink: sap-hana-ops/task_configuring_sap_hana_for_san_environments.html 
+sidebar: sidebar 
+keywords: configuring, sap, hana, san, environments 
+summary: 'Nach der Konfiguration der Daten-Backups muss der Snap Creator Konfigurationsdatei in Umgebungen, in denen ein SAP HANA-System über Fibre Channel Storage Area Network (SAN) mit dem/den Storage Controller verbunden ist, ein neuer Befehl hinzugefügt werden.' 
+---
+= Konfiguration von SAP HANA für SAN-Umgebungen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Nach der Konfiguration der Daten-Backups muss der Snap Creator Konfigurationsdatei in Umgebungen, in denen ein SAP HANA-System über Fibre Channel Storage Area Network (SAN) mit dem/den Storage Controller verbunden ist, ein neuer Befehl hinzugefügt werden.
+
+Wenn ein globaler synchronisierter Backup-Speicherpunkt von Snap Creator innerhalb von SAP HANA ausgelöst wird, tritt der letzte Schritt auf, wenn SAP HANA die Datei /hana/Data/SID/mnt00001/hdb00001/Snapshot_datackup_0_1 schreibt. Diese Datei ist Teil des Daten-Volumes auf dem Storage und ist daher Teil der Storage-Snapshot Kopie. Diese Datei ist bei der Durchführung einer Wiederherstellung obligatorisch, falls das Backup wiederhergestellt wird. Durch Metadaten-Caching mit dem 'X' File System (XFS) auf dem Linux-Host ist die Datei auf der Speicherebene nicht sofort sichtbar. Die standardmäßige XFS-Konfiguration für das Metadaten-Caching beträgt 30 Sekunden.
+
+Innerhalb von Snap Creator müssen Sie einen Post-Application-Befehl quiesce hinzufügen, der wartet, bis der Metadaten-Cache der XFS auf die Festplattenebene gespeichert wird.
+
+Sie können die Konfiguration des Metadaten-Caching mit folgendem Befehl überprüfen:
+
+[listing]
+----
+stlrx300s8-2:/ # sysctl -A | grep xfssyncd_centisecs
+fs.xfs.xfssyncd_centisecs = 3000
+----
+. Fügen Sie in der Konfigurationsdatei (install_PATH/scServersion_number/Engine/configs) den Befehl /bin/Sleep dem Abschnitt Post befiehlt, wie im folgenden Beispiel dargestellt:
++
+[listing]
+----
+############################################################
+#     Post Commands      ############################################
+POST_NTAP_DATA_TRANSFER_CMD01=
+POST_APP_QUIESCE_CMD01=/bin/sleep 60
+POST_CLONE_CREATE_CMD01=
+----
++
+
+NOTE: Sie sollten eine Wartezeit zulassen, die doppelt so hoch ist wie der Wert des Parameters fs.xfs.xfssyncd_centisecs. Mit dem Standardwert 30 Sekunden sollte beispielsweise der Befehl Sleep mit 60 Sekunden konfiguriert werden.
+
+

@@ -1,0 +1,87 @@
+---
+permalink: domino-ops/task_configuring_snap_creator_to_use_snapdrive_by_using_the_gui.html 
+sidebar: sidebar 
+keywords: domino, ibm, adding, supplemental, commands 
+summary: Sie können Ihrer Konfiguration zusätzliche Befehle hinzufügen, nachdem Sie die Konfigurationsdatei erstellt haben. Sie können die Befehle auf dem Snap Creator Server oder Agent ausführen. 
+---
+= Hinzufügen von zusätzlichen Befehlen zur Konfiguration
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können Ihrer Konfiguration zusätzliche Befehle hinzufügen, nachdem Sie die Konfigurationsdatei erstellt haben. Sie können die Befehle auf dem Snap Creator Server oder Agent ausführen.
+
+Um einen zusätzlichen Befehl auf dem Agent auszuführen, sollten Sie den Befehl bereits der Datei allowed_bedges.config auf dem Agent hinzugefügt haben.
+
+Standardmäßig werden zusätzliche Befehle auf dem Agent ausgeführt. Sie können einen zusätzlichen Befehl auf dem Server ausführen, indem Sie den Befehl mit dem TEXTSERVER vorwarden, gefolgt von einem Doppelpunkt (:). BEISPIEL: SERVER:C:\myscript.bat. Es ist nicht erforderlich, den Befehl auf dem Server zu erlauben.
+
+Sie können entweder die Snap Creator GUI oder die Snap Creator CLI verwenden, um Befehle zu Ihrer Backup- und Restore-Konfiguration hinzuzufügen.
+
+
+NOTE: In diesem Handbuch wird gezeigt, wie Sie über die GUI Befehle hinzufügen. Informationen zur Verwendung der CLI finden Sie im https://library.netapp.com/ecm/ecm_download_file/ECMP12395422["Snap Creator Framework 4.1.2 – Administratorhandbuch"].
+
+. Wählen Sie im Fenster Profile und Konfigurationen die Konfigurationsdatei aus und klicken Sie auf die Registerkarte *befiehlt*.
++
+Die folgenden Befehlstypen sind verfügbar:
+
++
+|===
+| Befehlstyp | Beschreibung 
+
+
+ a| 
+Anwendungsquiesce
+ a| 
+Nur für nicht-Plug-in-Verwendung. Diesen Befehlstyp ignorieren.
+
+
+
+ a| 
+Anwendungs-Unqualisce
+ a| 
+Nur für nicht-Plug-in-Verwendung. Diesen Befehlstyp ignorieren.
+
+
+
+ a| 
+Vor Dem Beenden
+ a| 
+Verwenden Sie diese Art, um Befehle auszuführen, die Snap Creator nach einem schwerwiegenden Fehler erklären, was zu tun ist.
+
+
+
+ a| 
+Erstellen Von Snapshot Kopien
+ a| 
+Verwenden Sie diesen Typ, um Ihre eigenen Befehle zum Erstellen von Snapshot Kopien auszuführen.
+
+|===
++
+
+NOTE: In der GUI ist nur ein Teil der unterstützten Befehle verfügbar. Informationen zu DEN BEFEHLEN APP, ARCHIVE, MOUNT/UNMOUNT und POST finden Sie im link:https://library.netapp.com/ecm/ecm_download_file/ECMP12395422["Snap Creator Framework 4.1.2 – Administratorhandbuch"].
+
+. Scrollen Sie auf der Registerkarte *befiehlt* zum Abschnitt für den Befehlstyp, den Sie verwenden möchten, und klicken Sie auf *Hinzufügen*.
+. Geben Sie den Text *Befehl hier einfügen* ein, um den Befehl einzugeben.
++
+Um ein Backup mit SnapDrive für Windows zu erstellen, können Sie im Abschnitt des Befehls „Snapshot Kopie erstellen“ Folgendes eingeben:
+
++
+[listing]
+----
+"C:\Program Files\NetApp\SnapDrive\sdcli.exe" snap create -s %SNAME-%SNAP_TYPE_%SNAP_TIME -D F G H
+----
++
+Wo?
+
++
+** „C:\Programme\NetApp\SnapDrive\sdcli.exe“ ist der Standardinstallationspfad für die SnapDrive CLI.
+** %SNAME-%SNAP_TYPE_%SNAP_TIME gibt an, dass der Name der Snapshot Kopie aus dem Namen der Konfigurationsdatei, der Snapshot-Richtlinie (stündlich, täglich oder monatlich) und der Zeit und dem Datum, an dem die Snapshot Kopie erstellt wurde, gebildet wird.
+** D ist der Schalter und F G H sind die Mount-Punkte für die zu sichernden Daten. TIPP: Um den Befehl auf dem Server auszuführen, geben Sie den Befehl mit dem TEXTSERVER vor, gefolgt von einem Doppelpunkt (:).
+
+
+. Wenn Sie mit Ihrer Eingabe zufrieden sind, drücken Sie *Enter*.
+. Wiederholen Sie die Schritte ,#STEP_3F9C83DD05D84075AD0277213FD67C56 Bis ,#STEP_FBEDD7AE105F42138EB35315EA9FA7CC Um einen weiteren Befehl hinzuzufügen.
+. Klicken Sie im Fenster Konfigurationsinhalt auf *Speichern*, um Ihre Änderungen zu speichern.
+

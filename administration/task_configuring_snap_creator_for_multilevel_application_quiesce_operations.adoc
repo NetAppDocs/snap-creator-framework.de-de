@@ -1,0 +1,103 @@
+---
+permalink: administration/task_configuring_snap_creator_for_multilevel_application_quiesce_operations.html 
+sidebar: sidebar 
+keywords: hypervisoer, virtualization, plug-in, vmware, vcloud, multilevel, application, quiesce 
+summary: 'Wenn Sie die Hypervisor (auch Virtualisierungs-)Plug-ins (VMware (VMware vCloud Director und VMware vSphere), KVM und Citrix XenServer) verwenden und eine Anwendung auf mehreren Ebenen stilllegen und Backups durchführen möchten, müssen Sie Snap Creator für diese Art von Setup konfigurieren.' 
+---
+= Konfiguration von Snap Creator zur Stilllegung von Anwendungen auf mehreren Ebenen bei Verwendung von Hypervisor-Plug-ins
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie die Hypervisor (auch als „`Virtualization`“ bezeichnet) Plug-ins (VMware (VMware vCloud Director und VMware vSphere), KVM und Citrix XenServer verwenden und eine mehrstufig betreiben möchten, müssen Sie Snap Creator für diese Art von Setup konfigurieren.
+
+Mit dieser Konfiguration können Sie eine Applikation stilllegen, die sich auf einer Virtual Machine befindet, die Virtual Machine stilllegen und dann eine Snapshot Kopie erstellen.
+
+Während dieses Prozesses erstellen Sie eine Hypervisor- und Anwendungskonfiguration, indem Sie eine übergeordnete Konfigurationsdatei mit einer oder mehreren untergeordneten Konfigurationsdateien angeben. Diese übergeordnete Konfigurationsdatei enthält Informationen zu den typischen Konfigurationsdateien wie Aufbewahrungsrichtlinie, SVM-Details und Informationen für das Hypervisor-Plug-in. Jede untergeordnete Konfigurationsdatei enthält die Details, die zum Ausführen von Aktionen des Snap Creator Quiesce und Unquiesce mithilfe des spezifischen Applikations-Plug-ins erforderlich sind.
+
+. Erstellen Sie ein neues Profil.
+. Erstellen Sie eine neue Konfiguration.
++
+.. Geben Sie auf der Seite Konfiguration einen Namen für die Konfigurationsdatei ein.
++
+
+NOTE: Standardmäßig ist die Kennwortverschlüsselung aktiviert, um zu verhindern, dass Passwörter in der Konfigurationsdatei im Klartext angezeigt werden.
+
+.. Wählen Sie auf der Seite Plug-in-Typ *Virtualisierungs-Plug-in* aus.
+.. Wählen Sie auf der Seite Virtualisierungs-Plug-in das zu konfigurierende Plug-in aus.
+.. Geben Sie auf der Seite Plug-in-Parameter die Konfigurationsdetails an, die mit der ausgewählten Plug-in-Option verknüpft sind.
++
+Im folgenden Beispiel ist VMware vSphere das ausgewählte Plug-in für Virtualisierung. Die angezeigten Fenster des Assistenten hängen von Ihrer Auswahl ab.
+
++
+... Geben Sie die entsprechenden Informationen ein und klicken Sie auf *Hinzufügen*.
++
+image::../media/scf_config_multilvl_setup_1.gif[scf config - Konfiguration 1]
+
+... Geben Sie auf der Seite New vCenter die vCenter IP und den Hostnamen an und klicken Sie auf *Hinzufügen*.
+... Wählen Sie die entsprechenden Datastores und Virtual Machines für das Backup aus.
++
+image::../media/scf_config_multilvl_setup_2.gif[scf config - Konfiguration mit Multilvl 2]
+
+... Überprüfen Sie, ob die eingegebenen Details korrekt sind.
+... Geben Sie auf der Seite Agentenkonfiguration die Details zum VMware-Agent an. Dies sind die Details zum System, auf dem Sie den Agent installiert haben.
++
+
+NOTE: Der Port ist der Port, auf dem der Agent abhört.
+
++
+Klicken Sie auf *Agent-Verbindung*, um sicherzustellen, dass der Agent ausgeführt wird.
+
+... Wählen Sie auf der Seite Hypervisor + App Backup *Ja* aus, da sowohl der Hypervisor als auch applikationskonsistente Backups erforderlich sind.
+... Geben Sie auf der Konfigurationsseite Hypervisor + App den übergeordneten Konfigurationsnamen für den Hypervisor und die Anwendungskonfiguration an.
+... Wählen Sie auf der Seite Plug-in-Typ die Option *Anwendungs-Plug-in*.
+... Wählen Sie auf der Seite Anwendungs-Plug-ins die Anwendung aus, die für die Sicherung und Wiederherstellung verwendet werden soll.
+... Geben Sie die Details für die ausgewählte Anwendung an.
+... Geben Sie auf der Seite Agentenkonfiguration die Details zur Anwendung Snap Creator Agent an. Dies sind die Details der Anwendung oder des Datenbankhosts, auf dem Sie den Agent installiert haben.
++
+
+NOTE: Normalerweise handelt es sich bei dem Host um eine gesicherte Virtual Machine, auf der eine Applikation ausgeführt wird.
+
++
+Klicken Sie auf *Agent-Verbindung*, um sicherzustellen, dass der Agent ausgeführt wird.
+
+... Überprüfen Sie auf der Seite Zusammenfassung die Informationen und klicken Sie auf *Fertig stellen*.
+... Auf der Seite Hypervisor + App haben Sie folgende Optionen:
++
+**** Um dieser Konfiguration weitere Anwendungen hinzuzufügen, klicken Sie auf *Hinzufügen* und wiederholen Sie die Schritte VII bis XII in diesem Beispiel.
+**** Um Anwendungen aus dieser Konfiguration zu löschen, wählen Sie das Element aus und klicken Sie auf *Löschen*.
+**** Um mit dem Hauptkonfigurationsassistenten fortzufahren, klicken Sie auf *Weiter*.
++
+
+NOTE: Wenn Sie mehrere Anwendungen aufgelistet haben, haben Sie die Möglichkeit, diese Liste neu zu ordnen, indem Sie eine Anwendung nach oben oder unten in der Liste verschieben. Anwendungen werden seriell gesichert. Wenn also eine Anwendung vor einer anderen in der Liste stillgelegt werden muss, müssen Sie die Anwendungen in der richtigen Reihenfolge platzieren.
+
+
+
+
+
+.. Stellen Sie auf der Seite Einstellungen für Speicherverbindungen die folgenden Informationen bereit:
++
+*** Wählen Sie für die Option *Transport* *HTTPS* aus.
+*** Bei der Option *Controller/Vserver Port* behalten Sie die Standardeinstellung (443) bei.
+*** Wählen Sie für die Option *Clustered ONTAP* *Ja* aus.image:../media/scf_config_multilvl_setup_3.gif[""]
+
+
+.. Geben Sie auf der Seite New Controller/Vserver die IP-Adresse, den Benutzernamen und das Passwort des Controllers an.
+.. Stellen Sie die Details der Snapshot Kopie bereit.
++
+image::../media/scf_config_multilvl_setup_4.gif[scf config - Konfiguration mit Mehrfachlvl 4]
+
+.. Wählen Sie auf der Seite Snapshot Details Fortsetzung nicht die Option *Consistency Group* aus.
+.. Wählen Sie auf der Seite Datenschutz keine der Optionen *Datenübertragung* aus.
+.. Überprüfen Sie die Informationen auf der Übersichtsseite, und klicken Sie auf *Fertig stellen*.
+
+
+
+
+*Verwandte Informationen*
+
+xref:task_creating_profiles.adoc[Profile werden erstellt]
+
+xref:task_creating_configuration_files_using_sc_gui.adoc[Konfigurationsdateien werden erstellt]

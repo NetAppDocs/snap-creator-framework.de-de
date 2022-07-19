@@ -1,0 +1,173 @@
+---
+permalink: administration/reference_sybase_plug_in.html 
+sidebar: sidebar 
+keywords: sybase, ase, plug-in, isql, command, database, parameter, user, server 
+summary: Das Sybase ASE Plug-in verwendet den isql-Befehl zur Interaktion mit der Sybase-Datenbank. 
+---
+= Sybase ASE Plug-in
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das Sybase ASE Plug-in verwendet den isql-Befehl zur Interaktion mit der Sybase-Datenbank.
+
+
+NOTE: Aktuelle Informationen zu Support oder Kompatibilitätsmatrizen finden Sie in der Interoperabilitäts-Matrix.
+
+In der folgenden Tabelle sind die Sybase Plug-in-Parameter aufgeführt, ihre Einstellungen aufgeführt und beschrieben:
+
+|===
+| Parameter | Einstellung | Beschreibung 
+
+
+ a| 
+SYBASE_USER
+ a| 
+Benutzername
+ a| 
+Gibt den Betriebssystembenutzer an, der den Befehl isql ausführen kann. Dieser Parameter ist für UNIX erforderlich. Dieser Parameter ist erforderlich, wenn der Benutzer, der die Snap Creator Agentstart- und STOP-Befehle ausführt (normalerweise der Root-Benutzer) und der Benutzer, der den isql-Befehl ausführt, unterschiedlich ist.
+
+
+
+ a| 
+SYBASE_SERVER
+ a| 
+Name_Data_Server
+ a| 
+Gibt den Namen des Sybase Datenservers an (-S Option auf dem isql-Befehl).Beispiel: `p_test`
+
+
+
+ a| 
+SYBASE_DATENBANKEN
+ a| 
+db_Name:user_Name/password
+ a| 
+Listet die Datenbanken innerhalb der Instanz auf, die gesichert werden sollen. Die Master-Datenbank wird hinzugefügt, z. B.: `DBAtest2:sa/53616c7404351e`Wenn eine Datenbank mit dem Namen +ALL verwendet wird, dann wird die automatische Datenbankerkennung verwendet, und die Datenbanken sybsyntax, sybsystemdb, sybsystemprocs und tempdb sind ausgeschlossen.
+
+Beispiel: `+ALL:sa/53616c71a6351e`
+
+Verschlüsselte Passwörter werden unterstützt, wenn der Parameter NTAP_PWD_PROTECTION festgelegt ist.
+
+
+
+ a| 
+SYBASE_DATABASES_EXCLUDE
+ a| 
+db_Name
+ a| 
+Ermöglicht den Ausschluss von Datenbanken, wenn das +ALLE-Konstrukt verwendet wird. Sie können mehrere Datenbanken mithilfe einer durch Semikolon getrennten Liste angeben.Beispiel: `pubs2;test_db1`
+
+
+
+ a| 
+SYBASE_TRAN_DUMP
+ a| 
+db_Name:Directory_PATH
+ a| 
+Ermöglicht Ihnen die Durchführung eines Sybase Transaktions-Dump nach dem Erstellen einer Snapshot Kopie.Beispiel: `pubs2:/sybasedumps/pubs2`
+
+Sie müssen jede Datenbank angeben, die einen Transaktions-Dump erfordert.
+
+
+
+ a| 
+SYBASE_TRAN_DUMP_FORMAT
+ a| 
+%S_%D_%T.CMN
+ a| 
+Ermöglicht Ihnen die Angabe der Namenskonvention für Dump. Folgende Schlüssel können angegeben werden:
+
+* %S = Instanzname vom SYBASE_SERVER
+* %D = Datenbank aus SYBASE_DATABASES
+* %T = eindeutiger Zeitstempel
+
+
+Hier ein Beispiel: `%S_%D_%T.log`
+
+
+
+ a| 
+SYBASE_TRAN_DUMP_COMPRESS
+ a| 
+(J
+| N ) 
+
+
+ a| 
+Aktiviert oder deaktiviert die native Sybase Transaktions-Dump-Komprimierung.
+ a| 
+SYBASE_ISQL_CMD
+ a| 
+Beispiel: /Opt/sybase/OCS-15__0/bin/isql
+
+
+
+ a| 
+Definiert den Pfad zum Befehl isql.
+ a| 
+SYBASE
+ a| 
+Beispiel: /sybase
+
+
+
+ a| 
+Gibt den Speicherort der Sybase-Installation an.
+ a| 
+SYBASE_LOGDIR
+ a| 
+Beispiel: /Usr/local/ntap/scServer/logs
+
+
+
+ a| 
+Definiert das Verzeichnis, in dem Snap Creator-Protokolle abgelegt werden.
+ a| 
+SYBASE_MANIFEST
+ a| 
+Beispiel: `DBAtest2:/t_inf_nzl_devs/`
+
+
+
+ a| 
+Gibt die Datenbanken an, für die die Manifestdatei erstellt werden soll, zusammen mit dem Speicherort, an dem die Manifestdatei platziert werden soll.
+ a| 
+SYBASE_MANIFEST_FORMAT
+ a| 
+%S_%D_%T.Manifestbeispiel: `%S_%D_%T.manifest`
+
+
+
+ a| 
+Ermöglicht Ihnen die Angabe der Namenskonvention für die Manifestdatei. Folgende Schlüssel können angegeben werden:
+
+* %S = Instanzname vom SYBASE_SERVER
+* %D = Datenbank aus SYBASE_DATABASES
+* %T = eindeutiger Zeitstempel. Dies ist der gleiche, wie für die Benennung von Snapshot Kopien verwendet
+
+ a| 
+SYBASE_MANIFEST_DELETE
+ a| 
+(J
+
+
+
+| N )  a| 
+Ermöglicht das Löschen des Manifests nach dem Erstellen der Snapshot Kopie. Die Manifest-Datei sollte in der Snapshot-Kopie erfasst werden, damit sie immer für das Backup verfügbar ist.
+ a| 
+SYBASE_EXCLUDE_TEMPDB
+
+
+
+ a| 
+(J
+| N )  a| 
+Ermöglicht den automatischen Ausschluss von vom Benutzer erstellten temporären Datenbanken.
+
+|===
+*Verwandte Informationen*
+
+http://mysupport.netapp.com/matrix["Interoperabilitäts-Matrix-Tool: mysupport.netapp.com/matrix"]

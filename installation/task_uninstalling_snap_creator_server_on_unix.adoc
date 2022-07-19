@@ -1,0 +1,48 @@
+---
+permalink: installation/task_uninstalling_snap_creator_server_on_unix.html 
+sidebar: sidebar 
+keywords: uninstalling, uninstall, snap, creator, server, unix 
+summary: Sie können Snap Creator Server von UNIX deinstallieren, indem Sie den Snap Creator Server Installationsordner löschen. 
+---
+= Deinstallieren von Snap Creator Server unter UNIX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können Snap Creator Server von UNIX deinstallieren, indem Sie den Snap Creator Server Installationsordner löschen.
+
+Sichern Sie die folgenden Verzeichnisse und alle zugehörigen Unterverzeichnisse und Dateien im Snap Creator Server-Engine-Verzeichnis (/install_PATH/scServer4.1.0/Engine):
+
+* Snap Creator Datenbank (./SnapCreator)
+* Eigenschaften von Snap Creator Server (../etc.)
+* Konfiguration (../Konfigurationen)
+* Logs (../logs)
+* Plug-in Repository, falls aktiviert (../SnapcreatorPlugin)
+
+
+
+NOTE: Stellen Sie sicher, dass Sie diese Verzeichnisse sichern; andernfalls verlieren Sie die Benutzerdaten und es wird nicht wiederhergestellt werden.
+
+So deinstallieren Sie Snap Creator Server:
+
+
+NOTE: Die in den folgenden Schritten aufgeführten Pfade beziehen sich auf den allgemeinen Installationspfad. Sie können den Pfad in diesen Befehlen ändern, um den angepassten Snap Creator Server-Installationspfad anzuzeigen.
+
+. Beenden Sie den Snap Creator Server Service (`snapcreatorserverservice`) Mit Hilfe des folgenden Skripts:
++
+[listing]
+----
+/install_path/scServer4.1.0/bin/scServer stop
+----
+. Löschen Sie den Snap Creator Server-Installationsordner.
++
+Führen Sie beispielsweise für ein Linux-System den folgenden Befehl aus:
+
++
+[listing]
+----
+rm -Rf /install_path/scServer4.1.0
+----
+

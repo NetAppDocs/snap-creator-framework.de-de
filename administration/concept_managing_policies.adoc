@@ -1,0 +1,18 @@
+---
+permalink: administration/concept_managing_policies.html 
+sidebar: sidebar 
+keywords: managing, retention, policies, list, delete, policies, snapshot, snapvault 
+summary: Sie können Aufbewahrungsrichtlinien erstellen sowie Richtlinien auflisten und löschen. 
+---
+= Verwalten von Aufbewahrungsrichtlinien
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können Aufbewahrungsrichtlinien erstellen sowie Richtlinien auflisten und löschen.
+
+Eine Aufbewahrungsrichtlinie definiert in der Regel Snapshot Aufbewahrungseinstellungen, z. B. die Anzahl der Snapshot Kopien und deren Dauer. Beispielsweise kann eine tägliche Richtlinie 30 Tage Snapshot-Kopien aufbewahren, die mindestens 30 Tage alt sein müssen. (Durch die Einstellung des Aufbewahrungszeitalters wird verhindert, dass mehrere Snapshot Kopien, die am selben Tag erstellt wurden, die Service Level Agreements (SLAs) umgehen, die möglicherweise angeben, dass eine Snapshot Kopie 30 Tage alt sein muss.)
+
+Bei Verwendung von SnapVault definiert die Richtlinie auch die Aufbewahrungseinstellungen für die SnapVault Kopie.

@@ -1,0 +1,54 @@
+---
+permalink: sap-hana-ops/task_configuring_snapvault_relationships.html 
+sidebar: sidebar 
+keywords: configuring, configure snapvault, relationships, snaprestore 
+summary: Wenn Sie SnapVault-Beziehungen konfigurieren, müssen für die primären Storage Controller eine gültige SnapRestore- und SnapVault-Lizenz installiert sein. Auf dem sekundären Storage muss eine gültige SnapVault-Lizenz installiert sein. 
+---
+= SnapVault Beziehungen werden konfiguriert
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie SnapVault-Beziehungen konfigurieren, müssen für die primären Storage Controller eine gültige SnapRestore- und SnapVault-Lizenz installiert sein. Auf dem sekundären Storage muss eine gültige SnapVault-Lizenz installiert sein.
+
+. Aktivieren Sie SnapVault und NDMP auf den primären und sekundären Storage Controllern.
++
+[listing]
+----
+hana1a> options snapvault.enable on
+hana1a> ndmp on
+hana1a>
+hana1b> options snapvault.enable on
+hana1b> ndmpd on
+hana1b
+hana2b> options snapvault.enable on
+hana2b> ndmpd on
+hana2b>
+----
+. Konfigurieren Sie auf allen primären Storage Controllern den Zugriff auf den sekundären Storage Controller.
++
+[listing]
+----
+hana1a> options snapvault.access host=hana2b
+hana1a>
+hana1b> options snapvault.access host=hana2b
+hana1b>
+----
++
+
+NOTE: Die Verwendung eines dedizierten Netzwerks für den Replikationsverkehr wird empfohlen. In diesen Fällen muss der Host-Name dieser Schnittstelle am sekundären Storage Controller konfiguriert werden. Anstelle von hana2b könnte der Host Name hana2b-Rep sein.
+
+. Konfigurieren Sie auf dem sekundären Storage Controller den Zugriff für alle primären Storage Controller.
++
+[listing]
+----
+hana2b> options snapvault.access host=hana1a,hana1b
+hana2b>
+----
++
+
+NOTE: Die Verwendung eines dedizierten Netzwerks für den Replikationsverkehr wird empfohlen. In diesen Fällen muss der Host-Name dieser Schnittstelle auf den primären Storage Controllern konfiguriert werden. Anstelle von hana1b und hana1a könnte der Hostname hana1a-Rep und hana1b-rep sein.
+
+

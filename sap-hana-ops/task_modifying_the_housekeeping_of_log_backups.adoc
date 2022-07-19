@@ -1,0 +1,22 @@
+---
+permalink: sap-hana-ops/task_modifying_the_housekeeping_of_log_backups.html 
+sidebar: sidebar 
+keywords: sap, hana, modifying, modify, housekeeping, log, backups 
+summary: Sie können die Parameter ändern, die für die allgemeine Ordnung der Protokollsicherungen konfiguriert sind, wenn Sie die Protokollbereinigung deaktivieren möchten. 
+---
+= Änderung der allgemeinen Ordnung der Protokollsicherungen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können die Parameter ändern, die für die allgemeine Ordnung der Protokollsicherungen konfiguriert sind, wenn Sie die Protokollbereinigung deaktivieren möchten.
+
+. Wählen Sie das SAP HANA-Profil aus, das Sie ändern möchten.
+. Wählen Sie die zu ändernde Konfiguration aus, und klicken Sie auf *SAP HANA-Einstellungen*.
+. Bearbeiten Sie den Parameter Protokollbereinigung aktivieren, und klicken Sie auf *Speichern*.
++
+image::../media/modifying_housekeeping_of_logs.gif[Ordnung der allgemeinen Ordnung und Sauberkeit der Protokollsicherung]
+
+

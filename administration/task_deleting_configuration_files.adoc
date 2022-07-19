@@ -1,0 +1,29 @@
+---
+permalink: administration/task_deleting_configuration_files.html 
+sidebar: sidebar 
+keywords: delete, configuration, file, profile, management 
+summary: Sie können Konfigurationsdateien aus einem Profil löschen. 
+---
+= Konfigurationsdateien aus einem Profil löschen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können Konfigurationsdateien aus einem Profil löschen.
+
+
+IMPORTANT: Beim Löschen von Konfigurationsdateien werden auch Zeitpläne, die mit der Konfiguration verknüpft sind, im Rahmen des Prozesses entfernt.
+
+. Wählen Sie im Hauptmenü der Snap Creator GUI die Option *Verwaltung* > *Konfigurationen*.
+. Erweitern Sie im Bereich Profile und Konfigurationen den Inhalt des Profils.
++
+Die dem Profil zugewiesenen Konfigurationsdateien werden unter dem Profilnamen aufgelistet.
+
+. Klicken Sie mit der rechten Maustaste auf die Konfigurationsdatei und wählen Sie *Löschen*.
+. Klicken Sie im Bestätigungsfenster auf *Ja*.
++
+Die Konfigurationsdatei wird unter dem Profilnamen aus der Liste entfernt und dauerhaft aus dem Snap Creator Server gelöscht.
+
+

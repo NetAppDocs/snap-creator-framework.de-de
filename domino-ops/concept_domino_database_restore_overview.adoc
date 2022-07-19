@@ -1,0 +1,49 @@
+---
+permalink: domino-ops/concept_domino_database_restore_overview.html 
+sidebar: sidebar 
+keywords: domino, ibm, restore, restoring, databases, understanding, snapmirror, snapvault, destination, directories 
+summary: Das IBM Domino Plug-in stellt Datenbankdateien aus der Snapshot Kopie des Volumes wieder her, auf dem die Datenbank gespeichert ist. Wenn die Snapshot-Wiederherstellung abgeschlossen ist, wendet das Plug-in alle Änderungen an, die im Verzeichnis „changeinfo“ gespeichert sind. 
+---
+= Datenbanken werden wiederhergestellt
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das IBM Domino Plug-in stellt Datenbankdateien aus der Snapshot Kopie des Volumes wieder her, auf dem die Datenbank gespeichert ist. Wenn die Snapshot-Wiederherstellung abgeschlossen ist, wendet das Plug-in alle Änderungen an, die im Verzeichnis „changeinfo“ gespeichert sind.
+
+
+
+== Allgemeines zu Restore-Vorgängen bei SnapMirror und SnapVault
+
+Sie können Snap Creator zum Wiederherstellen einer SnapMirror Kopie der Daten nicht verwenden. Wenn Sie eine gespiegelte Kopie wiederherstellen möchten, müssen Sie zuerst die Spiegelung unterbrechen und dann die Daten manuell wiederherstellen. Weitere Informationen finden Sie im link:http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-sm-ic-fr/home.html["ONTAP 9 Express Guide für die Disaster Recovery von Volumes"].
+
+Nur zeitpunktgenaue Volume-Restores sind verfügbar, wenn Sie eine SnapVault Kopie aus dem sekundären Storage wiederherstellen. Eine minutengenaue Volume-Wiederherstellung oder Wiederherstellung einzelner Dateien kann nicht durchgeführt werden. Sie können diese Einschränkung umgehen, indem Sie zuerst vom sekundären Storage auf den primären Storage wiederherstellen. Im primären Storage können Sie dann nach Bedarf eine minutengenaue Volume-Wiederherstellung oder einzelne Dateien wiederherstellen.
+
+
+
+== Allgemeines zu Zielverzeichnissen
+
+Bei Volume-Restores und Restores mit einzelnen Dateien gibt es in der Regel unterschiedliche Zielverzeichnisse. Sie geben das Zielverzeichnis im Parameter Verzeichnis der Datenwiederherstellung in der Konfigurationsdatei Backup und Restore an (siehe Schritt) link:task_using_the_gui_to_create_a_configuration_file.md#STEP_E6C507729B3647FD8B2E8D0818F22D3B["Task_using_the_gui_to_create_a_Configuration_file.md#STEP_E6C507729B3647FD8B2E8D0818F22D3B"]):
+
+* Für eine Volume-Wiederherstellung müssen Sie das Data Restore Directory auf das Domino-Datenverzeichnis setzen.
+* Für die Wiederherstellung einer einzelnen Datei muss das Data Restore Directory in ein Unterverzeichnis auf dem Domino Daten-Volume gesetzt werden.
+
+
+Das bedeutet, dass Sie bei alternativen Wiederherstellungsarten das Datenverwiederherstellungsverzeichnis ändern müssen, um auf die richtige Einstellung für jeden Wiederherstellungstyp zu verweisen. Andernfalls werden die Änderungsinformationen nicht korrekt angewendet, und die Daten sind nicht mit dem Datenbankstatus, auf den Sie wiederherstellen möchten, inkonsistent. Natürlich können Sie, falls Sie möchten, unterschiedliche Konfigurationen für Wiederherstellungen von Volumes und einzelnen Dateien erstellen.
+
+
+
+== Wo eine Wiederherstellung ausgeführt werden soll
+
+Mit einer Ausnahme können Datenbanken entweder mit der Snap Creator GUI oder mit der Snap Creator CLI wiederhergestellt werden. Für die Wiederherstellung einer einzelnen Datei in einer SAN-Umgebung müssen Sie die CLI verwenden, wie in beschrieben xref:concept_single_file_restore_in_fc_iscsi_environments.adoc[Wiederherstellung einer einzelnen Datei in einer SAN-Umgebung durchführen].
+
+
+NOTE: In diesem Leitfaden wird die Verwendung der CLI nur für Restores mit einzelnen Dateien in einer SAN-Umgebung erläutert. Andernfalls wird angezeigt, wie die GUI zum Wiederherstellen von Datenbanken verwendet wird. Informationen zur Verwendung der CLI finden Sie im https://library.netapp.com/ecm/ecm_download_file/ECMP12395422["Snap Creator Framework 4.1.2 – Administratorhandbuch"].
+
+*Verwandte Informationen*
+
+link:task_performing_point_in_time_volume_restore.adoc["Volume-Wiederherstellung durchführen"]
+link:task_performing_point_in_time_single_file_restore_with_nfs.adoc["Wiederherstellung einzelner Dateien"]
+link:concept_single_file_restore_in_fc_iscsi_environments.adoc["Wiederherstellung einer einzelnen Datei in einer SAN-Umgebung durchführen"]

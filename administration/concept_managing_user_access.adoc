@@ -1,0 +1,137 @@
+---
+permalink: administration/concept_managing_user_access.html 
+sidebar: sidebar 
+keywords: snap, creator, security, features, rbac, snapcreator 
+summary: 'Snap Creator bietet Sicherheitsfunktionen wie etwa rollenbasierte Zugriffssteuerung \(RBAC\), sodass Sie den Benutzerzugriff in Snap Creator managen können.' 
+---
+= Verwalten des Benutzerzugriffs
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Snap Creator bietet Sicherheitsfunktionen wie rollenbasierte Zugriffssteuerung (RBAC), sodass Sie den Benutzerzugriff in Snap Creator managen können.
+
+RBAC umfasst Benutzer, Rollen, Berechtigungen, Vorgänge und Profile. Benutzer, Rollen und Berechtigungen können von Snap Creator-Benutzern definiert werden.
+
+
+
+== Benutzer
+
+* Benutzer werden eindeutig durch einen Benutzernamen und ein Passwort identifiziert.
+* Ein Benutzer kann einer oder mehreren Rollen und Profilen zugewiesen und wieder zugewiesen werden.
+* Der SNAPCREATOR_USER in der Datei snapcreator.properties wird als Benutzer hinzugefügt, wenn der Snap Creator Server gestartet wird.
+* Dem SNAPCREATOR_USER in der Datei snapcreator.properties wird die Standard-Administratorrolle zugewiesen, wenn der Benutzer während des Startvorgangs erstellt wird.
+
+
+
+
+== Rollen
+
+Rollen haben mindestens eine Berechtigung. Die zugewiesenen Berechtigungen bestimmen die Aktionen, auf die ein Benutzer zugreifen kann und auf welche GUI-Elemente der Benutzer zugreifen kann. Es gibt drei integrierte Rollen:
+
+* * ADMINISTRATOR*
++
+Hat vollen Zugriff auf alle APIs. Diese Rolle kann nur Benutzer erstellen, bearbeiten und löschen.
+
+* *BETREIBER*
++
+Diese Rolle ist als Super-Benutzer konfiguriert und hat Zugriff auf alle APIs außer RBAC.
+
+* *BETRACHTER*
++
+Hat nur sehr begrenzten Zugang. Diese Rolle hat Zugriff auf schreibgeschützte Snap Creator API-Aufrufe.
+
+
+
+Diese integrierten Rollen können nicht hinzugefügt, entfernt oder geändert werden.
+
+
+
+== Berechtigungen
+
+Berechtigungen sind eine Reihe von Operationen, die der Benutzer ausführen kann. Die folgenden sind integrierte Berechtigungen:
+
+* *BACKUP*
++
+Die für die Durchführung eines Backup- oder Klonvorgangs erforderlich sind.
+
+* *KONFIGURATION*
++
+Erforderlich, um Konfigurationsdateien zu erstellen, zu lesen, zu aktualisieren und zu löschen.
+
+* *BENUTZERDEFINIERT*
++
+Erforderlich, um einen benutzerdefinierten Plug-in-Betrieb zu starten.
+
+* *EXTENDED_REPOSITORY*
++
+Erforderlich für Katalogvorgänge (auch als erweitertes Repository bezeichnet)
+
+* *GLOBAL*
++
+Erforderlich, um globale Konfigurationsdateien zu erstellen, zu bearbeiten und zu löschen.
+
+* *POLICY_ADMIN*
++
+Erforderlich, um Policy-Operationen aufrufen zu können (z. B. addPolicy, UpdatePolicy, RemovePolicy).
+
+* *POLICY_VIEWER*
++
+Erforderlich für schreibgeschützte Richtlinienvorgänge
+
+* *RBAC_ADMIN*
++
+Erforderlich zum Verwalten von Benutzern (z. B. Erstellen, Aktualisieren, Löschen von Benutzern und Rollen; Auch zum Zuweisen und Aufheben der Zuweisung von Rollen, Berechtigungen).
+
+* *RBAC_VIEW*
++
+Erforderlich, um Benutzerkonten, zugewiesene Rollen und zugewiesene Berechtigungen anzuzeigen.
+
+* *WIEDERHERSTELLEN*
++
+Für Restore-Vorgänge erforderlich
+
+* *PLANER*
++
+Für die Durchführung von Planungsvorgängen erforderlich.
+
+* *BETRACHTER*
++
+Ermöglicht die Autorisierung für schreibgeschützte Vorgänge.
+
+
+
+
+
+== Betrieb
+
+Operationen sind die Grundwerte, die Snap Creator auf seine Autorisierung überprüft. Einige Beispiele für Operationen sind getTask, fileCloneCreate, createTask, dirCreate usw.
+
+
+NOTE: Vorgänge können nicht hinzugefügt, entfernt oder geändert werden.
+
+
+
+== Profile
+
+* Profile werden Benutzern zugewiesen.
+* Profile in RBAC werden im Profilverzeichnis im Dateisystem erstellt.
+* Bestimmte Snap Creator APIs überprüfen, ob ein Benutzer einem Profil zugewiesen ist, und überprüfen Sie auch die Berechtigungen für Vorgänge.
++
+Wenn ein Benutzer beispielsweise einen Job-Status wünscht, überprüft RBAC, ob der Benutzer über die Berechtigung verfügt, den ZeitplanergetJob anzurufen, und prüft dann, ob das dem Job zugeordnete Profil dem Benutzer zugewiesen ist.
+
+* Wenn ein Benutzer, dem die Bedienerrolle zugewiesen wird, ein Profil erstellt, wird dieses Profil automatisch dem Benutzer zugewiesen.
+
+
+
+
+== Verwalten des Benutzerzugriffs für Storage Controller
+
+Wenn Sie den Active IQ Unified Manager-Proxy nicht verwenden, benötigen Sie einen Benutzernamen und ein Passwort, um mit den Storage Controllern zu kommunizieren. Passwörter können aus Sicherheitsgründen verschlüsselt werden.
+
+
+NOTE: Sie sollten den Root-Benutzer oder den Admin/vsadmin-Benutzer nicht verwenden. Als Best Practice empfiehlt es sich, einen Backup-Benutzer mit den erforderlichen API-Berechtigungen zu erstellen.
+
+Die Netzwerkkommunikation erfolgt über HTTP (80) oder HTTPS (443), sodass ein oder beide dieser Ports zwischen dem Host, auf dem Snap Creator ausgeführt wird, und den Storage Controllern geöffnet sein müssen. Zur Authentifizierung muss auf den Speichercontrollern ein Benutzer erstellt werden. Für HTTPS müssen Sie sicherstellen, dass der Benutzer auf den Speichercontrollern aktiviert und konfiguriert ist.

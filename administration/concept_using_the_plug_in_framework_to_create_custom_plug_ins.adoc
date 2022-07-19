@@ -1,0 +1,43 @@
+---
+permalink: administration/concept_using_the_plug_in_framework_to_create_custom_plug_ins.html 
+sidebar: sidebar 
+keywords: plug-in, framework, snap, creator, reuse, quiesce, unquiesce, discover, scdump, restore, restore, clone, describe, restore 
+summary: Mithilfe des Plug-in-Frameworks können Sie eigene Plug-ins für Snap Creator erstellen oder vorhandene Plug-ins wiederverwenden. Das Plug-in versorgt Snap Creator mit Schritten für Backup und Recovery einer bestimmten Applikation. 
+---
+= Erstellen benutzerdefinierter Plug-ins mithilfe des Plug-in-Frameworks
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Mithilfe des Plug-in-Frameworks können Sie eigene Plug-ins für Snap Creator erstellen oder vorhandene Plug-ins wiederverwenden. Das Plug-in versorgt Snap Creator mit Schritten für Backup und Recovery einer bestimmten Applikation.
+
+Das Plug-in-Framework definiert folgende Methoden:
+
+* Quiesce - Methode zum Umgang mit Quiesce für ein bestimmtes Anwendungs-Plug-in
+* Unquiesce - Methode zum Umgang mit unquiesce für ein bestimmtes Anwendungs-Plug-in
+* Discover - Methode zur Bearbeitung der Erkennung von Speicherobjekten für ein bestimmtes Anwendungs-Plug-in
+* Scdump - Methode zum Umgang mit der Erfassung von Support-Informationen, Datenbank, Betriebssystem und SnapDrive
+* Restore - Methode zum Umgang mit der Wiederherstellung für ein bestimmtes Anwendungs-Plug-in
+* Restore_Pre - Methode zum Handling von Pre-Store-Operationen für ein bestimmtes Applikations-Plug-in (kann integrierte Restore CLI von Snap Creator verwenden)
+* Restore_Post - Methode zum Umgang mit Operationen nach der Wiederherstellung für ein bestimmtes Anwendungs-Plug-in (kann integrierte Restore CLI von Snap Creator verwenden)
+* Clone_pre - Methode zur Handhabung von Preclone-Vorgängen für ein bestimmtes Applikations-Plug-in
+* Clone_Post - Methode zur Bearbeitung von Vorgänge nach dem Klonen für ein bestimmtes Applikations-Plug-in
+* Beschreiben: Methode zur Beschreibung der Funktionen eines Plug-ins. Dies ist optional für Perl Plug-ins, wird aber für native Plug-ins unter Plug-ins/nativ benötigt.
+* Clone_all - Methode zum Handling des Klonens für ein Applikations-Plug-in (integrierte Klonschnittstelle nicht verwenden)
+* Clone_cleanup - Methode zur Bearbeitung der Bereinigung, wenn ein Klonvorgang fehlschlägt
+* Restore_cleanup - Methode zur Bearbeitung der Bereinigung, wenn eine Wiederherstellung fehlschlägt
+
+
+
+NOTE: Das Plug-in-Framework unterstützt Perl, PowerShell, Java, UNIX Shell und Python für die Programmierung. HINWEIS: Mit dem Plug-in-Framework können Sie Objekte und Funktionen implementieren, die im Snap Creator vorhanden sind.
+
++ zum Beispiel ist eine Fehlerbehandlung verfügbar, was bedeutet, dass das Plug-in die Standard Implementation Snap Creator verwendet. Dadurch ist weniger Aufwand zur Erstellung eines Plug-ins erforderlich.
+
+* Perl Plug-ins werden unter /Plug-ins/PLUG-IN-Name/PLUG-IN.pm installiert.
+* Native Plug-ins werden unter /Plug-ins/nativ/Plug-in.sh,plug-in.java.plug-in.bat usw. installiert.
+* Das Plug-in muss dort installiert werden, wo es ausgeführt werden soll. Dies kann ein Snap Creator Server oder Snap Creator Agent sein, je nach Einrichtung von Snap Creator.
+
+
+Weitere Informationen zum Plug-in-Framework, Plug-ins und Plug-in-Benutzerhandbüchern finden Sie im http://community.netapp.com/t5/Snap-Creator-Framework-Discussions/bd-p/snap-creator-framework-discussions["Snap Creator Framework Diskussionen Community-Forum"].

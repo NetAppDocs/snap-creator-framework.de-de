@@ -1,0 +1,68 @@
+---
+permalink: administration/reference_logs.html 
+sidebar: sidebar 
+keywords: snap, creator, error, troubleshoot, cmd, output, debug, warn, error, out, debug, stderr 
+summary: Snap Creator bietet nützliche Fehlermeldungen und Fehlerbehebungsprotokolle. 
+---
+= Arten von Fehlermeldungen und Fehlerbehebungsprotokollen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Snap Creator bietet nützliche Fehlermeldungen und Fehlerbehebungsprotokolle.
+
+Die folgenden Arten von Fehlermeldungen werden von Snap Creator bereitgestellt:
+
+* *INFO*
++
+Bei normalen, normalerweise auftretenden Vorgängen.
+
+* *CMD*
++
+Externer Befehl oder Skript, das Snap Creator ausführt (je nach Konfiguration) und der Rückgabecode vom Befehl oder Skript wird protokolliert. In der Regel handelt es sich dabei um BEFEHLE VOR, NACH DEM POST oder UM Quiesce-Befehle aus DER ANWENDUNG oder um das unquiesce-aktivieren
+
+* *AUSGANG*
++
+Für Data ONTAPI-Bibliotheksaufrufe.
+
+* *DEBUG*
++
+Für Debug-Informationen.
+
+* *WARNUNG*
++
+Um Ihre Aufmerksamkeit zu lenken, dies gilt jedoch als normale Aktivität – in der Regel und erfordert keine Aktion (z. B. beim Löschen von Snapshot Kopien).
+
+* *FEHLER*
++
+Weist auf ein Problem hin und erfordert höchstwahrscheinlich manuelle Maßnahmen zur Behebung des Fehlers. Snap Creator beendet jede FEHLERMELDUNG. Es ist wichtig, jedes Problem zu beheben, das aufgetreten ist, bevor es erneut ausgeführt wird. Snap Creator behebt nicht automatisch Probleme, aber Sie können angeben, was vor dem Beenden von Snap Creator ausgeführt werden soll, indem SIE IN der Konfigurationsdatei PRE_EXIT_CMD definiert verwenden.
+
+
+
+Die Fehlerbehebungsprotokolle enthalten die Ausgabe von beliebigen externen Befehlen oder Skripten, die von Snap Creator ausgeführt werden (z. B. SnapDrive). Wenn Sie andere Skripte über Snap Creator aufrufen, ist es wichtig, dass Sie Exit-Codes und die Ausgabe für diese Skripte ordnungsgemäß einrichten. Sie sollten niemals mit Status 0 beenden, wenn ein Problem auftritt.
+
+Für jedes Snap Creator Profil und jede Konfiguration sind folgende Protokolle verfügbar:
+
+* *Aus*
++
+Enthält nur ausführliche Protokollinformationen.
+
+* *Debug*
++
+Enthält ausführliche und Debug-Protokollinformationen. Wenn Trace-Meldungen in der Konfigurationsdatei aktiviert sind, was die Standardeinstellung ist, werden die Trace-Informationen in diesem Protokoll angezeigt. Der Parameter, der Trace-Meldungen aktiviert, ist LOG_TRACE_ENABLE - (Y N).
+
+* *Fehler*
++
+Enthält einen Verlauf aller Fehlerereignisse für eine bestimmte Konfiguration. Das Fehlerprotokoll hilft bei der Anzeige von Informationen über Fehler der Vergangenheit, sodass Benutzer Ereignisse korrelieren und eine historische Perspektive erhalten können. Es kann überwacht werden und als Möglichkeit zur Integration von Snap Creator in eine Monitoring-Anwendung verwendet werden.
+
+* *Stderr*
++
+Informationen enthalten, wenn Probleme mit dem Snap Creator-Code auftreten. Das Standard-Protokoll für Fehlerströme ist jedoch in der Regel leer.
+
+
+
+Die aus-, Debug- und stderr-Protokolle werden wie durch DEN LOG_NUM-Wert in der Konfigurationsdatei definiert beibehalten, während das Fehlerprotokoll immer angefügt wird. Alle Protokolle werden in das Verzeichnis /scServer_install_PATH/Engine/logs/Profile geschrieben.
+
+Der Snap Creator Agent erstellt optional auch die Protokolle out, Debug und stderr und ist standardmäßig mit der folgenden Parametereinstellung aktiviert: SC_AGENT_LOG_ENABLE=Y.

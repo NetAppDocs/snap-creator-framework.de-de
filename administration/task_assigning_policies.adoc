@@ -1,0 +1,23 @@
+---
+permalink: administration/task_assigning_policies.html 
+sidebar: sidebar 
+keywords: assign, retention, policy, configuration, snap, creator, gui, assignment 
+summary: Über die Snap Creator GUI können Sie den Konfigurationsdateien Aufbewahrungsrichtlinien zuweisen. 
+---
+= Richtlinien werden zugewiesen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Über die Snap Creator GUI können Sie den Konfigurationsdateien Aufbewahrungsrichtlinien zuweisen.
+
+. Wählen Sie im Hauptmenü der Snap Creator GUI die Option *Richtlinie* > *Richtlinienzuweisungen*.
+. Wählen Sie im Bereich Profil ein Profil aus.
+. Wählen Sie eine Richtlinie oder Richtlinien aus, die dem Profil zugewiesen werden sollen, indem Sie das entsprechende Kontrollkästchen im rechten Fensterbereich aktivieren und dann auf *Speichern* klicken.
++
+Wenn Konfigurationsdateien bereits im Profil vorhanden sind, wird eine Meldung angezeigt, in der Sie darüber informiert werden, dass die zugewiesene Richtlinie die Einstellungen in der Konfigurationsdatei überfordert.
+
+. Klicken Sie auf *Ja*, um die Richtlinie zuzuweisen.
+

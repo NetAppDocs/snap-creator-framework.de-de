@@ -1,0 +1,105 @@
+---
+permalink: administration/task_creating_policies.html 
+sidebar: sidebar 
+keywords: create, retention, policy, snap, creator, gui, guideline, policy, management 
+summary: Sie können eine neue Aufbewahrungsrichtlinie mithilfe der Snap Creator GUI erstellen, um mehrere Snapshot Richtlinien mit unterschiedlicher Aufbewahrungsanzahl zu konfigurieren. 
+---
+= Richtlinien werden erstellt
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können eine neue Aufbewahrungsrichtlinie mithilfe der Snap Creator GUI erstellen, um mehrere Snapshot Richtlinien mit unterschiedlicher Aufbewahrungsanzahl zu konfigurieren.
+
+Sie sollten die Richtlinien zur Definition von Snap Creator Richtlinien verstehen.
+
+. Wählen Sie im Hauptmenü der Snap Creator GUI die Option *Richtlinie* > *Policy Management*.
+. Klicken Sie auf der Registerkarte *Policy Manager* auf *Erstellen*.
+. Geben Sie die Details ein und klicken Sie dann auf *Speichern*.
++
+image::../media/create_new_policy.gif[Erstellen einer neuen Richtlinie]
+
++
+|===
+| Feld | Beschreibung 
+
+
+ a| 
+Name Der Richtlinie
+ a| 
+Geben Sie den Namen der Richtlinie an.
+
+
+
+ a| 
+Backup-Typ
+ a| 
+(Optional) Wählen Sie den Sicherungstyp aus.
+
+
+
+ a| 
+Richtlinientyp
+ a| 
+Wählen Sie den Richtlinientyp aus:
+
+** *LOKAL*
++
+Erstellt eine Snapshot-Kopie im Primär-Storage. Wählen Sie diesen Typ aus, wenn es keine SnapMirror oder SnapVault-Beziehungen gibt.
+
+** SnapVault
++
+Erstellt eine Snapshot Kopie auf dem primären Storage und führt ein SnapVault Update durch. Das SnapVault-Update muss für alle Volumes in der Konfiguration aktiviert sein.
+
+** SNAPMIRROR
++
+Erstellt eine Snapshot Kopie auf dem primären Storage und führt ein SnapMirror Update durch. Das SnapMirror Update muss für alle Volumes in der Konfiguration aktiviert sein.
+
+
+
+
+
+ a| 
+Zeitplan Für Richtlinien
+ a| 
+(Optional) Wählen Sie den zu verwendenden Richtlinienplan aus. Wenn kein Richtlinienplan angegeben wird, werden diese Aktionen nicht automatisch ausgeführt.
+
+
+
+ a| 
+Anzahl Snapshot Aufbewahrung
+ a| 
+Geben Sie die Anzahl der zu behaltenden Backups ein.
+
+
+
+ a| 
+Alter Der Snapshot-Aufbewahrung
+ a| 
+Geben Sie das Mindestalter ein, das die Backups aufbewahrt werden müssen, bevor sie gelöscht werden können.
+
+
+
+ a| 
+SnapVault Retention Count
+ a| 
+Wenn Sie SnapVault als Richtlinientyp ausgewählt haben, geben Sie die Aufbewahrungsanzahl für SnapVault ein.
+
+
+
+ a| 
+SnapVault Aufbewahrungsfrist
+ a| 
+Wenn Sie SnapVault als Richtlinientyp ausgewählt haben, geben Sie das Aufbewahrungsalter für SnapVault ein.
+
+
+
+ a| 
+Parameter Hinzufügen/Überschreiben
+ a| 
+Bestimmte Parameter können für eine Richtlinie außer Kraft gesetzt werden. Aktivieren Sie dieses Kontrollkästchen, und fügen Sie dann die Parameter hinzu, die überschrieben werden sollen.
+
+|===
+

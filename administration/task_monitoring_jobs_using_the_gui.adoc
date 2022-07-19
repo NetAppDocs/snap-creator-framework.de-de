@@ -1,0 +1,21 @@
+---
+permalink: administration/task_monitoring_jobs_using_the_gui.html 
+sidebar: sidebar 
+keywords: monitor, job, snap, creator, gui 
+summary: Sie können den Status der von Snap Creator ausgeführten Jobs mithilfe der Snap Creator GUI überwachen. 
+---
+= Überwachen von Jobs
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können den Status der von Snap Creator ausgeführten Jobs mithilfe der Snap Creator GUI überwachen.
+
+. Wählen Sie im Hauptmenü der Snap Creator GUI die Option *Verwaltung* > *Job Monitor*.
++
+Eine Liste der laufenden Jobs wird angezeigt.
+
+. Um einen laufenden Job zu beenden, wählen Sie den Job aus, und klicken Sie auf *Abbrechen*.
+

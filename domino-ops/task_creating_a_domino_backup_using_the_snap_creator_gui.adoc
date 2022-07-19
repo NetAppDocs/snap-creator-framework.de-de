@@ -1,0 +1,30 @@
+---
+permalink: domino-ops/task_creating_a_domino_backup_using_the_snap_creator_gui.html 
+sidebar: sidebar 
+keywords: domino, ibm, backing up, backup, databases, on-demand, on, demand 
+summary: Sie sollten Ihre Datenbanken sichern, sobald diese im NetApp Storage verfügbar sind. Sie können wiederkehrende Backups nach dem ersten Backup planen. 
+---
+= Backup von Datenbanken nach Bedarf
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie sollten Ihre Datenbanken sichern, sobald diese im NetApp Storage verfügbar sind. Sie können wiederkehrende Backups nach dem ersten Backup planen.
+
+Sie sollten die Konfigurationsdatei für das Backup erstellt haben, wie in beschrieben xref:task_using_the_gui_to_create_a_configuration_file.adoc[Erstellen einer Konfigurationsdatei].
+
+. Wählen Sie im Fenster Profile und Konfigurationen die Konfigurationsdatei aus und klicken Sie auf *Aktionen* > *Backup*.
+. Wählen Sie im Dialogfeld zusätzliche Parameter die Richtlinie für den Backupjob im Dropdown-Menü *Richtlinie* aus und klicken Sie auf *OK*.
++
+image::../media/scfw_domino_select_a_policy.gif[Dieses Bild wird durch den umgebenden Text erläutert.]
+
++
+
+NOTE: Sie müssen die Richtlinie in der Konfigurationsdatei konfiguriert haben.
+
++
+Snap Creator startet die Sicherungsaufgabe. Jobinformationen werden im Konsolenfenster angezeigt.
+
+

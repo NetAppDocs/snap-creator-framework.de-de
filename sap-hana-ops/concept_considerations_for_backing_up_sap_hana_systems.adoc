@@ -1,0 +1,38 @@
+---
+permalink: sap-hana-ops/concept_considerations_for_backing_up_sap_hana_systems.html 
+sidebar: sidebar 
+keywords: considerations, backup, backing, up, sap, hana 
+summary: SAP HANA-Administratoren müssen ein zuverlässiges Service-Level erfüllen und so die Ausfallzeiten oder Performance-Verschlechterung aufgrund von Backups minimieren. 
+---
+= Überlegungen für das Backup von SAP HANA Systemen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SAP HANA-Administratoren müssen ein zuverlässiges Service-Level erfüllen und so die Ausfallzeiten oder Performance-Verschlechterung aufgrund von Backups minimieren.
+
+Um ein solches Service-Level zu bieten, kämpfen SAP HANA-Administratoren mit Herausforderungen in den folgenden Bereichen:
+
+* Performance-Effekt auf SAP-Produktionssysteme
++
+Backups haben in der Regel erhebliche Auswirkungen auf die Performance des produktiven SAP-Systems, da der Datenbankserver, das Storage-System und das Storage-Netzwerk während der Backups sehr belastet werden.
+
+* Kleiner werdende Backup-Fenster
++
+Backups können nur zu Zeiten erstellt werden, in denen I/O- oder Batch-Aktivitäten auf dem SAP-System stattfinden. Es ist sehr schwierig, ein Backup-Fenster zu definieren, wenn das SAP-System die ganze Zeit aktiv ist.
+
+* Rasantes Datenwachstum
++
+Das rasante Datenwachstum und die immer kleiner werdenden Backup-Fenster führen zu laufenden Investitionen in die Backup-Infrastruktur: Mehr Bandlaufwerke, neue Bandlauftechnologie und schnellere Speichernetzwerke. Wachsende Datenbanken führen zu mehr Bandmedien oder Speicherplatz für Backups. Inkrementelle Backups können diese Probleme beheben, aber sie führen zu einem sehr langsamen Restore-Prozess, der normalerweise nicht akzeptabel ist.
+
+* Steigende Kosten durch Ausfallzeiten
++
+Ungeplante Ausfallzeiten eines SAP-Systems haben immer finanzielle Auswirkungen auf das Geschäft. Ein wesentlicher Teil der ungeplanten Ausfallzeit ist die Zeit, die für die Wiederherstellung des SAP-Systems bei einem Ausfall erforderlich ist. Die Architektur für Backup und Recovery muss auf der Grundlage einer akzeptablen Recovery-Zeitvorgabe (Recovery Time Objective, RTO) entwickelt werden.
+
+* Backup und Recovery-Zeit
++
+Backup- und Recovery-Zeit sind auch in SAP Upgrade-Projekten enthalten. Der Projektplan für ein SAP-Upgrade umfasst immer mindestens drei Backups der SAP-Datenbank. Die zur Durchführung dieser Backups benötigte Zeit verringert die für den Upgrade-Prozess verfügbare Gesamtdauer. Die Entscheidung, ob Backup und Recovery durchgeführt werden sollen, hängt in der Regel von der Zeit ab, die zum Wiederherstellen der Datenbank aus dem zuvor erstellten Backup benötigt wird. Durch die Möglichkeit zur sehr schnellen Wiederherstellung wird mehr Zeit zur Lösung von Problemen bereitgestellt, die während des Upgrades auftreten können, anstatt das System wieder in seinen vorherigen Zustand wiederherzustellen.
+
+

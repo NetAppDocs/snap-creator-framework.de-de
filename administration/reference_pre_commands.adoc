@@ -1,0 +1,74 @@
+---
+permalink: administration/reference_pre_commands.html 
+sidebar: sidebar 
+keywords: snap, creator, server, configuration, pre, command, quiesce, cmd, ntap, clone, exit 
+summary: Snap Creator Server enthält mehrere VORBEFEHLE für die Konfigurationsdatei. 
+---
+= VORBEFEHLE
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Snap Creator Server enthält mehrere VORBEFEHLE für die Konfigurationsdatei.
+
+
+NOTE: Für Windows `cmd.exe /c` Muss vor einem VORBEFEHL enthalten sein.
+
+|===
+| Befehl | Beschreibung 
+
+
+ a| 
+PRE_APP_QUIESCE_ CMD ##
+ a| 
+Dies ist der Befehl zum Starten des Backups vor der Anwendung, wobei ## eine Zahl von 01-99 ist.
+
+
+
+ a| 
+PRE_NTAP_CMD ##
+ a| 
+Dies ist der Befehl pre-Snapshot, wobei ## eine Zahl von 01-99 ist; er wird vor allen Vorgängen ausgeführt.
+
+
+
+ a| 
+PRE_APP_UNQUIESCE_CMD ##
+ a| 
+Dies ist der Befehl zum Beenden von Backups vor der Anwendung, wobei ## eine Zahl von 01-99 ist.
+
+
+
+ a| 
+PRE_NTAP_CLONE_ DELETE_CMD ##
+ a| 
+Dies ist der Befehl zum Löschen vor dem Klonen, wobei ## eine Zahl von 01-99 ist. *Hinweis:* der Zweck des Clone delete-Befehls besteht darin, ein Mount-Skript oder Befehle zu aufrufen, damit geklonte LUNs zum Zwecke der Sicherung (wahrscheinlich auf Band) gemountet werden können.
+
+
+
+ a| 
+PRE_EXIT_CMD ##
+ a| 
+Dies ist ein optionaler Befehl, der ausgeführt wird, nachdem ein schwerwiegender Fehler auftritt, aber bevor Snap Creator beendet wird. Dies ist nützlich, um in den Zustand zurück, den es vor Snap Creator ausgeführt wurde.*Hinweis:*
+
+* Dieser Befehl gibt eine Anwendung in den normalen Betriebsmodus zurück, bevor Snap Creator aufgrund eines Fehlers beendet wird.
+* Dies wird ignoriert, wenn SIE APP_NAME verwenden, da er intern in Snap Creator verarbeitet wird.
+
+
+
+
+ a| 
+PRE_RESTORE_CMD ##
+ a| 
+Dies ist ein optionaler Befehl, der ausgeführt werden kann, bevor Sie eine interaktive Wiederherstellung eingeben. Dadurch können Sie mit der wiederherzustellenden Anwendung interagieren. Beispielsweise möchten Sie die Applikation herunterfahren, bevor Sie eine Wiederherstellung durchführen. *Hinweis:* Dies wird vom MySQL-Plug-in nicht unterstützt.
+
+
+
+ a| 
+PRE_CLONE_CREATE _ CMD ##
+ a| 
+Dies ist ein optionaler Befehl, der ausgeführt werden kann, bevor ONTAPI Klonvorgänge stattfinden, wobei ## eine Zahl von 01-99 ist.
+
+|===

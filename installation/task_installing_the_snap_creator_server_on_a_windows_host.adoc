@@ -1,0 +1,113 @@
+---
+permalink: installation/task_installing_the_snap_creator_server_on_a_windows_host.html 
+sidebar: sidebar 
+keywords: installing, install, snap, creator, server, windows, hosts 
+summary: Sie können Snap Creator Server auf einem Windows-Host mithilfe des Windows-Installationsprogramms installieren. 
+---
+= Installieren des Snap Creator Servers auf einem Windows-Host
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können Snap Creator Server auf einem Windows-Host mithilfe des Windows-Installationsprogramms installieren.
+
+* JRE 1.8 Update 72 oder höher muss installiert sein.
+* Die Person, die die Installation ausführt, muss über Administratorrechte für die Durchführung der Installation verfügen.
+* Der Standardport für den Snap Creator Server muss 8443 sein.
++
+Sie können netstat oder ein ähnliches Tool verwenden, um zu überprüfen, ob der Netzwerkport, den Sie verwenden möchten (sofern der Port HTTPS unterstützt) verfügbar ist und nicht bereits verwendet wird (z. B. Windows: `netstat -na | find "8443"`).
+
+* Sie müssen Snap Creator bereits heruntergeladen haben.
++
+.. Doppelklicken Sie auf die Datei Snap_Creator_Frameworkrelease-Windowsversion.exe.
++
+Um das Snap Creator-Installationsprogramm zu starten, verwenden Sie Snap_Creator_Frame4.1.0-Windows64.exe.
+
+.. Klicken Sie auf der Begrüßungsseite auf *Weiter*, um die Installation zu starten.
+.. Lesen und akzeptieren Sie die Bedingungen der Lizenzvereinbarung.
+.. Ändern Sie auf der Seite *Installationstyp auswählen* die Einstellungen, um sie an verschiedene Installationstypen anzupassen, und klicken Sie dann auf *Weiter*.
++
+image::../media/choose_install_type_page.gif[Wählen Sie die Seite „Installationstyp“]
+
++
+*** *Installationstyp auswählen*
++
+Wählen Sie *Server*. Sowohl der Snap Creator Server als auch Snap Creator Agent können gleichzeitig installiert werden, wenn Sie beide auf dem gleichen System haben möchten.
+
+*** *Server als Dienst starten*
++
+Wählen Sie diese Option aus, um den Snapcreatorserverservice automatisch zu installieren und sofort nach Abschluss des Installationsprozesses zu starten. Wenn diese Option nicht ausgewählt ist, ist das Feld *Server-Port* deaktiviert.
+
++
+
+NOTE: Wenn Sie diese Option nicht auswählen, wird der Dienst nicht installiert, und Sie müssen den Snap Creator Server manuell starten, indem Sie über eine Eingabeaufforderung ein Batch-Skript ausführen.
+
+*** *Geben Sie Ihre System-IP* ein
++
+Wählen Sie diese Option aus, um die IP-Adresse des Systems bereitzustellen, auf dem Snap Creator Server oder Snap Creator Agent installiert ist. Diese Option wird zum Generieren des SSL-Zertifikats während der Installation von Snap Creator verwendet.
+
+*** *Java bin-Pfad eingeben*
++
+Wählen Sie diese Option aus, um den Java-bin-Pfad zur Suche nach dem Keytool-Dienstprogramm bereitzustellen. Keytool wird verwendet, um ein SSL-Zertifikat während der Snap Creator Installation zu generieren.
+
+*** *Server-Port*
++
+Akzeptieren Sie den Standardport von `8443` Oder geben Sie die Portnummer an.
+
+
+
+.. Konfigurieren Sie die Seite *Profile Setup*, und klicken Sie dann auf *Weiter*.
++
+Die auf der Seite *Profile Setup* eingegebenen Informationen dienen zur Einrichtung des für die Snap Creator GUI benötigten Profils.
+
++
+*** *Seriennummer des Storage-Controllers*
++
+Dieser Parameter ist optional. Geben Sie die Seriennummer eines Ihrer Storage Controller ein. Wenn diese Informationen angezeigt werden, wird die Seriennummer des Controllers in die Snap Creator-Eigenschaftendatei integriert und in Support- und Protokollausgänge enthalten. Mit diesen Informationen lassen sich zukünftig auftretende Probleme beheben.
+
+*** *Benutzername*
++
+Geben Sie den Namen des Snap Creator Server Administrators ein.
+
+*** *Passwort und Bestätigung*
++
+Geben Sie das Passwort für den Snap Creator Server Administrator ein.
+
+*** *Jobmonitor aktivieren*
++
+Wenn Sie die Jobüberwachung aktivieren möchten, aktivieren Sie das Kontrollkästchen *Jobmonitor aktivieren*. Job Monitor ist ein separater Abschnitt in der GUI, der alle Jobs, die von Snap Creator ausgeführt werden, und den Status dieser Jobs überwacht.
+
+*** *Job Log size*
++
+Geben Sie die Anzahl der Jobs ein, die in der Historie des Jobprotokolls gespeichert werden sollen. Die Standardeinstellung lautet `100`; Die Größe sollte zwischen 1 und 1000 liegen.
+
++
+
+NOTE: Obwohl der maximal zulässige Wert für die *Job Log-Größe* 10,000 beträgt, ist die empfohlene maximale Größe, die Sie angeben, 1000.
+
+
+
+.. Geben Sie auf der Seite *Installationsort wählen* den Snap Creator-Installationspfad ein, oder übernehmen Sie die Standardeinstellung (C:\Programme\NetApp\Snap_Creator_Framework), und klicken Sie dann auf *Weiter*.
+.. Passen Sie auf der Seite *Startmenü Ordner* den Ordner an, in dem Snap Creator im Windows Startmenü angezeigt werden soll, oder übernehmen Sie den Standardwert, und klicken Sie dann auf *Installieren*.
+.. Klicken Sie nach Abschluss der Installation auf *Weiter*.
++
+Während der Installation des Snap Creator Server Service wird eine Eingabeaufforderung angezeigt, wenn ein Service als Teil der Installationsoptionen ausgewählt wurde. Dieser Prozess versucht, vorhandene Dienste zu starten. Daher ist es üblich, Fehlermeldungen zu sehen, die als Teil dieses Schritts aufgelistet sind.
+
+.. Klicken Sie auf *Fertig stellen*, um das Windows-Installationsprogramm zu schließen.
+.. Überprüfen Sie den Start der Snap Creator Framework GUI, indem Sie zum lokalen Host auf dem angegebenen Port navigieren (https://IP_address:gui_port)[].
++
+Sie müssen eine Verbindung über HTTPS herstellen. Andernfalls wird die Verbindung nicht automatisch zu einer HTTPS-Verbindung umgeleitet und die GUI funktioniert nicht.
+
+
+
+
+
+*Verwandte Informationen*
+
+xref:task_installing_java_on_snap_creator_hosts.adoc[Installieren von Java auf Snap Creator Hosts]
+
+xref:task_downloading_the_snap_creator_software.adoc[Herunterladen der Snap Creator Software]
+
+xref:task_starting_the_server_from_a_command_prompt.adoc[Starten des Servers über eine Eingabeaufforderung]

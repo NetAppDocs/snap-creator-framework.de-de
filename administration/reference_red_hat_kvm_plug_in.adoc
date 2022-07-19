@@ -1,0 +1,111 @@
+---
+permalink: administration/reference_red_hat_kvm_plug_in.html 
+sidebar: sidebar 
+keywords: kernel, kvm, virtualization, linux, snap, creator, virsh, command, plug-in, red, hat, guideline 
+summary: 'Kernel-Based Virtual Machine (KVM) ist eine Virtualisierungslösung für den Linux Kernel. Snap Creator verwendet das KVM-Plug-in zum Sichern und Wiederherstellen der Gast-Virtual Machines.' 
+---
+= Red hat KVM-Plug-in-Richtlinien
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Kernel-Based Virtual Machine (KVM) ist eine Virtualisierungslösung für den Linux Kernel. Snap Creator verwendet das KVM-Plug-in zum Sichern und Wiederherstellen der Gast-Virtual Machines.
+
+
+NOTE: Aktuelle Informationen zu Support oder Kompatibilitätsmatrizen finden Sie in der Interoperabilitäts-Matrix.
+
+Das KVM-Plug-in unterstützt Gastbetriebssysteme wie Linux, Windows und Solaris.
+
+Das Plug-in verwendet intern virsh-Befehle.
+
+Bei Verwendung des KVM-Plug-ins müssen Sie Folgendes berücksichtigen:
+
+* Der Active IQ Unified Manager-Server als Proxy wird nicht unterstützt.
+* Mounten, unmounten und Backup-Vorgänge mit Open Systems SnapVault und Archivprotokollmanagement werden nicht unterstützt.
+* In einer SAN-Umgebung (Storage Area Network) ist das Linux Host Utilities (LHU) Kit erforderlich, um Informationen über LUNs und Volumes vom Storage Controller zu sammeln.
++
+Das LHU-Kit sollte auf einem KVM-Hypervisor installiert werden, der sich am selben Ort wie der Snap Creator Agent befindet.
+
++
+
+NOTE: Wenn das LHU-Kit nicht installiert ist und die Konfiguration eine Mischung aus Network Attached Storage- und Storage Area Network-Umgebungen ist, funktionieren die Backup- und Restore-Vorgänge nur auf einem Network File System (NFS).
+
+* Das KVM-Plug-in unterstützt nur die Linux-Version des Snap Creator 4.0 und 4.1 Agent.
+* Volume-Wiederherstellung wird nicht unterstützt; nur softwaredefinierte Restore-Vorgänge werden unterstützt.
+* Die gelöschten Virtual Machines (VMs) können nicht wiederhergestellt werden.
+* Die Speicher-Controller-IPs und der Host sollten sich entweder in /etc/Hosts auf dem KVM-Host oder in einem Domain Name System (DNS) befinden.
+* Es wird nur ein KVM-Host pro Konfiguration unterstützt.
+* Wenn eine virtuelle Maschine mit einem ISO-Repository erstellt wird, dann sollten Sie dieses Repository durch die Virt Manager-Konsole in CD-ROM-Optionen von der virtuellen Maschine trennen.
+* Der Wert für SC_AGENT_TIMEOUT sollte größer als der Standardwert sein: 600 oder höher.
+* Die Volumes werden automatisch durch automatische Erkennung erkannt.
++
+Sie können die erkannten Ziel-Volumes nicht sehen, wenn sich das Ziel nicht in einer SnapMirror Beziehung befindet. Sie sollten dpstatus verwenden, um den Status der SnapMirror-Beziehung zu überprüfen. Wenn eine SnapMirror-Beziehung nicht existiert, müssen Sie zuerst die SnapMirror-Beziehung erstellen.
+
+* Wenn DER Wert von APP_DEFINED_RESTORE „Y“ lautet, wird der Wiederherstellungsvorgang für SnapVault mit der GUI nicht unterstützt.
+* Bei der Erstellung einer SnapMirror- und SnapVault-Konfiguration mithilfe der grafischen Benutzeroberfläche müssen die Volume-Details manuell eingegeben werden, da die SnapMirror und SnapVault-Beziehung nicht automatisch erkannt wird.
+* Die den VMs zugeordneten Datenfestplatten werden nicht gesichert.
+* Die VM-Unterbrechung und Wiederaufnahme des Betriebs wird seriell durchgeführt.
++
+Bei mehreren VMs hängt die Dauer der VM während des Backup-Vorgangs „ausgesetzt“ von der Anzahl der VMs ab.
+
+
+
+
+
+== Unterstützte KVM-Konfigurationen
+
+* SAN: Unterstützung von Virtual Machines zu Gast, die auf einem Multipath-Rohgerät installiert sind (LUN mit mehreren Pfaden)
+* NAS: Unterstützung von Virtual Machines zu Gast-VMs, die auf NFS Volumes installiert sind
+
+
+
+NOTE: Konfigurationen mit mehreren Virtual Machines, die auf einem einzelnen Multipath-Gerät installiert sind, werden nicht unterstützt.
+
+Virtuelle Gastmaschinen, die auf LVM oder einer Image-Datei in der SAN-Umgebung installiert sind, werden nicht unterstützt.
+
+Die folgende Tabelle beschreibt die KVM-Plug-in-Parameter:
+
+|===
+| Parameter | Einstellung | Beschreibung 
+
+
+ a| 
+KVM_RESTORE_VM_LIST
+ a| 
+Beispiel: `VM1,VM2`
+ a| 
+Gibt die Liste der wiederherzustellenden VMs an. Dieser Parameter ist nur während der Wiederherstellung erforderlich.
+
+
+
+ a| 
+KVM_VM_MAPPING
+ a| 
+Beispiel: `VM1:s_c1:/vol/vol1/lun1;VM2:s_c2:/vol/vol2/lun2;`
+ a| 
+(Erforderlich) gibt die Zuordnung zwischen der VM und dem zugehörigen Storage Controller, der LUN oder dem Dateipfad an. Dieser Parameter wird während der Ermittlung dynamisch aktualisiert.
+
+
+
+ a| 
+KVM_VM_CONFIG_DIR
+ a| 
+Standard: /Etc/libvirt/qemu
+ a| 
+(Optional) gibt den Pfad zum Verzeichnis an, in dem alle XML-Konfigurationsdateien der VM gespeichert sind.
+
+
+
+ a| 
+KVM_CMD_RETRY_COUNT
+ a| 
+Standard: `3`
+ a| 
+(Optional) legt fest, wie oft Sie den Befehl erneut ausführen, wenn er im KVM-Plug-in ausgeführt wird.
+
+|===
+*Verwandte Informationen*
+
+http://mysupport.netapp.com/matrix["Interoperabilitäts-Matrix-Tool: mysupport.netapp.com/matrix"]

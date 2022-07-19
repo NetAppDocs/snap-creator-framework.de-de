@@ -1,0 +1,14 @@
+---
+permalink: installation/concept_upgrading_from_snap_creator_4_0_x.html 
+sidebar: sidebar 
+keywords: upgrading, upgrade, snap, creator, 4.0.x 
+summary: Wenn Sie ein Upgrade von Snap Creator 4.0.x durchführen, wird das Datenbankschema aktualisiert. 
+---
+= Upgrade von Snap Creator 4.0.x
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie ein Upgrade von Snap Creator 4.0.x durchführen, wird das Datenbankschema aktualisiert.

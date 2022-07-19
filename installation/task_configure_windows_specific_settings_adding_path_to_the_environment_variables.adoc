@@ -1,0 +1,29 @@
+---
+permalink: installation/task_configure_windows_specific_settings_adding_path_to_the_environment_variables.html 
+sidebar: sidebar 
+keywords: configuring, configure, windows, settings, adding, add, path, environment, variables 
+summary: Wenn Sie den Snap Creator Agent unter Windows installieren möchten, müssen Sie den Pfad zu den Domino Binärdateien zu den Umgebungsvariablen für Windows hinzufügen. 
+---
+= Windows-spezifische Einstellungen konfigurieren: Pfad zu den Umgebungsvariablen hinzufügen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie den Snap Creator Agent unter Windows installieren möchten, müssen Sie den Pfad zu den Domino Binärdateien zu den Umgebungsvariablen für Windows hinzufügen.
+
+. Rufen Sie die erweiterten Einstellungen für Ihr Windows-Betriebssystem auf (z. B. *Arbeitsplatz* > *Eigenschaften* > *Erweitert* > *Umgebungsvariablen*) und fügen Sie den Domino-Pfad zur Pfadvariablen hinzu.
++
+
+NOTE: Weitere Informationen zum Ändern der Systemvariablen finden Sie in der Dokumentation Ihres Windows-Betriebssystems.
+
+
+
+Wenn Sie den Domino-Pfad zu den Umgebungsvariablen hinzufügen, nachdem der Snap Creator Agent installiert wurde, müssen Sie den Snap Creator Agent-Service neu starten. Öffnen Sie beispielsweise auf dem Host, auf dem der Snap Creator Agent installiert ist, eine Eingabeaufforderung und geben Sie die folgenden Befehle ein:
+
+[listing]
+----
+sc stop SnapCreatorAgentService
+sc start SnapCreatorAgentService
+----

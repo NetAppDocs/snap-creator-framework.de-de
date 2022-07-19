@@ -1,0 +1,14 @@
+---
+permalink: domino-ops/index.html 
+sidebar: sidebar 
+keywords: domino, ibm, plug-in, operations, guide, configure, use, backup, back up, restore, databases 
+summary: Beschreibt die Konfiguration und Verwendung des IBM Domino Plug-ins zum Sichern und Wiederherstellen von IBM Domino Datenbanken. 
+---
+= IBM® Domino® Plug-in Betriebsanleitung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="Lead"]
+Beschreibt die Konfiguration und Verwendung des IBM Domino Plug-ins für Snap Creator 4.3.3 zum Sichern und Wiederherstellen von IBM Domino Datenbanken.

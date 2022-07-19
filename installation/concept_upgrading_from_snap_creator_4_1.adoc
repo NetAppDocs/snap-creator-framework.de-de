@@ -1,0 +1,14 @@
+---
+permalink: installation/concept_upgrading_from_snap_creator_4_1.html 
+sidebar: sidebar 
+keywords: upgrading, upgrade, snap, creator, 4.1 
+summary: Sie können ein Upgrade von Snap Creator 4.1.x durchführen, einschließlich aller derzeit verfügbaren Patch-Ebenen. 
+---
+= Upgrade von Snap Creator 4.1.x
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können ein Upgrade von Snap Creator 4.1.x durchführen, einschließlich aller derzeit verfügbaren Patch-Ebenen.

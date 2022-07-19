@@ -1,0 +1,21 @@
+---
+permalink: administration/task_viewing_a_list_of_scheduled_jobs.html 
+sidebar: sidebar 
+keywords: schedule, job, view, list, snap, creator, gui 
+summary: Sie können die Liste der geplanten Jobs anzeigen. 
+---
+= Anzeigen einer Liste geplanter Jobs
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können die Liste der geplanten Jobs anzeigen.
+
+. Wählen Sie im Hauptmenü der Snap Creator GUI die Option *Verwaltung* > *Zeitpläne*.
+. Überprüfen Sie auf der Registerkarte „Zeitpläne“ die Liste der geplanten Jobs.
++
+Das Feld Ergebnis der letzten Ausführung zeigt den Status des letzten geplanten Jobs an. Ein grünes Häkchen im Feld zeigt an, dass der Job erfolgreich ausgeführt wurde, und ein rotes „X“ zeigt an, dass ein Fehler auftritt.
+
+

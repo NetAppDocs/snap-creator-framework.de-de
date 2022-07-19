@@ -1,0 +1,221 @@
+---
+permalink: administration/reference_snap_creator_gui_error_messages.html 
+sidebar: sidebar 
+keywords: snap, creator, gui, error, message, gui 
+summary: In der folgenden Tabelle sind die Fehlermeldungen der Snap Creator GUI aufgeführt. 
+---
+= Fehlermeldungen der Snap Creator GUI
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+In der folgenden Tabelle sind die Fehlermeldungen der Snap Creator GUI aufgeführt.
+
+|===
+| Fehlercode | Beschreibung/Auflösung 
+
+
+ a| 
+gui-00001
+ a| 
+Stellen Sie sicher, dass das verschlüsselte Kennwort in der Konfigurationsdatei korrekt ist.
+
+
+
+ a| 
+gui-00002
+ a| 
+Stellen Sie sicher, dass Sie die richtige Snap Creator ausführbare Datei verwenden. Überprüfen Sie, ob /etc/Snapcreatorgui.conf korrekt ist.
+
+
+
+ a| 
+gui-00003
+ a| 
+Stellen Sie sicher, dass die Protokolle und der entsprechende Profilordner vorhanden sind.
+
+
+
+ a| 
+gui-00004
+ a| 
+Überprüfen Sie, ob Snap Creator Home/logs/profilame vorhanden ist.
+
+
+
+ a| 
+gui-00005
+ a| 
+Überprüfen Sie, ob das entsprechende Profil und die entsprechende Konfiguration im Verzeichnis Konfigurationen vorhanden sind.
+
+
+
+ a| 
+gui-00006
+ a| 
+Versuchen Sie, das SnapCreator-Profil-Setup auszuführen, wenn die Snapcreatorgui.conf verloren geht.
+
+
+
+ a| 
+gui-00007
+ a| 
+Überprüfen Sie, ob Ihre Konfiguration umbenannt oder gelöscht wurde.
+
+
+
+ a| 
+gui-00008
+ a| 
+Überprüfen Sie Ihren Benutzernamen und Ihr Kennwort und überprüfen Sie, ob Sie den Befehl zum Einrichten des SnapCreator-Profils ausgeführt haben.
+
+
+
+ a| 
+gui-00009
+ a| 
+Prüfen Sie, ob Berechtigungen für Datei oder Ordner vorhanden sind.
+
+
+
+ a| 
+gui-00010
+ a| 
+Prüfen Sie, ob Berechtigungen für Datei oder Ordner vorhanden sind.
+
+
+
+ a| 
+gui-00011
+ a| 
+Wählen Sie ein anderes Profil aus, oder löschen Sie das vorhandene Profil.
+
+
+
+ a| 
+gui-00012
+ a| 
+Überprüfen Sie, ob das Verzeichnis „Konfigurationen“ vorhanden ist und ob der Befehl zum Einrichten des SnapCreator-Profils ausgeführt wurde.
+
+
+
+ a| 
+gui-00013
+ a| 
+Weitere Informationen finden Sie in den Protokollen.
+
+
+
+ a| 
+gui-00014
+ a| 
+Schließen Sie die Konfiguration, und öffnen Sie sie erneut.
+
+
+
+ a| 
+gui-00015
+ a| 
+Prüfen Sie die Berechtigungen für die Datei und ob sie vorhanden sind.
+
+
+
+ a| 
+gui-00017
+ a| 
+Überprüfen Sie, ob Ihr vCenter korrekt ist und über ein gültiges Datacenter verfügt.
+
+
+
+ a| 
+gui-00019
+ a| 
+Versuchen Sie es erneut, da der Datenspeicher während des Abrufs möglicherweise gelöscht wurde.
+
+
+
+ a| 
+gui-00020
+ a| 
+Versuchen Sie es erneut, da der Datenspeicher während des Abrufs möglicherweise gelöscht wurde.
+
+
+
+ a| 
+gui-00021
+ a| 
+Versuchen Sie es erneut. Überprüfen Sie, ob vCenter korrekt ist.
+
+
+
+ a| 
+gui-00022
+ a| 
+Fügen Sie Datastores zu Ihrem vCenter hinzu.
+
+
+
+ a| 
+gui-00023
+ a| 
+Versuchen Sie es erneut, überprüfen Sie Ihr vCenter.
+
+
+
+ a| 
+gui-00024
+ a| 
+Die von Ihnen verwendete vCloud Director Version wird nicht unterstützt.
+
+
+
+ a| 
+gui-00025
+ a| 
+Geben Sie die richtigen Anmeldedaten ein, und versuchen Sie es erneut.
+
+
+
+ a| 
+gui-00026
+ a| 
+Organisationen nicht für VCD gefunden. Erstellen Sie Organisationen und versuchen Sie es erneut.
+
+
+
+ a| 
+gui-00027
+ a| 
+Überprüfen Sie die vCenter-Anmeldedaten.
+
+
+
+ a| 
+gui-00028
+ a| 
+Prüfen Sie die Controller-Details/NTAP_USERS.
+
+
+
+ a| 
+gui-00029
+ a| 
+Überprüfen Sie die vCloud Director-URL.
+
+
+
+ a| 
+gui-00030
+ a| 
+Prüfung, ob vDCs für die Unternehmen vorhanden sind
+
+
+
+ a| 
+gui-00031
+ a| 
+Prüfung, ob vApps für die vDCs vorhanden sind
+
+|===

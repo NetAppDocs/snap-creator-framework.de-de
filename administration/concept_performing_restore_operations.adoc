@@ -1,0 +1,16 @@
+---
+permalink: administration/concept_performing_restore_operations.html 
+sidebar: sidebar 
+keywords: snap, creator, gui, snapdrive, windows 
+summary: Sie können über die Snap Creator GUI Volume Restores, einzelne Dateien und definierte Restore-Vorgänge durchführen. 
+---
+= Durchführung von Restore-Vorgängen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können über die Snap Creator GUI Volume Restores, einzelne Dateien und definierte Restore-Vorgänge durchführen.
+
+Wenn Sie SnapDrive für Windows verwenden, müssen Sie SnapDrive zum Durchführen von Restore-Vorgängen verwenden, die außerhalb von Snap Creator durchgeführt werden sollten.

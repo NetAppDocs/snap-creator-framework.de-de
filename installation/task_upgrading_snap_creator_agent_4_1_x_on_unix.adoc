@@ -1,0 +1,57 @@
+---
+permalink: installation/task_upgrading_snap_creator_agent_4_1_x_on_unix.html 
+sidebar: sidebar 
+keywords: upgrading, upgrade, snap, creator, agent, 4.1.x, unix, unix-based 
+summary: Sie können ein Upgrade von Snap Creator Agent 4.1.x auf UNIX-basierten Systemen durchführen. 
+---
+= Aktualisieren von Snap Creator Agent 4.1.x auf UNIX-basierten Systemen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können ein Upgrade von Snap Creator Agent 4.1.x auf UNIX-basierten Systemen durchführen.
+
+* Sie haben Snap Creator Agent angehalten, bevor Sie die Snap Creator Agent Verzeichnisse sichern, um sicherzustellen, dass die gesicherten Daten abgeschlossen sind.
++
+Geben Sie beispielsweise den folgenden Befehl ein:
+
++
+[listing]
+----
+/install_path/scAgent4.1.0/bin/scAgent stop
+----
+* Sie haben die folgenden Verzeichnisse und alle damit verbundenen Unterverzeichnisse und Dateien im Snap Creator Agent Verzeichnis (/install_PATH/scAgent4.1.x) gesichert:
++
+** Eigenschaften von Snap Creator Agent (../etc), die die Dateien allowed_befiehlt.config und agent.properties enthalten
+** Logs (../logs)
+** Plug-ins (../Plugins) *Hinweis:* Löschen Sie die Sicherungskopien von Snap Creator 4.1.x nicht, die Sie erstellt haben.
+
+
+
+
+Die in den folgenden Schritten aufgeführten Pfade beziehen sich auf den Standardinstallationspfad. Die Pfadinformationen können von Ihrem Installationspfad abweichen, wenn die Standardeinstellungen nicht verwendet wurden.
+
+. Stoppen Sie den Snap Creator Agent, wenn Sie dies noch nicht getan haben.
++
+Weitere Informationen finden Sie in den Details, die weiter oben in diesem Thema aufgeführt sind.
+
+. Installieren Sie den neuesten Snap Creator Agent, starten Sie aber nicht den Snap Creator Agent.
++
+Weitere Informationen finden Sie in den Informationen zum Installieren von Snap Creator Agent auf UNIX.
+
+. Kopieren Sie das gesicherte Snap Creator 4.1.x Protokollverzeichnis auf den letzten Speicherort unter /install_path/scAgent4.1.x/logs).
+. Kopieren Sie das gesicherte Snap Creator 4.1.x Plug-ins Verzeichnis an den aktuellen Speicherort unter /install_path/scAgent4.1.x/Plugins).
+. Kopieren Sie das Verzeichnis der gesicherten Snap Creator 4.1.x-Agenteneigenschaften auf die neueste Position unter /install_path/scAgent4.1.x/etc).
+. Starten Sie Snap Creator Agent durch Eingabe des folgenden Befehls:
++
+[listing]
+----
+/install_path/scAgent4.1.x/bin/scAgent start
+----
++
+
+NOTE: Bei Änderungen an den Dateien „allowed_bedges.config“ oder „agent.properties“ müssen Sie den Snap Creator Agent neu starten, wenn er ausgeführt wird, wenn die Änderungen vorgenommen wurden.
+
+
