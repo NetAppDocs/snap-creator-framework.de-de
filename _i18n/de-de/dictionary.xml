@@ -2948,7 +2948,6 @@
   <block id="fecc8aff3c88a0445bf428ef692f1cea" category="paragraph">NTAP_SNAPVAULT_UPDATE</block>
   <block id="dbd64b7506acb36055eca79b8b364a18" category="paragraph">Ermöglicht das ein- und Ausschalten der SnapVault Update-Funktion.</block>
   <block id="d1ba6e7eb95663aa596dd570add83f9a" category="paragraph">SnapVault VOLUMES</block>
-  <block id="a1fc7f749c5ea5718722bdebdc587614" category="paragraph">Führt die Quell-Storage-Systeme und Volumes auf, auf denen ein SnapVault-Update durchgeführt werden soll (z. B. Controller1:vol1,vol2,vol3;Controller2:vol1;Controller3:vol2,vol3). *Hinweis:*</block>
   <block id="487eb327be46517fae6f993840d60362" category="list-text">Damit SnapVault und SnapMirror Updates funktionieren, müssen die Beziehungen bestehen.</block>
   <block id="b3b87058bbcfac523b85dde91deb1c09" category="paragraph">Snap Creator erstellt nicht die Beziehungen.</block>
   <block id="1ea062b82f2f00248618134e362b06c1" category="list-text">Die Host-Namen in der SnapMirror- oder SnapVault-Beziehung müssen den gleichen sein, wie in den Optionen VOLUMES, SNAPMIRROR_VOLUMES und SNAPVAULT_VOLUMES angegeben. Außerdem muss der Host, auf dem Snap Creator ausgeführt wird, in der Lage sein, die Hostnamen aufzulösen.</block>
@@ -4597,4 +4596,9 @@
   <block id="3fa7ec916163970da88e2e2759209761" category="sidebar">IBM® Domino® Plug-in-Betrieb</block>
   <block id="3cc13999b80491b390e27e7298102ccb" category="sidebar">SAP HANA® Plug-in-Operationen</block>
   <block id="7258e7251413465e0a3eb58094430bde" category="sidebar">Administration</block>
+  <block id="eae66b4b74b6b82ce35a83d2757f6d46" category="cell">(J/N)</block>
+  <block id="0fed4fd40330e62e1aa81d896b62ecb5" category="paragraph">NTAP_ALLOW_MIRRORVAULT_AS_MIRROR</block>
+  <block id="069d4fc9438ae257bab719c9b98b55ff" category="paragraph">Ermöglicht Ihnen die Verwendung der Richtlinie „Mirror_Vault Schutz“ als SnapVault oder SnapMirror. (Standard) N: Aktiviert den Policy-Typ Mirror_Vault Schutz für SnapVault. Y: Aktiviert den Richtlinientyp „Mirror_Vault“ für SnapMirror.</block>
+  <block id="6235e974fbd5143adbb2a8573ca76e9a" category="paragraph">Führt die Quell-Storage-Systeme und Volumes auf, auf denen ein SnapVault-Update durchgeführt werden soll (z. B. Controller1:vol1,vol2,vol3;Controller2:vol1;Controller3:vol2,vol3).</block>
+  <block id="2a8806d1dbd2f7d98c2367f622afe0f8" category="paragraph">Die maximale Bandbreite, die SnapVault verwenden darf, ist in kbps zulässig. Wenn er nicht festgelegt ist, verwendet SnapVault die maximal verfügbare Bandbreite.</block>
 </blocks>
