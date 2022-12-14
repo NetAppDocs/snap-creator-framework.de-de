@@ -299,7 +299,7 @@ Die Richtlinie für gespiegelte Snapshot-Kopien ist dieselbe wie die Richtlinie 
 
 .. Klicken Sie auf *SnapVault*, um Snapshot Kopien zu archivieren.
 .. Geben Sie die Richtlinie für archivierte Snapshot Kopien an.
-.. Die Anweisungen finden Sie im folgenden Schritt,13.
+.. Die Anweisungen finden Sie im folgenden Schritt<<STEP_81795CF9D6294AC891BC3D0CE4827CA3,13>>.
 .. Geben Sie in *SnapVault Wartezeit* die Anzahl der Minuten ein, die Snap Creator warten soll, bis der SnapVault Vorgang abgeschlossen ist.
 .. Sie müssen SnapMirror und SnapVault Beziehungen einrichten, bevor Sie die Replizierung auf den sekundären Storage durchführen. Weitere Informationen finden Sie unter xref:concept_snapmirror_and_snapvault_setup.adoc[Einrichtung von SnapMirror und SnapVault].
 

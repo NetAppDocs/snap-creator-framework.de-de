@@ -82,6 +82,6 @@ Wo?
 
 
 . Wenn Sie mit Ihrer Eingabe zufrieden sind, drücken Sie *Enter*.
-. Wiederholen Sie die Schritte ,#STEP_3F9C83DD05D84075AD0277213FD67C56 Bis ,#STEP_FBEDD7AE105F42138EB35315EA9FA7CC Um einen weiteren Befehl hinzuzufügen.
+. Wiederholen Sie die Schritte <<STEP_3F9C83DD05D84075AD0277213FD67C56,#STEP_3F9C83DD05D84075AD0277213FD67C56>> Bis <<STEP_FBEDD7AE105F42138EB35315EA9FA7CC,#STEP_FBEDD7AE105F42138EB35315EA9FA7CC>> Um einen weiteren Befehl hinzuzufügen.
 . Klicken Sie im Fenster Konfigurationsinhalt auf *Speichern*, um Ihre Änderungen zu speichern.
 
