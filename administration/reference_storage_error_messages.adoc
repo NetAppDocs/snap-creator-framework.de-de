@@ -15,6 +15,7 @@ Die speicherbezogenen Fehlermeldungen können Ihnen bei der Behebung aller auftr
 
 In der folgenden Tabelle sind die Fehlercodes und Meldungen sowie eine kurze Beschreibung des Fehlers und der vorgeschlagenen Lösung aufgeführt.
 
+[cols="15,35,50"]
 |===
 | Fehlercode | Fehlermeldung | Beschreibung/Auflösung 
 
@@ -637,5 +638,23 @@ STORAGE-03094
 Qtree-Liste auf Volume [%s] fehlgeschlagen
  a| 
 Überprüfen Sie die Protokolle auf Fehler. Am ehesten ist ein NetApp Manageability-Fehler zu erwarten. Die Protokolle können die Ursache des Problems aufzeigen.
+
+
+
+ a| 
+STORAGE-04119
+ a| 
+Fehler beim Auflisten der Vserver
+ a| 
+Überprüfen Sie die Protokolle auf Fehler. Sie haben höchstwahrscheinlich einen Fehler bei der Verwaltung der ONTAP-Lösung, der die Ursache des Problems aufdecken kann.
+
+
+
+ a| 
+VSERVER_TUNNEL_AKTIVIERT
+ a| 
+(J/N)
+ a| 
+Stellen Sie vSim Tunneling ein. Wenn die Option Y eingestellt ist, ist die vSim Tunneling-Funktion aktiviert.
 
 |===

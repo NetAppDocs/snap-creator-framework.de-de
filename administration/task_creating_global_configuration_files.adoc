@@ -81,7 +81,7 @@ Der Standardanschluss für den ausgewählten Transporttyp wird angezeigt. Wenn d
 ... Geben Sie auf der Seite „Controller/Vserver Credentials“ die IP-Adresse und die Anmeldedaten für jeden Storage Controller oder jede SVM ein, der die Volumes in dieser Konfigurationsdatei enthält.
 +
 
-NOTE: Sie müssen der Konfiguration mindestens einen Storage-Controller oder SVM hinzufügen.
+NOTE: Sie müssen der Konfiguration mindestens einen Storage-Controller oder SVM hinzufügen. Um die vsim-Tunneling-Funktion zu verwenden, aktivieren Sie das Kontrollkästchen *IP Tunneling* (nur für Cluster).
 
 ... Überprüfen Sie auf der Seite Controller Credentials, ob die Controller die korrekten Informationen anzeigen.
 +

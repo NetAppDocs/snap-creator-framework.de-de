@@ -22,7 +22,7 @@ Die folgende Tabelle bietet das Äquivalent zur Befehlszeile für GUI-basierte R
  a| 
 Benutzer
  a| 
-Erstellen Sie einen neuen Benutzer.
+Erstellen Sie einen neuen Benutzer
  a| 
 [listing]
 ----
@@ -38,9 +38,7 @@ snapcreator
 ----
 
 
- a| 
-Löschen Sie einen Benutzer.
- a| 
+|  | Löschen Sie einen Benutzer  a| 
 [listing]
 ----
 snapcreator
@@ -51,12 +49,11 @@ snapcreator
 --action userDelete
 --username user_name
 --verbose
----- a| 
-Alle Benutzer auflisten.
-
+----
 
 
  a| 
+| Alle Benutzer auflisten  a| 
 [listing]
 ----
 snapcreator
@@ -66,9 +63,11 @@ snapcreator
 --passwd Password
 --action userList
 --verbose
----- a| 
-Listen Sie alle zugewiesenen Benutzer für eine Rolle auf.
+----
+
+
  a| 
+| Listen Sie alle zugewiesenen Benutzer für eine Rolle auf  a| 
 [listing]
 ----
 snapcreator
@@ -83,8 +82,7 @@ snapcreator
 
 
  a| 
-Listen Sie alle Benutzer auf, denen ein Profil zugewiesen ist.
- a| 
+| Listen Sie alle Benutzer auf, denen ein Profil zugewiesen ist  a| 
 [listing]
 ----
 snapcreator
@@ -95,13 +93,13 @@ snapcreator
 --profile Profile
 --action userListForProfile
 --verbose
----- a| 
-Rollen
-
+----
 
 
  a| 
-Erstellen Sie eine neue Rolle.
+Rollen
+ a| 
+Erstellen Sie eine neue Rolle
  a| 
 [listing]
 ----
@@ -114,12 +112,11 @@ snapcreator
 --roleName role_name
 --roleDesc role_description
 --verbose
----- a| 
-Rolle löschen.
-
+----
 
 
  a| 
+| Rolle löschen  a| 
 [listing]
 ----
 snapcreator
@@ -130,9 +127,11 @@ snapcreator
 --action roleDelete
 --roleName role_name
 --verbose
----- a| 
-Weisen Sie einem Benutzer eine Rolle zu.
+----
+
+
  a| 
+| Weisen Sie einem Benutzer eine Rolle zu  a| 
 [listing]
 ----
 snapcreator
@@ -148,8 +147,7 @@ snapcreator
 
 
  a| 
-Heben Sie die Zuordnung einer Rolle zu einem Benutzer auf.
- a| 
+| Heben Sie die Zuordnung einer Rolle zu einem Benutzer auf  a| 
 [listing]
 ----
 snapcreator
@@ -161,12 +159,11 @@ snapcreator
 --userName user_name
 --roleName role_name
 --verbose
----- a| 
-Listen Sie alle zugewiesenen Rollen für einen Benutzer auf.
-
+----
 
 
  a| 
+| Listen Sie alle zugewiesenen Rollen für einen Benutzer auf  a| 
 [listing]
 ----
 snapcreator
@@ -177,13 +174,13 @@ snapcreator
 --action roleListAssigned
 --userName user_name
 --verbose
----- a| 
+----
+
+
+ a| 
 Berechtigungen
  a| 
-Erstellen Sie eine neue Berechtigung.
-
-
-
+Erstellen Sie eine neue Berechtigung
  a| 
 [listing]
 ----
@@ -196,9 +193,11 @@ snapcreator
 --permName permission_name
 --permDesc permission_description
 --verbose
----- a| 
-Löschen Sie eine Berechtigung.
+----
+
+
  a| 
+| Löschen Sie eine Berechtigung  a| 
 [listing]
 ----
 snapcreator
@@ -213,8 +212,7 @@ snapcreator
 
 
  a| 
-Weisen Sie einem Benutzer eine Berechtigung zu.
- a| 
+| Weisen Sie einem Benutzer eine Berechtigung zu  a| 
 [listing]
 ----
 snapcreator
@@ -226,12 +224,11 @@ snapcreator
 --permName permission_name
 --roleName role_name
 --verbose
----- a| 
-Heben Sie die Zuweisung einer Berechtigung von einem Benutzer ab.
-
+----
 
 
  a| 
+| Heben Sie die Zuweisung einer Berechtigung von einem Benutzer ab  a| 
 [listing]
 ----
 snapcreator
@@ -243,9 +240,11 @@ snapcreator
 --permName
 --roleName role_name
 --verbose
----- a| 
-Alle Berechtigungen auflisten.
+----
+
+
  a| 
+| Alle Berechtigungen auflisten  a| 
 [listing]
 ----
 snapcreator
@@ -259,8 +258,7 @@ snapcreator
 
 
  a| 
-Listen Sie alle Berechtigungen auf, die einer Rolle zugewiesen sind.
- a| 
+| Listen Sie alle Berechtigungen auf, die einer Rolle zugewiesen sind  a| 
 [listing]
 ----
 snapcreator
@@ -271,13 +269,13 @@ snapcreator
 --action permListAssigned
 --roleName role_name
 --verbose
----- a| 
-Betrieb
-
+----
 
 
  a| 
-Weisen Sie einer Berechtigung eine Operation zu.
+Betrieb
+ a| 
+Weisen Sie einer Berechtigung eine Operation zu
  a| 
 [listing]
 ----
@@ -290,12 +288,11 @@ snapcreator
 --opName operation_name
 --permName permission_name
 --verbose
----- a| 
-Heben Sie die Zuweisung einer Operation aus einer Berechtigung auf.
-
+----
 
 
  a| 
+| Heben Sie die Zuweisung einer Operation aus einer Berechtigung auf.  a| 
 [listing]
 ----
 snapcreator
@@ -307,9 +304,11 @@ snapcreator
 --opName operation_name
 --permName permission_name
 --verbose
----- a| 
-Listen Sie alle Vorgänge auf.
+----
+
+
  a| 
+| Listen Sie alle Vorgänge auf  a| 
 [listing]
 ----
 snapcreator
@@ -323,8 +322,7 @@ snapcreator
 
 
  a| 
-Listen Sie alle Vorgänge auf, die einer Berechtigung zugewiesen sind.
- a| 
+| Listen Sie alle Vorgänge auf, die einer Berechtigung zugewiesen sind  a| 
 [listing]
 ----
 snapcreator
@@ -335,11 +333,11 @@ snapcreator
 --action opListAssigned
 --permName permission_name
 --verbose
----- a| 
+----
+
+
+ a| 
 Profile
-
-
-
  a| 
 Weisen Sie einem Benutzer ein Profil zu.
  a| 
@@ -354,12 +352,11 @@ snapcreator
 --action profileAssign
 --userName user_name
 --verbose
----- a| 
-Heben Sie die Zuordnung eines Profils zu einem Benutzer auf.
-
+----
 
 
  a| 
+| Heben Sie die Zuordnung eines Profils zu einem Benutzer auf  a| 
 [listing]
 ----
 snapcreator
@@ -371,9 +368,11 @@ snapcreator
 --action profileUnassign
 --userName user_name
 --verbose
----- a| 
-Listen Sie alle Profile auf, die einem Benutzer zugewiesen sind.
+----
+
+
  a| 
+| Listen Sie alle Profile auf, die einem Benutzer zugewiesen sind  a| 
 [listing]
 ----
 snapcreator
