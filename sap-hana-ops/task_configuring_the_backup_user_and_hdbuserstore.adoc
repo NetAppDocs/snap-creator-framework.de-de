@@ -11,7 +11,7 @@ summary: Sie sollten einen dedizierten Datenbankbenutzer in der HANA Datenbank k
 
 
 [role="lead"]
-Sie sollten einen dedizierten Datenbankbenutzer in der HANA Datenbank konfigurieren, um die Backup-Vorgänge mit Snap Creator auszuführen. In einem zweiten Schritt sollten Sie einen SAP HANA User Store Key für diesen Backup User konfigurieren. Dieser UserStore-Schlüssel wird in der Konfiguration des Snap Creator SAP HANA Plug-ins verwendet.
+Sie sollten einen dedizierten Datenbankbenutzer in der HANA Datenbank konfigurieren, um die Backup-Vorgänge mit Snap Creator auszuführen. In einem zweiten Schritt sollten Sie für diesen Backup-Benutzer einen SAP HANA User Store Key konfigurieren. Dieser UserStore-Schlüssel wird in der Konfiguration des Snap Creator SAP HANA Plug-ins verwendet.
 
 Der Backup-Benutzer muss über die folgenden Berechtigungen verfügen:
 

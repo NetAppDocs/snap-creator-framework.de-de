@@ -41,17 +41,16 @@ SC_CLONE_TARGET
  a| 
 Hostname oder IP_address des Klonziels:Port
  a| 
-Aktiviert Klonvorgänge.mit dem Parameter *cloneVol* mit dem {PRE
+Ermöglicht Klonvorgänge.mit dem Parameter *cloneVol* mit dem Parameter {PRE/POST}_CLONE_CREATE_CMDxx können Sie die Remote-Speicherobjekte auf der Remote-Seite verwalten (z. B. Mounten oder Aufhängen von Dateisystemen).
+
+Um ein Klonziel festzulegen, müssen Sie seinen Namen oder seine IP-Adresse gefolgt von einem Doppelpunkt und den Port eingeben, auf dem Snap Creator Agent abhört.
 
 
 
-| NACH dem Parameter}_CLONE_CREATE_CMDxx können Sie die Remote-Speicherobjekte auf der Remote-Seite verwalten (z. B. Mounten oder Unmounten von Dateisystemen). Um ein Klonziel festzulegen, müssen Sie seinen Namen oder seine IP-Adresse gefolgt von einem Doppelpunkt und den Port eingeben, auf dem Snap Creator Agent abhört.  a| 
+ a| 
 SC_AGENT_TIMEOUT
  a| 
 Zeit (in Sekunden)
-
-
-
  a| 
 Gibt die Zeitüberschreitung in Sekunden des Agent-Dienstes an. Die implementierte Client-/Server-Architektur verwendet einen Timeout-Mechanismus. Das bedeutet, dass der Server mit einer Timeout-Meldung fehlschlägt, wenn der Client nicht im angegebenen Intervall reagiert. Die Aufgabe auf dem Client wird jedoch nicht abgebrochen und erfordert weitere Untersuchungen.
 
@@ -61,13 +60,13 @@ Sie sollten diesen Parameter auf die maximale Zeit einstellen, die ein Vorgang d
 
 
 NOTE: Einige Plug-ins haben spezifische Anforderungen für SC_AGENT_TIMEOUT.
+
+
+
  a| 
 SC_AGENT_WATCHDOG_ENABLE
  a| 
 „`Y`“ oder „`N`“
-
-
-
  a| 
 Der Parameter SC_AGENT_WATCHDOG_ENABLE wird nur angewendet, wenn die Snap Creator Agent-Version vor 4.1 liegt. Dieser Parameter aktiviert oder deaktiviert den Watchdog-Prozess. Bei Snap Creator Agent 4.1 oder neuer wird dieser Parameter ignoriert, da der Watchdog-Prozess immer aktiviert ist. Wenn der Parameter aktiviert ist (d. h. auf Y gesetzt) und die Snap Creator Agent Version 4.1 oder höher ist, wird der Watchdog-Prozess gestartet, wenn der Snap Creator Agent eine quiesce-Anfrage erhält.
 
@@ -75,27 +74,32 @@ Der Watchdog-Prozess verwendet den Parameter SC_AGENT_UNQUIESCE_TIMEOUT als Time
 
 
 NOTE: Der Parameter SC_AGENT_WATCHDOG_ENABLE ist mit Snap Creator Agent 4.1 veraltet und gilt nur für die Verwendung mit Snap Creator Agent 4.0. Ab Snap Creator Agent 4.1 ist der Watchdog-Prozess aktiviert (da er hartcodiert ist), unabhängig vom für diesen Parameter eingestellten Wert.
+
+
+
  a| 
 SC_AGENT_UNQUIESCE_TIMEOUT
  a| 
 Zeit (in Sekunden)
-
-
-
  a| 
 Gibt die Zeitüberschreitung für das nicht-quiesce-Stillstand in Sekunden an. Bei Snap Creator Agent Versionen vor 4.1 wird dieser Parameter nur verwendet, wenn SC_AGENT_WATCHDOG_ENABLE auf Y. Mit Snap Creator Agent 4.1 oder neuer ist der Parameter immer anwendbar, da der Snap Creator Agent Watchdog-Prozess immer aktiviert ist.Wenn die Kommunikation mit Snap Creator Agent nicht möglich ist und eine Applikation sich im quiesce-Status befindet, Der Snap Creator Agent gibt die Anwendung automatisch ohne Kommunikation vom Server in den normalen Betriebsmodus zurück. Standardmäßig ist das unquiesce-Timeout auf den Parameterwert SC_AGENT_TIMEOUT gesetzt, plus fünf Sekunden.
+
+
+
  a| 
 SC_TMP_DIR
  a| 
 „`Y`“ oder „`N`“
-
-
-
  a| 
 Ermöglicht die Verwendung eines benutzerdefinierten, alternativen temporären Verzeichnisses zum Speichern von Snap Creator-bezogenen Dateien. Der Benutzer erstellt das Verzeichnis und verwaltet den Benutzerzugriff. Die Plug-ins verwenden temporäre Dateien, um mit der Datenbank zu interagieren. Die temporären Dateien werden im standardmäßigen temporären Verzeichnis des Hosts erstellt, das Schreibzugriff für alle Benutzer hat. Wenn das temporäre Verzeichnis voll ist, zeigt Snap Creator beim Erstellen der temporären Dateien einen Fehler an.
+
+
+
  a| 
 SC_AGENT_LOG_ENABLE
  a| 
 „`Y`“ oder „`N`“
+ a| 
+Ermöglicht die Protokollerstellung für alle vom Snap Creator Server ausgeführten Vorgänge für Snap Creator Agent. Wenn ein Fehler auftritt, können Sie diese Protokolle überprüfen. Snap Creator Server sendet Vorgänge an Snap Creator Agent. Wenn ein Fehler auftritt, bevor der Snap Creator Agent einen Callback an Snap Creator Server sendet, könnten die Snap Creator Agent Meldungen verloren gehen. Dieser Parameter hilft Snap Creator Agent Nachrichten, auf Snap Creator Agent protokolliert zu werden, sodass diese Nachrichten nicht verloren gehen.
 
 |===
