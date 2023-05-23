@@ -96,7 +96,7 @@ NOTE: Obwohl der maximal zulässige Wert für die *Job Log-Größe* 10,000 betr�
 Während der Installation des Snap Creator Server Service wird eine Eingabeaufforderung angezeigt, wenn ein Service als Teil der Installationsoptionen ausgewählt wurde. Dieser Prozess versucht, vorhandene Dienste zu starten. Daher ist es üblich, Fehlermeldungen zu sehen, die als Teil dieses Schritts aufgelistet sind.
 
 .. Klicken Sie auf *Fertig stellen*, um das Windows-Installationsprogramm zu schließen.
-.. Überprüfen Sie den Start der Snap Creator Framework GUI, indem Sie zum lokalen Host auf dem angegebenen Port navigieren (https://IP_address:gui_port)[].
+.. Überprüfen Sie den Start der Snap Creator Framework GUI, indem Sie zum lokalen Host auf dem angegebenen Port navigieren .
 +
 Sie müssen eine Verbindung über HTTPS herstellen. Andernfalls wird die Verbindung nicht automatisch zu einer HTTPS-Verbindung umgeleitet und die GUI funktioniert nicht.
 

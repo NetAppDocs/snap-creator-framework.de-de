@@ -72,6 +72,6 @@ Löschen Sie auch das Snap Creator 4.1.x-Installationsverzeichnis.
 
 IMPORTANT: Löschen Sie Ihre Backup-Kopien erst, wenn Sie sich sicher sind, dass Sie das Zurücksetzen auf eine ältere Version nicht benötigen.
 
-Sie müssen auch den Start der Snap Creator Framework GUI überprüfen, indem Sie zum lokalen Host auf dem angegebenen Port navigieren (https://IP_address:gui_port)[].
+Sie müssen auch den Start der Snap Creator Framework GUI überprüfen, indem Sie zum lokalen Host auf dem angegebenen Port navigieren .
 
 Sie müssen eine Verbindung über HTTPS herstellen. Andernfalls wird die Verbindung nicht automatisch zu einer HTTPS-Verbindung umgeleitet und die GUI funktioniert nicht.
