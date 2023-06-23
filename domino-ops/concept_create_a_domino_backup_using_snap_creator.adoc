@@ -14,9 +14,10 @@ summary: Sie können Datenbanken nach Bedarf oder nach einem Zeitplan sichern. Z
 Sie können Datenbanken nach Bedarf oder nach einem Zeitplan sichern. Zum Sichern von Datenbanken können Sie entweder die Snap Creator GUI oder die Snap Creator CLI verwenden.
 
 
-NOTE: In diesem Handbuch erfahren Sie, wie Sie mit der GUI Datenbanken sichern. Informationen zur Verwendung der CLI finden Sie im https://library.netapp.com/ecm/ecm_download_file/ECMP12395422["Snap Creator Framework 4.1.2 – Administratorhandbuch"].
+NOTE: Sie können die GUI verwenden, um Datenbanken zu sichern. Informationen zur Verwendung der CLI finden Sie im https://library.netapp.com/ecm/ecm_download_file/ECMP12395422["Snap Creator Framework 4.1.2 – Administratorhandbuch"^].
 
 *Verwandte Informationen*
 
-link:task_creating_a_domino_backup_using_the_snap_creator_gui.adoc["Backup von Datenbanken nach Bedarf"]
-link:task_scheduling_actions_using_the_snap_creator_gui.adoc["Planen von Backups"]
+* link:task_creating_a_domino_backup_using_the_snap_creator_gui.adoc["Backup von Datenbanken nach Bedarf"]
+* link:task_scheduling_actions_using_the_snap_creator_gui.adoc["Planen von Backups"]
+

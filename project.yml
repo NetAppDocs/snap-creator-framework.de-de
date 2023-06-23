@@ -148,7 +148,7 @@ sidebar:
           url: "/installation/reference_cli_command_for_creating_cluster_roles.html"
         - title: CLI-Befehle zum Erstellen von SVM-Rollen
           url: "/installation/reference_cli_commands_for_creating_svm_roles.html"
-  - title: IBM® Domino® Plug-in-Betrieb
+  - title: IBM Domino Plug-in Operations
     url: "/domino-ops/index.html"
     entries:
     - title: Überblick über das IBM Domino Plug-in
@@ -230,7 +230,7 @@ sidebar:
       url: "/domino-ops/reference_domino_plug_in_specific_errors.html"
     - title: Weitere Schritte
       url: "/domino-ops/reference_references.html"
-  - title: SAP HANA® Plug-in-Operationen
+  - title: SAP HANA Plug-in Operations
     url: "/sap-hana-ops/index.html"
     entries:
     - title: Überblick über die Backup- und Restore-Lösung für SAP HANA
