@@ -14,7 +14,7 @@ summary: 'Gängige Fehler in Snap Creator lassen sich in zwei Kategorien unterte
 Gängige Fehler in Snap Creator lassen sich in zwei Kategorien unterteilen: Generische Snap Creator-Fehler und Plug-in-spezifische Fehler von Domino. Plug-in-spezifische Fehler in Domino sind in der Regel mit Problemen vor der Installation, fehlerhaften Datenbanken oder Problemen mit einer benutzerdefinierten Wiederherstellungsaktion verbunden.
 
 
-NOTE: Informationen zu generischen Snap Creator-Fehlern finden Sie im link:https://library.netapp.com/ecm/ecm_download_file/ECMP12395422["Snap Creator Framework 4.1.2 – Administratorhandbuch"].
+NOTE: Informationen zu allgemeinen Snap Creator-Fehlern finden Sie unterlink:../administration/index.html["Snap Creator Framework 4.3.3 – Administratorhandbuch"] Die
 
 
 
@@ -47,7 +47,7 @@ Diese Fehlermeldungen werden angezeigt, wenn eine der folgenden Bedingungen nich
 * Die Schritte vor der Installation wurden nicht ausgeführt oder wurden nicht korrekt ausgeführt:
 +
 ** Auf UNIX-Hosts müssen Sie symbolische Links zu gemeinsam genutzten Objektdateien von IBM Domino erstellen.
-** Unter Windows Hosts müssen Sie den IBM Domino-Installationspfad zur PFADUMGEBVARIABLE hinzufügen. Weitere Informationen finden Sie im link:https://library.netapp.com/ecm/ecm_download_file/ECMP12395424["Snap Creator Framework 4.1.2 – Installationshandbuch"].
+** Auf Windows-Hosts müssen Sie den Installationspfad von IBM Domino zur Umgebungsvariablen PATH hinzufügen. Weitere Informationen finden Sie imlink:https://docs.netapp.com/us-en/snap-creator-framework/installation/task_configure_windows_specific_settings_adding_path_to_the_environment_variables.html["Installationsanleitung für das Snap Creator Framework – Hinzufügen des Pfads zu den Umgebungsvariablen"] .
 
 
 * Die Bit-Ebene von Domino unterscheidet sich von der Bit-Ebene von Snap Creator. Wenn Sie beispielsweise 32-bit Domino verwenden, sollten Sie 32-bit Snap Creator verwenden.
