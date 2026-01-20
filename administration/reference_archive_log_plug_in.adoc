@@ -22,47 +22,44 @@ In der folgenden Tabelle sind die Parameter für das Archiv-Protokoll-Plug-in au
  a| 
 ARCHIVE_LOG_ENABLE
  a| 
-(J
-| N 
-
-
-| Richtlinie:Alter)  a| 
+(J|N|Richtlinie:Alter)
+ a| 
 Ermöglicht das Management von Archivprotokollen (Löschen der alten Archivprotokolle).
+
+
+
  a| 
 ARCHIVE_LOG_RETENTION
-
-
-
  a| 
 Anzahl_Tage
  a| 
 Gibt die Anzahl der Tage an, die die Archivprotokolle aufbewahrt werden. Diese Einstellung muss gleich oder größer sein als NTAP_SNAPSHOT_ AUFBEWAHRUNG.
+
+
+
  a| 
 ARCHIVE_LOG_DIR
-
-
-
  a| 
 Change_info_Directory/logs
  a| 
 Gibt den Pfad zum Verzeichnis an, das die Archivprotokolle enthält.
+
+
+
  a| 
 ARCHIVE_LOG_EXT
-
-
-
  a| 
 Dateierweiterung
  a| 
 Gibt die Dateierweiterung der Archivprotokolle an. Wenn die Archivprotokolle z. B. 10192091019.log sind, geben Sie diese Parametereinstellung für PROTOKOLL an.
+
+
+
  a| 
 ARCHIVE_LOG_REKURSIVE_SEARCH
-
-
-
  a| 
-(J
-| N)  a| 
+(J|N)
+ a| 
 Ermöglicht das Management von Archivprotokollen innerhalb von Unterverzeichnissen. Wenn sich die Archivprotokolle unter Unterverzeichnissen befinden, sollten Sie diesen Parameter verwenden.
 
 |===

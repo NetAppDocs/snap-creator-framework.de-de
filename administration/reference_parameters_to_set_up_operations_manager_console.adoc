@@ -52,6 +52,8 @@ Der Port, der für die Kommunikation mit der Operations Manager-Konsole verwende
  a| 
 OM_EVENT_GENERATE
  a| 
-(J
-| N) 
+(J|N)
+ a| 
+Aktiviert oder deaktiviert die Ereigniserstellung in der Operations Manager-Konsole.
+
 |===

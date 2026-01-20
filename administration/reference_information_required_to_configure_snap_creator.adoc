@@ -43,29 +43,26 @@ Legt fest, welche Applikation gesichert wird. Snap Creator verfügt über integr
  a| 
 APP_IGNORE_ERROR
  a| 
-(J
-| N) 
-
-
+(J|N)
  a| 
 Bestimmt, ob Snap Creator Fehler von Applikations-Plug-ins ignorieren sollte. Dies ist nützlich, wenn Sie mehrere Datenbanken sichern möchten und nicht das Backup beenden möchten, wenn das System stillgelegt oder eine Datenbank ausfällt.
+
+
+
  a| 
 APP_DEFINED_BACKUP
  a| 
-(J
-
-
-
-| N)  a| 
+(J|N)
+ a| 
 Das Applikations-Plug-in wird erwartet, den gesamten Backup-Vorgang auszuführen, einschließlich Stilllegung, Erstellung einer Snapshot Kopie und Stilllegung. Die integrierten Plug-ins unterstützen diese Art von Backups nicht.
+
+
+
  a| 
 APP_DEFINED_RESTORE
-
-
-
  a| 
-(J
-| N)  a| 
+(J|N)
+ a| 
 Ermöglicht applikationsbasierte Restore-Vorgänge. Im Falle einer Wiederherstellung sendet Snap Creator eine Anforderung an das Applikations-Plug-in, das diese Anforderung erledigt.
 
 
@@ -73,29 +70,26 @@ Ermöglicht applikationsbasierte Restore-Vorgänge. Im Falle einer Wiederherstel
  a| 
 APP_DEFINED_MOUNT
  a| 
-(J
-| N) 
-
-
+(J|N)
  a| 
 Die eingebauten Mount-Fähigkeiten von Snap Creator werden ignoriert. Stattdessen ist das Plug-in für alle Mount-Aktivitäten zuständig, einschließlich der Erstellung von Volumes oder LUNs. Die integrierten Plug-ins unterstützen diesen Mount-Typ nicht.
+
+
+
  a| 
 APP_DEFINED_UMOUNT
  a| 
-(J
-
-
-
-| N)  a| 
+(J|N)
+ a| 
 Die eingebauten Unmount-Fähigkeiten von Snap Creator werden ignoriert. Stattdessen ist das Plug-in für die Durchführung aller unmounten-Aktivitäten verantwortlich, einschließlich Löschen von Volumes oder LUNs. Die integrierten Plug-ins unterstützen diesen Typ der Unmount-Operation nicht.
+
+
+
  a| 
 APP_AUTO_DISCOVERY
-
-
-
  a| 
-(J
-| N)  a| 
+(J|N)
+ a| 
 Ermöglicht die automatische Erkennung von Anwendungen. Snap Creator sendet eine Discovery-Anfrage an das Applikations-Plug-in. Das Plug-in ist dann für die Erkennung der Storage-Konfiguration zuständig. Dies kann dynamisch oder dauerhaft mit DEM PARAMETER APP_CONF_PERSISTENCE erfolgen, wenn die Informationen in der Konfigurationsdatei gespeichert werden sollen.
 
 
@@ -103,102 +97,110 @@ Ermöglicht die automatische Erkennung von Anwendungen. Snap Creator sendet eine
  a| 
 APP_CONF_PERSISTENZ
  a| 
-(J
-| N) 
-
-
+(J|N)
  a| 
 Ermöglicht die automatische Erkennung dauerhaft, d. h. Änderungen werden in der Konfigurationsdatei dynamisch aktualisiert.
+
+
+
  a| 
 APP_DEFINED_CLONE
  a| 
-(J
-
-
-
-| N)  a| 
+(J|N)
+ a| 
 Die integrierten Klonfunktionen von Snap Creator werden ignoriert. Stattdessen ist das Plug-in für die Durchführung aller Klonaktivitäten zuständig, einschließlich der Erstellung und des Löschens von Volumes oder LUNs. Die integrierten Plug-ins unterstützen diesen Klontyp nicht.
+
+
+
  a| 
 FS_NAME
-
-
-
  a| 
 Plug-in
  a| 
 Legt fest, welches Plug-in für Dateisystemvorgänge verwendet wird.
+
+
+
  a| 
 JAVA_HOME
-
-
-
  a| 
 Text
  a| 
 Diese Einstellung verweist auf die Java Virtual Machine (JVM), die für die Ausführung von .class- und .jar-Dateien verwendet werden soll.
+
+
+
  a| 
 JVM_ARGS
-
-
-
  a| 
 Text
  a| 
 Diese Einstellung steuert die JVM-Einstellungen, wenn native Java .class- oder .jar-Dateien ausgeführt werden. Die Standardeinstellung ist -Xms32M -Xmx128M.
+
+
+
  a| 
 JAVA_CLASSPATH
-
-
-
  a| 
 Text
  a| 
 Mit dieser Einstellung wird der Java-Klassenpfad definiert. Standardmäßig werden Plug-ins/native konfiguriert und können mit dieser Umgebungsvariable, die an den Standard angehängt ist, abgeschlossen werden.
+
+
+
  a| 
 META_DATA_VOLUME
-
-
-
  a| 
  a| 
 Ermöglicht die Erstellung einer Snapshot Kopie des angegebenen Volumes nach dem unquiesce-Vorgang. Dies kann für bestimmte Plug-ins nützlich sein, bei denen die Snapshot Kopie der Daten zu unterschiedlichen Zeiten erstellt werden muss. Der Parameter darf nicht nur das Volume angeben, sondern auch den Controller (z. B. `controller1:volume1,volume2;controller2:volume3,volume4;controller3:volume5,volume6`).
+
+
+
  a| 
 PERL_HOME
-
-
-
  a| 
 Text
  a| 
 Diese Einstellung verweist auf den Perl-Interpreter, der für die Ausführung von .pl-Dateien verwendet werden soll.
+
+
+
  a| 
 PERL_OPTS
-
-
-
  a| 
 Text
  a| 
 Diese Einstellung steuert die PERL-Interpretereinstellungen, wenn native Perl-Dateien ausgeführt werden. Zu den Optionen für zusätzliche Einstellungen gehören Verzeichnisse (-I), die an den Perl-Interpreter weitergeleitet werden können.
+
+
+
  a| 
 PYTHON_HOME
-
-
-
  a| 
 Text
  a| 
 Diese Einstellung verweist auf den Python-Interpreter, der für die Ausführung von .py-Dateien verwendet werden soll.
+
+
+
  a| 
 PYTHON_OPTS
-
-
-
  a| 
 Text
  a| 
 Diese Einstellung steuert die Python-Interpretereinstellungen, wenn native Python-Dateien ausgeführt werden.
+
+
+
  a| 
 VALIDIERUNG_VOLUMES
+ a| 
+Daten
+ a| 
+Prüft, ob alle Datenträger, auf denen sich die Datenbank befindet, Teil des Sicherungsvorgangs sind. Aktuell bestehen Einschränkungen:
+
+* Es wird ausschließlich das Network File System (NFS) unterstützt.
+* Es werden nur die Datendateien der unterstützten Datenbanken überprüft.
+
 
 |===

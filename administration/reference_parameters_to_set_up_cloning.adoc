@@ -53,57 +53,54 @@ Gibt das Storage-System, das Quell-Volume und eine INITIATORGRUPPE an. Die IGROU
  a| 
 NTAP_CLONE_FOR_BACKUP
  a| 
-(J
-| N) 
-
-
+(J|N)
  a| 
 Bei entsprechender Aktivierung werden Klone (Volume und LUN) erstellt und anschließend gelöscht, sobald die anderen Vorgänge abgeschlossen sind. Andernfalls werden Klone vor Abschluss des Betriebs gelöscht. *Hinweis:* Wenn Sie Clones auf Band sichern, sollte dies auf Y. eingestellt sein. Wenn Sie Datenbankaktualisierungen ausführen, dann sollten Sie sie auf N einstellen
+
+
+
  a| 
 NTAP_CLONE_SECONDARY
  a| 
-(J
-
-
-
-| N)  a| 
+(J|N)
+ a| 
 Bei entsprechender Aktivierung werden Klone nach Abschluss des SnapMirror Updates auf dem SnapMirror Zielsystem erstellt. *Hinweis:* Diese Einstellung sollte mit NTAP_SNAPMIRROR_USE_SNAPSHOT, NTAP_SNAPMIRROR_WAIT und NTAP_CLONE_SECONDARY_VOLUMES und der KlonVol Aktion verwendet werden.
+
+
+
  a| 
 NTAP_CLONE_SECONDARY_VOLUMES
-
-
-
  a| 
  a| 
 Hierbei handelt es sich um eine Zuordnung von primären oder sekundären Storage-Systemen und den sekundären Volumes. Dies ist erforderlich, damit Snap Creator die sekundären Volumes finden kann (z. B. Controller1:Controller1-sec/vol1;Controller1:Controller1-sec/vol2).
+
+
+
  a| 
 NTAP_NUM_VOL_CLONES
-
-
-
  a| 
  a| 
 Dies ist die Anzahl der Volume-Klone, die Sie aufbewahren möchten. Dies funktioniert ähnlich der Aufbewahrungsrichtlinie für Snapshot Kopien. *Hinweis:* Dies funktioniert nur bei Volume-Klonen, für die eine FlexClone Lizenz auf dem Storage Controller erforderlich ist.
+
+
+
  a| 
 NTAP_NFS_EXPORT_HOST
-
-
-
  a| 
 Host-IP
  a| 
 Der Hostname oder die IP-Adresse, in die der Klon exportiert werden soll. Dies ist der Host, auf dem Sie das Klon-Volume mit NFS mounten.
+
+
+
  a| 
 NTAP_NFS_EXPORT_ACCESS
-
-
-
  a| 
 Stamm
-| Lesen und schreiben | Schreibgeschützt 
+| Lesen und schreiben 
 
 
- a| 
+| Schreibgeschützt  a| 
 Der in NTAP_NFS_EXPORT_HOST angegebene Host erhält Zugriff oder die Berechtigung für das Klon-Volume.
 
 * Stamm
@@ -121,21 +118,21 @@ Lese-/Schreibzugriff wird gewährt.
 
  a| 
 NTAP_NFS_EXPORT_PERSISTENT
+
+
+
  a| 
 Richtig
-
-
-
 | Falsch  a| 
 Legt fest, ob der NFS-Export persistent ist. Wenn „true“ ausgewählt ist, wird das Klon-Volume exportiert und die /etc/exports-Datei auf dem Storage Controller aktualisiert.
+
+
+
  a| 
 NTAP_CIFS_EXPORT_ENABLE
-
-
-
  a| 
-(J
-| N)  a| 
+(J|N)
+ a| 
 Ist die Einstellung, um ein geklontes Volume mithilfe von CIFS gemeinsam zu nutzen.
 
 |===

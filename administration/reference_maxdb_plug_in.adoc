@@ -43,26 +43,23 @@ Gibt den Anwendungsnamen an.
  a| 
 XUSER_ENABLE
  a| 
-(J
-| N) 
-
-
+(J|N)
  a| 
 Aktiviert oder deaktiviert die Verwendung eines xuser für MaxDB, sodass für den Datenbankbenutzer kein Passwort erforderlich ist.
+
+
+
  a| 
 HANDLE_LOGWRITER
  a| 
-(J
-
-
-
-| N)  a| 
+(J|N)
+ a| 
 Führt die Vorgänge zum Anhalten des Logwriters (N) aus oder führt den Protokollwriter (Y) wieder aus.
+
+
+
  a| 
 DBMCLICMD
-
-
-
  a| 
 Pfad_zu_dbmcli_cmd
  a| 
@@ -70,23 +67,23 @@ Gibt den Pfad zum Befehl MaxDB dbmcli an.Falls nicht gesetzt, wird dbmcli auf de
 
 
 NOTE: In einer Windows Umgebung muss der Pfad in doppelten Angeboten enthalten sein (“...“).
+
+
+
  a| 
 SQLCLICMD
-
-
-
  a| 
 Pfad_zu_sqlcli_cmd
  a| 
 Gibt den Pfad für den MaxDB sqlcli Befehl an.Wenn nicht festgelegt, wird sqlcli auf dem Suchpfad verwendet.
+
+
+
  a| 
 MAXDB_UPDATE_HIST_LOG
-
-
-
  a| 
-(J
-| N)  a| 
+(J|N)
+ a| 
 Weist das MaxDB Backup-Programm an, unabhängig davon, ob das MaxDB-Verlaufsprotokoll aktualisiert wird.
 
 

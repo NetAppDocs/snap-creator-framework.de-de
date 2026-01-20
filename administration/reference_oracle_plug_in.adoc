@@ -75,11 +75,8 @@ Pfad zum Verzeichnis zum Speichern der temporären Datei, zum Beispiel /tmp.der 
  a| 
 NUR ARCHIVE_LOG_ONLY
  a| 
-(J
-| N 
-
-
-| Richtlinie:<Y | N>)  a| 
+(Y|N|Richtlinie:<Y|N>)
+ a| 
 Informiert das Oracle Plug-in über die Durchführung eines Switch-ProtokolloperationDiese Einstellung ist nützlich, wenn Sie Archiv-Log-Backups getrennt von Daten-Backups durchführen.
 
 
@@ -103,24 +100,31 @@ Pfad zum Oracle Home-Verzeichnis für eine bestimmte System-ID (SID)beim Backup 
  a| 
 ORACLE_EXPORT_PARAMETER
  a| 
-(J
-| N ) 
-
-
+(J|N)
  a| 
 Die Parameter DER Umgebung ORACLE_HOME und ORACLE_SID werden mithilfe des Exportbefehls exportiert. Dies gilt nur für UNIX oder für eine Linux-basierte Umgebung.
+
+
+
  a| 
 ORACLE_BACKUPMODE
  a| 
-
-
-
  a| 
 Option zum Konfigurieren von Offline- oder Online-Backups mithilfe der Snap Creator-Richtlinie Die Standardoption ist online. ORACLE_BACKUPMODE=stündlich:online,täglich:offline
+
+
+
  a| 
 ORACLE_SHUTDOWNABORT
  a| 
-(J
+(J|N)
+ a| 
+Wenn beim Ausführen der Oracle-Offline-Sicherung der Wert Y gesetzt wird, wird der Shutdown-Abbruchmechanismus verwendet, um sicherzustellen, dass die Datenbank in einem konsistenten Zustand heruntergefahren wird. Die Schritte zum Herunterfahren des Parameters ORACLE_SHUTDOWNABORT lauten wie folgt:
+
+* Abbruch
+* Startbeschränkungen
+* Sofortige Abschaltung
+
 
 |===
 *Verwandte Informationen*
