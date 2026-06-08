@@ -98,6 +98,6 @@ sc start snapcreatorserverservice
 ----
 
 
-Sie müssen außerdem den Start der Snap Creator Framework GUI überprüfen, indem Sie zum lokalen Host am angegebenen Port navigieren .
+Außerdem müssen Sie den Start der Snap Creator Framework GUI überprüfen, indem Sie zum lokalen Host auf dem angegebenen Port +(https://IP_address:gui_port)+[] navigieren.
 
 Sie müssen eine Verbindung über HTTPS herstellen. Andernfalls wird die Verbindung nicht automatisch zu einer HTTPS-Verbindung umgeleitet und die GUI funktioniert nicht.

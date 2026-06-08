@@ -22,7 +22,7 @@ Die grundlegenden Schritte sind wie folgt:
 . Prüfen Sie auf inkonsistente oder beschädigte Datenbanken.
 +
 
-NOTE: Sie können das Plug-in erzwingen, um mit Backup-Vorgängen trotz Fehlern fortzufahren, wie in Schritt beschrieben link:task_using_the_gui_to_create_a_configuration_file.md#STEP_AA41331683A24598B7845367CB967F99["Task_using_the_gui_to_create_a_Configuration_file.md#STEP_AA41331683A24598B7845367CB967F99"].
+NOTE: Sie können das Plug-in zwingen, trotz Fehlern mit den Sicherungsvorgängen fortzufahren, wie in Schritt link:task_using_the_gui_to_create_a_configuration_file.html["Aufgabe: Mit der GUI eine Konfigurationsdatei erstellen"] beschrieben.
 
 . Erstellen Sie von jedem Volume eine Snapshot Kopie.
 . Wenn die Transaktionsprotokollierung von Domino verwendet wird, können Sie Kopien von Domino Transaktionsprotokollen zwecks Verwendung in aktuellen Restore-Vorgängen archivieren.

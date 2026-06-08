@@ -25,7 +25,7 @@ Nur zeitpunktgenaue Volume-Restores sind verfügbar, wenn Sie eine SnapVault Kop
 
 == Allgemeines zu Zielverzeichnissen
 
-Bei Volume-Restores und Restores mit einzelnen Dateien gibt es in der Regel unterschiedliche Zielverzeichnisse. Sie geben das Zielverzeichnis im Parameter Verzeichnis der Datenwiederherstellung in der Konfigurationsdatei Backup und Restore an (siehe Schritt) link:task_using_the_gui_to_create_a_configuration_file.md#STEP_E6C507729B3647FD8B2E8D0818F22D3B["Task_using_the_gui_to_create_a_Configuration_file.md#STEP_E6C507729B3647FD8B2E8D0818F22D3B"]):
+Die Wiederherstellung von Volumes und einzelnen Dateien erfolgt in der Regel in unterschiedlichen Zielverzeichnissen. Das Zielverzeichnis wird im Parameter „Datenwiederherstellungsverzeichnis“ in der Sicherungs- und Wiederherstellungskonfigurationsdatei (siehe Schritt link:task_using_the_gui_to_create_a_configuration_file.html["Aufgabe mit der gui zum Erstellen einer Konfigurationsdatei"]) angegeben:
 
 * Für eine Volume-Wiederherstellung müssen Sie das Data Restore Directory auf das Domino-Datenverzeichnis setzen.
 * Für die Wiederherstellung einer einzelnen Datei muss das Data Restore Directory in ein Unterverzeichnis auf dem Domino Daten-Volume gesetzt werden.

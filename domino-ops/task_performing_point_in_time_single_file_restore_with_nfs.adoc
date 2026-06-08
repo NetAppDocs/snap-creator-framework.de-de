@@ -55,7 +55,7 @@ Durch Auswahl von *Restore* wird der Snap Creator Framework Restore Wizard autom
 
 +
 
-NOTE: Wenn Sie ein Restore aus einer SnapVault Kopie durchführen, werden Sie aufgefordert, eine Wiederherstellung aus primärem oder sekundärem Storage durchzuführen. Ihre Auswahl hängt davon ab, wie Sie mit der unter beschriebenen Beschränkung umgehen link:concept_domino_database_restore_overview.md#GUID-4D864E27-DE54-43BF-9B9F-EF2F240F65D9["Concept_domino_Database_Restore_overview.md#GUID-4D864E27-DE54-43BF-9B9F-EF2F240F65D9"].
+NOTE: Wenn Sie eine SnapVault-Kopie wiederherstellen, werden Sie aufgefordert, vom primären oder sekundären Speicher wiederherzustellen. Ihre Auswahl hängt davon ab, wie Sie mit der in link:concept_domino_database_restore_overview.html["Concept_domino_Database_Restore_overview.md#GUID-4D864E27-DE54-43BF-9B9F-EF2F240F65D9"] beschriebenen Einschränkung umgehen.
 
 . Geben Sie auf der Seite Restore Details die Wiederherstellungsdetails an:
 +
