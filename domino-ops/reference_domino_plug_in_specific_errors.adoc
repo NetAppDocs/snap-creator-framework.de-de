@@ -18,6 +18,7 @@ NOTE: Informationen zu allgemeinen Snap Creator-Fehlern finden Sie unterlink:../
 
 
 
+[[domino-plug-in-is-not-supported-on-this-platform]]
 == Das Domino Plug-in wird auf dieser Plattform nicht unterstützt
 
 Sie erhalten diesen Fehler in der Regel, wenn die Voraussetzungen für das Domino Plug-in nicht erfüllt sind. Im Allgemeinen ist die Fehlermeldung ähnlich wie die folgende:
@@ -55,12 +56,14 @@ Diese Fehlermeldungen werden angezeigt, wenn eine der folgenden Bedingungen nich
 
 
 
+[[snap-creator-backup-fails-because-of-a-bad-database]]
 == Snap Creator Backup schlägt fehl wegen einer schlechten Datenbank
 
 Standardmäßig schlägt eine Datensicherung fehl, wenn eine oder mehrere Datenbanken inkonsistent oder beschädigt sind. Sie können das Plug-in zwingen, die Datensicherung trotz Fehlern fortzusetzen, wie in Schritt link:task_using_the_gui_to_create_a_configuration_file.html["Aufgabe mit der gui zum Erstellen einer Konfigurationsdatei"] beschrieben.
 
 
 
+[[domino-restore-using-custom-action-fails]]
 == Die Wiederherstellung von Domino unter Verwendung benutzerdefinierter Aktion schlägt fehl
 
 Wiederherstellungsfehler treten in der Regel auf, wenn Restore-Pfade nicht richtig eingestellt sind. Überprüfen Sie die Pfade auf zusätzliche Zeichen und Schrägstriche. Überprüfen Sie außerdem, ob das Verzeichnis zur Datenwiederherstellung richtig eingestellt ist.
@@ -84,6 +87,7 @@ Recovery Manager: Recovery only supported for Backup Files.ERROR_CODE:5114
 ----
 
 
+[[all-domino-plug-in-specific-errors]]
 == Alle Plug-in-spezifischen Fehler von Domino
 
 In der folgenden Tabelle sind die IBM Domino Plug-in-spezifischen Fehlermeldungen im Referenzformat aufgeführt:

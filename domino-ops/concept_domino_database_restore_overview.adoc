@@ -15,6 +15,7 @@ Das IBM Domino Plug-in stellt Datenbankdateien aus der Snapshot Kopie des Volume
 
 
 
+[[understanding-snapmirror-and-snapvault-restore-operations]]
 == Allgemeines zu Restore-Vorgängen bei SnapMirror und SnapVault
 
 Sie können Snap Creator zum Wiederherstellen einer SnapMirror Kopie der Daten nicht verwenden. Wenn Sie eine gespiegelte Kopie wiederherstellen möchten, müssen Sie zuerst die Spiegelung unterbrechen und dann die Daten manuell wiederherstellen. Weitere Informationen finden Sie im link:http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-sm-ic-fr/home.html["ONTAP 9 Express Guide für die Disaster Recovery von Volumes"].
@@ -23,6 +24,7 @@ Nur zeitpunktgenaue Volume-Restores sind verfügbar, wenn Sie eine SnapVault Kop
 
 
 
+[[understanding-destination-directories]]
 == Allgemeines zu Zielverzeichnissen
 
 Die Wiederherstellung von Volumes und einzelnen Dateien erfolgt in der Regel in unterschiedlichen Zielverzeichnissen. Das Zielverzeichnis wird im Parameter „Datenwiederherstellungsverzeichnis“ in der Sicherungs- und Wiederherstellungskonfigurationsdatei (siehe Schritt link:task_using_the_gui_to_create_a_configuration_file.html["Aufgabe mit der gui zum Erstellen einer Konfigurationsdatei"]) angegeben:
@@ -35,6 +37,7 @@ Das bedeutet, dass Sie bei alternativen Wiederherstellungsarten das Datenverwied
 
 
 
+[[where-to-run-a-restore]]
 == Wo eine Wiederherstellung ausgeführt werden soll
 
 Mit einer Ausnahme können Datenbanken entweder mit der Snap Creator GUI oder mit der Snap Creator CLI wiederhergestellt werden. Für die Wiederherstellung einer einzelnen Datei in einer SAN-Umgebung müssen Sie die CLI verwenden, wie in beschrieben xref:concept_single_file_restore_in_fc_iscsi_environments.adoc[Wiederherstellung einer einzelnen Datei in einer SAN-Umgebung durchführen].

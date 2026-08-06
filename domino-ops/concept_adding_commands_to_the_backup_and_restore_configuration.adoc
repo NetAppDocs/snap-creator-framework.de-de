@@ -15,6 +15,7 @@ Gelegentlich muss eine Backup- oder Restore-Operation einen Befehl ausführen, d
 
 
 
+[[where-to-run-supplemental-commands]]
 == Wo werden zusätzliche Befehle ausgeführt
 
 Standardmäßig werden zusätzliche Befehle auf dem Snap Creator Agent ausgeführt. Sie können einen zusätzlichen Befehl auf dem Server ausführen, indem Sie den Befehl mit dem TEXTSERVER vorwarden, gefolgt von einem Doppelpunkt (:). BEISPIEL: SERVER:C:\myscript.bat.
@@ -23,6 +24,7 @@ Wenn Sie einen zusätzlichen Befehl auf dem Agent ausführen möchten, müssen S
 
 
 
+[[where-to-add-supplemental-commands]]
 == Hinzufügen zusätzlicher Befehle
 
 Sie können entweder die Snap Creator GUI oder die Snap Creator CLI verwenden, um Befehle zu Ihrer Backup- und Restore-Konfiguration hinzuzufügen.

@@ -54,6 +54,7 @@ Bei mehreren VMs hängt die Dauer der VM während des Backup-Vorgangs „ausgese
 
 
 
+[[supported-kvm-configurations]]
 == Unterstützte KVM-Konfigurationen
 
 * SAN: Unterstützung von Virtual Machines zu Gast, die auf einem Multipath-Rohgerät installiert sind (LUN mit mehreren Pfaden)

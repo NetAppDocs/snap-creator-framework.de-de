@@ -17,6 +17,7 @@ RBAC umfasst Benutzer, Rollen, Berechtigungen, Vorgänge und Profile. Benutzer, 
 
 
 
+[[users]]
 == Benutzer
 
 * Benutzer werden eindeutig durch einen Benutzernamen und ein Passwort identifiziert.
@@ -27,6 +28,7 @@ RBAC umfasst Benutzer, Rollen, Berechtigungen, Vorgänge und Profile. Benutzer, 
 
 
 
+[[roles]]
 == Rollen
 
 Rollen haben mindestens eine Berechtigung. Die zugewiesenen Berechtigungen bestimmen die Aktionen, auf die ein Benutzer zugreifen kann und auf welche GUI-Elemente der Benutzer zugreifen kann. Es gibt drei integrierte Rollen:
@@ -49,6 +51,7 @@ Diese integrierten Rollen können nicht hinzugefügt, entfernt oder geändert we
 
 
 
+[[permissions]]
 == Berechtigungen
 
 Berechtigungen sind eine Reihe von Operationen, die der Benutzer ausführen kann. Die folgenden sind integrierte Berechtigungen:
@@ -105,6 +108,7 @@ Ermöglicht die Autorisierung für schreibgeschützte Vorgänge.
 
 
 
+[[operations]]
 == Betrieb
 
 Operationen sind die Grundwerte, die Snap Creator auf seine Autorisierung überprüft. Einige Beispiele für Operationen sind getTask, fileCloneCreate, createTask, dirCreate usw.
@@ -114,6 +118,7 @@ NOTE: Vorgänge können nicht hinzugefügt, entfernt oder geändert werden.
 
 
 
+[[profiles]]
 == Profile
 
 * Profile werden Benutzern zugewiesen.
@@ -127,6 +132,7 @@ Wenn ein Benutzer beispielsweise einen Job-Status wünscht, überprüft RBAC, ob
 
 
 
+[[managing-user-access-for-storage-controllers]]
 == Verwalten des Benutzerzugriffs für Storage Controller
 
 Wenn Sie den Active IQ Unified Manager-Proxy nicht verwenden, benötigen Sie einen Benutzernamen und ein Passwort, um mit den Storage Controllern zu kommunizieren. Passwörter können aus Sicherheitsgründen verschlüsselt werden.

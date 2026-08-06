@@ -42,6 +42,7 @@ Bei mehreren VMs hängt die Dauer der VM während des Backup-Vorgangs im Pause-S
 
 
 
+[[supported-citrix-xenserver-configurations]]
 == Unterstützte Citrix XenServer Konfigurationen
 
 Die folgenden Citrix XenServer Konfigurationen werden unterstützt:
@@ -62,6 +63,7 @@ Die folgenden Citrix XenServer Konfigurationen werden unterstützt:
 
 
 
+[[parameters]]
 == Parameter
 
 In der folgenden Tabelle werden die Citrix XenServer Plug-in-Parameter aufgeführt und beschrieben:
